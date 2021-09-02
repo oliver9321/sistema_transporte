@@ -1,153 +1,155 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-    <!-- Meta tags -->
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <title>Dastone - Admin & Dashboard Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="author" content="Oliver Fermin">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title><?=NOMBRE_APLICATION.VERSION ?></title>
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="vendor/bootstrap4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendor/select2/select2.min.css">
-    <!-- Neptune CSS -->
-    <link rel="stylesheet" href="vendor/css/core.css">
-
-    <style>
-        body{
-            background: url(img/back.png) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-
-    </style>
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
-<br><br><br><br><br><br>
-<body class="auth-bg" id="loginModule">
+<body class="account-body accountbg">
 
-<div class="auth">
+    <!-- Log In page -->
+    <div class="container">
+        <div class="row vh-100 d-flex justify-content-center">
+            <div class="col-12 align-self-center">
+                <div class="row">
+                    <div class="col-lg-5 mx-auto">
+                        <div class="card">
+                            <div class="card-body p-0 auth-header-box">
+                                <div class="text-center p-3">
+                                    <a href="index.html" class="logo logo-admin">
+                                        <img src="assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo">
+                                    </a>
+                                    <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Logistics Transport</h4>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <ul class="nav-border nav nav-pills" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#LogIn_Tab" role="tab">Log In</a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane active p-3" id="LogIn_Tab" role="tabpanel">
+                                        <form id="frm-login" action="?c=login&a=ValidateUser" method="post" class="form-horizontal auth-form">
 
-    <div class="container-fluid">
-        <div class="row">
+                                            <div class="form-group mb-2">
+                                                <label class="form-label" for="username">Username</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+                                                </div>
+                                            </div>
+                                            <!--end form-group-->
 
-            <!--<div class="auth-header">
-                <div class="mb-2"><img src="img/log.png" title=""></div>
-            </div>-->
+                                            <div class="form-group mb-2">
+                                                <label class="form-label" for="userpassword">Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">
+                                                </div>
+                                            </div>
+                                            <!--end form-group-->
 
-            <center>
-                <div class="mb-2"><img src="img/log3.png"  class="img-responsive" title="Logo"></div>
-            </center>
+                                            <div class="form-group row my-3">
+                                                <div class="col-sm-6">
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-sm-6 text-end">
+                                                    <a href="auth-recover-pw.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end form-group-->
 
-            <br>
-            <div class="col-md-4 offset-md-4">
-                <form id="frm-login" action="?c=login&a=ValidateUser" method="post">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="Usuario" name="Usuario" placeholder="Usuario" >
-                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                                            <div class="form-group mb-0 row">
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary w-100 waves-effect waves-light" type="button">Log In <i class="fas fa-sign-in-alt ms-1"></i></button>
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end form-group-->
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end card-body-->
+                            <div class="card-body bg-light-alt text-center">
+                                <span class="text-muted d-none d-sm-inline-block">devsarrollando.org © 
+                                    <script>
+                                        document.write(new Date().getFullYear())
+                                    </script>
+                                    </span>
+                            </div>
                         </div>
+                        <!--end card-->
                     </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="password" class="form-control" id="Password"  name="Password" placeholder="Password">
-                            <div class="input-group-addon"><i class="ti-key"></i></div>
-                        </div>
-                    </div>
-
-                    <div class="form-group" id="FormPuestoID" style="display:none">
-                        <select id="PuestoID" name="PuestoID" class="form-control select2" style="width: 100%" required></select>
-                    </div>
-
-                    <div class="form-group clearfix">
-                        <div class="float-xs-right">
-                            <a class="text-white font-90" href="#">Olvidaste tu contraseña?</a>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="button" onclick="GetListPuestosByUser()" class="btn btn-primary btn-block" id="BtnValidarPuestos">Iniciar Sesion</button>
-                        <button type="submit" class="btn btn-success btn-block" style="display:none" id="BtnIniciarSesion">Entrar al puesto</button>
-                    </div>
-                </form>
-
-                <div class="form-group clearfix">
-                    <center>
-                        <br><a class="text-white font-90" href="#">Contactar Administrador</a>
-                    </center>
+                    <!--end col-->
                 </div>
-
+                <!--end row-->
             </div>
+            <!--end col-->
         </div>
+        <!--end row-->
     </div>
-</div>
+    <!--end container-->
+    <!-- End Log In page -->
 
-<!-- Vendor JS -->
-<script type="text/javascript" src="vendor/jquery/jquery-1.12.3.min.js"></script>
-<script type="text/javascript" src="vendor/tether/js/tether.min.js"></script>
-<script type="text/javascript" src="vendor/bootstrap4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="vendor/js/select2.full.min.js"></script>
-<script type="text/javascript" src="vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/feather.min.js"></script>
+    <script src="assets/js/simplebar.min.js"></script>
+
 </body>
+
 </html>
 
-
 <script>
-
-    $('.select2').select2();
-
-    $(document).ready(function(){
-        $("#frm-login").submit(function(){
+    $(document).ready(function() {
+        $("#frm-login").submit(function() {
             return $(this).validate();
         });
     });
 
     var body = document.querySelector('body');
 
-    body.onkeydown = function (e) {
+    body.onkeydown = function(e) {
         if (!e.metaKey) {
 
-            if(e.keyCode == 13){
-                GetListPuestosByUser();
+            if (e.keyCode == 13) {
+                ValidateUser();
             }
         }
     };
 </script>
 
 <script>
+    function ValidateUser() {
 
-    function GetListPuestosByUser(){
+        $.ajax({
+            url: "index.php?c=login&a=ValidateUser",
+            type: "POST",
+            data: {
+                Action: "ValidateUser",
+                Usuario: $("#Usuario").val()
+            },
+            success: function(data) {
+                console.log(data);
 
-    $.ajax({
-        url: "index.php?c=login&a=GetListPuestosByUser",
-        type: "POST",
-        data: {Action: "GetListPuestosByUser", Usuario: $("#Usuario").val()},
-        success: function (data) {
-
-                   if(data != '0'){
-
-                       var Json = JSON.parse(data);
-                       $("#FormPuestoID").show(1000);
-                       $("#BtnValidarPuestos").hide();
-                       $("#BtnIniciarSesion").show();
-
-                       $.each(Json, function( key, value ) {
-                           $('#PuestoID').append('<option value="'+value.PuestoID+'">'+value.PuestoConcatenado+'</option>');
-                       });
-
-               }else{
-                     alert("Usuario Invalido o Sin permisos");
-                       $("#FormPuestoID").hide(1000);
-               }
-
-        }
-    });
+            }
+        });
     }
-
 </script>

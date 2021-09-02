@@ -111,37 +111,4 @@ class Login
 
     }
 
-
-    public function GetListPuestosByUser($Usuario){
-
-        try
-        {
-            $stm = $this->pdo
-                ->prepare("SELECT a.PuestoID, CONCAT(Puesto, ' -', Departamento, ' - ', Sucursal) as PuestoConcatenado FROM pv_usuarios_puestos as a inner join vw_puestos_sucursales as b ON (a.PuestoID = b.PuestoID) INNER JOIN  tbl_usuarios as u ON (a.UsuarioID = u.Id) WHERE u.Usuario  = ?");
-            $stm->execute(array($Usuario));
-
-
-            $ArrayPuestos = array();
-
-            foreach($stm->fetchAll() as $value){
-
-                $ArrayPuestos[] = $value;
-            }
-
-            if(count($ArrayPuestos) > 0){
-                return $ArrayPuestos;
-            }else{
-                return 0;
-            }
-
-
-            return $stm->fetch(PDO::FETCH_OBJ);
-
-        } catch (Exception $e)
-        {
-            die($e->getMessage());
-        }
-
-    }
-
 }

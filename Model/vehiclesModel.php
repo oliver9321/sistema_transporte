@@ -1,23 +1,17 @@
 <?php
 
-class Mant_BotonesTurnos
-{
+class Vehicles {
+
     private $pdo;
 
     public $Id;
-    public $Nombre;
-    public $Icono;
-    public $Color;
-    public $TextoGraMostrar;
-    public $TextoPeqMostrar;
-    public $ValorBoton;
-    public $TipoBoton;
-    public $Logo;
-    public $CreadoPorUsuarioID;
-    public $ModificadoPorUsuarioID;
-    public $FechaModificacion;
-    public $Activo;
-
+    public $Brand;
+    public $Model;
+    public $DateCreation;
+    public $UserIdCreation;
+    public $LastModificationDate;
+    public $UserIdLastModification;
+    public $IsActive;
 
     public function __CONSTRUCT()
     {
@@ -33,14 +27,15 @@ class Mant_BotonesTurnos
         try
         {
 
-                $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos");
+                $stm = $this->pdo->prepare("SELECT * FROM tbl_vehicles");
                 $stm->execute();
 
-               $row = $stm->fetchAll();
+                $row = $stm->fetchAll();
 
                 $response = array();
                 $response['success'] = true;
                 $response['aaData'] = $row;
+                
                 return $response;
 
         }
@@ -54,50 +49,37 @@ class Mant_BotonesTurnos
     {
         try
         {
-            $stm = $this->pdo
-                ->prepare("SELECT *  FROM tbl_botones_turnos WHERE Id = ?");
-
-
+            $stm = $this->pdo->prepare("SELECT *  FROM tbl_vehicles WHERE Id = ?");
             $stm->execute(array($id));
+
             return $stm->fetch(PDO::FETCH_OBJ);
+
         } catch (Exception $e)
         {
             die($e->getMessage());
         }
     }
-
+  
     public function Update($data)
     {
         try
         {
-            $sql = "UPDATE tbl_botones_turnos SET
-						Nombre  = ?,
-                        Icono  = ?,
-                        Color  = ?,
-                        TextoGraMostrar  = ?,
-                        TextoPeqMostrar  = ?,
-                        ValorBoton  = ?,
-                        TipoBoton  = ?,
-                        Logo = ?,
-						ModificadoPorUsuarioID = ?,
-						FechaModificacion = ?,
-						Activo = ?
+            $sql = "UPDATE tbl_vehicles SET
+						Brand  = ?,
+                        Model  = ?,
+						LastModificationDate = ?,
+						UserIdLastModification = ?,
+						IsActive = ?
 				    WHERE Id = ?";
 
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data->Nombre,
-                        $data->Icono,
-                        $data->Color,
-                        $data->TextoGraMostrar,
-                        $data->TextoPeqMostrar,
-                        $data->ValorBoton,
-                        $data->TipoBoton,
-                        $data->Logo,
-                        (int)$data->ModificadoPorUsuarioID,
-                        $data->FechaModificacion,
-                        (int)$data->Activo,
+                        $data->Brand,
+                        $data->Model,
+                        $data->LastModificationDate,
+                        (int)$data->UserIdLastModification,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -111,22 +93,15 @@ class Mant_BotonesTurnos
     {
         try
         {
-            $sql = "INSERT INTO tbl_botones_turnos(Nombre,Icono,Color,TextoGraMostrar,TextoPeqMostrar,ValorBoton,TipoBoton,Logo,CreadoPorUsuarioID,FechaCreacion,Activo)
-		        VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tbl_vehicles (Brand,Model,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data->Nombre,
-                        $data->Icono,
-                        $data->Color,
-                        $data->TextoGraMostrar,
-                        $data->TextoPeqMostrar,
-                        $data->ValorBoton,
-                        $data->TipoBoton,
-                        $data->Logo,
-                        (int)$data->CreadoPorUsuarioID,
+                        $data->Brand,
+                        $data->Model,
                         date('Y-m-d'),
+                        (int)$data->UserIdCreation,
                         1
                     )
                 );
