@@ -71,7 +71,7 @@ class Mant_marquesinaController
         $Marquesina->FechaCreacion            = date('Y-m-d');
         $Marquesina->ModificadoPorUsuarioID   =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
         $Marquesina->CreadoPorUsuarioID       =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $Marquesina->Activo                   = $_REQUEST['Activo'];
+        $Marquesina->IsActive                   = $_REQUEST['IsActive'];
 
 
         $Marquesina->Id > 0

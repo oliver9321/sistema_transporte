@@ -29,6 +29,7 @@ class dashboardController{
                }else{
                 header('Location:index.php?c=login&a=index');
                }
+               
          }else{
          header('Location:index.php?c=login&a=index');   
          }

@@ -11,7 +11,7 @@
         <th>Empresa</th>
         <th>Telefono</th>
         <th>Descripcion</th>
-        <th>Activo</th>
+        <th>IsActive</th>
         <th>Modificar</th>
     </tr>
     </thead>
@@ -34,7 +34,7 @@ $(document).ready(function() {
             {data: "Nombre"},
             {data: "Telefono"},
             {data: "Descripcion"},
-            {data: "Activo"},
+            {data: "IsActive"},
             {data: "Id"}
         ],"columnDefs": [ {
             "targets":8,
@@ -50,7 +50,7 @@ $(document).ready(function() {
             }},
             {
                 "targets": 7,
-                "data": "Activo",
+                "data": "IsActive",
                 "render": function (data) {
                     return (data) == 1 ? '<button type="button" class="btn btn-sm btn-success btn-circle waves-effect waves-light"> <i class="ti-check"></i> </button>': '<button type="button" class="btn btn-sm btn-danger btn-circle waves-effect waves-light"> <i class="ti-close"></i> </button>';
          }}]

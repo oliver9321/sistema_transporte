@@ -56,7 +56,7 @@ class Mant_departamentosController
         $Departamento->Codigo = $_REQUEST['Codigo'];
         $Departamento->Nombre = $_REQUEST['Nombre'];
         $Departamento->Descripcion = $_REQUEST['Descripcion'];
-        $Departamento->Activo = $_REQUEST['Activo'];
+        $Departamento->IsActive = $_REQUEST['IsActive'];
         $Departamento->SucursalID = $_REQUEST['SucursalID'];
         $Departamento->FechaModificacion = date('Y-m-d');
         $Departamento->FechaCreacion = date('Y-m-d');

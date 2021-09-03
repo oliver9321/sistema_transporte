@@ -68,7 +68,7 @@ class Administracion
         $stm2->execute(array($DepartamentID));
         $RsArray["CantidadPorTipoTurno"] = $stm2->fetchAll(PDO::FETCH_OBJ);
 
-        $stm2 = $this->pdo->prepare(        "SELECT  X.Fecha, WEEKDAY(Fecha)+1 Dia,X.DIA_SEMANA, COUNT(X.Cantidad) Cantidad FROM (SELECT date(FechaHoraSeleccion) Fecha, (ELT(WEEKDAY(FechaHoraSeleccion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo')) AS DIA_SEMANA, COUNT(Id) Cantidad FROM vw_administracion_turnos WHERE Activo = 1 AND DepartamentoID = ? GROUP BY FechaHoraSeleccion, Id) X WHERE X.Fecha >= date(date_add(NOW(), INTERVAL -5 DAY)) AND DIA_SEMANA IN ('Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes') GROUP BY Fecha,  X.DIA_SEMANA  ORDER BY WEEKDAY(Fecha)+1");
+        $stm2 = $this->pdo->prepare(        "SELECT  X.Fecha, WEEKDAY(Fecha)+1 Dia,X.DIA_SEMANA, COUNT(X.Cantidad) Cantidad FROM (SELECT date(FechaHoraSeleccion) Fecha, (ELT(WEEKDAY(FechaHoraSeleccion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo')) AS DIA_SEMANA, COUNT(Id) Cantidad FROM vw_administracion_turnos WHERE IsActive = 1 AND DepartamentoID = ? GROUP BY FechaHoraSeleccion, Id) X WHERE X.Fecha >= date(date_add(NOW(), INTERVAL -5 DAY)) AND DIA_SEMANA IN ('Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes') GROUP BY Fecha,  X.DIA_SEMANA  ORDER BY WEEKDAY(Fecha)+1");
         $stm2->execute(array($DepartamentID));
         $RsArray["CantidadTurnosUltimosCincoDias"] = $stm2->fetchAll(PDO::FETCH_OBJ);
 
@@ -149,7 +149,7 @@ class Administracion
         try
         {
 
-            $stm = $this->pdo->prepare("SELECT TurnoConcatenado, Estado,  FechaHoraSeleccion FROM vw_administracion_turnos WHERE Estado = 'E' AND SucursalID AND Activo = 1");
+            $stm = $this->pdo->prepare("SELECT TurnoConcatenado, Estado,  FechaHoraSeleccion FROM vw_administracion_turnos WHERE Estado = 'E' AND SucursalID AND IsActive = 1");
             $stm->execute();
 
             $row = $stm->fetchAll();

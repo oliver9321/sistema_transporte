@@ -7,7 +7,7 @@
         <th>#</th>
         <th>Boton</th>
         <th>Departamento</th>
-        <th>Activo</th>
+        <th>IsActive</th>
         <th></th>
     </tr>
     </thead>
@@ -25,7 +25,7 @@ $(document).ready(function() {
             {data: "Id"},
             {data: "Boton"},
             {data: "Departamento"},
-            {data: "Activo"},
+            {data: "IsActive"},
             {data: "BotonTurnoID"}
         ],"columnDefs": [ {
             "targets":4,
@@ -35,7 +35,7 @@ $(document).ready(function() {
             }
         },{
                 "targets": 3,
-                "data": "Activo",
+                "data": "IsActive",
                 "render": function (data) {
                     return (data) == 1 ? '<button type="button" class="btn btn-sm btn-success btn-circle waves-effect waves-light"> <i class="ti-check"></i> </button>': '<button type="button" class="btn btn-sm btn-danger btn-circle waves-effect waves-light"> <i class="ti-close"></i> </button>';
          }}]

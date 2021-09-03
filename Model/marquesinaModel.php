@@ -14,7 +14,7 @@ class Mant_Marquesina
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -31,7 +31,7 @@ class Mant_Marquesina
         try
         {
 
-                $stm = $this->pdo->prepare("SELECT a.Id, a.TextoMostrar, a.DepartamentoID, CONCAT(b.Departamento,' - ',b.Sucursal) AS Departamento, CONCAT(a.HoraInicial, ' ',a.FechaInicial) AS 'Hora-Fecha-inicial', CONCAT(a.HoraFinal,' ',a.FechaFinal) AS 'Hora-Fecha-Final', a.CreadoPorUsuarioID, a.FechaCreacion, a.FechaCreacion, a.ModificadoPorUsuarioID, a.FechaModificacion, a.Activo FROM tbl_marquesina_pantalla as a  INNER JOIN vw_departamentos_sucursales as b ON (a.DepartamentoID = b.Id)");
+                $stm = $this->pdo->prepare("SELECT a.Id, a.TextoMostrar, a.DepartamentoID, CONCAT(b.Departamento,' - ',b.Sucursal) AS Departamento, CONCAT(a.HoraInicial, ' ',a.FechaInicial) AS 'Hora-Fecha-inicial', CONCAT(a.HoraFinal,' ',a.FechaFinal) AS 'Hora-Fecha-Final', a.CreadoPorUsuarioID, a.FechaCreacion, a.FechaCreacion, a.ModificadoPorUsuarioID, a.FechaModificacion, a.IsActive FROM tbl_marquesina_pantalla as a  INNER JOIN vw_departamentos_sucursales as b ON (a.DepartamentoID = b.Id)");
                 $stm->execute();
 
                $row = $stm->fetchAll();
@@ -53,7 +53,7 @@ class Mant_Marquesina
         try
         {
             $stm = $this->pdo
-                ->prepare("SELECT  Id,DepartamentoID,TextoMostrar,HoraInicial, DATE_FORMAT(FechaInicial, '%m/%d/%Y') FechaInicial,HoraFinal, DATE_FORMAT(FechaFinal, '%m/%d/%Y') FechaFinal,CreadoPorUsuarioID,FechaCreacion,ModificadoPorUsuarioID,FechaModificacion,Activo FROM tbl_marquesina_pantalla WHERE Id = ?");
+                ->prepare("SELECT  Id,DepartamentoID,TextoMostrar,HoraInicial, DATE_FORMAT(FechaInicial, '%m/%d/%Y') FechaInicial,HoraFinal, DATE_FORMAT(FechaFinal, '%m/%d/%Y') FechaFinal,CreadoPorUsuarioID,FechaCreacion,ModificadoPorUsuarioID,FechaModificacion,IsActive FROM tbl_marquesina_pantalla WHERE Id = ?");
             $stm->execute(array($id));
 
             return $stm->fetch(PDO::FETCH_OBJ);
@@ -76,7 +76,7 @@ class Mant_Marquesina
 						FechaFinal = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
             $FechaInicial = date_create($data->FechaInicial);
@@ -96,7 +96,7 @@ class Mant_Marquesina
                         $FechaFinal,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -110,7 +110,7 @@ class Mant_Marquesina
     {
         try
         {
-            $sql = "INSERT INTO tbl_marquesina_pantalla (DepartamentoID,TextoMostrar,HoraInicial,FechaInicial,HoraFinal,FechaFinal,CreadoPorUsuarioID,FechaCreacion,Activo)
+            $sql = "INSERT INTO tbl_marquesina_pantalla (DepartamentoID,TextoMostrar,HoraInicial,FechaInicial,HoraFinal,FechaFinal,CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?,?,?,?,?)";
 
             $FechaInicial = date_create($data->FechaInicial);
@@ -149,7 +149,7 @@ class Mant_Marquesina
 
             $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
 
-            $stm = $this->pdo->prepare("SELECT a.Id, a.TextoMostrar FROM tbl_marquesina_pantalla as a  INNER JOIN vw_departamentos_sucursales as b ON (a.DepartamentoID = b.Id) WHERE a.Activo = 1 AND FechaFinal >= CURDATE() AND HoraFinal >= ? AND a.DepartamentoID = ?");
+            $stm = $this->pdo->prepare("SELECT a.Id, a.TextoMostrar FROM tbl_marquesina_pantalla as a  INNER JOIN vw_departamentos_sucursales as b ON (a.DepartamentoID = b.Id) WHERE a.IsActive = 1 AND FechaFinal >= CURDATE() AND HoraFinal >= ? AND a.DepartamentoID = ?");
             $stm->execute(array($HoraFinal, $DepartamentoID));
 
 

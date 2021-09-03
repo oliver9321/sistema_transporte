@@ -53,7 +53,7 @@ class Mant_botones_turnosController
         $this->model->Id              = $_REQUEST['Id'];
         $this->model->Nombre          = $_REQUEST['Nombre'];
         $this->model->Icono           = $_REQUEST['Icono'];
-        $this->model->Activo          = $_REQUEST['Activo'];
+        $this->model->IsActive          = $_REQUEST['IsActive'];
         $this->model->Color           = $_REQUEST['Color'];
         $this->model->TextoPeqMostrar = $_REQUEST['TextoPeqMostrar'];
         $this->model->TextoGraMostrar = $_REQUEST['TextoGraMostrar'];

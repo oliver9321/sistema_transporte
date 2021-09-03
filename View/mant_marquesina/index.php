@@ -9,7 +9,7 @@
         <th>Departamento</th>
         <th>Hora/Final Inicial</th>
         <th>Hora/Final Final</th>
-        <th>Activo</th>
+        <th>IsActive</th>
         <th>Modificar</th>
     </tr>
     </thead>
@@ -30,7 +30,7 @@ $(document).ready(function() {
             {data: "Departamento"},
             {data: "Hora-Fecha-inicial"},
             {data: "Hora-Fecha-Final"},
-            {data: "Activo"},
+            {data: "IsActive"},
             {data: "Id"}
         ],"columnDefs": [ {
             "targets":6,
@@ -40,7 +40,7 @@ $(document).ready(function() {
             }
         },{
                 "targets": 5,
-                "data": "Activo",
+                "data": "IsActive",
                 "render": function (data) {
                     return (data) == 1 ? '<button type="button" class="btn btn-sm btn-success btn-circle waves-effect waves-light"> <i class="ti-check"></i> </button>': '<button type="button" class="btn btn-sm btn-danger btn-circle waves-effect waves-light"> <i class="ti-close"></i> </button>';
          }}]

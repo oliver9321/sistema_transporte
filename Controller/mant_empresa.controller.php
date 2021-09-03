@@ -42,7 +42,7 @@ class Mant_empresaController
         $Empresa->Codigo = $_REQUEST['Codigo'];
         $Empresa->Nombre = $_REQUEST['Nombre'];
         $Empresa->Descripcion = $_REQUEST['Descripcion'];
-        $Empresa->Activo = $_REQUEST['Activo'];
+        $Empresa->IsActive = $_REQUEST['IsActive'];
         $Empresa->Rnc = $_REQUEST['Rnc'];
         $Empresa->Direccion = $_REQUEST['Direccion'];
         $Empresa->Telefono = $_REQUEST['Telefono'];

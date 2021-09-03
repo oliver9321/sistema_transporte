@@ -79,7 +79,7 @@ class Mant_usuariosController
             $Usuario->Password = $this->encryptIt($_REQUEST['Password'], KEY);
             $Usuario->PuestoID = $_REQUEST['PuestoID'];
             $Usuario->Email = $_REQUEST['Email'];
-            $Usuario->Activo = $_REQUEST['Activo'];
+            $Usuario->IsActive = $_REQUEST['IsActive'];
             $Usuario->FechaModificacion = date('Y-m-d');
             $Usuario->FechaCreacion = date('Y-m-d');
             $Usuario->ModificadoPorUsuarioID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;

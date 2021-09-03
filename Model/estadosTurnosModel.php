@@ -11,7 +11,7 @@ class Mant_EstadosTurnos
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -70,7 +70,7 @@ class Mant_EstadosTurnos
                         Descripcion  = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
             $this->pdo->prepare($sql)
@@ -80,7 +80,7 @@ class Mant_EstadosTurnos
                         $data->Descripcion,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -94,7 +94,7 @@ class Mant_EstadosTurnos
     {
         try
         {
-            $sql = "INSERT INTO tbl_estados_turnos (Estado,Descripcion,CreadoPorUsuarioID,FechaCreacion,Activo)
+            $sql = "INSERT INTO tbl_estados_turnos (Estado,Descripcion,CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?)";
 
             $this->pdo->prepare($sql)

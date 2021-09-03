@@ -15,7 +15,7 @@ class Mant_Sucursales
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -78,7 +78,7 @@ class Mant_Sucursales
 						Telefono = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
             $this->pdo->prepare($sql)
@@ -92,7 +92,7 @@ class Mant_Sucursales
                         $data->Telefono,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -106,7 +106,7 @@ class Mant_Sucursales
     {
         try
         {
-            $sql = "INSERT INTO tbl_sucursales (EmpresaID,Codigo,Nombre,Descripcion,Direccion,Telefono,CreadoPorUsuarioID,FechaCreacion, Activo)
+            $sql = "INSERT INTO tbl_sucursales (EmpresaID,Codigo,Nombre,Descripcion,Direccion,Telefono,CreadoPorUsuarioID,FechaCreacion, IsActive)
 		        VALUES (?,?,?,?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
@@ -135,7 +135,7 @@ class Mant_Sucursales
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM vw_sucursales_empresa WHERE Activo = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM vw_sucursales_empresa WHERE IsActive = 1");
             $stm->execute();
 
 
@@ -149,7 +149,7 @@ class Mant_Sucursales
                 $Sucursal->Descripcion            =  $r->Descripcion;
                 $Sucursal->Telefono               =  $r->Telefono;
                 $Sucursal->Direccion              =  $r->Direccion;
-                $Sucursal->Activo                 =  (int)$r->Activo;
+                $Sucursal->IsActive                 =  (int)$r->IsActive;
 
                 $result[] = $Sucursal;
             }

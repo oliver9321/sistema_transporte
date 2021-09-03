@@ -61,7 +61,7 @@ class Mant_modulosController
         $Modulo->Codigo =                   $_REQUEST['Codigo'];
         $Modulo->Nombre =                   $_REQUEST['Nombre'];
         $Modulo->Descripcion =              $_REQUEST['Descripcion'];
-        $Modulo->Activo =                   $_REQUEST['Activo'];
+        $Modulo->IsActive =                   $_REQUEST['IsActive'];
         $Modulo->FechaModificacion =        date('Y-m-d');
         $Modulo->FechaCreacion =            date('Y-m-d');
         $Modulo->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;

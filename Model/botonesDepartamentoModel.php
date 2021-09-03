@@ -10,7 +10,7 @@ class Mant_BotonesDepartamento
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -70,7 +70,7 @@ class Mant_BotonesDepartamento
 
             foreach($data->DepartamentoID as $value){
 
-                $sql2 = "INSERT INTO pv_botones_turnos_departamentos(BotonTurnoID,DepartamentoID, CreadoPorUsuarioID,FechaCreacion,Activo)
+                $sql2 = "INSERT INTO pv_botones_turnos_departamentos(BotonTurnoID,DepartamentoID, CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?)";
 
                 $this->pdo->prepare($sql2)
@@ -97,7 +97,7 @@ class Mant_BotonesDepartamento
         {
             foreach($data->DepartamentoID as $value){
 
-                $sql2 = "INSERT INTO pv_botones_turnos_departamentos(BotonTurnoID,DepartamentoID, CreadoPorUsuarioID,FechaCreacion,Activo)
+                $sql2 = "INSERT INTO pv_botones_turnos_departamentos(BotonTurnoID,DepartamentoID, CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?)";
 
                 $this->pdo->prepare($sql2)
@@ -126,7 +126,7 @@ class Mant_BotonesDepartamento
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos WHERE Activo = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos WHERE IsActive = 1");
             $stm->execute();
 
 

@@ -11,7 +11,7 @@ class Mant_PerfilesUsuarios
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -70,7 +70,7 @@ class Mant_PerfilesUsuarios
                         Descripcion  = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
             $this->pdo->prepare($sql)
@@ -80,7 +80,7 @@ class Mant_PerfilesUsuarios
                         $data->Descripcion,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -94,7 +94,7 @@ class Mant_PerfilesUsuarios
     {
         try
         {
-            $sql = "INSERT INTO tbl_perfiles_usuarios (Perfil,Descripcion,CreadoPorUsuarioID,FechaCreacion,Activo)
+            $sql = "INSERT INTO tbl_perfiles_usuarios (Perfil,Descripcion,CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
@@ -119,7 +119,7 @@ class Mant_PerfilesUsuarios
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_perfiles_usuarios WHERE Activo = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM tbl_perfiles_usuarios WHERE IsActive = 1");
             $stm->execute();
 
 
@@ -131,7 +131,7 @@ class Mant_PerfilesUsuarios
                 $PerfilUsuario->Id             = $r->Id;
                 $PerfilUsuario->Perfil         = $r->Perfil;
                 $PerfilUsuario->Descripcion    = $r->Descripcion;
-                $PerfilUsuario->Activo         =  (int)$r->Activo;
+                $PerfilUsuario->IsActive         =  (int)$r->IsActive;
 
                 $result[] = $PerfilUsuario;
             }

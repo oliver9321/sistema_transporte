@@ -12,7 +12,7 @@ class Mant_PrioridadTurnosPuestos
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -71,7 +71,7 @@ class Mant_PrioridadTurnosPuestos
                         PuestoID  = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
             $this->pdo->prepare($sql)
@@ -82,7 +82,7 @@ class Mant_PrioridadTurnosPuestos
                         $data->PuestoID,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -96,7 +96,7 @@ class Mant_PrioridadTurnosPuestos
     {
         try
         {
-            $sql = "INSERT INTO tbl_prioridad_turnos_puestos (PrioridadID,BotonTurnoID,PuestoID,CreadoPorUsuarioID,FechaCreacion,Activo)
+            $sql = "INSERT INTO tbl_prioridad_turnos_puestos (PrioridadID,BotonTurnoID,PuestoID,CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)

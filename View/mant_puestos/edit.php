@@ -17,7 +17,7 @@
 
         <div class="container-fluid">
         <input type="hidden" name="Id" id="Id" value="<?php echo $Puesto->Id; ?>" />
-        <input type="hidden" name="Activo" id="Activo" value="<?php echo ($Puesto->Id != null) ? $Puesto->Activo : 1 ?>" >
+        <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($Puesto->Id != null) ? $Puesto->IsActive : 1 ?>" >
 
         <div class="form-group">
             <label for="cmbDepartamento"><b>Departamentos:</b></label>
@@ -52,7 +52,7 @@
             <hr>
             <?php if($Puesto->Id != null){?>
                 <button type="submit" class="btn btn-warning">Actualizar <i class="fa fa-refresh"></i> </button>
-                <input type="checkbox"  data-toggle="toggle" id="ActivoToogle" data-on="Activo" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
+                <input type="checkbox"  data-toggle="toggle" id="ActivoToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
             <?php }else {?>
                 <button type="submit"  class="btn btn-success">Guardar <i class="fa fa-save"></i> </button>
             <?php }?>
@@ -85,7 +85,7 @@
             return $(this).validate();
         });
 
-        if($("#Activo").val() > 0){
+        if($("#IsActive").val() > 0){
             $('#ActivoToogle').bootstrapToggle('on');
         }else{
             $('#ActivoToogle').bootstrapToggle('off');
@@ -103,7 +103,7 @@
                     buttonsStyling: true
                 });
             }
-            $("#Activo").val(($(this).prop('checked')) == false ? 0 : 1);
+            $("#IsActive").val(($(this).prop('checked')) == false ? 0 : 1);
         });
 
     });

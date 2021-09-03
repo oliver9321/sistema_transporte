@@ -52,7 +52,7 @@ class Mant_estatus_turnosController
         $this->model->Id = $_REQUEST['Id'];
         $this->model->Estatus = $_REQUEST['Estatus'];
         $this->model->Descripcion = $_REQUEST['Descripcion'];
-        $this->model->Activo = $_REQUEST['Activo'];
+        $this->model->IsActive = $_REQUEST['IsActive'];
         $this->model->FechaModificacion = date('Y-m-d');
         $this->model->FechaCreacion = date('Y-m-d');
         $this->model->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;

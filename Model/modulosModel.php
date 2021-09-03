@@ -12,7 +12,7 @@ class Mant_Modulos
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -73,7 +73,7 @@ class Mant_Modulos
                         Descripcion  = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
             $this->pdo->prepare($sql)
@@ -84,7 +84,7 @@ class Mant_Modulos
                         $data->Descripcion,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -98,7 +98,7 @@ class Mant_Modulos
     {
         try
         {
-            $sql = "INSERT INTO tbl_modulos_aplicacion (Codigo,Nombre,Descripcion,CreadoPorUsuarioID,FechaCreacion, Activo)
+            $sql = "INSERT INTO tbl_modulos_aplicacion (Codigo,Nombre,Descripcion,CreadoPorUsuarioID,FechaCreacion, IsActive)
 		        VALUES (?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
@@ -124,7 +124,7 @@ class Mant_Modulos
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_modulos_aplicacion WHERE Activo = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM tbl_modulos_aplicacion WHERE IsActive = 1");
             $stm->execute();
 
 

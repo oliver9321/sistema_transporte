@@ -69,7 +69,7 @@ class Mant_sucursalesController
         $Sucursal->Descripcion =              $_REQUEST['Descripcion'];
         $Sucursal->Direccion =                $_REQUEST['Direccion'];
         $Sucursal->Telefono =                 $_REQUEST['Telefono'];
-        $Sucursal->Activo =                   $_REQUEST['Activo'];
+        $Sucursal->IsActive =                   $_REQUEST['IsActive'];
         $Sucursal->EmpresaID =                $_REQUEST['EmpresaID'];
         $Sucursal->FechaModificacion =        date('Y-m-d');
         $Sucursal->FechaCreacion =            date('Y-m-d');

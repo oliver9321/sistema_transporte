@@ -70,7 +70,7 @@ class Dashboard
     public function GetListPrioridadesBypuesto($PuestoID){
 
         $stm2 = $this->pdo
-            ->prepare("SELECT DISTINCT Nivel, Prioridad, Nombre FROM vw_puestos_prioridades WHERE Activo = 1 AND PuestoID = ? ORDER BY Nivel");
+            ->prepare("SELECT DISTINCT Nivel, Prioridad, Nombre FROM vw_puestos_prioridades WHERE IsActive = 1 AND PuestoID = ? ORDER BY Nivel");
 
         $stm2->execute(array(
             $PuestoID
@@ -182,7 +182,7 @@ class Dashboard
             $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
             $PuestoID = $_SESSION['DataUserOnline']['Usuario']->PuestoId;
 
-            $stm = $this->pdo->prepare("SELECT Id, TurnoConcatenado, Estado, Estatus, Comentario, Puesto, FechaHoraAnulacion  FROM vw_administracion_turnos  WHERE Estado = 'A'  AND Activo = 1  AND Dia = DAY(NOW())  AND Mes = MONTH(NOW())  AND Ano = YEAR(NOW())  AND SucursalID = ?  AND DepartamentoID = ?  AND PuestoID = ? ");
+            $stm = $this->pdo->prepare("SELECT Id, TurnoConcatenado, Estado, Estatus, Comentario, Puesto, FechaHoraAnulacion  FROM vw_administracion_turnos  WHERE Estado = 'A'  AND IsActive = 1  AND Dia = DAY(NOW())  AND Mes = MONTH(NOW())  AND Ano = YEAR(NOW())  AND SucursalID = ?  AND DepartamentoID = ?  AND PuestoID = ? ");
             $stm->execute(array($SucursalID, $DepartamentoID, $PuestoID));
 
             $row = $stm->fetchAll();

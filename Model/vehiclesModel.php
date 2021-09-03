@@ -117,7 +117,7 @@ class Vehicles {
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos WHERE Activo = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos WHERE IsActive = 1");
             $stm->execute();
 
 

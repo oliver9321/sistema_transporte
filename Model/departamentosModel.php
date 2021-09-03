@@ -13,7 +13,7 @@ class Mant_Departamentos
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -74,7 +74,7 @@ class Mant_Departamentos
 						SucursalID = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
             $this->pdo->prepare($sql)
@@ -86,7 +86,7 @@ class Mant_Departamentos
                         $data->SucursalID,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -100,7 +100,7 @@ class Mant_Departamentos
     {
         try
         {
-            $sql = "INSERT INTO tbl_departamentos (SucursalID,Codigo,Nombre,Descripcion,CreadoPorUsuarioID,FechaCreacion,Activo)
+            $sql = "INSERT INTO tbl_departamentos (SucursalID,Codigo,Nombre,Descripcion,CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
@@ -127,7 +127,7 @@ class Mant_Departamentos
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM vw_departamentos_sucursales WHERE Activo = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM vw_departamentos_sucursales WHERE IsActive = 1");
             $stm->execute();
 
 
@@ -139,7 +139,7 @@ class Mant_Departamentos
                 $Departamento->Codigo                 =  $r->Codigo;
                 $Departamento->Nombre                 =  $r->Departamento.' - '.$r->Sucursal;
                 $Departamento->Descripcion            =  $r->Descripcion;
-                $Departamento->Activo                 =  (int)$r->Activo;
+                $Departamento->IsActive                 =  (int)$r->IsActive;
 
                 $result[] = $Departamento;
             }

@@ -26,6 +26,9 @@ class loginController{
 
             $returnResponse =  $this->model->login($login);
 
+            print($returnResponse);
+            exit;
+
            /* if($returnResponse){
 
                 $_SESSION['DataUserOnline'] = $returnResponse;

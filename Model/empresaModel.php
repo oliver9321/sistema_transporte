@@ -17,7 +17,7 @@ class Mant_Empresa
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -60,7 +60,7 @@ class Mant_Empresa
 						Rnc = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
             $this->pdo->prepare($sql)
@@ -76,7 +76,7 @@ class Mant_Empresa
                         $data->Rnc,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -90,7 +90,7 @@ class Mant_Empresa
     {
         try
         {
-            $sql = "INSERT INTO tbl_empresa (Codigo,Nombre,Descripcion,LogoGrande,LogoPeq, Telefono, Direccion, Rnc, CreadoPorUsuarioID, FechaCreacion, Activo)
+            $sql = "INSERT INTO tbl_empresa (Codigo,Nombre,Descripcion,LogoGrande,LogoPeq, Telefono, Direccion, Rnc, CreadoPorUsuarioID, FechaCreacion, IsActive)
 		        VALUES (?, ?, ?, ?, ?, ?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
@@ -120,7 +120,7 @@ class Mant_Empresa
         try
         {
 
-                $stm = $this->pdo->prepare("SELECT Id, Codigo, Nombre, Rnc, LogoPeq, Telefono, Descripcion, Activo FROM tbl_empresa");
+                $stm = $this->pdo->prepare("SELECT Id, Codigo, Nombre, Rnc, LogoPeq, Telefono, Descripcion, IsActive FROM tbl_empresa");
                 $stm->execute();
 
                $row = $stm->fetchAll();
@@ -143,7 +143,7 @@ class Mant_Empresa
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_empresa WHERE Activo = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM tbl_empresa WHERE IsActive = 1");
             $stm->execute();
 
 
@@ -163,7 +163,7 @@ class Mant_Empresa
                 $Empresa->Rnc            = $r->Rnc;
                 $Empresa->ModificadoPorUsuarioID =  (int)$r->ModificadoPorUsuarioID;
                 $Empresa->FechaModificacion      =  $r->FechaModificacion;
-                $Empresa->Activo                 =  (int)$r->Activo;
+                $Empresa->IsActive                 =  (int)$r->IsActive;
 
                 $result[] = $Empresa;
             }

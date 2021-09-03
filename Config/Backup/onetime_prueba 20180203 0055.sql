@@ -249,7 +249,7 @@ CREATE TABLE pv_botones_turnos_departamentos (
   FechaCreacion datetime NOT NULL,
   FechaModificacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB
@@ -268,7 +268,7 @@ CREATE TABLE pv_usuarios_puestos (
   FechaCreacion datetime DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB
@@ -304,7 +304,7 @@ CREATE TABLE tbl_administracion_turnos (
   CreadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion date DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB
@@ -330,7 +330,7 @@ CREATE TABLE tbl_botones_turnos (
   FechaCreacion datetime NOT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(1) DEFAULT 1,
+  IsActive tinyint(1) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Nombre_UNIQUE (Nombre),
   UNIQUE Index ValorBoton_UNIQUE (ValorBoton)
@@ -353,7 +353,7 @@ CREATE TABLE tbl_departamentos (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
   UNIQUE Index depto_id (Id),
@@ -382,7 +382,7 @@ CREATE TABLE tbl_empresa (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
   UNIQUE Index Nombre_UNIQUE (Nombre)
@@ -403,7 +403,7 @@ CREATE TABLE tbl_estados_turnos (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Estado_UNIQUE (Estado)
 )
@@ -423,7 +423,7 @@ CREATE TABLE tbl_estatus_turnos (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Estatus_UNIQUE (Estatus)
 )
@@ -481,7 +481,7 @@ CREATE TABLE tbl_marquesina_pantalla (
   FechaCreacion datetime NOT NULL,
   ModificadoPorUsuarioID int(11) NOT NULL,
   FechaModificacion datetime NOT NULL,
-  Activo tinyint(4) NOT NULL DEFAULT 1,
+  IsActive tinyint(4) NOT NULL DEFAULT 1,
   PRIMARY KEY (Id),
   Index sucursal_id (DepartamentoID)
 )
@@ -502,7 +502,7 @@ CREATE TABLE tbl_modulos_aplicacion (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
   UNIQUE Index Nombre_UNIQUE (Nombre)
@@ -523,7 +523,7 @@ CREATE TABLE tbl_perfiles_usuarios (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Perfil_UNIQUE (Perfil)
 )
@@ -543,7 +543,7 @@ CREATE TABLE tbl_perfiles_usuarios_permisos_modulos (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB
@@ -563,7 +563,7 @@ CREATE TABLE tbl_prioridad_turnos_puestos (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id, PrioridadID, BotonTurnoID, PuestoID)
 )
 ENGINE = MYISAM
@@ -582,7 +582,7 @@ CREATE TABLE tbl_prioridades_turnos (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index idPrioridad (Id),
   UNIQUE Index Nivel_UNIQUE (Nivel),
@@ -606,7 +606,7 @@ CREATE TABLE tbl_puestos (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
   UNIQUE Index Nombre_UNIQUE (Nombre)
@@ -631,7 +631,7 @@ CREATE TABLE tbl_sucursales (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
   Index empresa_id (EmpresaID),
@@ -670,7 +670,7 @@ CREATE TABLE tbl_tiempo_atencion_turnos (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB
@@ -694,7 +694,7 @@ CREATE TABLE tbl_usuarios (
   FechaCreacion datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime DEFAULT NULL,
-  Activo tinyint(4) DEFAULT 1,
+  IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Email_UNIQUE (Email),
   UNIQUE Index Usuario_UNIQUE (Usuario)
@@ -715,7 +715,7 @@ CREATE TABLE tbl_videos (
   FechaCreacion datetime NOT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   FechaModificacion datetime NOT NULL,
-  Activo tinyint(4) NOT NULL DEFAULT 1,
+  IsActive tinyint(4) NOT NULL DEFAULT 1,
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB
@@ -752,7 +752,7 @@ BEGIN
       Id
     FROM tbl_estados_turnos AS e
     WHERE e.Estado = Estado
-    AND e.Activo = 1);
+    AND e.IsActive = 1);
 
 
   IF Estado = 'E' THEN
@@ -780,7 +780,7 @@ BEGIN
         Id
       FROM tbl_estatus_turnos AS e
       WHERE e.Estatus = 'F'
-      AND e.Activo = 1);
+      AND e.IsActive = 1);
     UPDATE onetime.tbl_administracion_turnos AS adm
     SET adm.EstadoTurnoID = EstadoID,
         adm.EstatusTurnoID = EstatusID,
@@ -806,16 +806,16 @@ BEGIN
         Id
       FROM tbl_estados_turnos AS e
       WHERE e.Estado = 'E'
-      AND e.Activo = 1), (SELECT
+      AND e.IsActive = 1), (SELECT
         Id
       FROM tbl_estados_turnos AS e
       WHERE e.Estado = 'F'
-      AND e.Activo = 1));
+      AND e.IsActive = 1));
     SET EstatusID = (SELECT
         Id
       FROM tbl_estatus_turnos AS e
       WHERE e.Estatus = 'F'
-      AND e.Activo = 1);
+      AND e.IsActive = 1);
 
     UPDATE onetime.tbl_administracion_turnos AS adm
     SET adm.EstadoTurnoID = EstadoID,
@@ -869,7 +869,7 @@ BEGIN
       AND date (a.FechaCreacion) = date (NOW())
       AND a.DepartamentoID = InDepartamentoID
       AND a.SucursalID = InSucursalID
-      AND a.Activo = 1
+      AND a.IsActive = 1
       ORDER BY a.FechaHoraSeleccion;
 
 
@@ -884,7 +884,7 @@ BEGIN
       AND date (a.FechaCreacion) = date (NOW())
       AND a.DepartamentoID = InDepartamentoID
       AND a.SucursalID = InSucursalID
-      AND a.Activo = 1
+      AND a.IsActive = 1
       ORDER BY a.FechaHoraSeleccion;
 
 
@@ -907,7 +907,7 @@ BEGIN
       AND date (adm.FechaCreacion) = date (NOW())
       AND adm.DepartamentoID = InDepartamentoID
       AND adm.SucursalID = InSucursalID
-      AND adm.Activo = 1
+      AND adm.IsActive = 1
       ORDER BY adm.Nivel, adm.Turno ASC LIMIT 1);
 
   END IF;
@@ -981,7 +981,7 @@ BEGIN
       AND date (a.FechaCreacion) = date (NOW())
       AND a.DepartamentoID = InDepartamentoID
       AND a.SucursalID = InSucursalID
-      AND a.Activo = 1
+      AND a.IsActive = 1
       ORDER BY a.FechaHoraSeleccion;
 
 
@@ -997,7 +997,7 @@ BEGIN
       AND date (a.FechaCreacion) = date (NOW())
       AND a.DepartamentoID = InDepartamentoID
       AND a.SucursalID = InSucursalID
-      AND a.Activo = 1
+      AND a.IsActive = 1
       ORDER BY a.FechaHoraSeleccion;
 
     SET TurnoID = (SELECT
@@ -1023,7 +1023,7 @@ BEGIN
       AND date (adm.FechaCreacion) = date (NOW())
       AND adm.DepartamentoID = InDepartamentoID
       AND adm.SucursalID = InSucursalID
-      AND adm.Activo = 1
+      AND adm.IsActive = 1
       ORDER BY adm.Nivel, adm.Turno ASC LIMIT 1);
 
 
@@ -1085,7 +1085,7 @@ BEGIN
       COUNT(BotonTurnoID) + 1 AS Contador
     FROM tbl_administracion_turnos AS Adm
     WHERE date (Adm.FechaCreacion) = date (NOW())
-    AND Adm.Activo = 1
+    AND Adm.IsActive = 1
     AND Adm.BotonTurnoID = BotonTurnoID
     AND Adm.DepartamentoID = DepartamentoID
     AND Adm.SucursalID = SucursalID);
@@ -1114,14 +1114,14 @@ BEGIN
     SET Total = (SELECT
         COUNT(*) CANTIDAD_TURNOS_HOY
       FROM onetime.vw_administracion_turnos AS a
-      WHERE a.Activo = 1
+      WHERE a.IsActive = 1
       AND DATE_FORMAT(a.FechaCreacion, "%Y-%m-%d") = CURDATE()
       AND a.DepartamentoID = DepartamentID);
   ELSE
     SET Total = (SELECT
         COUNT(*) CANTIDAD_TURNOS_HOY
       FROM onetime.vw_administracion_turnos AS a
-      WHERE a.Activo = 1
+      WHERE a.IsActive = 1
       AND DATE_FORMAT(a.FechaCreacion, "%Y-%m-%d") = CURDATE()
       AND a.Estado IN (Estado)
       AND a.DepartamentoID = DepartamentID);
@@ -1172,7 +1172,7 @@ SELECT
   `adm`.`FechaCreacion` AS `FechaCreacion`,
   `adm`.`ModificadoPorUsuarioID` AS `ModificadoPorUsuarioID`,
   `adm`.`FechaModificacion` AS `FechaModificacion`,
-  `adm`.`Activo` AS `Activo`,
+  `adm`.`IsActive` AS `IsActive`,
   `adm`.`IDExterno` AS `IDExterno`,
   `adm`.`CampoExterno` AS `CampoExterno`,
   DAYOFMONTH(`adm`.`FechaCreacion`) AS `Dia`,
@@ -1238,7 +1238,7 @@ SELECT DISTINCT
   `adm`.`FechaCreacion` AS `FechaCreacion`,
   `adm`.`ModificadoPorUsuarioID` AS `ModificadoPorUsuarioID`,
   `adm`.`FechaModificacion` AS `FechaModificacion`,
-  `adm`.`Activo` AS `Activo`,
+  `adm`.`IsActive` AS `IsActive`,
   `adm`.`IDExterno` AS `IDExterno`,
   `adm`.`CampoExterno` AS `CampoExterno`,
   DAYOFMONTH(`adm`.`FechaCreacion`) AS `Dia`,
@@ -1270,7 +1270,7 @@ SELECT
   `c`.`TipoBoton` AS `TipoBoton`,
   `c`.`Logo` AS `Logo`,
   CONCAT(`b`.`Departamento`, ' - ', CONVERT(`b`.`Sucursal` USING utf8mb4), ' - ', CONVERT(`b`.`Empresa` USING utf8mb4)) AS `Departamento`,
-  `a`.`Activo` AS `Activo`
+  `a`.`IsActive` AS `IsActive`
 FROM ((`pv_botones_turnos_departamentos` `a`
   JOIN `tbl_botones_turnos` `c`
     ON ((`a`.`BotonTurnoID` = `c`.`Id`)))
@@ -1293,7 +1293,7 @@ SELECT
   `d`.`Id` AS `EmpresaID`,
   `d`.`Nombre` AS `Empresa`,
   `a`.`FechaCreacion` AS `FechaCreacion`,
-  `a`.`Activo` AS `Activo`
+  `a`.`IsActive` AS `IsActive`
 FROM ((`tbl_departamentos` `a`
   LEFT JOIN `tbl_sucursales` `b`
     ON ((`a`.`SucursalID` = `b`.`Id`)))
@@ -1318,7 +1318,7 @@ FROM ((`tbl_perfiles_usuarios_permisos_modulos` `pm`
     ON ((`pm`.`PerfilUsuarioID` = `p`.`Id`)))
   LEFT JOIN `tbl_modulos_aplicacion` `m`
     ON ((`pm`.`ModuloID` = `m`.`Id`)))
-WHERE (`pm`.`Activo` = 1);
+WHERE (`pm`.`IsActive` = 1);
 
 --
 -- Create view "vw_prioridades_turnos_puesto"
@@ -1338,7 +1338,7 @@ SELECT
   CONCAT(CONVERT(`pu`.`Nombre` USING utf8mb4), ' - ', `vw_puestos`.`Departamento`, ' - ', CONVERT(`vw_puestos`.`Sucursal` USING utf8mb4)) AS `PuestoCon`,
   `vw_puestos`.`Departamento` AS `Departamento`,
   `vw_puestos`.`Sucursal` AS `Sucursal`,
-  `p`.`Activo` AS `Activo`
+  `p`.`IsActive` AS `IsActive`
 FROM ((((`tbl_prioridad_turnos_puestos` `p`
   LEFT JOIN `tbl_botones_turnos` `b`
     ON ((`p`.`BotonTurnoID` = `b`.`Id`)))
@@ -1401,7 +1401,7 @@ SELECT
   `puestos`.`FechaCreacion` AS `FechaCreacion`,
   `puestos`.`ModificadoPorUsuarioID` AS `ModificadoPorUsuarioID`,
   `puestos`.`FechaModificacion` AS `FechaModificacion`,
-  `puestos`.`Activo` AS `Activo`
+  `puestos`.`IsActive` AS `IsActive`
 FROM (((`tbl_puestos` `puestos`
   LEFT JOIN `tbl_departamentos` `dpt`
     ON ((`puestos`.`DepartamentoID` = `dpt`.`Id`)))
@@ -1409,10 +1409,10 @@ FROM (((`tbl_puestos` `puestos`
     ON ((`dpt`.`SucursalID` = `suc`.`Id`)))
   LEFT JOIN `tbl_empresa` `empresa`
     ON ((`suc`.`EmpresaID` = `empresa`.`Id`)))
-WHERE ((`puestos`.`Activo` = 1)
-AND (`dpt`.`Activo` = 1)
-AND (`suc`.`Activo` = 1)
-AND (`empresa`.`Activo` = 1));
+WHERE ((`puestos`.`IsActive` = 1)
+AND (`dpt`.`IsActive` = 1)
+AND (`suc`.`IsActive` = 1)
+AND (`empresa`.`IsActive` = 1));
 
 --
 -- Create view "vw_pvt_puestos_usuarios"
@@ -1447,7 +1447,7 @@ SELECT
   `a`.`FechaCreacion` AS `FechaCreacion`,
   `b`.`Id` AS `EmpresaID`,
   `b`.`Nombre` AS `Empresa`,
-  `a`.`Activo` AS `Activo`
+  `a`.`IsActive` AS `IsActive`
 FROM (`tbl_sucursales` `a`
   JOIN `tbl_empresa` `b`
     ON ((`a`.`EmpresaID` = `b`.`Id`)));
@@ -1483,7 +1483,7 @@ SELECT
   `usuarios`.`Imagen` AS `Imagen`,
   `usuarios`.`CreadoPorUsuarioID` AS `CreadoPorUsuarioID`,
   `usuarios`.`FechaCreacion` AS `FechaCreacion`,
-  `usuarios`.`Activo` AS `Activo`
+  `usuarios`.`IsActive` AS `IsActive`
 FROM ((((((`tbl_usuarios` `usuarios`
   LEFT JOIN `tbl_perfiles_usuarios` `perfiles`
     ON ((`usuarios`.`PerfilUsuarioID` = `perfiles`.`Id`)))

@@ -17,7 +17,7 @@ class Mant_Usuarios
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
     public $FechaModificacion;
-    public $Activo;
+    public $IsActive;
 
 
     public function __CONSTRUCT()
@@ -34,7 +34,7 @@ class Mant_Usuarios
         try
         {
 
-                $stm = $this->pdo->prepare("SELECT Id, Imagen, Perfil, Nombre, Apellido, Usuario, Email, Activo  FROM vw_usuarios GROUP BY Id, Imagen, Perfil, Nombre, Apellido, Usuario, Email, Activo");
+                $stm = $this->pdo->prepare("SELECT Id, Imagen, Perfil, Nombre, Apellido, Usuario, Email, IsActive  FROM vw_usuarios GROUP BY Id, Imagen, Perfil, Nombre, Apellido, Usuario, Email, IsActive");
                 $stm->execute();
 
                $row = $stm->fetchAll();
@@ -82,7 +82,7 @@ class Mant_Usuarios
                         Imagen = ?,
 						ModificadoPorUsuarioID = ?,
 						FechaModificacion = ?,
-						Activo = ?
+						IsActive = ?
 				    WHERE Id = ?";
 
 
@@ -98,7 +98,7 @@ class Mant_Usuarios
                         $data->Imagen,
                         (int)$data->ModificadoPorUsuarioID,
                         $data->FechaModificacion,
-                        (int)$data->Activo,
+                        (int)$data->IsActive,
                         $data->Id
                     )
                 );
@@ -108,7 +108,7 @@ class Mant_Usuarios
 
             foreach($data->PuestoID as $value){
 
-                $sql2 = "INSERT INTO pv_usuarios_puestos (UsuarioID,PuestoID,CreadoPorUsuarioID,FechaCreacion,Activo)
+                $sql2 = "INSERT INTO pv_usuarios_puestos (UsuarioID,PuestoID,CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?)";
 
                 $this->pdo->prepare($sql2)
@@ -136,7 +136,7 @@ class Mant_Usuarios
     {
         try
         {
-            $sql = "INSERT INTO tbl_usuarios (PerfilUsuarioID,Nombre,Apellido,Usuario,Password,Email,Imagen, CreadoPorUsuarioID,FechaCreacion,Activo)
+            $sql = "INSERT INTO tbl_usuarios (PerfilUsuarioID,Nombre,Apellido,Usuario,Password,Email,Imagen, CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
@@ -165,7 +165,7 @@ class Mant_Usuarios
 
             foreach($data->PuestoID as $value){
 
-                $sql2 = "INSERT INTO pv_usuarios_puestos (UsuarioID,PuestoID,CreadoPorUsuarioID,FechaCreacion,Activo)
+                $sql2 = "INSERT INTO pv_usuarios_puestos (UsuarioID,PuestoID,CreadoPorUsuarioID,FechaCreacion,IsActive)
 		        VALUES (?,?,?,?,?)";
 
                 $this->pdo->prepare($sql2)

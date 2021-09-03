@@ -51,7 +51,7 @@ class Mant_estados_turnosController
         $EstadoTurnos->Id = $_REQUEST['Id'];
         $EstadoTurnos->Estado = $_REQUEST['Estado'];
         $EstadoTurnos->Descripcion = $_REQUEST['Descripcion'];
-        $EstadoTurnos->Activo = $_REQUEST['Activo'];
+        $EstadoTurnos->IsActive = $_REQUEST['IsActive'];
         $EstadoTurnos->FechaModificacion = date('Y-m-d');
         $EstadoTurnos->FechaCreacion = date('Y-m-d');
         $EstadoTurnos->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;

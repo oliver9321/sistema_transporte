@@ -64,7 +64,7 @@ class Mant_puestosController
         $Puesto->Codigo = $_REQUEST['Codigo'];
         $Puesto->Nombre = $_REQUEST['Nombre'];
         $Puesto->Descripcion = $_REQUEST['Descripcion'];
-        $Puesto->Activo = $_REQUEST['Activo'];
+        $Puesto->IsActive = $_REQUEST['IsActive'];
         $Puesto->DepartamentoID = $_REQUEST['DepartamentoID'];
         $Puesto->FechaModificacion = date('Y-m-d');
         $Puesto->FechaCreacion = date('Y-m-d');
