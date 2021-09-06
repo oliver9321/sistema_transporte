@@ -13,10 +13,6 @@
         </div>
         <!-- end page content -->
     </div>
-    <!-- end page-wrapper -->
-
-
-
 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
@@ -30,6 +26,7 @@
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+
 
 </body>
 

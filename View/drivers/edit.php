@@ -1,116 +1,84 @@
-<link rel="stylesheet" href="vendor/select2/select2.min.css">
-<link rel="stylesheet" href="vendor/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-<link rel="stylesheet" href="vendor/clockpicker/dist/bootstrap-clockpicker.min.css">
-<link rel="stylesheet" href="vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" href="vendor/bootstrap-daterangepicker/daterangepicker.css">
-<?php
-date_default_timezone_set('America/Santo_Domingo');
-?>
 
+            <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="page-title">Drivers</h4>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="?c=Dashboard&a=Index">Dashboard</a></li>
+                                        <li class="breadcrumb-item active"><a href="?c=Drivers&a=Index">Driver list</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<ul class="breadcrumb no-bg mb-1">
-    <li class="breadcrumb-item"><i class="fa fa-home"></i> <a href="#">Marquesina</a></li>
-    <li  class="breadcrumb-item"><i class="fa fa-list-ul"></i> <a href="?c=mant_marquesina&a=index">Listado</a></li>
-    <li class="breadcrumb-item active"><?php echo  ($Marquesina->Id != null)  ? "Modificar Registro" : "Nuevo Registro" ?></li>
-</ul>
+<br>
+<div class="row">
+    
+   <div class="col-sm-12">
+     
+   <form id="frm-drivers" action="?c=Drivers&a=Save" method="post" enctype="multipart/form-data">
 
-<div class="box box-block bg-white">
+            <input type="hidden" name="Id" id="Id" value="<?php echo $Driver->Id; ?>" />
+            <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($Driver->Id != null) ? $Driver->IsActive : 1 ?>" >
 
-    <h4 class="text-primary">Mantenimiento de la Marquesina</h4>
-    <p class="font-90 text-muted mb-1 text-bold">Administracion de Sistema</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title text-primary">Mantenimiento de la Drivers</h4>
+                                <p class="text-muted mb-0">Administracion de Sistema</p>
+                            </div>
+                   
+                            <div class="card-body">
 
-    <hr>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="Name">Driver name:</label>
+                                        <input type="text" class="form-control" id="Name" name="Name" aria-describedby="Name" placeholder="Enter driver name" value="<?php echo $Driver->Name; ?>"> 
+                                    </div>
 
-     <form id="frm-puestos" action="?c=mant_marquesina&a=Save" method="post" enctype="multipart/form-data" class="form-control">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="LastName">Driver last name:</label>
+                                        <input type="text" class="form-control" id="LastName" name="LastName"  aria-describedby="LastName" placeholder="Enter driver last name" value="<?php echo $Driver->LastName; ?>">
+                                    </div>
 
-        <div class="container-fluid">
-        <input type="hidden" name="Id" id="Id" value="<?php echo $Marquesina->Id; ?>" />
-        <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($Marquesina->Id != null) ? $Marquesina->IsActive : 1 ?>" >
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label" for="Phone1">Number phone 1:</label>
+                                        <input type="tel" class="form-control" id="Phone1" name="Phone1" aria-describedby="Phone1" placeholder="1-(555)-555-5555" value="<?php echo $Driver->Phone1; ?>">
+                                    </div>
 
-        <div class="form-group">
-            <label for="cmbDepartamento"><b>Departamentos:</b></label>
-            <select id="DepartamentoID" name="DepartamentoID" class="form-control select2" style="width: 100%">
-                <option value="" selected>Seleccione el departamento en el que desea mostrar la informaciom</option>
-                <?php foreach($Departamentos as $a): ?>
-                    <option value="<?php echo $a->Id; ?>"><?php echo $a->Nombre; ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="Phone2">Number phone 2:</label>
+                                        <input type="tel" class="form-control" id="Phone2" name="Phone2" aria-describedby="Phone2" placeholder="1-(555)-555-5555" value="<?php echo $Driver->Phone2; ?>">
+                                    </div>
 
-
-            <div class="form-group">
-                <label for="TextoMostrar"><b>Texto a mostrar:</b></label>
-                <textarea name="TextoMostrar" class="form-control"><?php echo htmlspecialchars($Marquesina->TextoMostrar); ?></textarea>
-            </div>
-
-
-            <div class="form-group clockpicker input-group">
-                <span class="input-group-addon"><i class="ti ti-time"></i></span>
-                <input type="text" name="HoraInicial" class="form-control Picker" placeholder="Desde que hora" value="<?= $Marquesina->HoraInicial; ?>" >
-                <span class="input-group-addon bg-primary b-0 text-white">a</span>
-                <input type="text" name="HoraFinal" class="form-control Picker" placeholder="Hasta que hora"  value="<?= $Marquesina->HoraFinal; ?>" >
-                <span class="input-group-addon"><i class="ti ti-time"></i></span>
-            </div>
-
-            <div class="form-group input-daterange input-group" id="date-range">
-                <span class="input-group-addon"><i class="ti ti-calendar"></i></span>
-                <input type="text" class="form-control datepicker" name="FechaInicial" placeholder="Mostrar desde (Fecha)" value="<?php echo ($Marquesina->FechaInicial) == '0000-00-00' ? '': $Marquesina->FechaInicial ?>" required>
-
-                <span class="input-group-addon bg-primary b-0 text-white">a</span>
-                <input type="text" class="form-control datepicker" name="FechaFinal" placeholder="Hasta (Fecha)" value="<?php echo ($Marquesina->FechaFinal) == '0000-00-00' ? '': $Marquesina->FechaFinal ?>" required>
-                <span class="input-group-addon"><i class="ti ti-calendar"></i></span>
-            </div>
-
-
-        <div class="form-group col-md-12">
-            <hr>
-            <?php if($Marquesina->Id != null){?>
-                <button type="submit" class="btn btn-warning">Actualizar <i class="fa fa-refresh"></i> </button>
-                <input type="checkbox"  data-toggle="toggle" id="ActivoToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
-            <?php }else {?>
-                <button type="submit"  class="btn btn-success">Guardar <i class="fa fa-save"></i> </button>
-            <?php }?>
-         </div>
-    </div>
-
+                                    <?php if($Driver->Id != null){?>
+                                        <button type="submit" class="btn btn-warning">Update <i class="fa fa-refresh"></i> </button>
+                                        <input type="checkbox"  data-toggle="toggle" id="ActivoToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
+                                    <?php }else {?>
+                                        <button type="submit"  class="btn btn-success">Submit <i class="fa fa-save"></i> </button>
+                                    <?php }?>
+                           
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
     </form>
-
-
+</div>
 </div>
 
-<script type="text/javascript" src="vendor/jquery/jquery-1.12.3.min.js"></script>
-<script type="text/javascript" src="vendor/switchery/dist/switchery.min.js"></script>
-<script type="text/javascript" src="vendor/js/select2.full.min.js"></script>
-<script type="text/javascript" src="vendor/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-<script type="text/javascript" src="vendor/clockpicker/dist/jquery-clockpicker.min.js"></script>
-<script type="text/javascript" src="vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<script type="text/javascript" src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-
-<script type="text/javascript">
-    $('.select2').select2();
-    $(".Picker").clockpicker({donetext: "Asignar Hora"});
-
-    $('.datepicker').datepicker({
-        autoclose: true,
-        todayHighlight: true
-    });
-
-</script>
+<script src="assets/js/jquery.min.js"></script>
 
 <script type="text/javascript">
 
     $(document).ready(function(){
 
-        var DepartamentoID = "";
-
-        if($("#Id").val() != null) {
-             DepartamentoID = "<?php echo (isset($Marquesina->DepartamentoID) != 0) ? $Marquesina->DepartamentoID : "" ?>";
-        }
-
-        $("#DepartamentoID").val(DepartamentoID).trigger('change');
-
-        $("#frm-puestos").submit(function(){
+        $("#frm-drivers").submit(function(){
             return $(this).validate();
         });
 
@@ -136,6 +104,7 @@ date_default_timezone_set('America/Santo_Domingo');
         });
 
     });
+
 </script>
 
 

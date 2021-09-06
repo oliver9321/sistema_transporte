@@ -21,7 +21,7 @@ date_default_timezone_set('America/Santo_Domingo');
 
     <hr>
 
-     <form id="frm-puestos" action="?c=mant_marquesina&a=Save" method="post" enctype="multipart/form-data" class="form-control">
+     <form id="frm-drivers" action="?c=mant_marquesina&a=Save" method="post" enctype="multipart/form-data" class="form-control">
 
         <div class="container-fluid">
         <input type="hidden" name="Id" id="Id" value="<?php echo $Marquesina->Id; ?>" />
@@ -110,7 +110,7 @@ date_default_timezone_set('America/Santo_Domingo');
 
         $("#DepartamentoID").val(DepartamentoID).trigger('change');
 
-        $("#frm-puestos").submit(function(){
+        $("#frm-drivers").submit(function(){
             return $(this).validate();
         });
 

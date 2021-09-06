@@ -77,7 +77,7 @@ class Drivers {
 						IsActive = ?
 				    WHERE Id = ?";
 
-            $this->pdo->prepare($sql)
+          $result =  $this->pdo->prepare($sql)
                 ->execute(
                     array(
 
@@ -91,19 +91,22 @@ class Drivers {
                         $data->Id
                     )
                 );
+
+                return $result;
+
         } catch (Exception $e)
         {
             die($e->getMessage());
         }
     }
 
-    public function Create (Mant_BotonesTurnos $data)
+    public function Create (Drivers $data)
     {
         try
         {
             $sql = "INSERT INTO tbl_drivers (Name,LastName,Phone1,Phone2,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?)";
 
-            $this->pdo->prepare($sql)
+            $result =  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->Name,
@@ -115,6 +118,9 @@ class Drivers {
                         1
                     )
                 );
+
+                return $result;
+                
         } catch (Exception $e)
         {
             die($e->getMessage());

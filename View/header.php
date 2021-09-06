@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Dastone - Admin & Dashboard Template</title>
+    <title>Logistics Transport</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="" name="author" />
+    <meta content="" name="description" />
+    <meta content="" name="ofermin" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
@@ -18,6 +18,15 @@
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/themes@5.0.3/bootstrap-4/bootstrap-4.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+          <!-- DataTables -->
+          <link href="plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
+
 
 </head>
 

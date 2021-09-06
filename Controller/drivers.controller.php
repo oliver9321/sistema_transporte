@@ -84,9 +84,9 @@ class DriversController
             if ($Driver->Id > 0) {
 
                 $Message =  $this->model->Update($Driver);
-
+           
                 if ($Message != "1") {
-                    echo '<script>alert("' . $Message . '"); setTimeout(function(){ window.location.href = "/index.php?c=Drivers&a=Edit&Id="+$Driver->Id+"; }, 100);</script>';
+                    echo '<script> setTimeout(function(){ window.location.href = "index.php?c=Drivers&a=Edit&Id="+$Driver->Id+"; }, 100);</script>';
                 } else {
                     header('Location:index.php?c=Drivers&a=index');
                 }
@@ -96,7 +96,7 @@ class DriversController
                 $Message = $this->model->Create($Driver);
 
                 if ($Message != "1") {
-                    echo '<script>alert("' . $Message . '"); setTimeout(function(){ window.location.href = "../index.php"; }, 100);</script>';
+                    echo '<script> setTimeout(function(){ window.location.href = "index.php?c=Drivers&a=index"; }, 100);</script>';
                 } else {
                     header('Location:index.php?c=Drivers&a=index');
                 }

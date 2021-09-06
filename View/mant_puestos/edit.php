@@ -13,7 +13,7 @@
 
     <hr>
 
-     <form id="frm-puestos" action="?c=mant_puestos&a=Save" method="post" enctype="multipart/form-data" class="form-control">
+     <form id="frm-drivers" action="?c=mant_puestos&a=Save" method="post" enctype="multipart/form-data" class="form-control">
 
         <div class="container-fluid">
         <input type="hidden" name="Id" id="Id" value="<?php echo $Puesto->Id; ?>" />
@@ -81,7 +81,7 @@
         }
 
 
-        $("#frm-puestos").submit(function(){
+        $("#frm-drivers").submit(function(){
             return $(this).validate();
         });
 

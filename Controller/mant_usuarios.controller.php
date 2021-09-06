@@ -100,7 +100,7 @@ class Mant_usuariosController
                 $Message =  $this->model->Update($Usuario);
 
                 if ($Message != "1") {
-                    echo '<script>alert("' . $Message . '"); setTimeout(function(){ window.location.href = "/index.php?c=mant_usuarios&a=Edit&Id="+$Usuario->Id+"; }, 100);</script>';
+                    echo '<script> setTimeout(function(){ window.location.href = "/index.php?c=mant_usuarios&a=Edit&Id="+$Usuario->Id+"; }, 100);</script>';
                 } else {
                     header('Location:index.php?c=mant_usuarios&a=index');
                 }
@@ -110,7 +110,7 @@ class Mant_usuariosController
                 $Message = $this->model->Create($Usuario);
 
                 if ($Message != "1") {
-                    echo '<script>alert("' . $Message . '"); setTimeout(function(){ window.location.href = "../index.php"; }, 100);</script>';
+                    echo '<script> setTimeout(function(){ window.location.href = "../index.php"; }, 100);</script>';
                 } else {
                     header('Location:index.php?c=mant_usuarios&a=index');
                 }
