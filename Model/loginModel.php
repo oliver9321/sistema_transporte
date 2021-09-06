@@ -20,34 +20,34 @@ class Login
 
     public function login(Login $data){
 
-        $RsArrayUserInformation = array();
+        $UserOnline = array();
 
         try
         {
 
-            $myusername = stripslashes($data->Usuario);
-            $mypassword = stripslashes($data->Password);
+            $myusername = $data->Usuario;
+            $mypassword = $data->Password;
             
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_usuarios  WHERE UserName = ? AND Password = ? AND IsActive = 1 LIMIT 1");
+            $stm = $this->pdo->prepare("SELECT Id, Name, LastName, UserName, Image, Email, Profile FROM vw_users  WHERE UserName = ? AND Password = ? AND IsActive = 1 LIMIT 1");
             $stm->execute(array($myusername,$mypassword));
 
             $RsArrayUsuario = $stm->fetch(PDO::FETCH_OBJ);
-           
+
             if($RsArrayUsuario){
 
-                $RsArrayUserInformation['Usuario'] = $RsArrayUsuario;
+                $UserOnline['Usuario'] = $RsArrayUsuario;
 
-                return $RsArrayUserInformation;
+                return $RsArrayUsuario;
 
             }else{
-                return $RsArrayUserInformation;
+                return $UserOnline;
             }
 
 
         } catch (Exception $e)
         {
             print_r($e->getMessage());
-            return $RsArrayUserInformation;
+            return $UserOnline;
             die($e->getMessage());
         }
 

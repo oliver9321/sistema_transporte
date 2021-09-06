@@ -14,7 +14,7 @@ class Mant_modulosController
 
     public function Index(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             GetRouteView(null, "header");
             GetRouteView("mant_modulos", "index");
             GetRouteView(null, "footer");
@@ -27,7 +27,7 @@ class Mant_modulosController
 
     public function View(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             echo json_encode($this->model->View());
          }else{
             header('Location:index.php?c=login&a=index');
@@ -36,7 +36,7 @@ class Mant_modulosController
 
     public function Edit(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             $Modulo = new Mant_Modulos();
 
@@ -64,8 +64,8 @@ class Mant_modulosController
         $Modulo->IsActive =                   $_REQUEST['IsActive'];
         $Modulo->FechaModificacion =        date('Y-m-d');
         $Modulo->FechaCreacion =            date('Y-m-d');
-        $Modulo->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $Modulo->CreadoPorUsuarioID =      $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $Modulo->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $Modulo->CreadoPorUsuarioID =      $_SESSION['UserOnline']->UsuarioID;
 
         $Modulo->Id > 0
             ? $this->model->Update($Modulo)

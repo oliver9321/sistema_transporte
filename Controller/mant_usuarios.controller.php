@@ -16,7 +16,7 @@ class Mant_usuariosController
 
     public function Index(){
 
-        if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if($_SESSION['UserOnline']->Profile == "admin") {
 
         GetRouteView(null, "header");
         require_once 'View/mant_usuarios/mant_usuarios/index.php';
@@ -28,7 +28,7 @@ class Mant_usuariosController
     }
 
     public function View(){
-        if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if($_SESSION['UserOnline']->Profile == "admin") {
          echo json_encode($this->model->View(), true);
         }else{
             header('Location:index.php?c=login&a=index');
@@ -37,7 +37,7 @@ class Mant_usuariosController
 
     public function Edit(){
 
-        if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if($_SESSION['UserOnline']->Profile == "admin") {
 
         //Instancias de clases
         $Usuario = new Mant_Usuarios();
@@ -82,8 +82,8 @@ class Mant_usuariosController
             $Usuario->IsActive = $_REQUEST['IsActive'];
             $Usuario->FechaModificacion = date('Y-m-d');
             $Usuario->FechaCreacion = date('Y-m-d');
-            $Usuario->ModificadoPorUsuarioID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-            $Usuario->CreadoPorUsuarioID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+            $Usuario->ModificadoPorUsuarioID = $_SESSION['UserOnline']->UsuarioID;
+            $Usuario->CreadoPorUsuarioID = $_SESSION['UserOnline']->UsuarioID;
 
       
             if (!empty($_FILES['Imagen']['name'])) {

@@ -13,7 +13,7 @@ class Mant_botones_turnosController
     }
 
     public function Index(){
-        if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if($_SESSION['UserOnline']->Profile == "admin") {
 
         GetRouteView(null, "header");
         require_once 'View/mant_turnos/mant_botones_turnos/index.php';
@@ -25,7 +25,7 @@ class Mant_botones_turnosController
 
     public function View(){
 
-            if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+            if($_SESSION['UserOnline']->Profile == "admin") {
                     echo json_encode($this->model->View(), true);
             }else{
                 header('Location:index.php?c=login&a=index');
@@ -34,7 +34,7 @@ class Mant_botones_turnosController
 
     public function Edit(){
 
-                if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+                if($_SESSION['UserOnline']->Profile == "admin") {
 
                     if(isset($_REQUEST['Id'])){
                         $this->model = $this->model->Edit($_REQUEST['Id']);
@@ -61,8 +61,8 @@ class Mant_botones_turnosController
         $this->model->TipoBoton       = $_REQUEST['TipoBoton'];
         $this->model->FechaModificacion      = date('Y-m-d');
         $this->model->FechaCreacion          = date('Y-m-d');
-        $this->model->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $this->model->CreadoPorUsuarioID     =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $this->model->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $this->model->CreadoPorUsuarioID     =  $_SESSION['UserOnline']->UsuarioID;
 
         if( !empty($_FILES['Logo']['name']) ){
             $foto = date('ymdhis') . '-' . strtolower($_FILES['Logo']['name']);

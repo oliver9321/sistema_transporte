@@ -2,7 +2,7 @@
 
 $ModoDebug = false;
 
-foreach ($_SESSION['DataUserOnline']['System'] as $key => $value ){
+foreach ($_SESSION['UserOnline']['System'] as $key => $value ){
 
     if($value->Campo == "Debug"){
         $ModoDebug = $value->Valor;
@@ -166,7 +166,7 @@ setInterval(update, 1000);
 
 						<ul class="nav navbar-nav float-md-left">
 
-                            <li class="logo"> <img class="img" src="uploads/<?= $_SESSION['DataUserOnline']['Usuario']->EmpresaLogo?>" height="60px"></li>
+                            <li class="logo"> <img class="img" src="uploads/<?= $_SESSION['UserOnline']->EmpresaLogo?>" height="60px"></li>
 
 						</ul>
 
@@ -260,9 +260,9 @@ setInterval(update, 1000);
         <input type="hidden" id="PlayListYoutube2">
         <input type="hidden" id="ModoPlayListYoutube">
         <input type="hidden" id="LlamadaPorVoz">
-        <input type="hidden" value="<?= $_SESSION['DataUserOnline']['Usuario']->Departamento ?>" name="Departamento" id="Departamento">
-        <input type="hidden" id="SucursalID" name="SucursalID"  value="<?= $_SESSION['DataUserOnline']['Usuario']->SucursalID ?>"><br>
-        <input type="hidden" id="EmpresaCodigo" name="EmpresaCodigo"  value="<?= $_SESSION['DataUserOnline']['Usuario']->EmpresaCodigo ?>">
+        <input type="hidden" value="<?= $_SESSION['UserOnline']->Departamento ?>" name="Departamento" id="Departamento">
+        <input type="hidden" id="SucursalID" name="SucursalID"  value="<?= $_SESSION['UserOnline']->SucursalID ?>"><br>
+        <input type="hidden" id="EmpresaCodigo" name="EmpresaCodigo"  value="<?= $_SESSION['UserOnline']->EmpresaCodigo ?>">
        
 
 	</body>
@@ -283,7 +283,7 @@ setInterval(update, 1000);
      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
      var ModoDebug = "<?php echo $ModoDebug ?>";
-     var DepartamentoID = "<?php echo $_SESSION['DataUserOnline']['Usuario']->DepartamentoID ?>";
+     var DepartamentoID = "<?php echo $_SESSION['UserOnline']->DepartamentoID ?>";
 
      var Puesto = $("#Puesto").val();
      var EmpresaCodigo = $("#EmpresaCodigo").val();

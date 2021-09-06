@@ -16,52 +16,42 @@ class loginController{
 
     public function ValidateUser(){
 
-        if(isset($_REQUEST['Usuario']) && isset($_REQUEST['Password'])){
+        if(isset($_POST['username']) && $_POST['username'] != '' &&  isset($_POST['password']) && $_POST['password'] != ''){
 
             $login = new login();
 
-            $login->Usuario  = $_REQUEST['Usuario'];
-            $login->Password = $this->encryptIt($_REQUEST['Password'], KEY);
-            $login->Password = $_REQUEST['Password'];
+            $login->Usuario  = stripslashes($_POST['username']);
+            $login->Password = stripslashes($this->encryptIt($_POST['password'], KEY));
+            $user = $this->model->login($login);
 
-            $returnResponse =  $this->model->login($login);
+           if($user){
 
-            print($returnResponse);
-            exit;
-
-           /* if($returnResponse){
-
-                $_SESSION['DataUserOnline'] = $returnResponse;
-                $Perfil = $returnResponse['Usuario']->Perfil;
-                $Empresa = $returnResponse['Usuario']->Empresa;
-
-                $SucursalID_File    =  $returnResponse['Usuario']->SucursalID;
-                $DepartamentoID_File =  $returnResponse['Usuario']->DepartamentoID;
-
-                $Puesto = $returnResponse['Usuario']->Puesto;
-
+                $Perfil = $user->Profile;
+    
                 switch($Perfil){
 
-                    case "Administrador":
-                        header('Location: index.php?c=Administracion&a=index');
+                    case "admin":
+                        $_SESSION['UserOnline'] = $user;
+                        header('Location: index.php?c=dashboard&a=index');
                         break;
 
-                    case "Oficial":
+                    case "manager":
+                        $_SESSION['UserOnline'] = $user;
                         header('Location: index.php?c=dashboard&a=index');
                         break;
 
                     default:
-                        echo '<script>alert("Usuario invalido, No posee permisos o Clave invalida"); setTimeout(function(){ window.location.href = "index.php?c=Login&a=index"; }, 100);</script>';
+                        echo '<script>alert("Invalid user, No posee permisos o Clave invalida"); setTimeout(function(){ window.location.href = "index.php?c=Login&a=index"; }, 100);</script>';
                         break;
                 }
 
 
             }else{
-                echo '<script>alert("Usuario invalido, No posee permisos o Clave invalida"); setTimeout(function(){ window.location.href = "index.php?c=Login&a=index"; }, 100);</script>';
+                echo '<script>alert("Invalid user, No posee permisos o Clave invalida"); setTimeout(function(){ window.location.href = "index.php?c=Login&a=index"; }, 100);</script>';
+            }
 
-            }*/
         }else{
-            echo '<script>alert("Usuario invalido, No posee permisos o Clave invalida"); setTimeout(function(){ window.location.href = "index.php?c=Login&a=index"; }, 100);</script>';
+            echo '<script>alert("Ingrese su username and password); setTimeout(function(){ window.location.href = "index.php?c=Login&a=index"; }, 100);</script>';
         }
 
     }

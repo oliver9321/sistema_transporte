@@ -20,10 +20,10 @@ class Dashboard
     {
         $Dashboard = new Dashboard();
 
-        $UsuarioID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $PuestoID = $_SESSION['DataUserOnline']['Usuario']->PuestoId;
-        $SucursalID = $_SESSION['DataUserOnline']['Usuario']->SucursalID;
-        $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
+        $UsuarioID = $_SESSION['UserOnline']->UsuarioID;
+        $PuestoID = $_SESSION['UserOnline']->PuestoId;
+        $SucursalID = $_SESSION['UserOnline']->SucursalID;
+        $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
 
         try
         {
@@ -85,7 +85,7 @@ class Dashboard
 
         $Dashboard = new Dashboard();
         $SystemLog = new System();
-        $UsuarioID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $UsuarioID = $_SESSION['UserOnline']->UsuarioID;
 
         try
         {
@@ -112,9 +112,9 @@ class Dashboard
     public function ActualizarEstadoTurnoModel($Estado, $TurnoID, $PuestoID, $Comentario, $PuestoCodigo, $Turno){
 
         $Dashboard      = new Dashboard();
-        $UsuarioID      = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $SucursalID     = $_SESSION['DataUserOnline']['Usuario']->SucursalID;
-        $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
+        $UsuarioID      = $_SESSION['UserOnline']->UsuarioID;
+        $SucursalID     = $_SESSION['UserOnline']->SucursalID;
+        $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
 
         try
         {
@@ -150,10 +150,10 @@ class Dashboard
 
         try
         {
-            $SucursalID = $_SESSION['DataUserOnline']['Usuario']->SucursalID;
-            $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
-            $PuestoID = $_SESSION['DataUserOnline']['Usuario']->PuestoId;
-            $Puesto = $_SESSION['DataUserOnline']['Usuario']->PuestoCodigo;
+            $SucursalID = $_SESSION['UserOnline']->SucursalID;
+            $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
+            $PuestoID = $_SESSION['UserOnline']->PuestoId;
+            $Puesto = $_SESSION['UserOnline']->PuestoCodigo;
 
             $stm = $this->pdo->prepare("CALL SP_GetListTurnosEsperaByPuesto(?, ?, ?, ?);");
             $stm->execute(array($SucursalID, $PuestoID, $Puesto, $DepartamentoID));
@@ -178,9 +178,9 @@ class Dashboard
 
         try
         {
-            $SucursalID = $_SESSION['DataUserOnline']['Usuario']->SucursalID;
-            $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
-            $PuestoID = $_SESSION['DataUserOnline']['Usuario']->PuestoId;
+            $SucursalID = $_SESSION['UserOnline']->SucursalID;
+            $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
+            $PuestoID = $_SESSION['UserOnline']->PuestoId;
 
             $stm = $this->pdo->prepare("SELECT Id, TurnoConcatenado, Estado, Estatus, Comentario, Puesto, FechaHoraAnulacion  FROM vw_administracion_turnos  WHERE Estado = 'A'  AND IsActive = 1  AND Dia = DAY(NOW())  AND Mes = MONTH(NOW())  AND Ano = YEAR(NOW())  AND SucursalID = ?  AND DepartamentoID = ?  AND PuestoID = ? ");
             $stm->execute(array($SucursalID, $DepartamentoID, $PuestoID));
@@ -205,7 +205,7 @@ class Dashboard
 
         $Dashboard = new Dashboard();
         $SystemLog = new System();
-        $UsuarioID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $UsuarioID = $_SESSION['UserOnline']->UsuarioID;
 
         try
         {
@@ -231,7 +231,7 @@ class Dashboard
     public function ActualizarPlayListYoutube($PlayListYoutube, $Opcion){
 
         $SystemLog = new System();
-        $UsuarioID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $UsuarioID = $_SESSION['UserOnline']->UsuarioID;
 
         $stm = $this->pdo->prepare("UPDATE tbl_system_app SET Valor = ? , Descripcion = ?, FechaModificacion = NOW(), ModificadoPorUsuarioID = ? WHERE Campo = 'PlayListYoutube' ");
         $stm->execute(array($PlayListYoutube, $Opcion, $UsuarioID));
@@ -245,7 +245,7 @@ class Dashboard
     public function ActivarModoDesarrollador($Opcion){
 
         $SystemLog = new System();
-        $UsuarioID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $UsuarioID = $_SESSION['UserOnline']->UsuarioID;
 
         $stm = $this->pdo->prepare("UPDATE tbl_system_app SET Valor = ? , FechaModificacion = NOW(), ModificadoPorUsuarioID = ? WHERE Campo = 'Debug' ");
         $stm->execute(array($Opcion, $UsuarioID));
@@ -259,10 +259,10 @@ class Dashboard
     public function TransferirTurnoPuesto($PuestoIDTransferir, $ComentarioTransferir, $TurnoID){
 
         $Dashboard = new Dashboard();
-        $UsuarioID      = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $PuestoID       = $_SESSION['DataUserOnline']['Usuario']->PuestoId;
-        $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
-        $SucursalID     = $_SESSION['DataUserOnline']['Usuario']->SucursalID;
+        $UsuarioID      = $_SESSION['UserOnline']->UsuarioID;
+        $PuestoID       = $_SESSION['UserOnline']->PuestoId;
+        $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
+        $SucursalID     = $_SESSION['UserOnline']->SucursalID;
 
         try
         {
@@ -292,10 +292,10 @@ class Dashboard
     {
 
     $Dashboard      = new Dashboard();
-    $UsuarioID      = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-    $PuestoID       = $_SESSION['DataUserOnline']['Usuario']->PuestoId;
-    $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
-    $SucursalID     = $_SESSION['DataUserOnline']['Usuario']->SucursalID;
+    $UsuarioID      = $_SESSION['UserOnline']->UsuarioID;
+    $PuestoID       = $_SESSION['UserOnline']->PuestoId;
+    $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
+    $SucursalID     = $_SESSION['UserOnline']->SucursalID;
 
         try
         {

@@ -147,7 +147,7 @@ class Mant_Marquesina
         {
             $result = array();
 
-            $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
+            $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
 
             $stm = $this->pdo->prepare("SELECT a.Id, a.TextoMostrar FROM tbl_marquesina_pantalla as a  INNER JOIN vw_departamentos_sucursales as b ON (a.DepartamentoID = b.Id) WHERE a.IsActive = 1 AND FechaFinal >= CURDATE() AND HoraFinal >= ? AND a.DepartamentoID = ?");
             $stm->execute(array($HoraFinal, $DepartamentoID));

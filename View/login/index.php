@@ -56,9 +56,9 @@
                                             <!--end form-group-->
 
                                             <div class="form-group mb-2">
-                                                <label class="form-label" for="userpassword">Password</label>
+                                                <label class="form-label" for="password">Password</label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">
+                                                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
                                                 </div>
                                             </div>
                                             <!--end form-group-->
@@ -144,11 +144,11 @@
             type: "POST",
             data: {
                 Action: "ValidateUser",
-                Usuario: $("#Usuario").val()
+                username: $("#username").val(),
+                password: $("#password").val()
             },
             success: function(data) {
                 console.log(data);
-
             }
         });
     }

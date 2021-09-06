@@ -16,7 +16,7 @@ class mant_prioridad_turnos_puestosController
 
     public function Index(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             GetRouteView(null, "header");
             require_once 'View/mant_turnos/mant_prioridad_turnos_puestos/index.php';
@@ -30,7 +30,7 @@ class mant_prioridad_turnos_puestosController
 
     public function View(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             echo json_encode($this->model->View());
         }else{
             header('Location:index.php?c=login&a=index');
@@ -39,7 +39,7 @@ class mant_prioridad_turnos_puestosController
 
     public function Edit(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             $Prioridades = new Mant_PrioridadesTurnos();
             $Prioridades = $Prioridades->GetListPrioridades();
@@ -71,8 +71,8 @@ class mant_prioridad_turnos_puestosController
         $this->model->IsActive = $_REQUEST['IsActive'];
         $this->model->FechaModificacion = date('Y-m-d');
         $this->model->FechaCreacion = date('Y-m-d');
-        $this->model->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $this->model->CreadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $this->model->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $this->model->CreadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
 
 
         $this->model->Id > 0

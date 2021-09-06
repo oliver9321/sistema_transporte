@@ -118,8 +118,8 @@ class Administracion
     public function ActualizarEstadoTurnoModel($Estado, $TurnoID, $PuestoID){
 
         $Dashboard = new Dashboard();
-        $UsuarioOnlineID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $SucursalID = $_SESSION['DataUserOnline']['Usuario']->SucursalID;
+        $UsuarioOnlineID = $_SESSION['UserOnline']->UsuarioID;
+        $SucursalID = $_SESSION['UserOnline']->SucursalID;
 
         try
         {
@@ -229,7 +229,7 @@ class Administracion
     public function TruncateTableTurnos(){
          
          $Administracion = new Administracion();
-         $UsuarioOnlineID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+         $UsuarioOnlineID = $_SESSION['UserOnline']->UsuarioID;
          $Administracion->ExecuteStoreProcedure($this->pdo, "SP_GuardarLogAdministracionTurnos", array("ModoLog"=> 'COMPLETO', "UsuarioLogID" => $UsuarioOnlineID));
 
         return $Administracion;
@@ -239,7 +239,7 @@ class Administracion
     public function FinalizarTurnos(){
 
          $Administracion = new Administracion();
-         $UsuarioOnlineID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+         $UsuarioOnlineID = $_SESSION['UserOnline']->UsuarioID;
 
         try
         {

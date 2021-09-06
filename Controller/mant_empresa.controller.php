@@ -12,7 +12,7 @@ class Mant_empresaController
     }
 
     public function Index(){
-        if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
         GetRouteView(null, "header");
         GetRouteView("mant_empresa", "index");
         GetRouteView(null, "footer");
@@ -21,7 +21,7 @@ class Mant_empresaController
 
     public function Edit(){
 
-        if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
         $Empresa = new Mant_Empresa();
 
         if(isset($_REQUEST['Id'])){
@@ -48,8 +48,8 @@ class Mant_empresaController
         $Empresa->Telefono = $_REQUEST['Telefono'];
         $Empresa->FechaModificacion = date('Y-m-d');
         $Empresa->FechaCreacion = date('Y-m-d');
-        $Empresa->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $Empresa->CreadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $Empresa->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $Empresa->CreadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
 
 
         if( !empty($_FILES['LogoGrande']['name']) ){

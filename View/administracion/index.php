@@ -140,10 +140,10 @@
     </div>
 
     <input type="text" id="DateTime" hidden>
-    <input type="hidden" value="<?= $_SESSION['DataUserOnline']['Usuario']->Departamento ?>" name="Departamento" id="Departamento">
-    <input type="hidden" value="<?= $_SESSION['DataUserOnline']['Usuario']->DepartamentoID ?>" name="DepartamentoID" id="DepartamentoID">
-    <input type="hidden" id="SucursalID" name="SucursalID"  value="<?= $_SESSION['DataUserOnline']['Usuario']->SucursalID ?>"><br>
-    <input type="hidden" id="EmpresaCodigo" name="EmpresaCodigo"  value="<?= $_SESSION['DataUserOnline']['Usuario']->EmpresaCodigo ?>">
+    <input type="hidden" value="<?= $_SESSION['UserOnline']->Departamento ?>" name="Departamento" id="Departamento">
+    <input type="hidden" value="<?= $_SESSION['UserOnline']->DepartamentoID ?>" name="DepartamentoID" id="DepartamentoID">
+    <input type="hidden" id="SucursalID" name="SucursalID"  value="<?= $_SESSION['UserOnline']->SucursalID ?>"><br>
+    <input type="hidden" id="EmpresaCodigo" name="EmpresaCodigo"  value="<?= $_SESSION['UserOnline']->EmpresaCodigo ?>">
             
 
     <script type="text/javascript" src="vendor/detectmobilebrowser/detectmobilebrowser.js"></script>

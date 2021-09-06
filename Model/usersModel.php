@@ -9,8 +9,9 @@ class Users {
     public $Name;
     public $LastName;
     public $UserName;
-    public $Password ;   
+    public $Password;   
     public $Email;
+    public $Image;
     public $DateCreation;
     public $UserIdCreation;
     public $LastModificationDate;
@@ -76,6 +77,7 @@ class Users {
                         UserName= ?,
                         Password= ?,
                         Email= ?,
+                        Image = ?,
 						LastModificationDate = ?,
 						UserIdLastModification = ?,
 						IsActive = ?
@@ -84,12 +86,13 @@ class Users {
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data->  ProfileUserId,
-                        $data->  Name,
-                        $data-> LastName,
-                        $data-> UserName,
-                        $data-> Password,    
-                        $data-> Email,
+                        $data->ProfileUserId,
+                        $data->Name,
+                        $data->LastName,
+                        $data->UserName,
+                        $data->Password,    
+                        $data->Email,
+                        $data->Image,
                         $data->LastModificationDate,
                         (int)$data->UserIdLastModification,
                         (int)$data->IsActive,
@@ -106,17 +109,18 @@ class Users {
     {
         try
         {
-            $sql = "INSERT INTO tbl_users (ProfileUserId,Name,LastName,UserName,Password,Email,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tbl_users (ProfileUserId,Name,LastName,UserName,Password,Email,Image,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data->  ProfileUserId,
-                        $data->  Name,
-                        $data-> LastName,
-                        $data-> UserName,
-                        $data-> Password,    
-                        $data-> Email,
+                        $data->ProfileUserId,
+                        $data->Name,
+                        $data->LastName,
+                        $data->UserName,
+                        $data->Password,    
+                        $data->Email,
+                        $data->Image,
                         date('Y-m-d'),
                         (int)$data->UserIdCreation,
                         1

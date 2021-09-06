@@ -15,7 +15,7 @@ class Mant_marquesinaController
 
     public function Index(){
 
-        if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             GetRouteView(null, "header");
             GetRouteView("mant_marquesina", "index");
             GetRouteView(null, "footer");
@@ -26,7 +26,7 @@ class Mant_marquesinaController
 
     public function View(){
 
-        if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             echo json_encode($this->model->View());
         }else{
             header('Location:index.php?c=login&a=index');
@@ -36,7 +36,7 @@ class Mant_marquesinaController
     public function Edit()
     {
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             $Marquesina = new Mant_Marquesina();
             $Departamento = new Mant_Departamentos();
@@ -69,8 +69,8 @@ class Mant_marquesinaController
         $Marquesina->FechaFinal               = $_REQUEST['FechaFinal'];
         $Marquesina->FechaModificacion        = date('Y-m-d');
         $Marquesina->FechaCreacion            = date('Y-m-d');
-        $Marquesina->ModificadoPorUsuarioID   =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $Marquesina->CreadoPorUsuarioID       =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $Marquesina->ModificadoPorUsuarioID   =  $_SESSION['UserOnline']->UsuarioID;
+        $Marquesina->CreadoPorUsuarioID       =  $_SESSION['UserOnline']->UsuarioID;
         $Marquesina->IsActive                   = $_REQUEST['IsActive'];
 
 

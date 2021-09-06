@@ -14,7 +14,7 @@ class Mant_estados_turnosController
 
     public function Index(){
 
-        if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
         GetRouteView(null, "header");
         require_once 'View/mant_turnos/mant_estados_turnos/index.php';
         GetRouteView(null, "footer");
@@ -23,14 +23,14 @@ class Mant_estados_turnosController
 
     public function View(){
 
-        if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
                       echo json_encode($this->model->View());
             }else{header('Location:index.php?c=login&a=index');}
     }
 
     public function Edit(){
 
-        if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
         $EstadoTurnos = new Mant_EstadosTurnos();
 
         if(isset($_REQUEST['Id'])){
@@ -54,8 +54,8 @@ class Mant_estados_turnosController
         $EstadoTurnos->IsActive = $_REQUEST['IsActive'];
         $EstadoTurnos->FechaModificacion = date('Y-m-d');
         $EstadoTurnos->FechaCreacion = date('Y-m-d');
-        $EstadoTurnos->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $EstadoTurnos->CreadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $EstadoTurnos->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $EstadoTurnos->CreadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
 
 
         $EstadoTurnos->Id > 0

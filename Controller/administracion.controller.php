@@ -15,7 +15,7 @@ class AdministracionController{
 
     if(count($_SESSION) > 0){
 
-        if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador"){
+        if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin"){
 
          $Departamento = new Mant_Departamentos();
          $Departamentos = $Departamento->GetListDepartamentos();

@@ -27,7 +27,7 @@ class Ponche
         try
         {
 
-            $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
+            $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
             $stm = $this->pdo->prepare("SELECT * FROM vw_botones_departamentos WHERE DepartamentoID = ?");
             $stm->execute(array($DepartamentoID));
 
@@ -42,8 +42,8 @@ class Ponche
     public function GetNexTurn($BotonId, $SucursalID)
     {
         $Ponche = new Ponche();
-        $UsuarioOnlineID = $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
+        $UsuarioOnlineID = $_SESSION['UserOnline']->UsuarioID;
+        $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
 
         try
         {

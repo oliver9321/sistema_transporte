@@ -75,9 +75,9 @@
 				<div class="container-fluid">
 
                             <center>
-							<img class="img-responsive" src="uploads/<?=$_SESSION['DataUserOnline']['Usuario']->EmpresaLogo;?>"  height="100">
-							<!--<h3 class="text-center"><?=$_SESSION['DataUserOnline']['Usuario']->EmpresaDescripcion;?></h3>-->
-							<h5><?php echo $_SESSION['DataUserOnline']['Usuario']->Departamento." - ".$_SESSION['DataUserOnline']['Usuario']->Sucursal; ?></h5>
+							<img class="img-responsive" src="uploads/<?=$_SESSION['UserOnline']->EmpresaLogo;?>"  height="100">
+							<!--<h3 class="text-center"><?=$_SESSION['UserOnline']->EmpresaDescripcion;?></h3>-->
+							<h5><?php echo $_SESSION['UserOnline']->Departamento." - ".$_SESSION['UserOnline']->Sucursal; ?></h5>
                           </center>
                     <br>
 
@@ -163,11 +163,11 @@
 		<div id="Imprime"></div>
 
         <div hidden>
-            Puesto:<input type="text" value="<?= $_SESSION['DataUserOnline']['Usuario']->Puesto ?>" name="Puesto" id="Puesto">
-            Departamento:<input type="text" value="<?= $_SESSION['DataUserOnline']['Usuario']->Departamento ?>" name="Departamento" id="Departamento">
-            DepartamentoID:<input type="text" value="<?= $_SESSION['DataUserOnline']['Usuario']->DepartamentoID ?>" name="DepartamentoID" id="DepartamentoID">
-            SucursalID:<input type="text" id="SucursalID" name="SucursalID"  value="<?= $_SESSION['DataUserOnline']['Usuario']->SucursalID ?>"><br>
-            EmpresaCodigo:<input type="text" id="EmpresaCodigo" name="EmpresaCodigo"  value="<?= $_SESSION['DataUserOnline']['Usuario']->EmpresaCodigo ?>">
+            Puesto:<input type="text" value="<?= $_SESSION['UserOnline']->Puesto ?>" name="Puesto" id="Puesto">
+            Departamento:<input type="text" value="<?= $_SESSION['UserOnline']->Departamento ?>" name="Departamento" id="Departamento">
+            DepartamentoID:<input type="text" value="<?= $_SESSION['UserOnline']->DepartamentoID ?>" name="DepartamentoID" id="DepartamentoID">
+            SucursalID:<input type="text" id="SucursalID" name="SucursalID"  value="<?= $_SESSION['UserOnline']->SucursalID ?>"><br>
+            EmpresaCodigo:<input type="text" id="EmpresaCodigo" name="EmpresaCodigo"  value="<?= $_SESSION['UserOnline']->EmpresaCodigo ?>">
         </div>
 
 
@@ -186,11 +186,11 @@
 
 			app.controller('CtrlBotonesPantallaController', function($scope, $http) {
 
-				$scope.sucursal = '<?= $_SESSION['DataUserOnline']['Usuario']->Sucursal?>';
-				$scope.sucursalID = '<?= $_SESSION['DataUserOnline']['Usuario']->SucursalID?>';
-				$scope.empresa = '<?= $_SESSION['DataUserOnline']['Usuario']->Empresa?>';
-				$scope.empresaLogo = '<?= $_SESSION['DataUserOnline']['Usuario']->EmpresaLogo?>';
-                $scope.departamento = '<?= $_SESSION['DataUserOnline']['Usuario']->Departamento?>';
+				$scope.sucursal = '<?= $_SESSION['UserOnline']->Sucursal?>';
+				$scope.sucursalID = '<?= $_SESSION['UserOnline']->SucursalID?>';
+				$scope.empresa = '<?= $_SESSION['UserOnline']->Empresa?>';
+				$scope.empresaLogo = '<?= $_SESSION['UserOnline']->EmpresaLogo?>';
+                $scope.departamento = '<?= $_SESSION['UserOnline']->Departamento?>';
 
 				$http.post("index.php?c=ponche&a=ListadoBotones", {Sucursal:$scope.sucursalOnline}).then(function (response) {
 

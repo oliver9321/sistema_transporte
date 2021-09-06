@@ -13,7 +13,7 @@ class PantallaController
 
     public function Index(){
 
-        if (isset($_SESSION['DataUserOnline'])) {
+        if (isset($_SESSION['UserOnline'])) {
             GetRouteView("pantalla", "index");
         }else{
             header('Location:index.php?c=login&a=index');

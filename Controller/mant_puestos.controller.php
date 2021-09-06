@@ -16,7 +16,7 @@ class Mant_puestosController
     public function Index(){
 
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             GetRouteView(null, "header");
             GetRouteView("mant_puestos", "index");
@@ -28,7 +28,7 @@ class Mant_puestosController
 
     public function View(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             echo json_encode($this->model->View());
         }else{
             header('Location:index.php?c=login&a=index');
@@ -37,7 +37,7 @@ class Mant_puestosController
 
     public function Edit(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             $Puesto = new Mant_Puestos();
             $Departamento = new Mant_Departamentos();
@@ -68,8 +68,8 @@ class Mant_puestosController
         $Puesto->DepartamentoID = $_REQUEST['DepartamentoID'];
         $Puesto->FechaModificacion = date('Y-m-d');
         $Puesto->FechaCreacion = date('Y-m-d');
-        $Puesto->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $Puesto->CreadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $Puesto->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $Puesto->CreadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
 
 
         $Puesto->Id > 0

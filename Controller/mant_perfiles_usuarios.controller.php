@@ -14,7 +14,7 @@ class Mant_perfiles_usuariosController
 
     public function Index(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             GetRouteView(null, "header");
             require_once 'View/mant_usuarios/mant_perfiles_usuarios/index.php';
             GetRouteView(null, "footer");
@@ -25,7 +25,7 @@ class Mant_perfiles_usuariosController
 
     public function View(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             echo json_encode($this->model->View());
         }else{
             header('Location:index.php?c=login&a=index');
@@ -34,7 +34,7 @@ class Mant_perfiles_usuariosController
 
     public function Edit(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
             
             if (isset($_REQUEST['Id'])) {
                 $this->model = $this->model->Edit($_REQUEST['Id']);
@@ -57,8 +57,8 @@ class Mant_perfiles_usuariosController
         $this->model->IsActive = $_REQUEST['IsActive'];
         $this->model->FechaModificacion = date('Y-m-d');
         $this->model->FechaCreacion = date('Y-m-d');
-        $this->model->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $this->model->CreadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $this->model->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $this->model->CreadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
 
 
         $this->model->Id > 0

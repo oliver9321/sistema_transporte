@@ -158,7 +158,7 @@ setInterval(update, 1000);
 
 						<ul class="nav navbar-nav float-md-left">
 
-                            <li class="logo"> <img class="img" src="uploads/<?= $_SESSION['DataUserOnline']['Usuario']->EmpresaLogo?>" height="60px"></li>
+                            <li class="logo"> <img class="img" src="uploads/<?= $_SESSION['UserOnline']->EmpresaLogo?>" height="60px"></li>
 
 						</ul>
 
@@ -270,7 +270,7 @@ setInterval(update, 1000);
 
              var ModoDebug = "<?php echo $ModoDebug ?>";
              var player;
-            var DepartamentoID = "<?php echo $_SESSION['DataUserOnline']['Usuario']->DepartamentoID ?>";
+            var DepartamentoID = "<?php echo $_SESSION['UserOnline']->DepartamentoID ?>";
 
         var tag = document.createElement('script');
         tag.src = "http://www.youtube.com/player_api";

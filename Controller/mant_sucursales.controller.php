@@ -14,7 +14,7 @@ class Mant_sucursalesController
 
     public function Index(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             GetRouteView(null, "header");
             GetRouteView("mant_sucursales", "index");
@@ -29,7 +29,7 @@ class Mant_sucursalesController
     public function View(){
 
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             echo json_encode($this->model->View());
 
@@ -40,7 +40,7 @@ class Mant_sucursalesController
 
     public function Edit(){
 
-        if (isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if (isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin") {
 
             $Sucursal = new Mant_Sucursales();
             $Empresa = new Mant_Empresa();
@@ -73,8 +73,8 @@ class Mant_sucursalesController
         $Sucursal->EmpresaID =                $_REQUEST['EmpresaID'];
         $Sucursal->FechaModificacion =        date('Y-m-d');
         $Sucursal->FechaCreacion =            date('Y-m-d');
-        $Sucursal->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $Sucursal->CreadoPorUsuarioID =      $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $Sucursal->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $Sucursal->CreadoPorUsuarioID =      $_SESSION['UserOnline']->UsuarioID;
 
 
         $Sucursal->Id > 0

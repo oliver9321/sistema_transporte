@@ -17,7 +17,7 @@ class Mant_botones_departamentoController
 
         if(count($_SESSION) > 0){
 
-        if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+        if($_SESSION['UserOnline']->Profile == "admin") {
 
                 GetRouteView(null, "header");
                 require_once 'View/mant_turnos/mant_botones_departamento/index.php';
@@ -32,7 +32,7 @@ class Mant_botones_departamentoController
 
     public function View(){
 
-         if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+         if($_SESSION['UserOnline']->Profile == "admin") {
 
              echo json_encode($this->model->View());
 
@@ -43,7 +43,7 @@ class Mant_botones_departamentoController
 
     public function Edit(){
 
-    if($_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador") {
+    if($_SESSION['UserOnline']->Profile == "admin") {
         $DepartamentosByBoton = "";
         $BotonDept = new Mant_BotonesDepartamento();
         $Botones = new Mant_BotonesTurnos();
@@ -74,8 +74,8 @@ class Mant_botones_departamentoController
         $this->model->IsActive                 = $_REQUEST['IsActive'];
         $this->model->FechaModificacion      = date('Y-m-d');
         $this->model->FechaCreacion          = date('Y-m-d');
-        $this->model->ModificadoPorUsuarioID =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
-        $this->model->CreadoPorUsuarioID     =  $_SESSION['DataUserOnline']['Usuario']->UsuarioID;
+        $this->model->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
+        $this->model->CreadoPorUsuarioID     =  $_SESSION['UserOnline']->UsuarioID;
 
         $this->model->Id > 0
             ? $this->model->Update($this->model)

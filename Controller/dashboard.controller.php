@@ -1,30 +1,24 @@
 <?php
 require_once 'Config/Core.php';
 require_once 'Model/dashboardModel.php';
-require_once 'Model/puestosModel.php';
-require_once 'Model/systemModel.php';
 
 class dashboardController{
 
     private $model;
-
+    
     public function __CONSTRUCT(){
         $this->model = new dashboard();
     }
 
     public function Index(){
 
-
         if(count($_SESSION) > 0){
 
-             if(isset($_SESSION['DataUserOnline']) && $_SESSION['DataUserOnline']['Usuario']->Perfil == "Administrador" || $_SESSION['DataUserOnline']['Usuario']->Perfil == "Oficial"  || $_SESSION['DataUserOnline']['Usuario']->Perfil == "Analista"){
+             if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin" || $_SESSION['UserOnline']->Profile == "manager"){
 
-             $Puesto = new Mant_Puestos();
-             $Puestos = $Puesto->GetListPuestos();
-
-             GetRouteView(null, "header");
-             require_once 'View/dashboard/index.php';
-             GetRouteView(null, "footer");
+                GetRouteView(null, "header");
+                require_once 'View/dashboard/index.php';
+                GetRouteView(null, "footer");
 
                }else{
                 header('Location:index.php?c=login&a=index');
@@ -96,8 +90,8 @@ class dashboardController{
 
         if(isset($_POST) && $_POST['Action'] == "ActualizarEstadoTurno"){
 
-            $DepartamentoID = $_SESSION['DataUserOnline']['Usuario']->DepartamentoID;
-            $PuestoCodigo= $_SESSION['DataUserOnline']['Usuario']->PuestoCodigo;
+            $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
+            $PuestoCodigo= $_SESSION['UserOnline']->PuestoCodigo;
 
             $Estado       = $_POST['Estado'];
             $PuestoID     = $_POST['PuestoID'];
@@ -143,7 +137,7 @@ class dashboardController{
 
     public function GetListPrioridadesBypuesto(){
 
-       // $PuestoID = $_SESSION['DataUserOnline']['Usuario']->PuestoId;
+       // $PuestoID = $_SESSION['UserOnline']->PuestoId;
 
         if(isset($_POST) && $_POST['Action'] == "GetListPrioridadesBypuesto"){
 
