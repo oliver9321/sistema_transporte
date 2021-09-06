@@ -2,13 +2,14 @@
 
 //CONFIGURACIONES DE LA APLICACION
 
-define ("NOMBRE_APLICATION", "Itick");
+define ("NOMBRE_APLICATION", "Logistics Transport");
 define ("VERSION", "-v1");
 define ("DEBUG", true);
-define("USUARIO_DB", "oliver9321");
-define("PASSWORD_DB", "Revilo9321");
-define("SERVIDOR", "127.0.0.1"); //local
-define("DATABASE", "itick_patria_rivas");
+define("USUARIO_DB", "delimar1_logisti");
+define("PASSWORD_DB", "logistics_transport123");
+//define("SERVIDOR", "127.0.0.1"); //local
+define("SERVIDOR", "162.241.216.248"); //Produccion
+define("DATABASE", "delimar1_bd_logistics_transport");
 define("KEY", "KeyItick4597136940Turnos");
 
 
