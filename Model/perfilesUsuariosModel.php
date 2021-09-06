@@ -7,10 +7,10 @@ class Mant_PerfilesUsuarios
     public $Id;
     public $Perfil;
     public $Descripcion;
-    public $FechaCreacion;
+    public $DateCreation;
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
-    public $FechaModificacion;
+    public $LastModificationDate;
     public $IsActive;
 
 
@@ -69,7 +69,7 @@ class Mant_PerfilesUsuarios
 						Perfil  = ?,
                         Descripcion  = ?,
 						ModificadoPorUsuarioID = ?,
-						FechaModificacion = ?,
+						LastModificationDate = ?,
 						IsActive = ?
 				    WHERE Id = ?";
 
@@ -79,7 +79,7 @@ class Mant_PerfilesUsuarios
                         $data->Perfil,
                         $data->Descripcion,
                         (int)$data->ModificadoPorUsuarioID,
-                        $data->FechaModificacion,
+                        $data->LastModificationDate,
                         (int)$data->IsActive,
                         $data->Id
                     )
@@ -94,7 +94,7 @@ class Mant_PerfilesUsuarios
     {
         try
         {
-            $sql = "INSERT INTO tbl_perfiles_usuarios (Perfil,Descripcion,CreadoPorUsuarioID,FechaCreacion,IsActive)
+            $sql = "INSERT INTO tbl_perfiles_usuarios (Perfil,Descripcion,CreadoPorUsuarioID,DateCreation,IsActive)
 		        VALUES (?,?,?,?,?)";
 
             $this->pdo->prepare($sql)

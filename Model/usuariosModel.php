@@ -13,10 +13,10 @@ class Mant_Usuarios
     public $Password;
     public $Email;
     public $Imagen;
-    public $FechaCreacion;
+    public $DateCreation;
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
-    public $FechaModificacion;
+    public $LastModificationDate;
     public $IsActive;
 
 
@@ -81,7 +81,7 @@ class Mant_Usuarios
                         Email = ?,
                         Imagen = ?,
 						ModificadoPorUsuarioID = ?,
-						FechaModificacion = ?,
+						LastModificationDate = ?,
 						IsActive = ?
 				    WHERE Id = ?";
 
@@ -97,7 +97,7 @@ class Mant_Usuarios
                         $data->Email,
                         $data->Imagen,
                         (int)$data->ModificadoPorUsuarioID,
-                        $data->FechaModificacion,
+                        $data->LastModificationDate,
                         (int)$data->IsActive,
                         $data->Id
                     )
@@ -108,7 +108,7 @@ class Mant_Usuarios
 
             foreach($data->PuestoID as $value){
 
-                $sql2 = "INSERT INTO pv_usuarios_puestos (UsuarioID,PuestoID,CreadoPorUsuarioID,FechaCreacion,IsActive)
+                $sql2 = "INSERT INTO pv_usuarios_puestos (UsuarioID,PuestoID,CreadoPorUsuarioID,DateCreation,IsActive)
 		        VALUES (?,?,?,?,?)";
 
                 $this->pdo->prepare($sql2)
@@ -117,7 +117,7 @@ class Mant_Usuarios
                             $data->Id,
                             $value,
                             (int)$data->CreadoPorUsuarioID,
-                            $data->FechaCreacion,
+                            $data->DateCreation,
                             1
                         )
                     );
@@ -136,7 +136,7 @@ class Mant_Usuarios
     {
         try
         {
-            $sql = "INSERT INTO tbl_usuarios (PerfilUsuarioID,Nombre,Apellido,Usuario,Password,Email,Imagen, CreadoPorUsuarioID,FechaCreacion,IsActive)
+            $sql = "INSERT INTO tbl_usuarios (PerfilUsuarioID,Nombre,Apellido,Usuario,Password,Email,Imagen, CreadoPorUsuarioID,DateCreation,IsActive)
 		        VALUES (?,?,?,?,?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
@@ -150,7 +150,7 @@ class Mant_Usuarios
                         $data->Email,
                         $data->Imagen,
                         (int)$data->CreadoPorUsuarioID,
-                        $data->FechaCreacion,
+                        $data->DateCreation,
                         1
                     )
                 );
@@ -165,7 +165,7 @@ class Mant_Usuarios
 
             foreach($data->PuestoID as $value){
 
-                $sql2 = "INSERT INTO pv_usuarios_puestos (UsuarioID,PuestoID,CreadoPorUsuarioID,FechaCreacion,IsActive)
+                $sql2 = "INSERT INTO pv_usuarios_puestos (UsuarioID,PuestoID,CreadoPorUsuarioID,DateCreation,IsActive)
 		        VALUES (?,?,?,?,?)";
 
                 $this->pdo->prepare($sql2)
@@ -174,7 +174,7 @@ class Mant_Usuarios
                             $LastUsuarioID,
                             $value,
                             (int)$data->CreadoPorUsuarioID,
-                            $data->FechaCreacion,
+                            $data->DateCreation,
                             1
                         )
                     );

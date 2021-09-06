@@ -1,14 +1,15 @@
-<a href="?c=mant_marquesina&a=Edit" class="btn btn-primary">Configurar Marquesina<i class="fa fa-plus" aria-hidden="true"></i></a>
+<br>
+<a href="?c=Drivers&a=Edit" class="btn btn-primary">Drivers <i class="fa fa-plus" aria-hidden="true"></i></a>
 <hr>
 <table id="DriverList" width="100%" class="table table-striped table-bordered dataTable">
     <thead>
     <tr>
 
         <th>#</th>
-        <th>Mensaje</th>
-        <th>Departamento</th>
-        <th>Hora/Final Inicial</th>
-        <th>Hora/Final Final</th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Phone 1</th>
+        <th>Phone 2</th>
         <th>IsActive</th>
         <th>Modificar</th>
     </tr>
@@ -22,21 +23,21 @@ $(document).ready(function() {
     $('#DriverList').DataTable({
         "responsive": true,
             "ajax": {
-                "url": "index.php?c=mant_marquesina&a=View",
+                "url": "index.php?c=Drivers&a=View",
             },
         columns:[
             {data: "Id"},
-            {data: "TextoMostrar"},
-            {data: "Departamento"},
-            {data: "Hora-Fecha-inicial"},
-            {data: "Hora-Fecha-Final"},
+            {data: "Name"},
+            {data: "LastName"},
+            {data: "Phone1"},
+            {data: "Phone2"},
             {data: "IsActive"},
             {data: "Id"}
         ],"columnDefs": [ {
             "targets":6,
             "data": "Editar",
             "render": function ( data) {
-                return '<a class="btn btn-warning" href="index.php?c=mant_marquesina&a=Edit&Id='+data+'" aria-label="Editar"> <i class="fa fa-pencil" aria-hidden="true"></i> </a>';
+                return '<a class="btn btn-warning" href="index.php?c=Drivers&a=Edit&Id='+data+'" aria-label="Editar"> <i class="fa fa-pencil" aria-hidden="true"></i> </a>';
             }
         },{
                 "targets": 5,

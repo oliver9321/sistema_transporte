@@ -8,10 +8,10 @@ class Mant_Modulos
     public $Codigo;
     public $Nombre;
     public $Descripcion;
-    public $FechaCreacion;
+    public $DateCreation;
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
-    public $FechaModificacion;
+    public $LastModificationDate;
     public $IsActive;
 
 
@@ -72,7 +72,7 @@ class Mant_Modulos
 						Nombre   = ?,
                         Descripcion  = ?,
 						ModificadoPorUsuarioID = ?,
-						FechaModificacion = ?,
+						LastModificationDate = ?,
 						IsActive = ?
 				    WHERE Id = ?";
 
@@ -83,7 +83,7 @@ class Mant_Modulos
                         $data->Nombre,
                         $data->Descripcion,
                         (int)$data->ModificadoPorUsuarioID,
-                        $data->FechaModificacion,
+                        $data->LastModificationDate,
                         (int)$data->IsActive,
                         $data->Id
                     )
@@ -98,7 +98,7 @@ class Mant_Modulos
     {
         try
         {
-            $sql = "INSERT INTO tbl_modulos_aplicacion (Codigo,Nombre,Descripcion,CreadoPorUsuarioID,FechaCreacion, IsActive)
+            $sql = "INSERT INTO tbl_modulos_aplicacion (Codigo,Nombre,Descripcion,CreadoPorUsuarioID,DateCreation, IsActive)
 		        VALUES (?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)

@@ -46,8 +46,8 @@ class Mant_empresaController
         $Empresa->Rnc = $_REQUEST['Rnc'];
         $Empresa->Direccion = $_REQUEST['Direccion'];
         $Empresa->Telefono = $_REQUEST['Telefono'];
-        $Empresa->FechaModificacion = date('Y-m-d');
-        $Empresa->FechaCreacion = date('Y-m-d');
+        $Empresa->LastModificationDate = date('Y-m-d');
+        $Empresa->DateCreation = date('Y-m-d');
         $Empresa->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
         $Empresa->CreadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
 

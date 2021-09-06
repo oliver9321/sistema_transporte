@@ -54,7 +54,7 @@ class Dashboard
     public function GetLastTurnByPuestoModel($PuestoID){
 
         $stm2 = $this->pdo
-            ->prepare("SELECT Id as TurnoID, TurnoConcatenado as Turno,  Estado, Estatus FROM vw_administracion_turnos WHERE Estado IN ('L','P') AND PuestoID = ? AND  DATE(FechaCreacion) = DATE(NOW()) LIMIT 1");
+            ->prepare("SELECT Id as TurnoID, TurnoConcatenado as Turno,  Estado, Estatus FROM vw_administracion_turnos WHERE Estado IN ('L','P') AND PuestoID = ? AND  DATE(DateCreation) = DATE(NOW()) LIMIT 1");
 
         $stm2->execute(array(
             $PuestoID
@@ -233,7 +233,7 @@ class Dashboard
         $SystemLog = new System();
         $UsuarioID = $_SESSION['UserOnline']->UsuarioID;
 
-        $stm = $this->pdo->prepare("UPDATE tbl_system_app SET Valor = ? , Descripcion = ?, FechaModificacion = NOW(), ModificadoPorUsuarioID = ? WHERE Campo = 'PlayListYoutube' ");
+        $stm = $this->pdo->prepare("UPDATE tbl_system_app SET Valor = ? , Descripcion = ?, LastModificationDate = NOW(), ModificadoPorUsuarioID = ? WHERE Campo = 'PlayListYoutube' ");
         $stm->execute(array($PlayListYoutube, $Opcion, $UsuarioID));
         $SystemLog->SaveLogSystem("ACTUALIZAR PLAYLIST", $PlayListYoutube, null, $UsuarioID);
 
@@ -247,7 +247,7 @@ class Dashboard
         $SystemLog = new System();
         $UsuarioID = $_SESSION['UserOnline']->UsuarioID;
 
-        $stm = $this->pdo->prepare("UPDATE tbl_system_app SET Valor = ? , FechaModificacion = NOW(), ModificadoPorUsuarioID = ? WHERE Campo = 'Debug' ");
+        $stm = $this->pdo->prepare("UPDATE tbl_system_app SET Valor = ? , LastModificationDate = NOW(), ModificadoPorUsuarioID = ? WHERE Campo = 'Debug' ");
         $stm->execute(array($Opcion, $UsuarioID));
         $SystemLog->SaveLogSystem("CAMBIO MODO DEVELOPER", $Opcion, null, $UsuarioID);
 

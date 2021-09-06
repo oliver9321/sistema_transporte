@@ -80,8 +80,8 @@ class Mant_usuariosController
             $Usuario->PuestoID = $_REQUEST['PuestoID'];
             $Usuario->Email = $_REQUEST['Email'];
             $Usuario->IsActive = $_REQUEST['IsActive'];
-            $Usuario->FechaModificacion = date('Y-m-d');
-            $Usuario->FechaCreacion = date('Y-m-d');
+            $Usuario->LastModificationDate = date('Y-m-d');
+            $Usuario->DateCreation = date('Y-m-d');
             $Usuario->ModificadoPorUsuarioID = $_SESSION['UserOnline']->UsuarioID;
             $Usuario->CreadoPorUsuarioID = $_SESSION['UserOnline']->UsuarioID;
 

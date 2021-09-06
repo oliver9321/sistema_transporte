@@ -13,10 +13,10 @@ class Mant_Empresa
     public $LogoPeq;
     public $Rnc;
     public $Telefono;
-    public $FechaCreacion;
+    public $DateCreation;
     public $CreadoPorUsuarioID;
     public $ModificadoPorUsuarioID;
-    public $FechaModificacion;
+    public $LastModificationDate;
     public $IsActive;
 
 
@@ -59,7 +59,7 @@ class Mant_Empresa
 						Direccion = ?,
 						Rnc = ?,
 						ModificadoPorUsuarioID = ?,
-						FechaModificacion = ?,
+						LastModificationDate = ?,
 						IsActive = ?
 				    WHERE Id = ?";
 
@@ -75,7 +75,7 @@ class Mant_Empresa
                         $data->Direccion,
                         $data->Rnc,
                         (int)$data->ModificadoPorUsuarioID,
-                        $data->FechaModificacion,
+                        $data->LastModificationDate,
                         (int)$data->IsActive,
                         $data->Id
                     )
@@ -90,7 +90,7 @@ class Mant_Empresa
     {
         try
         {
-            $sql = "INSERT INTO tbl_empresa (Codigo,Nombre,Descripcion,LogoGrande,LogoPeq, Telefono, Direccion, Rnc, CreadoPorUsuarioID, FechaCreacion, IsActive)
+            $sql = "INSERT INTO tbl_empresa (Codigo,Nombre,Descripcion,LogoGrande,LogoPeq, Telefono, Direccion, Rnc, CreadoPorUsuarioID, DateCreation, IsActive)
 		        VALUES (?, ?, ?, ?, ?, ?,?,?,?,?,?)";
 
             $this->pdo->prepare($sql)
@@ -162,7 +162,7 @@ class Mant_Empresa
                 $Empresa->Direccion      = $r->Direccion;
                 $Empresa->Rnc            = $r->Rnc;
                 $Empresa->ModificadoPorUsuarioID =  (int)$r->ModificadoPorUsuarioID;
-                $Empresa->FechaModificacion      =  $r->FechaModificacion;
+                $Empresa->LastModificationDate      =  $r->LastModificationDate;
                 $Empresa->IsActive                 =  (int)$r->IsActive;
 
                 $result[] = $Empresa;

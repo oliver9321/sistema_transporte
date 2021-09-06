@@ -54,8 +54,8 @@ class mant_prioridad_turnosController
         $this->model->Nivel = $_REQUEST['Nivel'];
         $this->model->Prioridad = $_REQUEST['Prioridad'];
         $this->model->IsActive = $_REQUEST['IsActive'];
-        $this->model->FechaModificacion = date('Y-m-d');
-        $this->model->FechaCreacion = date('Y-m-d');
+        $this->model->LastModificationDate = date('Y-m-d');
+        $this->model->DateCreation = date('Y-m-d');
         $this->model->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
         $this->model->CreadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
 

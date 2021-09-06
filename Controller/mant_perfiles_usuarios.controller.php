@@ -55,8 +55,8 @@ class Mant_perfiles_usuariosController
         $this->model->Perfil = $_REQUEST['Perfil'];
         $this->model->Descripcion = $_REQUEST['Descripcion'];
         $this->model->IsActive = $_REQUEST['IsActive'];
-        $this->model->FechaModificacion = date('Y-m-d');
-        $this->model->FechaCreacion = date('Y-m-d');
+        $this->model->LastModificationDate = date('Y-m-d');
+        $this->model->DateCreation = date('Y-m-d');
         $this->model->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
         $this->model->CreadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
 

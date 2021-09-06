@@ -246,8 +246,8 @@ CREATE TABLE pv_botones_turnos_departamentos (
   BotonTurnoID int(11) NOT NULL,
   DepartamentoID int(11) NOT NULL,
   CreadoPorUsuarioID int(11) NOT NULL,
-  FechaCreacion datetime NOT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  DateCreation datetime NOT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
@@ -265,8 +265,8 @@ CREATE TABLE pv_usuarios_puestos (
   UsuarioID int(11) DEFAULT NULL,
   PuestoID int(11) DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
@@ -300,9 +300,9 @@ CREATE TABLE tbl_administracion_turnos (
   Comentario text DEFAULT NULL,
   IDExterno varchar(45) DEFAULT NULL,
   CampoExterno varchar(45) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion date DEFAULT NULL,
+  LastModificationDate date DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
@@ -327,9 +327,9 @@ CREATE TABLE tbl_botones_turnos (
   TipoBoton varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   Logo text DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime NOT NULL,
+  DateCreation datetime NOT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(1) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Nombre_UNIQUE (Nombre),
@@ -350,9 +350,9 @@ CREATE TABLE tbl_departamentos (
   Nombre varchar(100) NOT NULL,
   Descripcion text DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
@@ -379,9 +379,9 @@ CREATE TABLE tbl_empresa (
   Direccion text DEFAULT NULL,
   Rnc varchar(30) DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
@@ -400,9 +400,9 @@ CREATE TABLE tbl_estados_turnos (
   Estado varchar(10) DEFAULT NULL,
   Descripcion varchar(50) DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Estado_UNIQUE (Estado)
@@ -420,9 +420,9 @@ CREATE TABLE tbl_estatus_turnos (
   Estatus varchar(45) DEFAULT NULL,
   Descripcion text DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Estatus_UNIQUE (Estatus)
@@ -478,9 +478,9 @@ CREATE TABLE tbl_marquesina_pantalla (
   HoraFinal time NOT NULL,
   FechaFinal date NOT NULL,
   CreadoPorUsuarioID int(11) NOT NULL,
-  FechaCreacion datetime NOT NULL,
+  DateCreation datetime NOT NULL,
   ModificadoPorUsuarioID int(11) NOT NULL,
-  FechaModificacion datetime NOT NULL,
+  LastModificationDate datetime NOT NULL,
   IsActive tinyint(4) NOT NULL DEFAULT 1,
   PRIMARY KEY (Id),
   Index sucursal_id (DepartamentoID)
@@ -499,9 +499,9 @@ CREATE TABLE tbl_modulos_aplicacion (
   Nombre varchar(45) DEFAULT NULL,
   Descripcion text DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
@@ -520,9 +520,9 @@ CREATE TABLE tbl_perfiles_usuarios (
   Perfil varchar(200) DEFAULT NULL,
   Descripcion text DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Perfil_UNIQUE (Perfil)
@@ -540,9 +540,9 @@ CREATE TABLE tbl_perfiles_usuarios_permisos_modulos (
   PerfilUsuarioID int(11) NOT NULL,
   ModuloID int(11) NOT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
 )
@@ -560,9 +560,9 @@ CREATE TABLE tbl_prioridad_turnos_puestos (
   BotonTurnoID int(11) NOT NULL,
   PuestoID int(11) NOT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id, PrioridadID, BotonTurnoID, PuestoID)
 )
@@ -579,9 +579,9 @@ CREATE TABLE tbl_prioridades_turnos (
   Nivel int(11) NOT NULL,
   Prioridad varchar(50) DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index idPrioridad (Id),
@@ -603,9 +603,9 @@ CREATE TABLE tbl_puestos (
   Nombre varchar(100) NOT NULL,
   Descripcion text DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
@@ -628,9 +628,9 @@ CREATE TABLE tbl_sucursales (
   Direccion text DEFAULT NULL,
   Telefono varchar(25) DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Codigo_UNIQUE (Codigo),
@@ -667,9 +667,9 @@ CREATE TABLE tbl_tiempo_atencion_turnos (
   TiempoMin time DEFAULT NULL,
   TiempoMax time DEFAULT NULL,
   CreadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id)
 )
@@ -691,9 +691,9 @@ CREATE TABLE tbl_usuarios (
   Email varchar(100) DEFAULT NULL,
   Imagen text CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   CreadoPorUsuarioID varchar(50) DEFAULT NULL,
-  FechaCreacion datetime DEFAULT NULL,
+  DateCreation datetime DEFAULT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime DEFAULT NULL,
+  LastModificationDate datetime DEFAULT NULL,
   IsActive tinyint(4) DEFAULT 1,
   PRIMARY KEY (Id),
   UNIQUE Index Email_UNIQUE (Email),
@@ -712,9 +712,9 @@ CREATE TABLE tbl_videos (
   Nombre varchar(50) DEFAULT NULL,
   VideoLink text NOT NULL,
   CreadoPorUsuarioID int(11) NOT NULL,
-  FechaCreacion datetime NOT NULL,
+  DateCreation datetime NOT NULL,
   ModificadoPorUsuarioID int(11) DEFAULT NULL,
-  FechaModificacion datetime NOT NULL,
+  LastModificationDate datetime NOT NULL,
   IsActive tinyint(4) NOT NULL DEFAULT 1,
   PRIMARY KEY (Id)
 )
@@ -866,7 +866,7 @@ BEGIN
       WHERE a.BotonTurnoValor = 'T'
       AND a.Estado IN ('E')
       AND a.Estatus IS NULL
-      AND date (a.FechaCreacion) = date (NOW())
+      AND date (a.DateCreation) = date (NOW())
       AND a.DepartamentoID = InDepartamentoID
       AND a.SucursalID = InSucursalID
       AND a.IsActive = 1
@@ -881,7 +881,7 @@ BEGIN
       WHERE a.Estatus IN ('F')
       AND a.Estado IN ('E')
       AND a.BotonTurnoValor NOT IN ('T')
-      AND date (a.FechaCreacion) = date (NOW())
+      AND date (a.DateCreation) = date (NOW())
       AND a.DepartamentoID = InDepartamentoID
       AND a.SucursalID = InSucursalID
       AND a.IsActive = 1
@@ -904,7 +904,7 @@ BEGIN
       WHERE adm.PuestoIDPrioridad = InPuestoID
       AND adm.Estado = 'E'
       AND adm.Estatus IS NULL
-      AND date (adm.FechaCreacion) = date (NOW())
+      AND date (adm.DateCreation) = date (NOW())
       AND adm.DepartamentoID = InDepartamentoID
       AND adm.SucursalID = InSucursalID
       AND adm.IsActive = 1
@@ -978,7 +978,7 @@ BEGIN
       WHERE a.BotonTurnoValor = 'T'
       AND a.Estado IN ('E')
       AND a.Estatus IS NULL
-      AND date (a.FechaCreacion) = date (NOW())
+      AND date (a.DateCreation) = date (NOW())
       AND a.DepartamentoID = InDepartamentoID
       AND a.SucursalID = InSucursalID
       AND a.IsActive = 1
@@ -994,7 +994,7 @@ BEGIN
       WHERE a.Estatus IN ('F')
       AND a.Estado IN ('E')
       AND a.BotonTurnoValor NOT IN ('T')
-      AND date (a.FechaCreacion) = date (NOW())
+      AND date (a.DateCreation) = date (NOW())
       AND a.DepartamentoID = InDepartamentoID
       AND a.SucursalID = InSucursalID
       AND a.IsActive = 1
@@ -1020,7 +1020,7 @@ BEGIN
       WHERE adm.PuestoIDPrioridad = InPuestoID
       AND adm.Estado = 'E'
       AND adm.Estatus IS NULL
-      AND date (adm.FechaCreacion) = date (NOW())
+      AND date (adm.DateCreation) = date (NOW())
       AND adm.DepartamentoID = InDepartamentoID
       AND adm.SucursalID = InSucursalID
       AND adm.IsActive = 1
@@ -1084,7 +1084,7 @@ BEGIN
   SET Turno = (SELECT
       COUNT(BotonTurnoID) + 1 AS Contador
     FROM tbl_administracion_turnos AS Adm
-    WHERE date (Adm.FechaCreacion) = date (NOW())
+    WHERE date (Adm.DateCreation) = date (NOW())
     AND Adm.IsActive = 1
     AND Adm.BotonTurnoID = BotonTurnoID
     AND Adm.DepartamentoID = DepartamentoID
@@ -1098,7 +1098,7 @@ BEGIN
   `EstadoTurnoID`,
   `FechaHoraSeleccion`,
   `CreadoPorUsuarioID`,
-  `FechaCreacion`)
+  `DateCreation`)
     VALUES (BotonTurnoID, Turno, DepartamentoID, SucursalID, EstadoTurnoID, NOW(), CreadoPorUsuarioID, NOW());
 
 
@@ -1115,14 +1115,14 @@ BEGIN
         COUNT(*) CANTIDAD_TURNOS_HOY
       FROM onetime.vw_administracion_turnos AS a
       WHERE a.IsActive = 1
-      AND DATE_FORMAT(a.FechaCreacion, "%Y-%m-%d") = CURDATE()
+      AND DATE_FORMAT(a.DateCreation, "%Y-%m-%d") = CURDATE()
       AND a.DepartamentoID = DepartamentID);
   ELSE
     SET Total = (SELECT
         COUNT(*) CANTIDAD_TURNOS_HOY
       FROM onetime.vw_administracion_turnos AS a
       WHERE a.IsActive = 1
-      AND DATE_FORMAT(a.FechaCreacion, "%Y-%m-%d") = CURDATE()
+      AND DATE_FORMAT(a.DateCreation, "%Y-%m-%d") = CURDATE()
       AND a.Estado IN (Estado)
       AND a.DepartamentoID = DepartamentID);
   END IF;
@@ -1169,15 +1169,15 @@ SELECT
   `adm`.`CreadoPorUsuarioID` AS `CreadoPorUsuarioID`,
   CONCAT(`u`.`Nombre`, ' ', `u`.`Apellido`) AS `NombreUsuario`,
   `u`.`Usuario` AS `Usuario`,
-  `adm`.`FechaCreacion` AS `FechaCreacion`,
+  `adm`.`DateCreation` AS `DateCreation`,
   `adm`.`ModificadoPorUsuarioID` AS `ModificadoPorUsuarioID`,
-  `adm`.`FechaModificacion` AS `FechaModificacion`,
+  `adm`.`LastModificationDate` AS `LastModificationDate`,
   `adm`.`IsActive` AS `IsActive`,
   `adm`.`IDExterno` AS `IDExterno`,
   `adm`.`CampoExterno` AS `CampoExterno`,
-  DAYOFMONTH(`adm`.`FechaCreacion`) AS `Dia`,
-  MONTH(`adm`.`FechaCreacion`) AS `Mes`,
-  YEAR(`adm`.`FechaCreacion`) AS `Ano`
+  DAYOFMONTH(`adm`.`DateCreation`) AS `Dia`,
+  MONTH(`adm`.`DateCreation`) AS `Mes`,
+  YEAR(`adm`.`DateCreation`) AS `Ano`
 FROM ((((((((`tbl_administracion_turnos` `adm`
   JOIN `tbl_botones_turnos` `btn`
     ON ((`adm`.`BotonTurnoID` = `btn`.`Id`)))
@@ -1235,15 +1235,15 @@ SELECT DISTINCT
   `adm`.`Sucursal` AS `Sucursal`,
   `adm`.`Empresa` AS `Empresa`,
   `adm`.`CreadoPorUsuarioID` AS `CreadoPorUsuarioID`,
-  `adm`.`FechaCreacion` AS `FechaCreacion`,
+  `adm`.`DateCreation` AS `DateCreation`,
   `adm`.`ModificadoPorUsuarioID` AS `ModificadoPorUsuarioID`,
-  `adm`.`FechaModificacion` AS `FechaModificacion`,
+  `adm`.`LastModificationDate` AS `LastModificationDate`,
   `adm`.`IsActive` AS `IsActive`,
   `adm`.`IDExterno` AS `IDExterno`,
   `adm`.`CampoExterno` AS `CampoExterno`,
-  DAYOFMONTH(`adm`.`FechaCreacion`) AS `Dia`,
-  MONTH(`adm`.`FechaCreacion`) AS `Mes`,
-  YEAR(`adm`.`FechaCreacion`) AS `Ano`
+  DAYOFMONTH(`adm`.`DateCreation`) AS `Dia`,
+  MONTH(`adm`.`DateCreation`) AS `Mes`,
+  YEAR(`adm`.`DateCreation`) AS `Ano`
 FROM ((`vw_administracion_turnos` `adm`
   LEFT JOIN `tbl_prioridad_turnos_puestos` `p`
     ON ((`adm`.`BotonTurnoID` = `p`.`BotonTurnoID`)))
@@ -1292,7 +1292,7 @@ SELECT
   `b`.`Nombre` AS `Sucursal`,
   `d`.`Id` AS `EmpresaID`,
   `d`.`Nombre` AS `Empresa`,
-  `a`.`FechaCreacion` AS `FechaCreacion`,
+  `a`.`DateCreation` AS `DateCreation`,
   `a`.`IsActive` AS `IsActive`
 FROM ((`tbl_departamentos` `a`
   LEFT JOIN `tbl_sucursales` `b`
@@ -1398,9 +1398,9 @@ SELECT
   `empresa`.`LogoPeq` AS `EmpresaLogoPeq`,
   `empresa`.`LogoGrande` AS `EmpresaLogoGrande`,
   `puestos`.`CreadoPorUsuarioID` AS `CreadoPorUsuarioID`,
-  `puestos`.`FechaCreacion` AS `FechaCreacion`,
+  `puestos`.`DateCreation` AS `DateCreation`,
   `puestos`.`ModificadoPorUsuarioID` AS `ModificadoPorUsuarioID`,
-  `puestos`.`FechaModificacion` AS `FechaModificacion`,
+  `puestos`.`LastModificationDate` AS `LastModificationDate`,
   `puestos`.`IsActive` AS `IsActive`
 FROM (((`tbl_puestos` `puestos`
   LEFT JOIN `tbl_departamentos` `dpt`
@@ -1444,7 +1444,7 @@ SELECT
   `a`.`Descripcion` AS `Descripcion`,
   `a`.`Direccion` AS `Direccion`,
   `a`.`Telefono` AS `Telefono`,
-  `a`.`FechaCreacion` AS `FechaCreacion`,
+  `a`.`DateCreation` AS `DateCreation`,
   `b`.`Id` AS `EmpresaID`,
   `b`.`Nombre` AS `Empresa`,
   `a`.`IsActive` AS `IsActive`
@@ -1482,7 +1482,7 @@ SELECT
   `empresa`.`LogoPeq` AS `EmpresaLogo`,
   `usuarios`.`Imagen` AS `Imagen`,
   `usuarios`.`CreadoPorUsuarioID` AS `CreadoPorUsuarioID`,
-  `usuarios`.`FechaCreacion` AS `FechaCreacion`,
+  `usuarios`.`DateCreation` AS `DateCreation`,
   `usuarios`.`IsActive` AS `IsActive`
 FROM ((((((`tbl_usuarios` `usuarios`
   LEFT JOIN `tbl_perfiles_usuarios` `perfiles`

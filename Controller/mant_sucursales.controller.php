@@ -71,8 +71,8 @@ class Mant_sucursalesController
         $Sucursal->Telefono =                 $_REQUEST['Telefono'];
         $Sucursal->IsActive =                   $_REQUEST['IsActive'];
         $Sucursal->EmpresaID =                $_REQUEST['EmpresaID'];
-        $Sucursal->FechaModificacion =        date('Y-m-d');
-        $Sucursal->FechaCreacion =            date('Y-m-d');
+        $Sucursal->LastModificationDate =        date('Y-m-d');
+        $Sucursal->DateCreation =            date('Y-m-d');
         $Sucursal->ModificadoPorUsuarioID =  $_SESSION['UserOnline']->UsuarioID;
         $Sucursal->CreadoPorUsuarioID =      $_SESSION['UserOnline']->UsuarioID;
 
