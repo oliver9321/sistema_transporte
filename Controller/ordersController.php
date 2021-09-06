@@ -67,6 +67,7 @@ class OrdersController
             $Orders = new Orders();
             
             //Campos unicos por tabla
+            $Driver->Id         = $_REQUEST['Id'];
             $Orders->IdCustomerOrigin         = $_REQUEST['IdCustomerOrigin'];
             $Orders->IdCustomerDestination = $_REQUEST['IdCustomerDestination'];
             $Orders->IdCompanayService   = $_REQUEST['IdCompanayService'];
