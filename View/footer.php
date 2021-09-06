@@ -6,8 +6,8 @@
                 &copy;
                 <script>
                     document.write(new Date().getFullYear())
-                </script> Dastone <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i
-                            class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+                </script> Logistics Transport <span class="text-muted d-none d-sm-inline-block float-end">developed by 
+                <i class="mdi mdi-heart text-danger"></i>devsarrollando.org</span>
             </footer>
             <!--end footer-->
         </div>
