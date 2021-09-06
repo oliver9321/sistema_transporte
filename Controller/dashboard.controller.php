@@ -5,7 +5,7 @@ require_once 'Model/dashboardModel.php';
 class dashboardController{
 
     private $model;
-    
+
     public function __CONSTRUCT(){
         $this->model = new dashboard();
     }
@@ -31,32 +31,6 @@ class dashboardController{
          
     }
 
-    public function Minipopup(){
-
-      // GetRouteView(null, "header");
-        GetRouteView("dashboard", "minipopup");
-    // GetRouteView(null, "footer");
-    }
-
-    public function GenerarLlamadaTurnoController(){
-
-        if(isset($_POST) && $_POST['Action'] == "GenerarLlamadaTurno"){
-
-                $JsonReturn = $this->model->GenerarLlamadaTurnoModel();
-
-                if(count($JsonReturn) > 0){
-
-                    echo json_encode($JsonReturn, true);
-
-                }else{
-                    echo json_encode("false", true);
-                }
-
-            }else{
-                echo json_encode("false", true);
-            }
-
-        }
 
     public function ActualizarPlayListYoutube(){
 
@@ -71,20 +45,6 @@ class dashboardController{
 
     }
 
-//OLIVER - VER
-   /* public function GetLastTurnByPuestoController(){
-
-        if(isset($_POST) && $_POST['Action'] == "GetLastTurno"){
-
-            $PuestoID = $_POST['PuestoID'];
-
-            echo json_encode($this->model->GetLastTurnByPuestoModel($PuestoID), true);
-
-        }else{
-            echo json_encode("false", true);
-        }
-
-    }*/
 
     public function ActualizarEstadoTurnoController(){
 
@@ -116,86 +76,5 @@ class dashboardController{
         echo json_encode($this->model->GetListTurnosBySucursal(), true);
     }
 
-    public function GetListTurnosAnulados(){
-
-        echo json_encode($this->model->GetListTurnosAnulados(), true);
-    }
-
-    public function CambiarModoLlamadaPuesto(){
-
-        if(isset($_POST) && $_POST['Action'] == "CambiarModoLlamadaPuesto"){
-
-            $Departamento  = $_POST['Departamento'];
-            $PuestoID     = $_POST['PuestoID'];
-            $Opcion      = $_POST['Opcion'];
-
-            echo json_encode( $this->model->CambiarModoLlamadaPuesto($Opcion, $PuestoID, $Departamento), true);
-
-        }
-
-    }
-
-    public function GetListPrioridadesBypuesto(){
-
-       // $PuestoID = $_SESSION['UserOnline']->PuestoId;
-
-        if(isset($_POST) && $_POST['Action'] == "GetListPrioridadesBypuesto"){
-
-            $PuestoID = $_POST['PuestoID'];
-
-            echo json_encode( $this->model->GetListPrioridadesBypuesto($PuestoID), true);
-
-        }
-
-    }
-
-    public function IntercambiarPrioridadesPuesto()
-    {
-
-        if (isset($_POST) && $_POST['Action'] == "IntercambiarPrioridadesPuesto") {
-
-            $NuevoPuestoIntercambiarID = $_POST['NuevoPuestoIntercambiarID'];
-            $PuestoIDActual = $_POST['PuestoIDActual'];
-
-            echo json_encode( $this->model->IntercambiarPrioridadesPuesto($NuevoPuestoIntercambiarID, $PuestoIDActual), true);
-        }
-    }
-
-    public function ActivarModoDesarrollador(){
-
-    if(isset($_POST) && $_POST['Action'] == "ActivarModoDesarrollador"){
-
-        $Opcion = $_POST['Opcion'];
-
-        echo json_encode( $this->model->ActivarModoDesarrollador($Opcion), true);
-
-    }
-}
-
-    public function TransferirTurnoPuesto(){
-
-        if(isset($_POST) && $_POST['Action'] == "TransferirTurnoPuesto"){
-
-            $PuestoIDTransferir = $_POST['PuestoIDTransferir'];
-            $ComentarioTransferir = $_POST['ComentarioTransferir'];
-            $TurnoID = $_POST['TurnoID'];
-
-            echo json_encode( $this->model->TransferirTurnoPuesto($PuestoIDTransferir, $ComentarioTransferir, $TurnoID), true);
-
-        }
-
-    }
-
-    public function ActivarTurnoAnulado(){
-
-        if(isset($_POST) && $_POST['Action'] == "ActivarTurnoAnulado"){
-
-            $TurnoID  = $_POST['TurnoID'];
-
-            echo json_encode( $this->model->ActivarTurnoAnulado($TurnoID), true);
-
-        }
-
-    }
 
 }
