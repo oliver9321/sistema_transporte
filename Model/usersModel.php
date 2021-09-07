@@ -83,7 +83,7 @@ class Users {
 						IsActive = ?
 				    WHERE Id = ?";
 
-            $this->pdo->prepare($sql)
+$result=  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->ProfileUserId,
@@ -99,6 +99,7 @@ class Users {
                         $data->Id
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -111,7 +112,7 @@ class Users {
         {
             $sql = "INSERT INTO tbl_users (ProfileUserId,Name,LastName,UserName,Password,Email,Image,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?)";
 
-            $this->pdo->prepare($sql)
+            $result= $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->ProfileUserId,
@@ -126,6 +127,7 @@ class Users {
                         1
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());

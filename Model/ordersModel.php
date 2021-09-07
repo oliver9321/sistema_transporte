@@ -121,7 +121,7 @@ class Orders {
 						IsActive = ?
 				    WHERE Id = ?";
 
-            $this->pdo->prepare($sql)
+$result=   $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         
@@ -157,6 +157,7 @@ class Orders {
                         $data->Id
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -199,7 +200,7 @@ class Orders {
                 IsActive)
                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-            $this->pdo->prepare($sql)
+$result=   $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data-> IdCustomerOrigin,
@@ -233,6 +234,7 @@ class Orders {
                         1
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());

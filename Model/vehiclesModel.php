@@ -72,7 +72,7 @@ class Vehicles {
 						IsActive = ?
 				    WHERE Id = ?";
 
-            $this->pdo->prepare($sql)
+$result=  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->Brand,
@@ -83,6 +83,7 @@ class Vehicles {
                         $data->Id
                     )
                 );
+               return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -95,7 +96,7 @@ class Vehicles {
         {
             $sql = "INSERT INTO tbl_vehicles (Brand,Model,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?)";
 
-            $this->pdo->prepare($sql)
+            $result=  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->Brand,
@@ -105,6 +106,7 @@ class Vehicles {
                         1
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());

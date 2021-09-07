@@ -80,7 +80,7 @@ class CompanyServices {
                 IsActive= ?,
                 WHERE Id = ?";
 
-            $this->pdo->prepare($sql)
+   $result =  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         
@@ -96,6 +96,7 @@ class CompanyServices {
                         $data->Id
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -108,7 +109,7 @@ class CompanyServices {
         {
             $sql = "INSERT INTO tbl_company_services (CompanyName,Address,Phone1,Phone2,Email,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?)";
 
-            $this->pdo->prepare($sql)
+            $result =  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data-> CompanyName,
@@ -121,6 +122,7 @@ class CompanyServices {
                         1
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());

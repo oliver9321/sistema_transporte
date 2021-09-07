@@ -70,7 +70,7 @@ class OrderStatus {
 						IsActive = ?
 				    WHERE Id = ?";
 
-            $this->pdo->prepare($sql)
+$result= $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->Status,
@@ -80,6 +80,7 @@ class OrderStatus {
                         $data->Id
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -92,7 +93,7 @@ class OrderStatus {
         {
             $sql = "INSERT INTO tbl_order_status(Status,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?)";
 
-            $this->pdo->prepare($sql)
+            $result=   $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->Status,
@@ -101,6 +102,7 @@ class OrderStatus {
                         1
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());

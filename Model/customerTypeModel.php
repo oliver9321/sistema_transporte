@@ -71,7 +71,7 @@ class CustomerType {
 						IsActive = ?
 				    WHERE Id = ?";
 
-            $this->pdo->prepare($sql)
+$result= $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->NameType,
@@ -81,6 +81,7 @@ class CustomerType {
                         $data->Id
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -93,7 +94,7 @@ class CustomerType {
         {
             $sql = "INSERT INTO tbl_customer_type (NameType,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?)";
 
-            $this->pdo->prepare($sql)
+            $result=  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->NameType,
@@ -102,6 +103,7 @@ class CustomerType {
                         1
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());

@@ -87,7 +87,7 @@ class Payments {
 						IsActive = ?
 				    WHERE Id = ?";
 
-            $this->pdo->prepare($sql)
+$result=  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data-> $PaymentOwnerName,
@@ -105,6 +105,7 @@ class Payments {
                         $data->Id
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -130,7 +131,7 @@ class Payments {
                     UserIdCreation,
                     IsActive) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
-            $this->pdo->prepare($sql)
+$result=   $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data-> $PaymentOwnerName,
@@ -147,6 +148,7 @@ class Payments {
                         1
                     )
                 );
+                return $result;
         } catch (Exception $e)
         {
             die($e->getMessage());
