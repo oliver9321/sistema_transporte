@@ -69,6 +69,14 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="briefcase" class="align-self-center menu-icon"></i><span>Company services</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=companyServices&a=Index"><i class="ti-control-record"></i>List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=companyServices&a=Edit"><i class="ti-control-record"></i>Create</a></li>
+                    </ul>
+                </li>
+
                 <hr class="hr-dashed hr-menu">
                <!-- <li class="menu-label my-2">Components</li>-->
 

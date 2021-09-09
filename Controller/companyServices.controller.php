@@ -1,14 +1,14 @@
 <?php
 
-require_once 'Config/Core.php'; // Obligatorio en todos los controladores
-require_once 'Model/companyServicesModel.php'; //Insertar Modelo correspondiente al controlador
+require_once 'Config/Core.php'; 
+require_once 'Model/companyServicesModel.php'; 
 
 class CompanyServicesController
 {
     private $model;
 
     public function __CONSTRUCT(){
-        $this->model = new CompanyServices(); // Se instancia el Modelo. Nombre de la clase del modelo
+        $this->model = new CompanyServices(); 
     }
 
     //Vista Index

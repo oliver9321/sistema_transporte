@@ -7,7 +7,8 @@
                                     <h4 class="page-title">Vehicles</h4>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="?c=Dashboard&a=Index">Dashboard</a></li>
-                                        <li class="breadcrumb-item active"><a href="?c=Vehicles&a=Index">Vehicle list</a></li>
+                                        <li class="breadcrumb-item"><a href="?c=Vehicles&a=Index">Vehicle list</a></li>
+                                        <li class="breadcrumb-item active"><a href="#"><b>Form</b></a></li>
                                     </ol>
                                 </div>
                             </div>
@@ -36,12 +37,12 @@
                             <div class="card-body">
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="Brand">Brand:</label>
+                                        <label class="form-label text-danger" for="Brand">*Brand:</label>
                                         <input type="text" class="form-control" id="Brand" name="Brand" aria-describedby="Brand" placeholder="Enter Brand" value="<?php echo $Vehicle->Brand; ?>"> 
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="Model">Model:</label>
+                                        <label class="form-label text-danger" for="Model">*Model:</label>
                                         <input type="text" class="form-control" id="Model" name="Model"  aria-describedby="Model" placeholder="Enter Model" value="<?php echo $Vehicle->Model; ?>">
                                     </div>
 

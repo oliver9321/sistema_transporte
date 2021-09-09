@@ -10,7 +10,7 @@
             </div><!--end card-header-->
             
             <div class="card-body">  
-                <table id="DriverList" width="100%" class="table table-striped table-bordered dataTable">
+                <table id="VehiclesList" width="100%" class="table table-striped table-bordered dataTable">
                     <thead>
                         <tr class="text-center">
                             <th>#</th>
@@ -44,7 +44,7 @@
 <script>
 $(document).ready(function() {
     $.noConflict();
-    $('#DriverList').DataTable({
+    $('#VehiclesList').DataTable({
         "responsive": true,
             "ajax": {
                 "url": "index.php?c=Vehicles&a=View",
