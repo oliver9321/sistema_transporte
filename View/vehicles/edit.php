@@ -4,10 +4,10 @@
                         <div class="page-title-box">
                             <div class="row">
                                 <div class="col">
-                                    <h4 class="page-title">Drivers</h4>
+                                    <h4 class="page-title">Vehicles</h4>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="?c=Dashboard&a=Index">Dashboard</a></li>
-                                        <li class="breadcrumb-item active"><a href="?c=Drivers&a=Index">Driver list</a></li>
+                                        <li class="breadcrumb-item active"><a href="?c=Vehicles&a=Index">Vehicle list</a></li>
                                     </ol>
                                 </div>
                             </div>
@@ -20,43 +20,32 @@
     
    <div class="col-sm-12">
      
-   <form id="frm-drivers" action="?c=Drivers&a=Save" method="post" enctype="multipart/form-data">
+   <form id="frm-Vehicles" action="?c=Vehicles&a=Save" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="Id" id="Id" value="<?php echo $Driver->Id; ?>" />
-            <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($Driver->Id != null) ? $Driver->IsActive : 1 ?>" >
+            <input type="hidden" name="Id" id="Id" value="<?php echo $Vehicle->Id; ?>" />
+            <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($Vehicle->Id != null) ? $Vehicle->IsActive : 1 ?>" >
 
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title text-primary">Driver maintenance</h4>
+                                <h4 class="card-title text-primary">Vehicle maintenance</h4>
                                 <p class="text-muted mb-0">Form</p>
                             </div>
                    
                             <div class="card-body">
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="Name">Driver name:</label>
-                                        <input type="text" class="form-control" id="Name" name="Name" aria-describedby="Name" placeholder="Enter driver name" value="<?php echo $Driver->Name; ?>"> 
+                                        <label class="form-label" for="Brand">Brand:</label>
+                                        <input type="text" class="form-control" id="Brand" name="Brand" aria-describedby="Brand" placeholder="Enter Brand" value="<?php echo $Vehicle->Brand; ?>"> 
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="LastName">Driver last name:</label>
-                                        <input type="text" class="form-control" id="LastName" name="LastName"  aria-describedby="LastName" placeholder="Enter driver last name" value="<?php echo $Driver->LastName; ?>">
+                                        <label class="form-label" for="Model">Model:</label>
+                                        <input type="text" class="form-control" id="Model" name="Model"  aria-describedby="Model" placeholder="Enter Model" value="<?php echo $Vehicle->Model; ?>">
                                     </div>
 
-                                    
-                                    <div class="mb-3">
-                                        <label class="form-label" for="Phone1">Number phone 1:</label>
-                                        <input type="tel" class="form-control" id="Phone1" name="Phone1" aria-describedby="Phone1" placeholder="1-(555)-555-5555" value="<?php echo $Driver->Phone1; ?>">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label class="form-label" for="Phone2">Number phone 2:</label>
-                                        <input type="tel" class="form-control" id="Phone2" name="Phone2" aria-describedby="Phone2" placeholder="1-(555)-555-5555" value="<?php echo $Driver->Phone2; ?>">
-                                    </div>
-
-                                    <?php if($Driver->Id != null){?>
+                                    <?php if($Vehicle->Id != null){?>
                                         <button type="submit" class="btn btn-warning">Update <i class="fa fa-refresh"></i> </button>
                                         <input type="checkbox"  data-toggle="toggle" id="ActivoToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
                                     <?php }else {?>
@@ -78,7 +67,7 @@
 
     $(document).ready(function(){
 
-        $("#frm-drivers").submit(function(){
+        $("#frm-Vehicles").submit(function(){
             return $(this).validate();
         });
 

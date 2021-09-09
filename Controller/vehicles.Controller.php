@@ -1,14 +1,14 @@
 <?php
 
-require_once 'Config/Core.php'; // Obligatorio en todos los controladores
-require_once 'Model/vehiclesModel.php'; //Insertar Modelo correspondiente al controlador
+require_once 'Config/Core.php'; 
+require_once 'Model/vehiclesModel.php'; 
 
 class VehiclesController
 {
     private $model;
 
     public function __CONSTRUCT(){
-        $this->model = new Vehicles(); // Se instancia el Modelo. Nombre de la clase del modelo
+        $this->model = new Vehicles(); 
     }
 
     //Vista Index
@@ -43,10 +43,10 @@ class VehiclesController
 
         if($_SESSION['UserOnline']->Profile == "admin") {
 
-          $Vehicles = new Vehicles();
+          $Vehicle = new Vehicles();
 
         if(isset($_REQUEST['Id'])){
-            $Vehicles =  $this->model->Edit($_REQUEST['Id']);
+            $Vehicle =  $this->model->Edit($_REQUEST['Id']);
         }
 
        GetRouteView(null, "header");
