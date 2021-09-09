@@ -43,10 +43,10 @@ class PaymentsController
 
         if($_SESSION['UserOnline']->Profile == "admin") {
 
-          $Payments = new Payments();
+          $Payment = new Payments();
 
         if(isset($_REQUEST['Id'])){
-            $Payments =  $this->model->Edit($_REQUEST['Id']);
+            $Payment =  $this->model->Edit($_REQUEST['Id']);
         }
 
        GetRouteView(null, "header");

@@ -43,10 +43,10 @@ class UsersController
 
         if($_SESSION['UserOnline']->Profile == "admin") {
 
-          $Users = new Users();
+          $User = new Users();
 
         if(isset($_REQUEST['Id'])){
-            $Users =  $this->model->Edit($_REQUEST['Id']);
+            $User =  $this->model->Edit($_REQUEST['Id']);
         }
 
        GetRouteView(null, "header");

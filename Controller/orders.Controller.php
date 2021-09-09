@@ -43,10 +43,10 @@ class OrdersController
 
         if($_SESSION['UserOnline']->Profile == "admin") {
 
-          $Orders = new Orders();
+          $Order = new Orders();
 
         if(isset($_REQUEST['Id'])){
-            $Orders =  $this->model->Edit($_REQUEST['Id']);
+            $Order =  $this->model->Edit($_REQUEST['Id']);
         }
 
        GetRouteView(null, "header");

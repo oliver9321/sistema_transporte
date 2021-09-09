@@ -43,10 +43,10 @@ class CompanyServicesController
 
         if($_SESSION['UserOnline']->Profile == "admin") {
 
-          $CompanyServices = new CompanyServices();
+          $CompanyService = new CompanyServices();
 
         if(isset($_REQUEST['Id'])){
-            $CompanyServices =  $this->model->Edit($_REQUEST['Id']);
+            $CompanyService =  $this->model->Edit($_REQUEST['Id']);
         }
 
        GetRouteView(null, "header");
