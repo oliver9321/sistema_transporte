@@ -54,10 +54,18 @@
                 </li>
 
                <li>
-                    <a href="javascript: void(0);"><i data-feather="user" class="align-self-center menu-icon"></i><span>Drivers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="users" class="align-self-center menu-icon"></i><span>Drivers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=Drivers&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=Drivers&a=Edit"><i class="ti-control-record"></i>Create</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="truck" class="align-self-center menu-icon"></i><span>Vehicles</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=Vehicles&a=Index"><i class="ti-control-record"></i>List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=Vehicles&a=Edit"><i class="ti-control-record"></i>Create</a></li>
                     </ul>
                 </li>
 

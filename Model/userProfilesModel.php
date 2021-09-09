@@ -90,7 +90,7 @@ $result= $this->pdo->prepare($sql)
         }
     }
 
-    public function Create (Mant_BotonesTurnos $data)
+    public function Create (UserProfiles $data)
     {
         try
         {
@@ -113,25 +113,24 @@ $result= $this->pdo->prepare($sql)
         }
     }
 
-    public function GetListBotones()
+    public function GetListUserProfiles()
     {
         try
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos WHERE Activo = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM tbl_user_profiles WHERE Activo = 1");
             $stm->execute();
 
 
             foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
             {
-                $Botones = new Mant_BotonesTurnos();
+                $UserProfile = new UserProfiles();
 
-                $Botones->Id              = $r->Id;
-                $Botones->Nombre          = $r->Nombre." - ".$r->TipoBoton;
-                $Botones->ValorBoton      = $r->ValorBoton;
+                $UserProfile->Id              = $r->Id;
+                $UserProfile->Nombre          = $r->Profile
 
-                $result[] = $Botones;
+                $result[] = $UserProfile;
             }
 
 

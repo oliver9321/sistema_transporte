@@ -90,15 +90,15 @@ class Payments {
 $result=  $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data-> $PaymentOwnerName,
-                        $data-> $CardHolderName,
-                        $data-> $CreditCard,
-                        $data-> $ExpDate,
-                        $data-> $BilingAddress,
-                        $data-> $Reference,
-                        $data-> $Tel,
-                        $data-> $Email,
-                        $data-> $NotePayment,
+                        $data->$PaymentOwnerName,
+                        $data->$CardHolderName,
+                        $data->$CreditCard,
+                        $data->$ExpDate,
+                        $data->$BilingAddress,
+                        $data->$Reference,
+                        $data->$Tel,
+                        $data->$Email,
+                        $data->$NotePayment,
                         $data->LastModificationDate,
                         (int)$data->UserIdLastModification,
                         (int)$data->IsActive,
@@ -112,7 +112,7 @@ $result=  $this->pdo->prepare($sql)
         }
     }
 
-    public function Create (Mant_BotonesTurnos $data)
+    public function Create (Payments $data)
     {
         try
         {
@@ -134,15 +134,15 @@ $result=  $this->pdo->prepare($sql)
 $result=   $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data-> $PaymentOwnerName,
-                        $data-> $CardHolderName,
-                        $data-> $CreditCard,
-                        $data-> $ExpDate,
-                        $data-> $BilingAddress,
-                        $data-> $Reference,
-                        $data-> $Tel,
-                        $data-> $Email,
-                        $data->  $NotePayment,
+                        $data->$PaymentOwnerName,
+                        $data->$CardHolderName,
+                        $data->$CreditCard,
+                        $data->$ExpDate,
+                        $data->$BilingAddress,
+                        $data->$Reference,
+                        $data->$Tel,
+                        $data->$Email,
+                        $data->$NotePayment,
                         date('Y-m-d'),
                         (int)$data->UserIdCreation,
                         1
@@ -150,36 +150,6 @@ $result=   $this->pdo->prepare($sql)
                 );
                 return $result;
         } catch (Exception $e)
-        {
-            die($e->getMessage());
-        }
-    }
-
-    public function GetListBotones()
-    {
-        try
-        {
-            $result = array();
-
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos WHERE Activo = 1");
-            $stm->execute();
-
-
-            foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-            {
-                $Botones = new Mant_BotonesTurnos();
-
-                $Botones->Id              = $r->Id;
-                $Botones->Nombre          = $r->Nombre." - ".$r->TipoBoton;
-                $Botones->ValorBoton      = $r->ValorBoton;
-
-                $result[] = $Botones;
-            }
-
-
-            return $result;
-        }
-        catch(Exception $e)
         {
             die($e->getMessage());
         }

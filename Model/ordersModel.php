@@ -124,33 +124,32 @@ class Orders {
 $result=   $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        
-                        $data-> IdCustomerOrigin,
-                        $data-> IdCustomerDestination,
-                        $data-> IdCompanayService,
-                        $data-> IdDriver,
-                        $data-> IdStatus,
-                        $data-> IdPayment,
-                        $data-> OrderDate,
-                        $data-> PickUpDate,
-                        $data-> DeliveryDate,
-                        $data-> OriginAddress,
-                        $data-> OriginCity,
-                        $data-> OriginState,
-                        $data-> OriginZip,
-                        $data-> OriginNote,
-                        $data-> DestinationAddress,
-                        $data-> DestinationCity,
-                        $data-> DestinationState,
-                        $data-> DestinationZip,
-                        $data-> DestinationNote,
-                        $data-> Total,
-                        $data-> Deposit,
-                        $data-> ExtraTrukerFee,
-                        $data-> Earnings,
-                        $data-> Cod,
-                        $data-> TrukerRate,
-                        $data-> RequestStatus,
+                        $data->IdCustomerOrigin,
+                        $data->IdCustomerDestination,
+                        $data->IdCompanayService,
+                        $data->IdDriver,
+                        $data->IdStatus,
+                        $data->IdPayment,
+                        $data->OrderDate,
+                        $data->PickUpDate,
+                        $data->DeliveryDate,
+                        $data->OriginAddress,
+                        $data->OriginCity,
+                        $data->OriginState,
+                        $data->OriginZip,
+                        $data->OriginNote,
+                        $data->DestinationAddress,
+                        $data->DestinationCity,
+                        $data->DestinationState,
+                        $data->DestinationZip,
+                        $data->DestinationNote,
+                        $data->Total,
+                        $data->Deposit,
+                        $data->ExtraTrukerFee,
+                        $data->Earnings,
+                        $data->Cod,
+                        $data->TrukerRate,
+                        $data->RequestStatus,
                         $data->LastModificationDate,
                         (int)$data->UserIdLastModification,
                         (int)$data->IsActive,
@@ -164,7 +163,7 @@ $result=   $this->pdo->prepare($sql)
         }
     }
 
-    public function Create (Mant_BotonesTurnos $data)
+    public function Create (Orders $data)
     {
         try
         {
@@ -240,36 +239,5 @@ $result=   $this->pdo->prepare($sql)
             die($e->getMessage());
         }
     }
-
-    public function GetListBotones()
-    {
-        try
-        {
-            $result = array();
-
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos WHERE Activo = 1");
-            $stm->execute();
-
-
-            foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-            {
-                $Botones = new Mant_BotonesTurnos();
-
-                $Botones->Id              = $r->Id;
-                $Botones->Nombre          = $r->Nombre." - ".$r->TipoBoton;
-                $Botones->ValorBoton      = $r->ValorBoton;
-
-                $result[] = $Botones;
-            }
-
-
-            return $result;
-        }
-        catch(Exception $e)
-        {
-            die($e->getMessage());
-        }
-    }
-
 
 }
