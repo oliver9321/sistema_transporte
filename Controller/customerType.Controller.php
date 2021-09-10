@@ -43,10 +43,10 @@ class CustomerTypeController
 
         if($_SESSION['UserOnline']->Profile == "admin") {
 
-          $CustomerType = new CustomerType();
+          $customerType = new CustomerType();
 
         if(isset($_REQUEST['Id'])){
-            $CustomerType =  $this->model->Edit($_REQUEST['Id']);
+            $customerType =  $this->model->Edit($_REQUEST['Id']);
         }
 
        GetRouteView(null, "header");

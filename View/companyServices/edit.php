@@ -7,7 +7,7 @@
                                     <h4 class="page-title">Company Services</h4>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="?c=Dashboard&a=Index">Dashboard</a></li>
-                                        <li class="breadcrumb-item "><a href="?c=companyServices&a=Index">CompanyService list</a></li>
+                                        <li class="breadcrumb-item "><a href="?c=companyServices&a=Index">Company services list</a></li>
                                         <li class="breadcrumb-item active"><a href="#"><b>Form</b></a></li>
                                     </ol>
                                 </div>
