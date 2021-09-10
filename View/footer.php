@@ -23,6 +23,8 @@
     <script src="assets/js/simplebar.min.js"></script>
     <script src="assets/js/moment.js"></script>
     <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="plugins/jquery-steps/jquery.steps.min.js"></script>
+        <script src="assets/pages/jquery.form-wizard.init.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>

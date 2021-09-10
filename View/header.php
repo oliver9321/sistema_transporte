@@ -14,10 +14,13 @@
 
     <!-- App css -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="plugins/jquery-steps/jquery.steps.css">
+  
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/themes@5.0.3/bootstrap-4/bootstrap-4.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
@@ -31,11 +34,15 @@
 </head>
 
 <body>
+
+                  
+   <?php include('dashboard/ordermodal.php'); ?>
+
     <!-- Left Sidenav -->
     <div class="left-sidenav">
         <!-- LOGO -->
         <div class="brand">
-            <a href="index.html" class="logo">
+            <a href="index.php?c=Dashboard&a=Index" class="logo">
                 <span>
                         <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
                     </span>
@@ -176,7 +183,7 @@
                     </li>
                     <li class="creat-btn">
                         <div class="nav-link">
-                            <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i class="fas fa-plus me-2"></i>New Orden</a>
+                            <button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#bd-example-modal-xl"><i class="fas fa-plus me-2"></i>New Orden</button>
                         </div>
                     </li>
                 </ul>
@@ -184,6 +191,8 @@
             <!-- end navbar-->
         </div>
         <!-- Top Bar End -->
+
+
 
         <!-- Page Content-->
         <div class="page-content">

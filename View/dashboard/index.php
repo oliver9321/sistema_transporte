@@ -1,4 +1,4 @@
-  <!-- Page-Title -->
+
   <div class="row">
                         <div class="col-sm-12">
                             <div class="page-title-box">
@@ -251,6 +251,7 @@
                             </div><!--end card--> 
                         </div> <!--end col-->
                     </div><!--end row-->
+
 
          <script src="assets/js/jquery.min.js"></script>         
         <script src="plugins/apex-charts/apexcharts.min.js"></script>
