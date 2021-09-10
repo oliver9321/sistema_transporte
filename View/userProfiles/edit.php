@@ -23,8 +23,8 @@
      
    <form id="frm-userProfiles" action="?c=userProfiles&a=Save" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="Id" id="Id" value="<?php echo $UserProfiles->Id; ?>" />
-            <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($UserProfiles->Id != null) ? $UserProfile->IsActive : 1 ?>" >
+            <input type="hidden" name="Id" id="Id" value="<?php echo $UserProfile->Id; ?>" />
+            <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($UserProfile->Id != null) ? $UserProfile->IsActive : 1 ?>" >
 
                 <div class="row">
                     <div class="col-lg-6">

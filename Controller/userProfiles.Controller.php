@@ -62,16 +62,15 @@ class UserProfilesController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['Profile']) || isset($_REQUEST['Description'])) {
+        if (isset($_REQUEST['Profile'])) {
 
             $UserProfiles = new UserProfiles();
             
             //Campos unicos por tabla
-            $UserProfiles->Id         = $_REQUEST['Id'];
-            $UserProfiles->Profile = $_REQUEST['Profile'];
-            $UserProfiles->Description   = $_REQUEST['Description'];
+            $UserProfiles->Id           = $_REQUEST['Id'];
+            $UserProfiles->Profile      = $_REQUEST['Profile'];
+            $UserProfiles->Description  = $_REQUEST['Description'];
       
-
             //Campos genericos
             $UserProfiles->DateCreation            = date('Y-m-d');
             $UserProfiles->UserIdCreation          = $_SESSION['UserOnline']->Id;

@@ -5,7 +5,7 @@
    <div class="col-12">
       <div class="card">
           <div class="card-header">
-              <h4 class="card-title">ORDER STATUS LIST</h4>
+              <h4 class="card-title">USER PROFILE LIST</h4>
                <p class="text-muted mb-0">Datatable</p>
             </div><!--end card-header-->
             
