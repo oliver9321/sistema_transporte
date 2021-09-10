@@ -167,7 +167,7 @@ $result=   $this->pdo->prepare($sql)
     {
         try
         {
-            $sql = "INSERT INTO tbl_order_status(
+            $sql = "INSERT INTO tbl_orders(
                 IdCustomerOrigin
                 IdCustomerDestination
                 IdCompanayService
@@ -239,5 +239,21 @@ $result=   $this->pdo->prepare($sql)
             die($e->getMessage());
         }
     }
+
+    public function getCountOrders(){
+
+        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountOrders FROM tbl_orders WHERE IsActive = 1");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+    
+    public function getSumEarnings(){
+
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Earnings),0) as Earnings FROM tbl_orders WHERE IsActive = 1");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
 
 }

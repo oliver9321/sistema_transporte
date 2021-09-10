@@ -1,14 +1,14 @@
 <?php
 
-require_once 'Config/Core.php'; // Obligatorio en todos los controladores
-require_once 'Model/paymentsModel.php'; //Insertar Modelo correspondiente al controlador
+require_once 'Config/Core.php'; 
+require_once 'Model/paymentsModel.php'; 
 
 class PaymentsController
 {
     private $model;
 
     public function __CONSTRUCT(){
-        $this->model = new Payments(); // Se instancia el Modelo. Nombre de la clase del modelo
+        $this->model = new Payments(); 
     }
 
     //Vista Index

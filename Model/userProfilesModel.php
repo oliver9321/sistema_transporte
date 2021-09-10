@@ -113,34 +113,5 @@ $result= $this->pdo->prepare($sql)
         }
     }
 
-    public function GetListUserProfiles()
-    {
-        try
-        {
-            $result = array();
-
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_user_profiles WHERE Activo = 1");
-            $stm->execute();
-
-
-            foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-            {
-                $UserProfile = new UserProfiles();
-
-                $UserProfile->Id              = $r->Id;
-                $UserProfile->Nombre          = $r->Profile;
-
-                $result[] = $UserProfile;
-            }
-
-
-            return $result;
-        }
-        catch(Exception $e)
-        {
-            die($e->getMessage());
-        }
-    }
-
 
 }
