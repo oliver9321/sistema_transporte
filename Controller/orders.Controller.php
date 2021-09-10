@@ -17,7 +17,7 @@ class OrdersController
         if($_SESSION['UserOnline']->Profile == "admin") {
 
         GetRouteView(null, "header");
-        require_once 'View/orders/index.php';
+        require_once 'View/orderStatus/index.php';
         GetRouteView(null, "footer");
 
         }else{

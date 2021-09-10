@@ -6,7 +6,7 @@ class UserProfiles {
 
     public $Id;
     public $Profile;
-    public $Description
+    public $Description;
     public $DateCreation;
     public $UserIdCreation;
     public $LastModificationDate;
@@ -128,7 +128,7 @@ $result= $this->pdo->prepare($sql)
                 $UserProfile = new UserProfiles();
 
                 $UserProfile->Id              = $r->Id;
-                $UserProfile->Nombre          = $r->Profile
+                $UserProfile->Nombre          = $r->Profile;
 
                 $result[] = $UserProfile;
             }

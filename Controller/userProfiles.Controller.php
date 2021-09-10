@@ -17,7 +17,7 @@ class UserProfilesController
         if($_SESSION['UserOnline']->Profile == "admin") {
 
         GetRouteView(null, "header");
-        require_once 'View/f/index.php';
+        require_once 'View/userProfiles/index.php';
         GetRouteView(null, "footer");
 
         }else{

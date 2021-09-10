@@ -106,7 +106,7 @@ $result=  $this->pdo->prepare($sql)
         }
     }
 
-    public function Create (Mant_BotonesTurnos $data)
+    public function Create (Users $data)
     {
         try
         {
