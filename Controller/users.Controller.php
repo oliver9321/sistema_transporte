@@ -68,12 +68,12 @@ class UsersController
             
             //Campos unicos por tabla
             $Users->ProfileUserId         = $_REQUEST['ProfileUserId'];
-            $Users->Name = $_REQUEST['Name'];
+            $Users->Name        =  $_REQUEST['Name'];
             $Users->LastName   = $_REQUEST['LastName'];
             $Users->UserName     = $_REQUEST['UserName'];
             $Users->Password     = $_REQUEST['Password'];
             $Users->Email     = $_REQUEST['Email'];
-          //  $Users->Image     = $_REQUEST['Image'];
+            $Users->Image     = $_REQUEST['Image'];
 
             //Campos genericos
             $Users->DateCreation            = date('Y-m-d');

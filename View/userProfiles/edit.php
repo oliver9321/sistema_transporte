@@ -42,8 +42,8 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="ProfileDescription">* Profile Description:</label>
-                                        <input type="text" class="form-control" id="ProfileDescription" name="ProfileDescription" aria-describedby="ProfileDescription" placeholder="Enter Description name" value="<?php echo $UserProfile->Description; ?>"> 
+                                        <label class="form-label text-danger" for="Description">* Profile Description:</label>  
+                                        <input type="text" class="form-control" id="Description" name="Description" aria-describedby="Description" placeholder="Enter Description name" value="<?php echo $UserProfile->Description; ?>"> 
                                     </div>
 
                                     <?php if($UserProfile->Id != null){?>

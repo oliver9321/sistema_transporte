@@ -65,6 +65,11 @@
                                         <label class="form-label text-danger" for="Email">*Email:</label>
                                         <input type="text" class="form-control" id="Email" name="Email" aria-describedby="Email" placeholder="Enter Email" value="<?php echo $User->Email; ?>"> 
                                     </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label text-danger" for="Image">Imagen:</label>
+                                        <input type="text" class="form-control" id="Image" name="Image" aria-describedby="Image" placeholder="Enter Email" value="<?php echo $User->Image; ?>"> 
+                                    </div>
                             
                                     <?php if($User->Id != null){?>
                                         <button type="submit" class="btn btn-warning">Update <i class="fa fa-refresh"></i> </button>

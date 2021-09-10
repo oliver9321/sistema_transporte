@@ -110,7 +110,7 @@ $result=  $this->pdo->prepare($sql)
     {
         try
         {
-            $sql = "INSERT INTO tbl_users (ProfileUserId,Name,LastName,UserName,Password,Email,Image,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tbl_users (ProfileUserId,Name,LastName,UserName,Password,Email,Image,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
             $result= $this->pdo->prepare($sql)
                 ->execute(

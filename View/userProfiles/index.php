@@ -57,13 +57,13 @@ $(document).ready(function() {
             {data: "IsActive"},
             {data: "Id"}
         ],"columnDefs": [ {
-            "targets":6,
+            "targets":4,
             "data": "Editar",
             "render": function ( data) {
                 return '<a class="btn btn-warning" href="index.php?c=userProfiles&a=Edit&Id='+data+'" aria-label="Editar"> <i class="ti-pencil"></i>  </a>';
             }
         },{
-                "targets": 5,
+                "targets": 3,
                 "data": "IsActive",
                 "render": function (data) {
                     return (data) == 1 ? '<center><button type="button" class="btn btn-success"> <i class="ti-check"></i> </button></center>': '<center><button type="button" class="btn btn-sm btn-danger btn-circle waves-effect waves-light"> <i class="ti-close"></i> </button></center>';
