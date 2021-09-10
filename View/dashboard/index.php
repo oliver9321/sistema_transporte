@@ -24,11 +24,11 @@
                                             <div class="row d-flex justify-content-center">
                                                 <div class="col">
                                                     <p class="text-dark mb-0 fw-semibold">Clients</p>
-                                                    <h3 class="m-0">24</h3>
+                                                    <h3 class="m-0"><?=$CountCustomers?></h3>
                                                 </div>
                                                 <div class="col-auto align-self-center">
                                                     <div class="report-main-icon bg-light-alt">
-                                                        <i data-feather="users" class="align-self-center text-muted icon-sm"></i>  
+                                                        <i data-feather="user-plus" class="align-self-center text-muted icon-sm"></i>  
                                                     </div>
                                                 </div>
                                             </div>
@@ -41,11 +41,11 @@
                                             <div class="row d-flex justify-content-center">                                                
                                                 <div class="col">
                                                     <p class="text-dark mb-0 fw-semibold">Orders</p>
-                                                    <h3 class="m-0">150</h3>
+                                                    <h3 class="m-0"><?=$CountOrders?></h3>
                                                 </div>
                                                 <div class="col-auto align-self-center">
                                                     <div class="report-main-icon bg-light-alt">
-                                                        <i data-feather="activity" class="align-self-center text-muted icon-sm"></i>  
+                                                        <i data-feather="shopping-cart" class="align-self-center text-muted icon-sm"></i>  
                                                     </div>
                                                 </div> 
                                             </div>
@@ -58,11 +58,11 @@
                                             <div class="row d-flex justify-content-center">                                                
                                                 <div class="col">
                                                     <p class="text-dark mb-0 fw-semibold">Payments</p>
-                                                    <h3 class="m-0">$2400</h3>
+                                                    <h3 class="m-0"><?= $SumEarnings ?></h3>
                                                 </div>
                                                 <div class="col-auto align-self-center">
                                                     <div class="report-main-icon bg-light-alt">
-                                                        <i data-feather="activity" class="align-self-center text-muted icon-sm"></i>  
+                                                        <i data-feather="dollar-sign" class="align-self-center text-muted icon-sm"></i>  
                                                     </div>
                                                 </div> 
                                             </div>
@@ -75,11 +75,11 @@
                                             <div class="row d-flex justify-content-center">
                                                 <div class="col">  
                                                     <p class="text-dark mb-0 fw-semibold">Drivers</p>                                         
-                                                    <h3 class="m-0">850</h3>
+                                                    <h3 class="m-0"><?=$CountDrivers ?></h3>
                                                 </div>
                                                 <div class="col-auto align-self-center">
                                                     <div class="report-main-icon bg-light-alt">
-                                                        <i data-feather="briefcase" class="align-self-center text-muted icon-sm"></i>  
+                                                        <i data-feather="users" class="align-self-center text-muted icon-sm"></i>  
                                                     </div>
                                                 </div> 
                                             </div>
@@ -91,7 +91,7 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Traffic Overview - Example grafic</h4>                      
+                                            <h4 class="card-title">Traffic Orders - Example grafic</h4>                      
                                         </div><!--end col-->
                                         <div class="col-auto"> 
                                             <div class="dropdown">

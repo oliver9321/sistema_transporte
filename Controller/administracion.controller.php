@@ -17,8 +17,8 @@ class AdministracionController{
 
         if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin"){
 
-         $Departamento = new Mant_Departamentos();
-         $Departamentos = $Departamento->GetListDepartamentos();
+         /*$Departamento = new Mant_Departamentos();
+         $Departamentos = $Departamento->GetListDepartamentos();*/
 
         GetRouteView(null, "header");
         require_once 'View/Administracion/index.php';

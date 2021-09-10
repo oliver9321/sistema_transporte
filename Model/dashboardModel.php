@@ -16,6 +16,7 @@ class Dashboard
         }
     }
 
+   
     public function GenerarLlamadaTurnoModel()
     {
         $Dashboard = new Dashboard();

@@ -131,4 +131,12 @@ $result=   $this->pdo->prepare($sql)
         }
     }
 
+    public function getCountCustomers(){
+
+        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountCustomers FROM tbl_customers WHERE IsActive = 1");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+
 }

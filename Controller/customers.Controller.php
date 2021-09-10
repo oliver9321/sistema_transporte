@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Config/Core.php'; // Obligatorio en todos los controladores
-require_once 'Model/customersModel.php'; //Insertar Modelo correspondiente al controlador
+require_once 'Config/Core.php'; 
+require_once 'Model/customersModel.php'; 
 
 class CustomersController
 {

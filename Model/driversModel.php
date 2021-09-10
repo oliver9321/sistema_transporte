@@ -127,34 +127,11 @@ class Drivers {
         }
     }
 
-    public function GetListBotones()
-    {
-        try
-        {
-            $result = array();
+    public function getCountDrivers(){
 
-            $stm = $this->pdo->prepare("SELECT * FROM tbl_botones_turnos WHERE Activo = 1");
-            $stm->execute();
-
-
-            foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-            {
-                $Botones = new Mant_BotonesTurnos();
-
-                $Botones->Id              = $r->Id;
-                $Botones->Nombre          = $r->Nombre." - ".$r->TipoBoton;
-                $Botones->ValorBoton      = $r->ValorBoton;
-
-                $result[] = $Botones;
-            }
-
-
-            return $result;
-        }
-        catch(Exception $e)
-        {
-            die($e->getMessage());
-        }
+        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountDrivers FROM tbl_drivers WHERE IsActive = 1");
+        $stm2->execute();
+        return $stm2->fetch();
     }
 
 

@@ -1,14 +1,14 @@
 <?php
 
-require_once 'Config/Core.php'; // Obligatorio en todos los controladores
-require_once 'Model/ordersModel.php'; //Insertar Modelo correspondiente al controlador
+require_once 'Config/Core.php'; 
+require_once 'Model/ordersModel.php'; 
 
 class OrdersController
 {
     private $model;
 
     public function __CONSTRUCT(){
-        $this->model = new Orders(); // Se instancia el Modelo. Nombre de la clase del modelo
+        $this->model = new Orders(); 
     }
 
     //Vista Index
