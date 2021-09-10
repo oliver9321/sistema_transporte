@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Config/Core.php'; // Obligatorio en todos los controladores
-require_once 'Model/orderStatus.php'; //Insertar Modelo correspondiente al controlador
+require_once 'Model/orderStatusModel.php'; //Insertar Modelo correspondiente al controlador
 
 class OrderStatusController
 {
@@ -67,7 +67,8 @@ class OrderStatusController
             $OrderStatus = new OrderStatus();
             
             //Campos unicos por tabla
-            $Users->Status         = $_REQUEST['Status'];
+            $OrderStatus->Status   = $_REQUEST['Status'];
+            $OrderStatus->Id       = $_REQUEST['Id'];
            
             //Campos genericos
             $OrderStatus->DateCreation            = date('Y-m-d');

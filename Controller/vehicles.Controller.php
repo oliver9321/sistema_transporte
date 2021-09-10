@@ -67,8 +67,8 @@ class VehiclesController
             $Vehicles = new Vehicles();
             
             //Campos unicos por tabla
-            $Vehicles->Id         = $_REQUEST['Id'];
-            $Vehicles->Brand = $_REQUEST['Brand'];
+            $Vehicles->Id      = $_REQUEST['Id'];
+            $Vehicles->Brand   = $_REQUEST['Brand'];
             $Vehicles->Model   = $_REQUEST['Model'];
            
 

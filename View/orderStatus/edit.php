@@ -23,8 +23,8 @@
      
    <form id="frm-orderStatus" action="?c=orderStatus&a=Save" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="Id" id="Id" value="<?php echo $OderStatus->Id; ?>" />
-            <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($OderStatus->Id != null) ? $OderStatus->IsActive : 1 ?>" >
+            <input type="hidden" name="Id" id="Id" value="<?php echo $OrderStatus->Id; ?>" />
+            <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($OrderStatus->Id != null) ? $OrderStatus->IsActive : 1 ?>" >
 
                 <div class="row">
                     <div class="col-lg-6">
@@ -37,11 +37,11 @@
                             <div class="card-body">
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="Status">*Order Status name:</label>
-                                        <input type="text" class="form-control" id="Status" name="Status" aria-describedby="Status" placeholder="Enter Order Status name" value="<?php echo $OderStatus->Status; ?>"> 
+                                        <label class="form-label text-danger" for="Status">*Status name:</label>
+                                        <input type="text" class="form-control" id="Status" name="Status" aria-describedby="Status" placeholder="Enter Order Status name" value="<?php echo $OrderStatus->Status; ?>"> 
                                     </div>
                             
-                                    <?php if($OderStatus->Id != null){?>
+                                    <?php if($OrderStatus->Id != null){?>
                                         <button type="submit" class="btn btn-warning">Update <i class="fa fa-refresh"></i> </button>
                                         <input type="checkbox"  data-toggle="toggle" id="ActivoToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
                                     <?php }else {?>
