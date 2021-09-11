@@ -18,7 +18,6 @@
                             <th>Name</th>
                             <th>Last Name</th>                           
                             <th>User Name</th>
-                            <th>Password</th>                           
                             <th>Email</th>  
                             <th>Active</th>
                             <th>Edit</th>
@@ -60,18 +59,17 @@ $(document).ready(function() {
             {data: "Name"},
             {data: "LastName"},
             {data: "UserName"},
-            {data: "Password"},
             {data: "Email"},
             {data: "IsActive"},
             {data: "Id"}
         ],"columnDefs": [ {
-            "targets":8,
+            "targets":7,
             "data": "Editar",
             "render": function ( data) {
                 return '<a class="btn btn-warning" href="index.php?c=users&a=Edit&Id='+data+'" aria-label="Editar"> <i class="ti-pencil"></i>  </a>';
             }
         },{
-                "targets": 7,
+                "targets": 6,
                 "data": "IsActive",
                 "render": function (data) {
                     return (data) == 1 ? '<center><button type="button" class="btn btn-success"> <i class="ti-check"></i> </button></center>': '<center><button type="button" class="btn btn-sm btn-danger btn-circle waves-effect waves-light"> <i class="ti-close"></i> </button></center>';
