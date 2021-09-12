@@ -92,7 +92,15 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="user-check" class="align-self-center menu-icon"></i><span>Customer types</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="user-check" class="align-self-center menu-icon"></i><span>Customers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=Customers&a=Index"><i class="ti-control-record"></i>List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=Customers&a=Edit"><i class="ti-control-record"></i>Create</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="check-circle" class="align-self-center menu-icon"></i><span>Customer types</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=customerType&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=customerType&a=Edit"><i class="ti-control-record"></i>Create</a></li>
