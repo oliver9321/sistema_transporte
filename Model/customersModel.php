@@ -110,7 +110,7 @@ $result=   $this->pdo->prepare($sql)
         {
             $sql = "INSERT INTO tbl_customers (IdCustomerType,Name,LastName,Phone1,Phone2,Email,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?)";
 
-            $result=  $this->pdo->prepare($sql)
+            $result =  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->IdCustomerType,
@@ -121,13 +121,15 @@ $result=   $this->pdo->prepare($sql)
                         $data->Email,
                         date('Y-m-d'),
                         (int)$data->UserIdCreation,
-                        1
+                        $data->IsActive
                     )
                 );
+
                 return $result;
+
         } catch (Exception $e)
         {
-            die($e->getMessage());
+            return $e->getMessage();
         }
     }
 

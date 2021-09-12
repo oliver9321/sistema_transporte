@@ -110,5 +110,23 @@ $result= $this->pdo->prepare($sql)
         }
     }
 
+    public function GetListCustomerTypes()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT Id, NameType FROM tbl_customer_type WHERE IsActive = 1");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
+
     
 }

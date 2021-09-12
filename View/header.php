@@ -8,21 +8,27 @@
     <meta content="" name="description" />
     <meta content="" name="ofermin" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Plugins css -->
+    <link href="plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/huebee/huebee.min.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/timepicker/bootstrap-material-datetimepicker.css" rel="stylesheet">
+    <link href="plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
 
     <!-- App css -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="plugins/jquery-steps/jquery.steps.css">
-  
-    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/themes@5.0.3/bootstrap-4/bootstrap-4.css" rel="stylesheet">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="plugins/sweet-alert2/sweetalert2.min.js"></script>
+    <!--
+
+    
+    <link href="plugins/sweet-alert2/bootstrap-4.css" rel="stylesheet">
+    -->
 
           <!-- DataTables -->
           <link href="plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
@@ -30,14 +36,15 @@
         <!-- Responsive datatable examples -->
         <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
 
-
+    <style>
+        .select2-container--open {
+            z-index: 9999999 !important;
+        }
+    </style>
 </head>
 
 <body>
-
-                  
-   <?php include('dashboard/ordermodal.php'); ?>
-
+        
     <!-- Left Sidenav -->
     <div class="left-sidenav">
         <!-- LOGO -->

@@ -62,17 +62,17 @@ class OrderDetailsController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['Brand']) || isset($_REQUEST['Model'])) {
+        if (isset($_REQUEST['Brand']) && isset($_REQUEST['Model'])  && isset($_REQUEST['IdOrder'])) {
 
             $OrderDetails = new OrderDetails();
             
             //Campos unicos por tabla
             $OrderDetails->IdOrder         = $_REQUEST['IdOrder'];
-            $OrderDetails->Brand = $_REQUEST['Brand'];
-            $OrderDetails->Model   = $_REQUEST['Model'];
-            $OrderDetails->Color     = $_REQUEST['Color'];
-            $OrderDetails->Year     = $_REQUEST['Year'];
-            $OrderDetails->Vin     = $_REQUEST['Vin'];
+            $OrderDetails->Brand           = $_REQUEST['Brand'];
+            $OrderDetails->Model           = $_REQUEST['Model'];
+            $OrderDetails->Color           = $_REQUEST['Color'];
+            $OrderDetails->Year            = $_REQUEST['Year'];
+            $OrderDetails->Vin             = $_REQUEST['Vin'];
 
             //Campos genericos
             $OrderDetails->DateCreation            = date('Y-m-d');

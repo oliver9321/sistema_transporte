@@ -6,6 +6,7 @@ require_once 'Model/driversModel.php';
 require_once 'Model/ordersModel.php'; 
 require_once 'Model/paymentsModel.php'; 
 require_once 'Model/customersModel.php'; 
+require_once 'Model/customerTypeModel.php';
 
 class dashboardController{
 
@@ -14,6 +15,7 @@ class dashboardController{
     private $ordersModel;
     private $paymentsModel;
     private $customersModel;
+    private $customerType;
 
     public function __CONSTRUCT(){
 
@@ -22,6 +24,7 @@ class dashboardController{
         $this->ordersModel    = new Orders();
         $this->paymentsModel  = new Payments();
         $this->customersModel = new Customers();
+        $this->customerType   = new CustomerType();
 
     }
 
@@ -31,8 +34,10 @@ class dashboardController{
 
              if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin" || $_SESSION['UserOnline']->Profile == "manager"){
 
-                $rsDrivers    = $this->driversModel->getCountDrivers();
-                $CountDrivers = $rsDrivers['CountDrivers'];
+                $CustomerTypeList  =  $this->customerType->GetListCustomerTypes();
+            
+                $rsDrivers      = $this->driversModel->getCountDrivers();
+                $CountDrivers   = $rsDrivers['CountDrivers'];
 
                 $rsCustomers    = $this->customersModel->getCountCustomers();
                 $CountCustomers = $rsCustomers['CountCustomers'];
@@ -45,7 +50,7 @@ class dashboardController{
 
                 GetRouteView(null, "header");
                 require_once 'View/dashboard/index.php';
-                GetRouteView(null, "footer");
+                require_once 'View/footer.php';
 
                }else{
                 header('Location:index.php?c=login&a=index');

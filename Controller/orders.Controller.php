@@ -62,7 +62,7 @@ class OrdersController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['IdCustomerOrigin']) || isset($_REQUEST['IdCustomerDestination'])) {
+        if (isset($_REQUEST['IdCustomerOrigin']) && isset($_REQUEST['IdCustomerDestination'])) {
 
             $Orders = new Orders();
             

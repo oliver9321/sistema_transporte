@@ -62,7 +62,7 @@ class CompanyServicesController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['CompanyName']) || isset($_REQUEST['Phone1'])) {
+        if (isset($_REQUEST['CompanyName']) && isset($_REQUEST['Phone1'])) {
 
             $CompanyServices = new CompanyServices();
             

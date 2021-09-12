@@ -62,20 +62,20 @@ class PaymentsController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['PaymentOwnerName']) || isset($_REQUEST['CardHolderName'])) {
+        if (isset($_REQUEST['PaymentOwnerName']) && isset($_REQUEST['CardHolderName'])) {
 
             $Payments = new Payments();
             
             //Campos unicos por tabla
-            $Payments->Id         = $_REQUEST['Id'];
+            $Payments->Id               = $_REQUEST['Id'];
             $Payments->PaymentOwnerName = $_REQUEST['PaymentOwnerName'];
             $Payments->CardHolderName   = $_REQUEST['CardHolderName'];
-            $Payments->ExpDate     = $_REQUEST['ExpDate'];
-            $Payments->BilingAddress     = $_REQUEST['BilingAddress'];
-            $Payments->Reference     = $_REQUEST['Reference'];
-            $Payments->Tel     = $_REQUEST['Tel'];
-            $Payments->Email     = $_REQUEST['Email'];
-            $Payments->NotePayment     = $_REQUEST['NotePayment'];
+            $Payments->ExpDate          = $_REQUEST['ExpDate'];
+            $Payments->BilingAddress    = $_REQUEST['BilingAddress'];
+            $Payments->Reference        = $_REQUEST['Reference'];
+            $Payments->Tel              = $_REQUEST['Tel'];
+            $Payments->Email            = $_REQUEST['Email'];
+            $Payments->NotePayment      = $_REQUEST['NotePayment'];
 
             //Campos genericos
             $Payments->DateCreation            = date('Y-m-d');

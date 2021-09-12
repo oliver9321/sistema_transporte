@@ -62,18 +62,18 @@ class CustomersController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['Name']) || isset($_REQUEST['LastName'])) {
+        if (isset($_REQUEST['Name']) && isset($_REQUEST['LastName']) &&  isset($_POST['Phone1'])) {
 
             $Customers = new Customers();
             
             //Campos unicos por tabla
-            $Customers->Id         = $_REQUEST['Id'];
-            $Customers->IdCustomerType = $_REQUEST['IdCustomerType'];
-            $Customers->Name   = $_REQUEST['Name'];
-            $Customers->LastName     = $_REQUEST['LastName'];
-            $Customers->Phone1     = $_REQUEST['Phone1'];
-            $Customers->Phone2     = $_REQUEST['Phone2'];
-            $Customers->Email     = $_REQUEST['Email'];
+            $Customers->Id              = $_REQUEST['Id'];
+            $Customers->IdCustomerType  = $_REQUEST['IdCustomerType'];
+            $Customers->Name            = $_REQUEST['Name'];
+            $Customers->LastName        = $_REQUEST['LastName'];
+            $Customers->Phone1          = $_REQUEST['Phone1'];
+            $Customers->Phone2          = $_REQUEST['Phone2'];
+            $Customers->Email           = $_REQUEST['Email'];
 
             //Campos genericos
             $Customers->DateCreation            = date('Y-m-d');
@@ -109,4 +109,35 @@ class CustomersController
         }
     }
 
+        public function NewCustomer()
+        {
+            //Se colocan los campos obligatorios en la tabla.
+            if (isset($_POST['Name']) && isset($_POST['IdCustomerType']) &&  isset($_POST['Phone1'])) {
+
+                if($_POST['Name'] != '' && $_POST['IdCustomerType'] != '' && $_POST['Phone1'] != ''){
+
+                    $Customers = new Customers();
+
+                    $Customers->IdCustomerType  = $_POST['IdCustomerType'];
+                    $Customers->Name            = $_POST['Name'];
+                    $Customers->LastName        = $_POST['LastName'];
+                    $Customers->Phone1          = $_POST['Phone1'];
+                    $Customers->Phone2          = $_POST['Phone2'];
+                    $Customers->Email           = $_POST['Email'];
+    
+                    //Campos genericos
+                    $Customers->DateCreation            = date('Y-m-d');
+                    $Customers->UserIdCreation          = $_SESSION['UserOnline']->Id;
+                    $Customers->IsActive                = 1;
+    
+                    echo json_encode($this->model->Create($Customers), true);
+                  
+                }else{
+                    echo "Please, complete the required fields (*)";
+                }
+
+        }else{
+            echo "Please, complete the required fields (*)";
+        }   
+    }
 }

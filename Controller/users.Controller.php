@@ -62,18 +62,18 @@ class UsersController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['Name']) || isset($_REQUEST['UserName'])) {
+        if (isset($_REQUEST['Name']) && isset($_REQUEST['UserName']) && isset($_REQUEST['Password'])) {
 
             $Users = new Users();
             
             //Campos unicos por tabla
             $Users->ProfileUserId         = $_REQUEST['ProfileUserId'];
-            $Users->Name        =  $_REQUEST['Name'];
-            $Users->LastName   = $_REQUEST['LastName'];
-            $Users->UserName     = $_REQUEST['UserName'];
-            $Users->Password     = $_REQUEST['Password'];
-            $Users->Email     = $_REQUEST['Email'];
-            $Users->Image     = $_REQUEST['Image'];
+            $Users->Name                  =  $_REQUEST['Name'];
+            $Users->LastName              = $_REQUEST['LastName'];
+            $Users->UserName              = $_REQUEST['UserName'];
+            $Users->Password              = $_REQUEST['Password'];
+            $Users->Email                 = $_REQUEST['Email'];
+            $Users->Image                 = $_REQUEST['Image'];
 
             //Campos genericos
             $Users->DateCreation            = date('Y-m-d');

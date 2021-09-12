@@ -252,7 +252,7 @@
                         </div> <!--end col-->
                     </div><!--end row-->
 
-
+                
          <script src="assets/js/jquery.min.js"></script>         
         <script src="plugins/apex-charts/apexcharts.min.js"></script>
         <script src="plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>

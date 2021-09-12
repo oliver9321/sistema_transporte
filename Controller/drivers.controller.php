@@ -62,7 +62,7 @@ class DriversController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['Name']) || isset($_REQUEST['Phone1'])) {
+        if (isset($_REQUEST['Name']) && isset($_REQUEST['Phone1'])) {
 
             $Driver = new Drivers();
 
