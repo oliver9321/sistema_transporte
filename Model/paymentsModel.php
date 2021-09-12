@@ -72,7 +72,6 @@ class Payments {
         try
         {
             $sql = "UPDATE tbl_payments SET
-
                         PaymentOwnerName= ?,
                         CardHolderName= ?,
                         CreditCard= ?,
@@ -90,15 +89,15 @@ class Payments {
 $result=  $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data->$PaymentOwnerName,
-                        $data->$CardHolderName,
-                        $data->$CreditCard,
-                        $data->$ExpDate,
-                        $data->$BilingAddress,
-                        $data->$Reference,
-                        $data->$Tel,
-                        $data->$Email,
-                        $data->$NotePayment,
+                        $data->PaymentOwnerName,
+                        $data->CardHolderName,
+                        $data->CreditCard,
+                        $data->ExpDate,
+                        $data->BilingAddress,
+                        $data->Reference,
+                        $data->Tel,
+                        $data->Email,
+                        $data->NotePayment,
                         $data->LastModificationDate,
                         (int)$data->UserIdLastModification,
                         (int)$data->IsActive,
@@ -117,7 +116,6 @@ $result=  $this->pdo->prepare($sql)
         try
         {
             $sql = "INSERT INTO tbl_payments (
-                
                     PaymentOwnerName,
                     CardHolderName,
                     CreditCard,
@@ -129,20 +127,21 @@ $result=  $this->pdo->prepare($sql)
                     NotePayment,
                     DateCreation,
                     UserIdCreation,
-                    IsActive) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                    IsActive) 
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
 $result=   $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data->$PaymentOwnerName,
-                        $data->$CardHolderName,
-                        $data->$CreditCard,
-                        $data->$ExpDate,
-                        $data->$BilingAddress,
-                        $data->$Reference,
-                        $data->$Tel,
-                        $data->$Email,
-                        $data->$NotePayment,
+                        $data->PaymentOwnerName,
+                        $data->CardHolderName,
+                        $data->CreditCard,
+                        $data->ExpDate,
+                        $data->BilingAddress,
+                        $data->Reference,
+                        $data->Tel,
+                        $data->Email,
+                        $data->NotePayment,
                         date('Y-m-d'),
                         (int)$data->UserIdCreation,
                         1

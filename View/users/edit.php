@@ -36,10 +36,16 @@
                    
                             <div class="card-body">
 
+
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="ProfileUserId">*Profile User:</label>
-                                        <input type="text" class="form-control" id="ProfileUserId" name="ProfileUserId" aria-describedby="ProfileUserId" placeholder="Enter Profile User" value="<?php echo $User->ProfileUserId; ?>"> 
-                                    </div>
+                                    <label for="ProfileUserId"><b>*Profile:</b></label>
+                                    <select id="ProfileUserId" name="ProfileUserId" class="form-control select2">
+                                        <option value="" selected>Select user profile</option>
+                                        <?php foreach($Sucursal as $a): ?>
+                                            <option value="<?php echo $a->Id; ?>"><?php echo $a->Nombre; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
 
                                     <div class="mb-3">
                                         <label class="form-label text-danger" for="Name">*Name:</label>
@@ -68,7 +74,7 @@
 
                                     <div class="mb-3">
                                         <label class="form-label text-danger" for="Image">Imagen:</label>
-                                        <input type="text" class="form-control" id="Image" name="Image" aria-describedby="Image" placeholder="Enter Email" value="<?php echo $User->Image; ?>"> 
+                                        <input type="text" class="form-control" id="Image" name="Image" aria-describedby="Image" placeholder="" value="<?php echo $User->Image; ?>"> 
                                     </div>
                             
                                     <?php if($User->Id != null){?>

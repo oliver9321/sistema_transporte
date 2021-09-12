@@ -268,6 +268,16 @@
                                         
                                                     <div class="col-lg-12">
                                                     <div class="card-body">   
+
+                                                    <div class="mb-3">
+                                                        <label for="IdCustomerType"><b>Customer type:</b></label>
+                                                        <select id="IdCustomerType" name="IdCustomerType" class="form-control select2">
+                                                            <option value="" selected>Select customer type</option>
+                                                            <?php foreach($CustomerType as $a): ?>
+                                                                <option value="<?php echo $a->Id; ?>"><?php echo $a->NameType; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
                                                         
                                                     <div class="mb-3">
                                                         <label class="form-label" for="Name">Name:</label>
