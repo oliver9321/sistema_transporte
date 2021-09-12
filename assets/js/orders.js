@@ -14,10 +14,19 @@ function newCustomer() {
         success: function(data) {
             console.log(data);
             if (data == "true") {
-                alert("Customer created !");
+
                 $("#exampleModalDefault").modal('hide');
+                $(".toast-success").html("Customer created !");
+                var myAlert = document.getElementById('toastSuccess');
+                var bsAlert = new bootstrap.Toast(myAlert);
+                bsAlert.show();
+
             } else {
-                alert(data);
+
+                $(".toast-error").html(data);
+                var myAlert = document.getElementById('toastError');
+                var bsAlert = new bootstrap.Toast(myAlert);
+                bsAlert.show();
             }
         }
     });

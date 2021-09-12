@@ -5,32 +5,32 @@ class Orders {
     private $pdo;
 
     public $Id;
-    public $IdCustomerOrigin ;
-    public $IdCustomerDestination ;
-    public $IdCompanayService ;
-    public $IdDriver ;
-    public $IdStatus ;
-    public $IdPayment ;
-    public $OrderDate ;
-    public $PickUpDate ;
-    public $DeliveryDate ;
-    public $OriginAddress ;
-    public $OriginCity ;
-    public $OriginState ;
-    public $OriginZip ;
-    public $OriginNote ;
-    public $DestinationAddress ;
-    public $DestinationCity ;
-    public $DestinationState ;
-    public $DestinationZip ;
-    public $DestinationNote ;
-    public $Total ;
-    public $Deposit ;
-    public $ExtraTrukerFee ;
-    public $Earnings ;
-    public $Cod ;
-    public $TrukerRate ;
-    public $RequestStatus ;
+    public $IdCustomerOrigin;
+    public $IdCustomerDestination;
+    public $IdCompanyService;
+    public $IdDriver;
+    public $IdStatus;
+    public $IdPayment;
+    public $OrderDate;
+    public $PickUpDate;
+    public $DeliveryDate;
+    public $OriginAddress;
+    public $OriginCity;
+    public $OriginState;
+    public $OriginZip;
+    public $OriginNote;
+    public $DestinationAddress;
+    public $DestinationCity;
+    public $DestinationState;
+    public $DestinationZip;
+    public $DestinationNote;
+    public $Total;
+    public $Deposit;
+    public $ExtraTrukerFee;
+    public $Earnings;
+    public $Cod;
+    public $TrukerRate;
+    public $RequestStatus;
     public $DateCreation;
     public $UserIdCreation;
     public $LastModificationDate;
@@ -92,7 +92,7 @@ class Orders {
 					             
                         IdCustomerOrigin  = ?,
                         IdCustomerDestination  = ?,
-                        IdCompanayService  = ?,
+                        IdCompanyService  = ?,
                         IdDriver  = ?,
                         IdStatus  = ?,
                         IdPayment  = ?,
@@ -126,7 +126,7 @@ $result=   $this->pdo->prepare($sql)
                     array(
                         $data->IdCustomerOrigin,
                         $data->IdCustomerDestination,
-                        $data->IdCompanayService,
+                        $data->IdCompanyService,
                         $data->IdDriver,
                         $data->IdStatus,
                         $data->IdPayment,
@@ -170,7 +170,7 @@ $result=   $this->pdo->prepare($sql)
             $sql = "INSERT INTO tbl_orders(
                 IdCustomerOrigin
                 IdCustomerDestination
-                IdCompanayService
+                IdCompanyService
                 IdDriver
                 IdStatus
                 IdPayment
@@ -204,7 +204,7 @@ $result=   $this->pdo->prepare($sql)
                     array(
                         $data-> IdCustomerOrigin,
                         $data-> IdCustomerDestination,
-                        $data-> IdCompanayService,
+                        $data-> IdCompanyService,
                         $data-> IdDriver,
                         $data-> IdStatus,
                         $data-> IdPayment,

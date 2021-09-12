@@ -29,19 +29,26 @@
                                                             <p class="text-muted mb-0">A powerful jQuery wizard plugin that supports accessibility and HTML5</p>-->
                                                         </div><!--end card-header-->
                                                         <div class="card-body">
+
                                                             <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
-                                                                <h3>Origin info</h3>
+                                                                <h3>Origin -> Destination</h3>
                                                                 <fieldset>
+
                                                                     <div class="row">
+                                                                       
                                                                         <div class="col-md-6">
+                                                                        <span class="text-dark"><b><i data-feather="truck"></i> Origin Information</b></span>
+                                                                        <hr>
                                                                             <div class="form-group row">
-                                                                                <label for="txtFirstNameBilling" class="col-lg-3 col-form-label">Contact Person</label>
+                                                                                <label for="IdCustomerOrigin" class="col-lg-3 col-form-label">Customer name</label>
                                                                                 <div class="col-lg-9">
-                                                                                    <input id="txtFirstNameBilling" name="txtFirstNameBilling" type="text" class="form-control">
+                                                                                    <input id="IdCustomerOrigin" name="IdCustomerOrigin" type="text" class="form-control">
                                                                                 </div>
                                                                             </div><!--end form-group-->
                                                                         </div><!--end col-->
                                                                         <div class="col-md-6">
+                                                                        <span class="text-dark"><b><i data-feather="arrow-right-circle"></i> Destination Information</b></span>
+                                                                        <hr>
                                                                             <div class="form-group row">
                                                                                 <label for="txtLastNameBilling" class="col-lg-3 col-form-label">Mobile No.</label>
                                                                                 <div class="col-lg-9">
@@ -50,43 +57,57 @@
                                                                             </div><!--end form-group-->
                                                                         </div><!--end col-->
                                                                     </div><!--end row-->
+
                                                                     <div class="row">
+
                                                                         <div class="col-md-6">
                                                                             <div class="form-group row">
-                                                                                <label for="txtCompanyBilling" class="col-lg-3 col-form-label">Landline No.</label>
+                                                                                <label for="OriginAddress" class="col-lg-3 col-form-label">Address</label>
                                                                                 <div class="col-lg-9">
-                                                                                    <input id="txtCompanyBilling" name="txtCompanyBilling" type="text" class="form-control">
+                                                                                    <input id="OriginAddress" name="OriginAddress" type="text" class="form-control">
                                                                                 </div>
                                                                             </div><!--end form-group-->
                                                                         </div><!--end col-->
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group row">
-                                                                                <label for="txtEmailAddressBilling" class="col-lg-3 col-form-label">Email Address</label>
-                                                                                <div class="col-lg-9">
-                                                                                    <input id="txtEmailAddressBilling" name="txtEmailAddressBilling" type="text" class="form-control">
-                                                                                </div>
-                                                                            </div><!--end form-group-->
-                                                                        </div><!--end col-->
+
+                                                                     
+
                                                                     </div><!--end row-->
+
                                                                     <div class="row">
-                                                                        <div class="col-md-6">
+                                                                   
+                                                                            <div class="col-md-6">
+                                                                                    <div class="form-group row">
+                                                                                        <label for="OriginCity" class="col-lg-3 col-form-label">Origin City</label>
+                                                                                        <div class="col-lg-9">
+                                                                                            <input id="OriginCity" name="OriginCity" type="text" class="form-control">
+                                                                                        </div>
+                                                                                    </div><!--end form-group-->
+                                                                            </div>
+
+                                                                            <div class="col-md-6">
                                                                             <div class="form-group row">
-                                                                                <label for="txtAddress1Billing" class="col-lg-3 col-form-label">Address 1</label>
+                                                                                <label for="txtStateProvinceBilling" class="col-lg-3 col-form-label">Live Market A/C</label>
                                                                                 <div class="col-lg-9">
-                                                                                    <textarea id="txtAddress1Billing" name="txtAddress1Billing" rows="4" class="form-control"></textarea>
+                                                                                    <input id="txtStateProvinceBilling" name="txtStateProvinceBilling" type="text" class="form-control">
                                                                                 </div>
                                                                             </div><!--end form-group-->
                                                                         </div><!--end col-->
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group row">
-                                                                                <label for="txtAddress2Billing" class="col-lg-3 col-form-label">Warehouse Address</label>
-                                                                                <div class="col-lg-9">
-                                                                                    <textarea id="txtAddress2Billing" name="txtAddress2Billing" rows="4" class="form-control"></textarea>
-                                                                                </div>
-                                                                            </div><!--end form-group-->
-                                                                        </div><!--end col-->
+
+                                                                         
+                                                                        
                                                                     </div><!--end row-->
+
                                                                     <div class="row">
+
+                                                                         <div class="col-md-6">
+                                                                                <div class="form-group row">
+                                                                                    <label for="OriginState" class="col-lg-3 col-form-label">Origin State</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input id="OriginState" name="OriginState" type="text" class="form-control">
+                                                                                    </div>
+                                                                                </div><!--end form-group-->
+                                                                            </div><!--end col-->
+
                                                                         <div class="col-md-6">
                                                                             <div class="form-group row">
                                                                                 <label for="txtCityBilling" class="col-lg-3 col-form-label">Company Type</label>
@@ -95,20 +116,23 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group row">
-                                                                                <label for="txtStateProvinceBilling" class="col-lg-3 col-form-label">Live Market A/C</label>
-                                                                                <div class="col-lg-9">
-                                                                                    <input id="txtStateProvinceBilling" name="txtStateProvinceBilling" type="text" class="form-control">
-                                                                                </div>
-                                                                            </div><!--end form-group-->
-                                                                        </div><!--end col-->
+                                                                  
                                                                     </div><!--end row-->
 
                                                                     <div class="row">
+
+                                                                    <div class="col-md-6">
+                                                                            <div class="form-group row">
+                                                                                <label for="OriginZip" class="col-lg-3 col-form-label">Origin Zip</label>
+                                                                                <div class="col-lg-9">
+                                                                                    <input id="OriginZip" name="OriginZip" type="text" class="form-control">
+                                                                                </div>
+                                                                            </div><!--end form-group-->
+                                                                        </div><!--end col-->
+
                                                                         <div class="col-md-6">
                                                                             <div class="form-group row">
-                                                                                <label for="txtTelephoneBilling" class="col-lg-3 col-form-label">Product Category</label>
+                                                                                <label for="OriginPhone1" class="col-lg-3 col-form-label">Origin Phone 1</label>
                                                                                 <div class="col-lg-9">
                                                                                     <input id="txtTelephoneBilling" name="txtTelephoneBilling" type="text" class="form-control">
                                                                                 </div>
@@ -344,23 +368,22 @@
                                     <!--end modal-dialog-->
                                 </div>
 
-                                <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
 
-                            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                            <div class="position-fixed top-0 end-0 p-3" style=" z-index: 9999999 !important;">
                             
-                                <div id="toastError" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div id="toastSuccess" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
                                     <div class="d-flex">
-                                        <div class="toast-body">
-                                                                
+                                        <div class="toast-body toast-success">
+                                                          <!-- Message from js -->          
                                         </div>
                                         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                                     </div>
                                   </div>
 
-                                  <div id="toastSuccess" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                  <div id="toastError" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
                                     <div class="d-flex">
-                                        <div class="toast-body">
-                                                                
+                                        <div class="toast-body toast-error">
+                                                <!-- Message from js -->                           
                                         </div>
                                         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                                     </div>
@@ -391,14 +414,6 @@
 <script>
      $(document).ready(function(){
         $(".select2").select2(); 
-      
-
-        document.getElementById("liveToastBtn").onclick = function() {
-    var myAlert =document.getElementById('toast');//select id of toast
-    var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
-    bsAlert.show();//show it
-}
-
     }); 
    </script>`
 
