@@ -9,7 +9,7 @@ class Orders {
     public $IdCustomerDestination;
     public $IdCompanyService;
     public $IdDriver;
-    public $IdStatus;
+    public $OrderStatusID;
     public $IdPayment;
     public $OrderDate;
     public $PickUpDate;
@@ -94,7 +94,7 @@ class Orders {
                         IdCustomerDestination  = ?,
                         IdCompanyService  = ?,
                         IdDriver  = ?,
-                        IdStatus  = ?,
+                        OrderStatusID  = ?,
                         IdPayment  = ?,
                         OrderDate  = ?,
                         PickUpDate  = ?,
@@ -128,7 +128,7 @@ $result=   $this->pdo->prepare($sql)
                         $data->IdCustomerDestination,
                         $data->IdCompanyService,
                         $data->IdDriver,
-                        $data->IdStatus,
+                        $data->OrderStatusID,
                         $data->IdPayment,
                         $data->OrderDate,
                         $data->PickUpDate,
@@ -172,7 +172,7 @@ $result=   $this->pdo->prepare($sql)
                 IdCustomerDestination
                 IdCompanyService
                 IdDriver
-                IdStatus
+                OrderStatusID
                 IdPayment
                 OrderDate
                 PickUpDate
@@ -206,7 +206,7 @@ $result=   $this->pdo->prepare($sql)
                         $data-> IdCustomerDestination,
                         $data-> IdCompanyService,
                         $data-> IdDriver,
-                        $data-> IdStatus,
+                        $data-> OrderStatusID,
                         $data-> IdPayment,
                         $data-> OrderDate,
                         $data-> PickUpDate,

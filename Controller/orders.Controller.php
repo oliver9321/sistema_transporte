@@ -70,9 +70,9 @@ class OrdersController
             $Orders->Id                       = $_REQUEST['Id'];
             $Orders->IdCustomerOrigin         = $_REQUEST['IdCustomerOrigin'];
             $Orders->IdCustomerDestination    = $_REQUEST['IdCustomerDestination'];
-            $Orders->IdCompanayService        = $_REQUEST['IdCompanayService'];
+            $Orders->IdCompanyService        = $_REQUEST['IdCompanyService'];
             $Orders->IdDriver                 = $_REQUEST['IdDriver'];
-            $Orders->IdStatus                 = $_REQUEST['IdStatus'];
+            $Orders->OrderStatusID                 = $_REQUEST['OrderStatusID'];
             $Orders->IdPayment                = $_REQUEST['IdPayment'];
             $Orders->OrderDate                = $_REQUEST['OrderDate'];
             $Orders->PickUpDate               = $_REQUEST['PickUpDate'];

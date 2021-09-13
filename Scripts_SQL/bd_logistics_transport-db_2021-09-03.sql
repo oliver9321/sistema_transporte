@@ -109,7 +109,7 @@ CREATE TABLE `tbl_orders` (
   `IdCustomerDestination` int NOT NULL,
   `IdCompanyService` int NOT NULL,
   `IdDriver` int NOT NULL,
-  `IdStatus` int NOT NULL,
+  `OrderStatusID` int NOT NULL,
   `IdPayment` int NOT NULL,
   `OrderDate` datetime NOT NULL,
   `PickUpDate` datetime NOT NULL,
@@ -300,7 +300,7 @@ ALTER TABLE `tbl_orders`
   ADD KEY `fk_customers_destination_idx` (`IdCustomerDestination`),
   ADD KEY `fk_company_service_idx` (`IdCompanyService`),
   ADD KEY `fk_driver_idx` (`IdDriver`),
-  ADD KEY `fk_estatus_order_idx` (`IdStatus`),
+  ADD KEY `fk_estatus_order_idx` (`OrderStatusID`),
   ADD KEY `fk_payment_idx` (`IdPayment`);
 
 --
@@ -429,7 +429,7 @@ ALTER TABLE `tbl_orders`
   ADD CONSTRAINT `fk_customers_destination` FOREIGN KEY (`IdCustomerDestination`) REFERENCES `tbl_customers` (`Id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_customers_origin` FOREIGN KEY (`IdCustomerOrigin`) REFERENCES `tbl_customers` (`Id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_driver` FOREIGN KEY (`IdDriver`) REFERENCES `tbl_drivers` (`Id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_estatus_order` FOREIGN KEY (`IdStatus`) REFERENCES `tbl_order_status` (`Id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_estatus_order` FOREIGN KEY (`OrderStatusID`) REFERENCES `tbl_order_status` (`Id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_payment` FOREIGN KEY (`IdPayment`) REFERENCES `tbl_payments` (`Id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 --
