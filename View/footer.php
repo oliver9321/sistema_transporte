@@ -296,7 +296,8 @@
                                                                     <option value="honda">Honda</option>
                                                                     <option value="ford">Ford</option>
                                                                 </select>
-                                                </div><br>
+                                                </div>
+                                                <hr>
 
                                                 <div class="col-sm-3">
                                                     <label class="form-label">Color</label>
