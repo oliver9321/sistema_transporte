@@ -55,10 +55,10 @@ $(document).ready(function() {
         columns:[
             {data: "Id"},
             {data: "CompanyName"},
-            {data: "Address"},
-            {data: "Phone1"},
-            {data: "Phone2"},
-            {data: "Email"},
+            {data: "CompanyAddress"},
+            {data: "CompanyPhone1"},
+            {data: "CompanyPhone2"},
+            {data: "CompanyEmail"},
             {data: "IsActive"},
             {data: "Id"}
         ],"columnDefs": [ {

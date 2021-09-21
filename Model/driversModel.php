@@ -5,10 +5,9 @@ class Drivers {
     private $pdo;
 
     public $Id;
-    public $Name;
-    public $LastName;
-    public $Phone1;
-    public $Phone2;
+    public $DriverName;
+    public $DriverPhone1;
+    public $DriverPhone2;
     public $DateCreation;
     public $UserIdCreation;
     public $LastModificationDate;
@@ -67,11 +66,9 @@ class Drivers {
         try
         {
             $sql = "UPDATE tbl_drivers SET
-
-                        Name= ?,
-                        LastName= ?,
-                        Phone1= ?,
-                        Phone2= ?,
+                        DriverName= ?,
+                        DriverPhone1= ?,
+                        DriverPhone2= ?,
 						LastModificationDate = ?,
 						UserIdLastModification = ?,
 						IsActive = ?
@@ -81,10 +78,9 @@ class Drivers {
                 ->execute(
                     array(
 
-                        $data->Name,
-                        $data->LastName,
-                        $data->Phone1,
-                        $data->Phone2,
+                        $data->DriverName,
+                        $data->DriverPhone1,
+                        $data->DriverPhone2,
                         $data->LastModificationDate,
                         (int)$data->UserIdLastModification,
                         (int)$data->IsActive,
@@ -104,15 +100,14 @@ class Drivers {
     {
         try
         {
-            $sql = "INSERT INTO tbl_drivers (Name,LastName,Phone1,Phone2,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tbl_drivers (DriverName,DriverPhone1,DriverPhone2,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?)";
 
             $result =  $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data->Name,
-                        $data->LastName,
-                        $data->Phone1,
-                        $data->Phone2,
+                        $data->DriverName,
+                        $data->DriverPhone1,
+                        $data->DriverPhone2,
                         date('Y-m-d'),
                         (int)$data->UserIdCreation,
                         1

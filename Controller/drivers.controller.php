@@ -62,16 +62,15 @@ class DriversController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['Name']) && isset($_REQUEST['Phone1'])) {
+        if (isset($_REQUEST['DriverName']) && isset($_REQUEST['DriverPhone1'])) {
 
             $Driver = new Drivers();
 
             //Campos unicos por tabla
             $Driver->Id         = $_REQUEST['Id'];
-            $Driver->Name       = $_REQUEST['Name'];
-            $Driver->LastName   = $_REQUEST['LastName'];
-            $Driver->Phone1     = $_REQUEST['Phone1'];
-            $Driver->Phone2     = $_REQUEST['Phone2'];
+            $Driver->DriverName       = $_REQUEST['DriverName'];
+            $Driver->DriverPhone1     = $_REQUEST['DriverPhone1'];
+            $Driver->DriverPhone2     = $_REQUEST['DriverPhone2'];
  
             //Campos genericos
             $Driver->DateCreation            = date('Y-m-d');

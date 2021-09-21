@@ -13,9 +13,8 @@
                 <table id="DriverList" width="100%" class="table table-striped table-bordered dataTable">
                     <thead>
                         <tr class="text-center">
-                             <th>#</th>
-                             <th>Name</th>
-                            <th>Last Name</th>
+                            <th>#</th>
+                            <th>Name</th>
                             <th>Phone 1</th>
                             <th>Phone 2</th>
                             <th>Active</th>
@@ -55,9 +54,8 @@ $(document).ready(function() {
         columns:[
             {data: "Id"},
             {data: "Name"},
-            {data: "LastName"},
-            {data: "Phone1"},
-            {data: "Phone2"},
+            {data: "DriverPhone1"},
+            {data: "DriverPhone2"},
             {data: "IsActive"},
             {data: "Id"}
         ],"columnDefs": [ {

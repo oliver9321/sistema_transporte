@@ -6,10 +6,10 @@ class CompanyServices {
 
     public $Id;
     public $CompanyName;
-    public $Address;
-    public $Phone1;
-    public $Phone2;
-    public $Email;
+    public $CompanyAddress;
+    public $CompanyPhone1;
+    public $CompanyPhone2;
+    public $CompanyEmail;
     public $DateCreation;
     public $UserIdCreation;
     public $LastModificationDate;
@@ -71,10 +71,10 @@ class CompanyServices {
             
      
                 CompanyName= ?,
-                Address = ?,
-                Phone1= ?,
-                Phone2= ?,
-                Email= ?,
+                CompanyAddress = ?,
+                CompanyPhone1= ?,
+                CompanyPhone2= ?,
+                CompanyEmail= ?,
                 LastModificationDate= ?,
                 UserIdLastModification= ?,
                 IsActive= ?,
@@ -86,10 +86,10 @@ class CompanyServices {
                         
                   
                         $data-> CompanyName,
-                        $data-> Address,
-                        $data-> Phone1,
-                        $data-> Phone2,
-                        $data-> Email,
+                        $data-> CompanyAddress,
+                        $data-> CompanyPhone1,
+                        $data-> CompanyPhone2,
+                        $data-> CompanyEmail,
                         (int)$data-> LastModificationDate,
                         (int)$data-> UserIdLastModification,
                         $data-> IsActive,
@@ -107,16 +107,16 @@ class CompanyServices {
     {
         try
         {
-            $sql = "INSERT INTO tbl_company_services (CompanyName,Address,Phone1,Phone2,Email,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tbl_company_services (CompanyName,CompanyAddress,CompanyPhone1,CompanyPhone2,CompanyEmail,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?)";
 
             $result =  $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data-> CompanyName,
-                        $data-> Address,
-                        $data-> Phone1,
-                        $data-> Phone2,
-                        $data-> Email,
+                        $data-> CompanyAddress,
+                        $data-> CompanyPhone1,
+                        $data-> CompanyPhone2,
+                        $data-> CompanyEmail,
                         date('Y-m-d'),
                         (int)$data->UserIdCreation,
                         1

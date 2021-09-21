@@ -9,11 +9,13 @@ class Payments {
     public $CardHolderName;
     public $CreditCard;
     public $ExpDate;
+    public $Cvv;
     public $BilingAddress;
     public $Reference;
-    public $Tel;
-    public $Email;
-    public $NotePayment;
+    public $Tel1;
+    public $Tel2;
+    public $PaymentEmail;
+    public $PaymentNote;
     public $DateCreation;
     public $UserIdCreation;
     public $LastModificationDate;
@@ -76,11 +78,13 @@ class Payments {
                         CardHolderName= ?,
                         CreditCard= ?,
                         ExpDate= ?,
+                        Cvv = ?,
                         BilingAddress= ?,
                         Reference= ?,
-                        Tel= ?,
-                        Email= ?,
-                        NotePayment= ?,         
+                        Tel1= ?,
+                        Tel2= ?,
+                        PaymentEmail= ?,
+                        PaymentNote= ?,         
 						LastModificationDate = ?,
 						UserIdLastModification = ?,
 						IsActive = ?
@@ -93,11 +97,13 @@ $result=  $this->pdo->prepare($sql)
                         $data->CardHolderName,
                         $data->CreditCard,
                         $data->ExpDate,
+                        $data->Cvv,
                         $data->BilingAddress,
                         $data->Reference,
-                        $data->Tel,
-                        $data->Email,
-                        $data->NotePayment,
+                        $data->Tel1,
+                        $data->Tel2,
+                        $data->PaymentEmail,
+                        $data->PaymentNote,
                         $data->LastModificationDate,
                         (int)$data->UserIdLastModification,
                         (int)$data->IsActive,
@@ -120,15 +126,17 @@ $result=  $this->pdo->prepare($sql)
                     CardHolderName,
                     CreditCard,
                     ExpDate,
+                    Cvv,
                     BilingAddress,
                     Reference,
-                    Tel,
-                    Email,
-                    NotePayment,
+                    Tel1,
+                    Tel2,
+                    PaymentEmail,
+                    PaymentNote,
                     DateCreation,
                     UserIdCreation,
                     IsActive) 
-                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 $result=   $this->pdo->prepare($sql)
                 ->execute(
@@ -137,11 +145,13 @@ $result=   $this->pdo->prepare($sql)
                         $data->CardHolderName,
                         $data->CreditCard,
                         $data->ExpDate,
+                        $data->Cvv,
                         $data->BilingAddress,
                         $data->Reference,
-                        $data->Tel,
-                        $data->Email,
-                        $data->NotePayment,
+                        $data->Tel1,
+                        $data->Tel2,
+                        $data->PaymentEmail,
+                        $data->PaymentNote,
                         date('Y-m-d'),
                         (int)$data->UserIdCreation,
                         1

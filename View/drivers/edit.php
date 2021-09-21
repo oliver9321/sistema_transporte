@@ -37,24 +37,18 @@
                             <div class="card-body">
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="Name">*Driver name:</label>
-                                        <input type="text" class="form-control" id="Name" name="Name" aria-describedby="Name" placeholder="Enter driver name" value="<?php echo $Driver->Name; ?>"> 
+                                        <label class="form-label text-danger" for="DriverName">*Driver name:</label>
+                                        <input type="text" class="form-control" id="DriverName" name="DriverName" aria-describedby="DriverName" placeholder="Enter driver name" value="<?php echo $Driver->DriverName; ?>"> 
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="LastName">*Driver last name:</label>
-                                        <input type="text" class="form-control" id="LastName" name="LastName"  aria-describedby="LastName" placeholder="Enter driver last name" value="<?php echo $Driver->LastName; ?>">
-                                    </div>
-
-                                    
-                                    <div class="mb-3">
-                                        <label class="form-label text-danger" for="Phone1">*Number phone 1:</label>
-                                        <input type="tel" class="form-control" id="Phone1" name="Phone1" aria-describedby="Phone1" placeholder="1-(555)-555-5555" value="<?php echo $Driver->Phone1; ?>">
+                                        <label class="form-label text-danger" for="DriverPhone1">*Number phone 1:</label>
+                                        <input type="tel" class="form-control" id="DriverPhone1" name="DriverPhone1" aria-describedby="DriverPhone1" placeholder="1-(555)-555-5555" value="<?php echo $Driver->DriverPhone1; ?>">
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="Phone2">Number phone 2:</label>
-                                        <input type="tel" class="form-control" id="Phone2" name="Phone2" aria-describedby="Phone2" placeholder="1-(555)-555-5555" value="<?php echo $Driver->Phone2; ?>">
+                                        <label class="form-label" for="DriverPhone2">Number phone 2:</label>
+                                        <input type="tel" class="form-control" id="DriverPhone2" name="DriverPhone2" aria-describedby="DriverPhone2" placeholder="1-(555)-555-5555" value="<?php echo $Driver->DriverPhone2; ?>">
                                     </div>
 
                                     <?php if($Driver->Id != null){?>

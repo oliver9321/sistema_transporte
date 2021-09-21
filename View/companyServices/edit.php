@@ -42,25 +42,25 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="Address">Address:</label>
-                                        <input type="text" class="form-control" id="Address" name="Address"  aria-describedby="Address" placeholder="Enter the address" value="<?php echo $CompanyService->Address; ?>">
+                                        <label class="form-label" for="CompanyAddress">Company address:</label>
+                                        <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress"  aria-describedby="CompanyAddress" placeholder="Enter the CompanyAddress" value="<?php echo $CompanyService->CompanyAddress; ?>">
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="Phone1">*Phone #1:</label>
-                                        <input type="tel" class="form-control" id="Phone1" name="Phone1"  aria-describedby="Phone1" placeholder="1 (555) 555-555" value="<?php echo $CompanyService->Phone1; ?>">
+                                        <label class="form-label text-danger" for="CompanyPhone1">*Phone #1:</label>
+                                        <input type="tel" class="form-control" id="CompanyPhone1" name="CompanyPhone1"  aria-describedby="CompanyPhone1" placeholder="1 (555) 555-555" value="<?php echo $CompanyService->CompanyPhone1; ?>">
                                     </div>
 
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="Phone2">Phone #2:</label>
-                                        <input type="tel" class="form-control" id="Phone2" name="Phone2"  aria-describedby="Phone2" placeholder="1 (555) 555-555 (optional)" value="<?php echo $CompanyService->Phone2; ?>">
+                                        <label class="form-label" for="CompanyPhone2">Phone #2:</label>
+                                        <input type="tel" class="form-control" id="CompanyPhone2" name="CompanyPhone2"  aria-describedby="CompanyPhone2" placeholder="1 (555) 555-555 (optional)" value="<?php echo $CompanyService->CompanyPhone2; ?>">
                                     </div>
                                     
                                     
                                     <div class="mb-3">
-                                        <label class="form-label" for="Email">Email:</label>
-                                        <input type="email" class="form-control" id="Email" name="Email"  aria-describedby="Email" placeholder="Enter the email (optional)" value="<?php echo $CompanyService->Email; ?>">
+                                        <label class="form-label" for="CompanyEmail">CompanyEmail:</label>
+                                        <input type="CompanyEmail" class="form-control" id="CompanyEmail" name="CompanyEmail"  aria-describedby="CompanyEmail" placeholder="Enter the CompanyEmail (optional)" value="<?php echo $CompanyService->CompanyEmail; ?>">
                                     </div>
 
                                     <?php if($CompanyService->Id != null){?>

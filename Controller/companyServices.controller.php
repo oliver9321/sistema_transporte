@@ -62,17 +62,17 @@ class CompanyServicesController
     public function Save()
     {
         //Se colocan los campos obligatorios en la tabla.
-        if (isset($_REQUEST['CompanyName']) && isset($_REQUEST['Phone1'])) {
+        if (isset($_REQUEST['CompanyName']) && isset($_REQUEST['CompanyPhone1'])) {
 
             $CompanyServices = new CompanyServices();
             
             //Campos unicos por tabla
-            $CompanyServices->Id         = $_REQUEST['Id'];
-            $CompanyServices->CompanyName = $_REQUEST['CompanyName'];
-            $CompanyServices->Address   = $_REQUEST['Address'];
-            $CompanyServices->Phone1     = $_REQUEST['Phone1'];
-            $CompanyServices->Phone2     = $_REQUEST['Phone2'];
-            $CompanyServices->Email     = $_REQUEST['Email'];
+            $CompanyServices->Id                = $_REQUEST['Id'];
+            $CompanyServices->CompanyName       = $_REQUEST['CompanyName'];
+            $CompanyServices->CompanyAddress    = $_REQUEST['CompanyAddress'];
+            $CompanyServices->CompanyPhone1     = $_REQUEST['CompanyPhone1'];
+            $CompanyServices->CompanyPhone2     = $_REQUEST['CompanyPhone2'];
+            $CompanyServices->CompanyEmail      = $_REQUEST['CompanyEmail'];
 
             //Campos genericos
             $CompanyServices->DateCreation            = date('Y-m-d');
