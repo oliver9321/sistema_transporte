@@ -458,7 +458,7 @@
 
                                         <div class="row">
                                             <div class="col-md-12" style="position: relative;">
-                                                <label class="mb-1">Payment note</label>
+                                                <label class="mb-1">Payment Note</label>
                                                 <textarea id="PaymentNote" name="PaymentNote" class="form-control" placeholder="Opcional information"></textarea>
                                             </div><!-- end row -->
                                         </div><br>
