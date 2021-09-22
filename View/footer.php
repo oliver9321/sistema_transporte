@@ -626,14 +626,179 @@
 
                             <h3>Confirm Order</h3>
                             <fieldset>
-                                <div class="p-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            I agree with the Terms and Conditions.
-                                        </label>
+                            <div class="row">
+                    <div class="col-lg-12 mx-auto">
+                        <div class="card">
+                            <div class="card-body invoice-head">
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <!--<img src="assets/images/logoTransport.png" alt="logo-small" class="logo-sm me-1" height="24">-->
+                                        <img src="assets/images/logoTransport.png" alt="logo-large" class="logo-lg logo-dark" height="150">
+                                        <!--<img src="assets/images/logoTransport.png" alt="logo-large" class="logo-lg logo-light" height="20">-->
+                                        <!--<p class="mt-2 mb-0 text-muted">Ez Auto Transportation</p>-->
                                     </div>
+                                    <!--end col-->
+                                    <div class="col-md-8">
+                                        <br>
+                                        <ul class="list-inline mb-0 contact-detail float-end">
+                                            <li class="list-inline-item">
+                                                <div class="ps-3">
+                                                    <p class="text-muted mb-0"><i class="mdi mdi-web"></i> www.ezautotransportationusa.com</p>
+                                                </div>
+                                            </li>
+                                           
+                                            <li class="list-inline-item">
+                                                <div class="ps-3">
+                                                    <p class="text-muted mb-0"><i class="mdi mdi-phone"></i> +123 123456789</p>
+                                                </div>
+                                            </li>
+                                           
+                                            <li class="list-inline-item">
+                                                <div class="ps-3">
+                                                    <p class="text-muted mb-0"><i class="mdi mdi-map-marker"></i> 2821 Kensington Road, Avondale Estates, GA 30002 USA.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--end col-->
                                 </div>
+                                <!--end row-->
+                            </div>
+                            <!--end card-body-->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="">
+                                            <h6 class="mb-0"><b>Order Date :</b> 11/05/2020</h6>
+                                            <h6><b>Order ID :</b> # 23654789</h6>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-md-4">
+                                        <div class="float-left">
+                                            <address class="font-13">
+                                                    <strong class="font-14">Billed To :</strong><br>
+                                                    Joe Smith<br>
+                                                    795 Folsom Ave<br>
+                                                    San Francisco, CA 94107<br>
+                                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                                </address>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-md-4">
+                                        <div class="">
+                                            <address class="font-13">
+                                                    <strong class="font-14">Shipped To:</strong><br>
+                                                    Joe Smith<br>
+                                                    795 Folsom Ave<br>
+                                                    San Francisco, CA 94107<br>
+                                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                                </address>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive project-invoice">
+                                            <table class="table table-bordered mb-0">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Brand</th>
+                                                        <th>Model</th>
+                                                        <th>Color</th>
+                                                        <th>Year</th>
+                                                    </tr>
+                                                    <!--end tr-->
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="mt-0 mb-1 font-14">Honda</h5>
+                                                            <p class="mb-0 text-muted">Vin 132157878421212</p>
+                                                        </td>
+                                                        <td>Accord</td>
+                                                        <td>White</td>
+                                                        <td>2021</td>
+                                                    </tr>
+                                                    <!--end tr-->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="mt-0 mb-1 font-14">Honda</h5>
+                                                            <p class="mb-0 text-muted">Vin 465465465454545</p>
+                                                        </td>
+                                                        <td>Civic</td>
+                                                        <td>Red</td>
+                                                        <td>2018</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td colspan="2" class="border-0"></td>
+                                                        <td class="border-0 font-14 text-dark"><b>Sub Total</b></td>
+                                                        <td class="border-0 font-14 text-dark"><b>$82,000.00</b></td>
+                                                    </tr>
+                                                    <!--end tr-->
+                                                    <tr>
+                                                        <th colspan="2" class="border-0"></th>
+                                                        <td class="border-0 font-14 text-dark"><b>Tax Rate</b></td>
+                                                        <td class="border-0 font-14 text-dark"><b>$0.00%</b></td>
+                                                    </tr>
+                                                    <!--end tr-->
+                                                    <tr class="bg-black text-white">
+                                                        <th colspan="2" class="border-0"></th>
+                                                        <td class="border-0 font-14"><b>Total</b></td>
+                                                        <td class="border-0 font-14"><b>$82,000.00</b></td>
+                                                    </tr>
+                                                    <!--end tr-->
+                                                </tbody>
+                                            </table>
+                                            <!--end table-->
+                                        </div>
+                                        <!--end /div-->
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+
+                                
+                                <div class="row justify-content-left">
+                                        <div class="col-lg-6">
+                                            <h6 class="mt-4">Payment information - Note:</h6>
+                                            <ul class="ps-3">
+                                                <li><small class="font-12">All accounts are to be paid within 7 days from receipt of invoice. </small></li>
+                                                <li><small class="font-12">To be paid by cheque or credit card or direct payment online.</small ></li>
+                                                <li><small class="font-12"> If account is not paid within 7 days the credits details supplied as confirmation of work undertaken will be charged the agreed quoted fee noted above.</small></li>                                            
+                                            </ul>
+                                        </div> <!--end col-->                                       
+                                    </div><!--end row-->
+
+                                <hr>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-12 col-xl-4 ms-auto align-self-center">
+                                        <div class="text-center"><small class="font-12">Thank you very much for doing business with us.</small></div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-lg-12 col-xl-4">
+                                        <div class="float-end d-print-none">
+                                            <a href="javascript:window.print()" class="btn btn-soft-info btn-sm">Print</a>
+                                            <a href="#" class="btn btn-soft-primary btn-sm">Submit</a>
+                                            <a href="#" class="btn btn-soft-danger btn-sm">Cancel</a>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row-->
                             </fieldset>
                             <!--end fieldset-->
 

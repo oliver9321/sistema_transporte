@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Logistics Transport</title>
+    <title>Logistic Transport</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="" name="description" />
     <meta content="" name="ofermin" />
@@ -31,7 +31,7 @@
                                     <a href="index.html" class="logo logo-admin">
                                         <img src="assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo">
                                     </a>
-                                    <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Logistics Transport</h4>
+                                    <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Logistic Transport</h4>
                                 </div>
                             </div>
                             <div class="card-body p-0">
