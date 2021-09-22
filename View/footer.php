@@ -780,17 +780,20 @@
 <script src="assets/js/moment.js"></script>
 <script src="plugins/daterangepicker/daterangepicker.js"></script>
 <script src="plugins/jquery-steps/jquery.steps.min.js"></script>
-<script src="assets/pages/jquery.form-wizard.init.js"></script>
 
 <!-- App js -->
 <script src="assets/js/app.js"></script>
 <script src="assets/js/orders.js"></script>
 
 <script>
-$(document).ready(function() {
-    $(".select2").select2();
-});
-</script>`
+
+    if ($(".select2").length > 0){
+        $(".select2").select2();
+    }
+
+   $("#form-horizontal").steps({ headerTag: "h3", bodyTag: "fieldset", transitionEffect: "slide" });
+    
+</script>
 
 </body>
 
