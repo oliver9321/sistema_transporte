@@ -1,5 +1,6 @@
 <br>
 <a href="?c=Drivers&a=Edit" class="btn btn-primary">New driver <i class="fa fa-plus" aria-hidden="true"></i></a>
+
 <hr>
 <div class="row">
    <div class="col-12">
@@ -53,19 +54,19 @@ $(document).ready(function() {
             },
         columns:[
             {data: "Id"},
-            {data: "Name"},
+            {data: "DriverName"},
             {data: "DriverPhone1"},
             {data: "DriverPhone2"},
             {data: "IsActive"},
             {data: "Id"}
         ],"columnDefs": [ {
-            "targets":6,
+            "targets":5,
             "data": "Editar",
             "render": function ( data) {
                 return '<a class="btn btn-warning" href="index.php?c=Drivers&a=Edit&Id='+data+'" aria-label="Editar"> <i class="ti-pencil"></i>  </a>';
             }
         },{
-                "targets": 5,
+                "targets": 4,
                 "data": "IsActive",
                 "render": function (data) {
                     return (data) == 1 ? '<center><button type="button" class="btn btn-success"> <i class="ti-check"></i> </button></center>': '<center><button type="button" class="btn btn-sm btn-danger btn-circle waves-effect waves-light"> <i class="ti-close"></i> </button></center>';

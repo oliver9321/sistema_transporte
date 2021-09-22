@@ -16,6 +16,8 @@ class DriversController
 
         if($_SESSION['UserOnline']->Profile == "admin") {
 
+            $data = $this->model->View();
+
         GetRouteView(null, "header");
         require_once 'View/drivers/index.php';
         GetRouteView(null, "footer");
@@ -28,10 +30,10 @@ class DriversController
     //Vista
     public function View(){
 
-        if($_SESSION['UserOnline']->Profile == "admin") {
+        if($_SESSION['UserOnline']->Profile == "admin"){
 
          echo json_encode($this->model->View(), true);
-
+       
         }else{
             header('Location:index.php?c=login&a=index');
         }
