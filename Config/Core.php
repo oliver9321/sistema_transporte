@@ -2,9 +2,11 @@
 
 //CONFIGURACIONES DE LA APLICACION
 
-define ("NOMBRE_APLICATION", "Logistics Transport");
-define ("VERSION", "-v1.5");
+define ("NOMBRE_APLICATION", "Ez autotransportation");
+define ("SYSTEM_NAME", "Logistic Transport");
+define ("VERSION", "v1.5");
 define ("DEBUG", true);
+define ("MODE", "develop mode");
 define("USUARIO_DB", "delimar1_logisti");
 define("PASSWORD_DB", "logistics_transport123");
 //define("SERVIDOR", "127.0.0.1"); //local

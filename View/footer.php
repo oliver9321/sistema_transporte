@@ -5,7 +5,7 @@
     &copy;
     <script>
     document.write(new Date().getFullYear())
-    </script> Logistics Transport - <span class="text-danger">develop mode</span><span
+    </script> <?=NOMBRE_APLICATION." ".VERSION ?> - <span class="text-danger"><?=MODE?></span><span
         class="text-muted d-none d-sm-inline-block float-end">developed by
         <i class="mdi mdi-heart text-danger"></i>devsarrollando.org</span>
 </footer>

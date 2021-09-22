@@ -10,17 +10,17 @@
             </div><!--end card-header-->
             
             <div class="card-body">  
-                <table id="usersList" width="100%" class="table table-striped table-bordered dataTable">
+                <table id="usersList" width="100%" class="table table-striped table-bordered dataTable mb-0 ">
                     <thead>
-                        <tr class="text-center">
+                        <tr>
                              <th>#</th>
                              <th>Profile User</th>                           
                             <th>Name</th>
                             <th>Last Name</th>                           
                             <th>User Name</th>
                             <th>Email</th>  
-                            <th>Active</th>
-                            <th>Edit</th>
+                            <th  class="text-center">Active</th>
+                            <th  class="text-center">Edit</th>
                         </tr>
                      </thead>
                    </table>
@@ -66,7 +66,7 @@ $(document).ready(function() {
             "targets":7,
             "data": "Editar",
             "render": function ( data) {
-                return '<a class="btn btn-warning" href="index.php?c=users&a=Edit&Id='+data+'" aria-label="Editar"> <i class="ti-pencil"></i>  </a>';
+                return '<center><a class="btn btn-warning" href="index.php?c=users&a=Edit&Id='+data+'" aria-label="Editar"> <i class="ti-pencil"></i>  </a></center>';
             }
         },{
                 "targets": 6,

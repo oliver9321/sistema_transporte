@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Logistics Transport</title>
+    <title><?=NOMBRE_APLICATION?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="" name="description" />
     <meta content="" name="ofermin" />
@@ -50,8 +50,8 @@
         <!-- LOGO -->
         <div class="brand">
             <a href="index.php?c=Dashboard&a=Index" class="logo">
-                <span>
-                        <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
+                  <span class="text-secondary">
+                     <b><?=SYSTEM_NAME?></b>
                     </span>
                 <span>
                        <!-- <img src="assets/images/logo.png" alt="logo-large" class="logo-lg logo-light">
