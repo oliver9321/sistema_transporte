@@ -3,7 +3,7 @@
 //CONFIGURACIONES DE LA APLICACION
 
 define ("NOMBRE_APLICATION", "Logistics Transport");
-define ("VERSION", "-v1");
+define ("VERSION", "-v1.5");
 define ("DEBUG", true);
 define("USUARIO_DB", "delimar1_logisti");
 define("PASSWORD_DB", "logistics_transport123");
