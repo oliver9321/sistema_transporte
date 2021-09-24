@@ -1,5 +1,6 @@
 <br>
 <a href="?c=customerType&a=Edit" class="btn btn-primary">New customer type <i class="fa fa-plus" aria-hidden="true"></i></a>
+
 <hr>
 <div class="row">
    <div class="col-12">

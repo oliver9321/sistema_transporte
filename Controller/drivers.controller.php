@@ -107,5 +107,32 @@ class DriversController
             header('Location:index.php?c=Drivers&a=Edit');
         }
     }
+    public function NewDriver()
+    {
+        //Se colocan los campos obligatorios en la tabla.
+        if (isset($_POST['DriverName']) && isset($_POST['DriverPhone1'])) {
 
+            if($_POST['DriverName'] != '' && $_POST['DriverPhone1'] != ''){
+
+                $driver= new Drivers();
+
+                $driver->DriverName     = $_POST['DriverName'];
+                $driver->DriverPhone1   = $_POST['DriverPhone1'];
+                $driver->DriverPhone2    = $_POST['DriverPhone2'];
+
+                //Campos genericos
+                $driver->DateCreation     = date('Y-m-d');
+                $driver->UserIdCreation   = $_SESSION['UserOnline']->Id;
+                $driver->IsActive = 1;
+
+                echo json_encode($this->model->Create($driver), true);
+              
+            }else{
+                echo "Please, complete the required fields (*)";
+            }
+
+    }else{
+        echo "Please, complete the required fields (*)";
+    }   
+}
 }

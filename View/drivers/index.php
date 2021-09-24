@@ -12,15 +12,15 @@
             
             <div class="card-body">  
             <div class="table-rep-plugin table-responsive">
-                <table id="DriverList" width="100%" class="table table-striped table-bordered dataTable mb-0 ">
+                <table id="DriverList" width="100%" class="table-responsive table table-striped table-bordered dataTable mb-0 ">
                     <thead>
-                        <tr class="text-center">
+                        <tr>
                             <th>#</th>
                             <th>Name</th>
                             <th>Phone 1</th>
                             <th>Phone 2</th>
-                            <th>Active</th>
-                            <th>Edit</th>
+                            <th class="text-center">Active</th>
+                            <th class="text-center">Edit</th>
                         </tr>
                      </thead>
                    </table>
@@ -31,6 +31,7 @@
  </div> <!-- end row -->
 
  <script src="assets/js/jquery.min.js"></script>
+ <script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Required datatable js -->
     <script src="plugins/datatables/jquery.dataTables.min.js"></script>

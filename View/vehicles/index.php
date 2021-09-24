@@ -11,7 +11,7 @@
             
             <div class="card-body">  
             <div class="table-rep-plugin table-responsive">
-                <table id="VehiclesList" width="100%" class="table table-striped table-bordered dataTable mb-0 ">
+                <table id="VehiclesList" width="100%" class="table table-striped table-bordered dataTable mb-0 table-responsive">
                     <thead>
                         <tr>
                             <th>#</th>

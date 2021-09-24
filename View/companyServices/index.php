@@ -10,8 +10,8 @@
             </div><!--end card-header-->
             
             <div class="card-body">  
-            <div class="table-rep-plugin table-responsive">
-                <table id="companyServicesList" width="100%" class="table table-striped table-bordered dataTable mb-0 ">
+            <div class="table-rep-plugin table-responsive responsiveTable">
+                <table id="companyServicesList" width="100%" class="table table-striped table-bordered dataTable mb-0 responsiveTable">
                     <thead>
                         <tr>
                             <th>#</th>

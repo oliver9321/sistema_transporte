@@ -108,4 +108,35 @@ class CompanyServicesController
         }
     }
 
+    public function NewCompany()
+    {
+        //Se colocan los campos obligatorios en la tabla.
+        if (isset($_POST['CompanyName']) && isset($_POST['CompanyPhone1']) &&  isset($_POST['CompanyAddress'])) {
+
+            if($_POST['CompanyName'] != '' && $_POST['CompanyPhone1'] != '' && $_POST['CompanyAddress'] != ''){
+
+                $companyServices= new CompanyServices();
+
+                $companyServices->CompanyName      = $_POST['CompanyName'];
+                $companyServices->CompanyAddress   = $_POST['CompanyAddress'];
+                $companyServices->CompanyPhone1    = $_POST['CompanyPhone1'];
+                $companyServices->CompanyPhone2    = $_POST['CompanyPhone2'];
+                $companyServices->CompanyEmail     = $_POST['CompanyEmail'];
+
+                //Campos genericos
+                $companyServices->DateCreation     = date('Y-m-d');
+                $companyServices->UserIdCreation   = $_SESSION['UserOnline']->Id;
+                $companyServices->IsActive          = 1;
+
+                echo json_encode($this->model->Create($companyServices), true);
+              
+            }else{
+                echo "Please, complete the required fields (*)";
+            }
+
+    }else{
+        echo "Please, complete the required fields (*)";
+    }   
+}
+
 }

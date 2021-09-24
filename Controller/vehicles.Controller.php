@@ -106,5 +106,32 @@ class VehiclesController
         }
     }
 
+    public function newVehicle()
+    {
+        //Se colocan los campos obligatorios en la tabla.
+        if (isset($_POST['Brand']) && isset($_POST['Model'])) {
+
+            if($_POST['Brand'] != '' && $_POST['Model'] != ''){
+
+                $Vehicle = new Vehicles();
+
+                $Vehicle->Brand  = $_POST['Brand'];
+                $Vehicle->Model  = $_POST['Model'];
+
+                //Campos genericos
+                $Vehicle->DateCreation            = date('Y-m-d');
+                $Vehicle->UserIdCreation          = $_SESSION['UserOnline']->Id;
+                $Vehicle->IsActive                = 1;
+
+                echo json_encode($this->model->Create($Vehicle), true);
+              
+            }else{
+                echo "Please, complete the required fields (*)";
+            }
+
+    }else{
+        echo "Please, complete the required fields (*)";
+    }   
+}
 
 }
