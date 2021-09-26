@@ -34,8 +34,6 @@ class dashboardController{
 
              if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin" || $_SESSION['UserOnline']->Profile == "manager"){
 
-                $CustomerTypeList        =  $this->customerType->GetListCustomerTypes();
-         
                 $rsDrivers      = $this->driversModel->getCountDrivers();
                 $CountDrivers   = $rsDrivers['CountDrivers'];
 
@@ -63,6 +61,27 @@ class dashboardController{
          
     }
 
+    public function Order(){
+
+        if(count($_SESSION) > 0){
+
+         if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin" || $_SESSION['UserOnline']->Profile == "manager"){
+
+            $CustomerTypeList        =  $this->customerType->GetListCustomerTypes();
+
+                GetRouteView(null, "header");
+                require_once 'View/dashboard/order.php';
+                GetRouteView(null, "footer");
+
+        }else{
+            header('Location:index.php?c=login&a=index');
+            }
+            
+        }else{
+             header('Location:index.php?c=login&a=index');   
+        }
+
+    }
 
     public function ActualizarPlayListYoutube(){
 

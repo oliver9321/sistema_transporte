@@ -315,7 +315,7 @@
     min-height: 52px;
     position: relative;
     /*border-bottom: 1px solid #e3ebf6;*/
-    box-shadow: rgb(0 0 0 / 1%) 0px 3px 6px, rgb(0 0 0 / 20%) 0px 3px 6px;
+    /*box-shadow: rgb(0 0 0 / 1%) 0px 3px 6px, rgb(0 0 0 / 20%) 0px 3px 6px;*/
 }
 
 .navbar-custom .nav-link {

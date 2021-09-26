@@ -230,7 +230,8 @@
                     </li>
                     <li class="creat-btn">
                         <div class="nav-link">
-                            <button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewOrder"><i class="fas fa-plus me-2"></i>New Orden</button>
+                            <a class="btn btn-sm btn-soft-primary" href="index.php?c=Dashboard&a=order" target="_blank"><i class="fas fa-plus me-2"></i>New Orden</a>
+                            <!--<button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewOrder"></button>-->
                         </div>
                     </li>
                 </ul>
