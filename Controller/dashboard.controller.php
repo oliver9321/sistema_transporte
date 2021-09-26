@@ -34,8 +34,8 @@ class dashboardController{
 
              if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin" || $_SESSION['UserOnline']->Profile == "manager"){
 
-                $CustomerTypeList  =  $this->customerType->GetListCustomerTypes();
-            
+                $CustomerTypeList        =  $this->customerType->GetListCustomerTypes();
+         
                 $rsDrivers      = $this->driversModel->getCountDrivers();
                 $CountDrivers   = $rsDrivers['CountDrivers'];
 

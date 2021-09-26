@@ -127,6 +127,4 @@ $result= $this->pdo->prepare($sql)
         }
     }
 
-
-    
 }

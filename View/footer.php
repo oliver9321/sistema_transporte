@@ -11,21 +11,21 @@
 <!-- end page content -->
 
 <!-- MODAL DE ORDENES -->
-<div class="modal fade bd-example-modal-xl" id="bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal fade ModalNewOrder" id="ModalNewOrder"  role="dialog" aria-labelledby="ModalNewOrderLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h6 class="modal-title m-0" id="myExtraLargeModalLabel">Order management</h6>
+				<h6 class="modal-title m-0" id="ModalNewOrderLabel">Order management</h6>
 				<!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
 			</div>
 			<!--end modal-header-->
 			<div class="modal-body">
 				<div class="card">
 					<div class="card-header">
-						<button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#exampleModalDefault"><i class="fas fa-user-plus me-2"></i>New customer</button>
+						<button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewCustomer"><i class="fas fa-user-plus me-2"></i>New customer</button>
 						<button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewVehicle"><i class="fas fa-car me-2"></i>New vehicle</button>
 						<button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewCompanyService"><i class="fas fa-building me-2"></i>New company</button>
-                        <button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewDriver"><i class="fas fa-car me-2"></i>New driver</button>
+                        <button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewDriver"><i class="fa fa-address-card me-2"></i>New driver</button>
                 </div>
 					<!--end card-header-->
 					<div class="card-body">
@@ -38,25 +38,30 @@
 										<div class="row">
 											<div class="col-md-12" style="position: relative;">
 												<label class="mb-1">Origin customer name</label>
-												<div class="input-group mb-3">
-													<input type="text" class="form-control" placeholder="Input the customer's origin name" name="IdCustomerOrigin" id="IdCustomerOrigin">
-													<button class="btn btn-dark" type="button" id="SearchCustomerName"><i class="fas fa-search"></i></button>
-												</div>
+												<div class="input-group">
+                                            		<select  style="width: 90%;" id="IdCustomerOrigin" name="IdCustomerOrigin" class="form-control originInput" aria-describedby="button-addon1">
+														<option value="" selected>Select customer origin</option>
+													</select>
+													<button class="btn btn-dark" type="button" id="SearchCustomerName"><i class="ti ti-reload"></i></button>
+                                        		</div>
 											</div>
-											<!-- end row -->
-										</div>
-										<br> </div>
+										</div><!-- end row -->
+										<br> 
+									</div>
 									<!--end col-->
 									<div class="col-md-6"> <span class="text-dark"><b><i data-feather="arrow-right-circle"></i> Destination
                                                 Information</b></span>
 										<hr>
 										<div class="row">
-											<div class="col-md-12" style="position: relative;">
-												<label class="mb-1">Destination customer name</label>
-												<div class="input-group mb-3">
-													<input type="text" class="form-control" placeholder="Input the customer's destination name" name="IdCustomerDestination" id="IdCustomerDestination">
-													<button class="btn btn-dark" type="button" id="SearchDestinationCustomer"><i class="fas fa-search"></i></button>
-												</div>
+
+										<div class="col-md-12" style="position: relative;">
+										<label class="mb-1">Destination customer name</label>
+												<div class="input-group">
+                                            	<select  style="width: 90%;" id="IdCustomerDestination" name="IdCustomerDestination" class="form-control" aria-describedby="button-addon1">
+												<option value="" selected>Select customer destination</option>
+												</select>
+													<button class="btn btn-dark" type="button" id="SearchDestinationCustomer"><i class="ti ti-reload"></i></button>
+                                        		</div>
 											</div>
 											<br>
 											<!--end form-group-->
@@ -68,8 +73,9 @@
 										<div class="col-md-6">
 											<div class="row">
 												<div class="col-md-12" style="position: relative;">
-													<label class="mb-1">Origin address</label>
-													<input id="OriginAddress" name="OriginAddress" type="text" class="form-control" placeholder="Ex. 12141 Pembroke Rd,..."> </div>
+													<label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin address</label>
+													<input id="OriginAddress" name="OriginAddress" type="text" class="form-control originInput" placeholder="Ex. 12141 Pembroke Rd,..."> 
+													</div>
 												<!-- end row -->
 											</div>
 											<br>
@@ -78,15 +84,15 @@
 													<div class="row">
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1">Origin city</label>
-															<input id="OriginCity" name="OriginCity" type="text" class="form-control" placeholder="City"> </div>
+															<input id="OriginCity" name="OriginCity" type="text" class="form-control originInput" placeholder="City"> </div>
 														<!-- end row -->
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1">Origin state</label>
-															<input id="OriginState" name="OriginState" type="text" class="form-control" placeholder="State"> </div>
+															<input id="OriginState" name="OriginState" type="text" class="form-control originInput" placeholder="State"> </div>
 														<!-- end row -->
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1">Origin zip code</label>
-															<input id="OriginZip" name="OriginZip" type="text" class="form-control" placeholder="00000"> </div>
+															<input id="OriginZip" name="OriginZip" type="text" class="form-control originInput" placeholder="00000"> </div>
 														<!-- end row -->
 													</div>
 												</div>
@@ -97,15 +103,15 @@
 													<div class="row">
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1"><i class="fa fa-phone-alt"></i> Origin phone #1</label>
-															<input id="OriginPhone1" name="OriginPhone1" type="tel" class="form-control" placeholder="+1 (555) 555-5555"> </div>
+															<input id="OriginPhone1" name="OriginPhone1" type="tel" class="form-control originInput" placeholder="+1 (555) 555-5555"> </div>
 														<!-- end row -->
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1"><i class="fa fa-phone-alt"></i> Origin phone #2</label>
-															<input id="OriginPhone2" name="OriginPhone2" type="tel" class="form-control" placeholder="+1 (555) 555-5555"> </div>
+															<input id="OriginPhone2" name="OriginPhone2" type="tel" class="form-control originInput" placeholder="+1 (555) 555-5555"> </div>
 														<!-- end row -->
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1">Origin email</label>
-															<input id="OriginEmail" name="OriginEmail" type="email" class="form-control" placeholder="cus@domain.com"> </div>
+															<input id="OriginEmail" name="OriginEmail" type="email" class="form-control originInput" placeholder="cus@domain.com"> </div>
 														<!-- end row -->
 													</div>
 												</div>
@@ -113,8 +119,8 @@
 											<br>
 											<div class="row">
 												<div class="col-md-12" style="position: relative;">
-													<label class="mb-1">Origin note</label>
-													<textarea id="OriginNote" name="OriginNote" class="form-control" placeholder="Opcional information"></textarea>
+													<label class="mb-1"><i class="fa fa-sticky-note"></i> Origin note</label>
+													<textarea id="OriginNote" name="OriginNote" class="form-control originInput" placeholder="Opcional information"></textarea>
 												</div>
 												<!-- end row -->
 											</div>
@@ -122,8 +128,8 @@
 										<div class="col-md-6">
 											<div class="row">
 												<div class="col-md-12" style="position: relative;">
-													<label class="mb-1">Destination address</label>
-													<input id="DestinationAddress" name="DestinationAddress" type="text" class="form-control" placeholder="Ex. 1600 Pennsylvania..."> </div>
+													<label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination address</label>
+													<input id="DestinationAddress" name="DestinationAddress" type="text" class="form-control DestinationInput" placeholder="Ex. 1600 Pennsylvania..."> </div>
 												<!-- end row -->
 											</div>
 											<br>
@@ -132,15 +138,15 @@
 													<div class="row">
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1">Destination city</label>
-															<input id="DestinationCity" name="DestinationCity" type="text" class="form-control" placeholder="City"> </div>
+															<input id="DestinationCity" name="DestinationCity" type="text" class="form-control DestinationInput" placeholder="City"> </div>
 														<!-- end row -->
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1">Destination state</label>
-															<input id="DestinationState" name="DestinationState" type="text" class="form-control" placeholder="State"> </div>
+															<input id="DestinationState" name="DestinationState" type="text" class="form-control DestinationInput" placeholder="State"> </div>
 														<!-- end row -->
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1">Destination zip code</label>
-															<input id="DestinationZip" name="DestinationZip" type="text" class="form-control" placeholder="00000"> </div>
+															<input id="DestinationZip" name="DestinationZip" type="text" class="form-control DestinationInput" placeholder="00000"> </div>
 														<!-- end row -->
 													</div>
 												</div>
@@ -151,15 +157,15 @@
 													<div class="row">
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1"><i class="fa fa-phone-alt"></i> Destination phone #1</label>
-															<input id="DestinationPhone1" name="DestinationPhone1" type="tel" class="form-control" placeholder="+1 (555) 555-5555"> </div>
+															<input id="DestinationPhone1" name="DestinationPhone1" type="tel" class="form-control DestinationInput" placeholder="+1 (555) 555-5555"> </div>
 														<!-- end row -->
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1"><i class="fa fa-phone-alt"></i> Destination phone #2</label>
-															<input id="DestinationPhone2" name="DestinationPhone2" type="tel" class="form-control" placeholder="+1 (555) 555-5555"> </div>
+															<input id="DestinationPhone2" name="DestinationPhone2" type="tel" class="form-control DestinationInput" placeholder="+1 (555) 555-5555"> </div>
 														<!-- end row -->
 														<div class="col-md-4" style="position: relative;">
 															<label class="mb-1">Destination email</label>
-															<input id="DestinationEmail" name="DestinationEmail" type="email" class="form-control" placeholder="cus@domain.com"> </div>
+															<input id="DestinationEmail" name="DestinationEmail" type="email" class="form-control DestinationInput" placeholder="cus@domain.com"> </div>
 														<!-- end row -->
 													</div>
 												</div>
@@ -167,8 +173,8 @@
 											<br>
 											<div class="row">
 												<div class="col-md-12" style="position: relative;">
-													<label class="mb-1">Destination note</label>
-													<textarea id="DestinationNote" name="DestinationNote" class="form-control" placeholder="Opcional information"></textarea>
+													<label class="mb-1"><i class="fa fa-sticky-note"></i> Destination note</label>
+													<textarea id="DestinationNote" name="DestinationNote" class="form-control DestinationInput" placeholder="Opcional information"></textarea>
 												</div>
 												<!-- end row -->
 											</div>
@@ -666,10 +672,10 @@
 					<!--end card-->
 				</div>
 				<!--end modal-body-->
-				<!--<div class="modal-footer">
-                <button type="button" class="btn btn-soft-primary btn-sm">Save changes</button>
-                <button type="button" class="btn btn-soft-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-            </div>-->
+			<div class="modal-footer">
+                <button type="button" class="btn btn-soft-danger btn-sm" onclick="$('input, textarea').val('');">Clear All fields</button>
+               <!-- <button type="button" class="btn btn-soft-secondary btn-sm" data-bs-dismiss="modal">Close</button>-->
+            </div>
 				<!--end modal-footer-->
 			</div>
 			<!--end modal-content-->
@@ -678,11 +684,11 @@
 	</div>
 	<!--end modal-->
     
-	<div class="modal fade" id="exampleModalDefault" tabindex="-1" role="dialog" aria-labelledby="exampleModalDefaultLabel" aria-hidden="true">
+	<div class="modal fade" id="ModalNewCustomer"  role="dialog" aria-labelledby="ModalNewCustomerLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header bg-info">
-					<h6 class="modal-title m-0" id="exampleModalDefaultLabel"> <i class="fas fa-user-plus me-2"></i> New
+					<h6 class="modal-title m-0" id="ModalNewCustomerLabel"> <i class="fas fa-user-plus me-2"></i> New
                     customer</h6>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
@@ -741,7 +747,7 @@
 		<!--end modal-dialog-->
 	</div>
 
-	<div class="modal fade" id="ModalNewVehicle" tabindex="-1" role="dialog" aria-labelledby="ModalNewVehicleLabel" aria-hidden="true">
+	<div class="modal fade" id="ModalNewVehicle"  role="dialog" aria-labelledby="ModalNewVehicleLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header bg-info">
@@ -778,7 +784,7 @@
 		<!--end modal-dialog-->
 	</div>
 
-	<div class="modal fade" id="ModalNewCompanyService" tabindex="-1" role="dialog" aria-labelledby="ModalNewCompanyServiceLabel" aria-hidden="true">
+	<div class="modal fade" id="ModalNewCompanyService"  role="dialog" aria-labelledby="ModalNewCompanyServiceLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header bg-info">
@@ -839,11 +845,11 @@
 		<!--end modal-dialog-->
 	</div>
 
-    <div class="modal fade" id="ModalNewDriver" tabindex="-1" role="dialog" aria-labelledby="ModalNewDriverLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalNewDriver"  role="dialog" aria-labelledby="ModalNewDriverLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header bg-info">
-					<h6 class="modal-title m-0" id="ModalNewDriverLabel"> <i class="fas fa-car me-2"></i> New driver</h6>
+					<h6 class="modal-title m-0" id="ModalNewDriverLabel"> <i class="fa fa-address-card me-2"></i> New driver</h6>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<!--end modal-header-->
@@ -910,7 +916,7 @@
 	</div>
 
 </div>
-
+ </div>
 
 <!-- FIN -->
 
@@ -920,6 +926,7 @@
 
 <!-- jQuery  -->
 <script src="assets/js/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOHEjweqW61WAqGaXKZzuQS7sbOakgpT0&libraries=places"></script>
 <script src="plugins/select2/select2.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/metismenu.min.js"></script>
@@ -932,15 +939,99 @@
 <!-- App js -->
 <script src="assets/js/app.js"></script>
 <script src="assets/js/orders.js"></script>
+
 <script>
+
+
 if($(".select2").length > 0) {
-	$(".select2").select2();
+	$('.select2').select2();
 }
+
 $("#form-horizontal").steps({
 	headerTag: "h3",
 	bodyTag: "fieldset",
 	transitionEffect: "slide"
 });
 
+//Input Search Select2
+$(document).ready(function() {
+
+function GetListCustomerOrigin(){
+
+$.ajax({
+    type: 'POST',
+	url: "index.php?c=customers&a=GetListCustomers",
+}).then(function (response) {
+
+   		 var data = JSON.parse(response);
+
+			if(data.length > 0){
+
+					data.forEach(element => {
+					   var optionBucle = new Option(element.Customer, element.Id, true, true);
+						$('#IdCustomerOrigin').append(optionBucle); //.trigger('change');
+					});
+			}
+			$('#IdCustomerOrigin').val("").trigger('change');
+});
+
+}
+
+
+function GetListCustomerDestination(){
+
+$.ajax({
+    type: 'POST',
+	url: "index.php?c=customers&a=GetListCustomers",
+}).then(function (response) {
+
+   		 var data = JSON.parse(response);
+
+			if(data.length > 0){
+
+					data.forEach(element => {
+					   var optionBucle = new Option(element.Customer, element.Id, true, true);
+						$('#IdCustomerDestination').append(optionBucle);//.trigger('change');
+					});
+			}
+			$('#IdCustomerDestination').val("").trigger('change');
+});
+
+}
+
+//Execute select2 functions 
+GetListCustomerOrigin();
+GetListCustomerDestination();
+
+$("#SearchCustomerName").click(function(){
+	GetListCustomerOrigin();
+
+	$(".toast-success").html("Customer list updated");
+                var myAlert = document.getElementById('toastSuccess');
+                var bsAlert = new bootstrap.Toast(myAlert);
+                bsAlert.show();
+});
+
+$("#SearchDestinationCustomer").click(function(){
+	GetListCustomerDestination();
+
+				$(".toast-success").html("Customer list updated");
+                var myAlert = document.getElementById('toastSuccess');
+                var bsAlert = new bootstrap.Toast(myAlert);
+                bsAlert.show();
+});
+
+
+  $("#IdCustomerOrigin, #IdCustomerDestination").select2({
+    dropdownParent: $("#ModalNewOrder")
+  });
+
+  $(".originInput, .DestinationInput").change(function() {
+    $(this).css("border-color", "#A6A6A6");
+});
+
+ 
+});
 
 </script>
+

@@ -2,13 +2,15 @@
 
 require_once 'Config/Core.php'; 
 require_once 'Model/customersModel.php'; 
+require_once 'Model/customerTypeModel.php';
 
 class CustomersController
 {
     private $model;
 
     public function __CONSTRUCT(){
-        $this->model = new Customers(); // Se instancia el Modelo. Nombre de la clase del modelo
+        $this->model         = new Customers(); 
+        $this->customerType  = new CustomerType();
     }
 
     //Vista Index
@@ -44,6 +46,7 @@ class CustomersController
         if($_SESSION['UserOnline']->Profile == "admin") {
 
           $Customer = new Customers();
+          $CustomerTypeList  =  $this->customerType->GetListCustomerTypes();
 
         if(isset($_REQUEST['Id'])){
             $Customer =  $this->model->Edit($_REQUEST['Id']);
@@ -140,4 +143,21 @@ class CustomersController
             echo "Please, complete the required fields (*)";
         }   
     }
+
+        //Vista Editar
+        public function GetInfoCustomerById(){
+
+            if(isset($_POST['Id'])){
+                $Customer =  $this->model->Edit($_POST['Id']);
+                echo json_encode($Customer, true);
+            }else{
+                echo json_encode(false, true);
+            }
+
+        }
+
+        public function GetListCustomers(){
+            echo json_encode($this->model->GetListCustomers(), true);
+        }
+    
 }

@@ -24,7 +24,7 @@
    <form id="frm-Customers" action="?c=Customers&a=Save" method="post" enctype="multipart/form-data">
 
             <input type="hidden" name="Id" id="Id" value="<?php echo $Customer->Id; ?>" />
-            <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($Driver->Id != null) ? $Customer->IsActive : 1 ?>" >
+            <input type="hidden" name="IsActive" id="IsActive" value="<?= ($Customer->Id != null) ? $Customer->IsActive : 1 ?>"/>
 
                 <div class="row">
                     <div class="col-lg-6">
@@ -36,9 +36,16 @@
                    
                             <div class="card-body">
 
-                            <div class="mb-3">
+                                     <div class="mb-3">
                                         <label class="form-label text-danger" for="IdCustomerType">*Customer type:</label>
-                                        <input type="text" class="form-control" id="IdCustomerType" name="IdCustomerType" aria-describedby="IdCustomerType" placeholder="Enter Customer Type" value="<?php echo $Customer->IdCustomerType; ?>"> 
+                                        <select style="width: 100%;" id="IdCustomerType" name="IdCustomerType" class="select2 form-control custom-select">
+										<option value="" selected>Select customer type</option>
+										<?php foreach($CustomerTypeList  as $key => $value): ?>
+											<option value="<?= $value['Id']; ?>">
+												<?= $value['NameType']; ?>
+											</option>
+											<?php endforeach; ?>
+									    </select>
                                     </div>
 
                                     <div class="mb-3">
@@ -69,7 +76,7 @@
 
                                     <?php if($Customer->Id != null){?>
                                         <button type="submit" class="btn btn-warning">Update <i class="fa fa-refresh"></i> </button>
-                                        <input type="checkbox"  data-toggle="toggle" id="ActivoToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
+                                        <input type="checkbox"  data-toggle="toggle" id="IsActiveToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
                                     <?php }else {?>
                                         <button type="submit"  class="btn btn-success">Submit <i class="fa fa-save"></i> </button>
                                     <?php }?>
@@ -93,13 +100,16 @@
             return $(this).validate();
         });
 
+        var IdCustomerType = "<?= $Customer->IdCustomerType;?>";
+        $("#IdCustomerType").select2("val", IdCustomerType);
+
         if($("#IsActive").val() > 0){
-            $('#ActivoToogle').bootstrapToggle('on');
+            $('#IsActiveToogle').bootstrapToggle('on');
         }else{
-            $('#ActivoToogle').bootstrapToggle('off');
+            $('#IsActiveToogle').bootstrapToggle('off');
         }
 
-        $('#ActivoToogle').change(function() {
+        $('#IsActiveToogle').change(function() {
 
             if($(this).prop('checked') == false){
 

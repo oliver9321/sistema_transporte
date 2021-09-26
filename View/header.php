@@ -40,6 +40,11 @@
         .select2-container--open {
             z-index: 9999999 !important;
         }
+
+        .pac-container {
+            z-index: 9999999 !important;
+        }
+
     </style>
 </head>
 
@@ -70,7 +75,7 @@
                 </li>
 
                <li>
-                    <a href="javascript: void(0);"><i data-feather="users" class="align-self-center menu-icon"></i><span>Drivers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i  class="fa fa-address-card align-self-center menu-icon"></i><span>Drivers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=Drivers&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=Drivers&a=Edit"><i class="ti-control-record"></i>Create</a></li>
@@ -145,6 +150,7 @@
 
 
     <div class="page-wrapper">
+  
         <!-- Top Bar Start -->
         <div class="topbar">
             <!-- Navbar -->
@@ -224,7 +230,7 @@
                     </li>
                     <li class="creat-btn">
                         <div class="nav-link">
-                            <button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#bd-example-modal-xl"><i class="fas fa-plus me-2"></i>New Orden</button>
+                            <button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewOrder"><i class="fas fa-plus me-2"></i>New Orden</button>
                         </div>
                     </li>
                 </ul>
@@ -238,3 +244,4 @@
         <!-- Page Content-->
         <div class="page-content">
             <div class="container-fluid">
+        

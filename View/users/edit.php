@@ -79,7 +79,7 @@
                             
                                     <?php if($User->Id != null){?>
                                         <button type="submit" class="btn btn-warning">Update <i class="fa fa-refresh"></i> </button>
-                                        <input type="checkbox"  data-toggle="toggle" id="ActivoToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
+                                        <input type="checkbox"  data-toggle="toggle" id="IsActiveToogle" data-on="IsActive" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-onstyle="danger" data-style="ios">
                                     <?php }else {?>
                                         <button type="submit"  class="btn btn-success">Submit <i class="fa fa-save"></i> </button>
                                     <?php }?>
@@ -104,12 +104,12 @@
         });
 
         if($("#IsActive").val() > 0){
-            $('#ActivoToogle').bootstrapToggle('on');
+            $('#IsActiveToogle').bootstrapToggle('on');
         }else{
-            $('#ActivoToogle').bootstrapToggle('off');
+            $('#IsActiveToogle').bootstrapToggle('off');
         }
 
-        $('#ActivoToogle').change(function() {
+        $('#IsActiveToogle').change(function() {
 
             if($(this).prop('checked') == false){
 

@@ -140,5 +140,24 @@ $result=   $this->pdo->prepare($sql)
         return $stm2->fetch();
     }
 
+    
+    public function GetListCustomers()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT Id, CONCAT(Name,' ',LastName, ' - ', Phone1, ' - ', NameType) AS Customer FROM vw_customers WHERE IsActive = 1");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
+
 
 }
