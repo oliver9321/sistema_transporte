@@ -134,4 +134,14 @@ class VehiclesController
     }   
 }
 
+public function GetListVehicles(){
+
+    $response = array(
+            'BrandsList' => $this->model->GetListBrands(),
+            "ModelsList" => $this->model->GetListModels(),
+    );
+ 
+    echo json_encode($response, true);
+}
+
 }

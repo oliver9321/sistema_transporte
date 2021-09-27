@@ -247,6 +247,9 @@ function newVehicle() {
         }
     });
 }
+
+
+
 //End vehicles
 
 //Google Maps Origin Info

@@ -27,6 +27,7 @@ class Orders {
     public $Total;
     public $Deposit;
     public $ExtraTrukerFee;
+    public $TrukerOwesUs;
     public $Earnings;
     public $Cod;
     public $TrukerRate;
@@ -89,7 +90,6 @@ class Orders {
         try
         {
             $sql = "UPDATE tbl_orders SET
-					             
                         IdCustomerOrigin  = ?,
                         IdCustomerDestination  = ?,
                         IdCompanyService  = ?,
@@ -112,6 +112,7 @@ class Orders {
                         Total  = ?,
                         Deposit  = ?,
                         ExtraTrukerFee  = ?,
+                        TrukerOwesUs = ?,
                         Earnings  = ?,
                         Cod  = ?,
                         TrukerRate  = ?,
@@ -146,6 +147,7 @@ $result=   $this->pdo->prepare($sql)
                         $data->Total,
                         $data->Deposit,
                         $data->ExtraTrukerFee,
+                        $data->TrukerOwesUs,
                         $data->Earnings,
                         $data->Cod,
                         $data->TrukerRate,
@@ -168,36 +170,37 @@ $result=   $this->pdo->prepare($sql)
         try
         {
             $sql = "INSERT INTO tbl_orders(
-                IdCustomerOrigin
-                IdCustomerDestination
-                IdCompanyService
-                IdDriver
-                OrderStatusID
-                IdPayment
-                OrderDate
-                PickUpDate
-                DeliveryDate
-                OriginAddress
-                OriginCity
-                OriginState
-                OriginZip
-                OriginNote
-                DestinationAddress
-                DestinationCity
-                DestinationState
-                DestinationZip
-                DestinationNote
-                Total
-                Deposit
-                ExtraTrukerFee
-                Earnings
-                Cod
-                TrukerRate
-                RequestStatus
+                IdCustomerOrigin,
+                IdCustomerDestination,
+                IdCompanyService,
+                IdDriver,
+                OrderStatusID,
+                IdPayment,
+                OrderDate,
+                PickUpDate,
+                DeliveryDate,
+                OriginAddress,
+                OriginCity,
+                OriginState,
+                OriginZip,
+                OriginNote,
+                DestinationAddress,
+                DestinationCity,
+                DestinationState,
+                DestinationZip,
+                DestinationNote,
+                Total,
+                Deposit,
+                ExtraTrukerFee,
+                TrukerOwesUs,
+                Earnings,
+                Cod,
+                TrukerRate,
+                RequestStatus,
                 DateCreation,
                 UserIdCreation,
                 IsActive)
-                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 $result=   $this->pdo->prepare($sql)
                 ->execute(
@@ -224,6 +227,7 @@ $result=   $this->pdo->prepare($sql)
                         $data-> Total,
                         $data-> Deposit,
                         $data-> ExtraTrukerFee,
+                        $data->TrukerOwesUs,
                         $data-> Earnings,
                         $data-> Cod,
                         $data-> TrukerRate,

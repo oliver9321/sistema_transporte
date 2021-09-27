@@ -91,7 +91,7 @@ $result= $this->pdo->prepare($sql)
     {
         try
         {
-            $sql = "INSERT INTO tbl_order_status(Status,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?)";
+            $sql = "INSERT INTO tbl_order_status (Status,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?)";
 
             $result=   $this->pdo->prepare($sql)
                 ->execute(
@@ -104,6 +104,23 @@ $result= $this->pdo->prepare($sql)
                 );
                 return $result;
         } catch (Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
+    public function GetListOrderStatus()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT Id, Status FROM tbl_order_status WHERE IsActive = 1");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
         {
             die($e->getMessage());
         }

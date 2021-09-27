@@ -113,4 +113,38 @@ $result=  $this->pdo->prepare($sql)
         }
     }
 
+    public function GetListBrands()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT distinct Brand FROM tbl_vehicles WHERE IsActive = 1");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
+    public function GetListModels()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT distinct Model FROM tbl_vehicles WHERE IsActive = 1");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
 }

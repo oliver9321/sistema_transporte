@@ -7,6 +7,8 @@ require_once 'Model/ordersModel.php';
 require_once 'Model/paymentsModel.php'; 
 require_once 'Model/customersModel.php'; 
 require_once 'Model/customerTypeModel.php';
+require_once 'Model/orderStatusModel.php';
+
 
 class dashboardController{
 
@@ -16,16 +18,13 @@ class dashboardController{
     private $paymentsModel;
     private $customersModel;
     private $customerType;
+    private $orderStatus;
 
     public function __CONSTRUCT(){
 
         $this->model          = new dashboard();
-        $this->driversModel   = new Drivers();
-        $this->ordersModel    = new Orders();
         $this->paymentsModel  = new Payments();
-        $this->customersModel = new Customers();
-        $this->customerType   = new CustomerType();
-
+       
     }
 
     public function Index(){
@@ -34,12 +33,15 @@ class dashboardController{
 
              if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin" || $_SESSION['UserOnline']->Profile == "manager"){
 
+                $this->driversModel   = new Drivers();
                 $rsDrivers      = $this->driversModel->getCountDrivers();
                 $CountDrivers   = $rsDrivers['CountDrivers'];
 
+                $this->customersModel = new Customers();
                 $rsCustomers    = $this->customersModel->getCountCustomers();
                 $CountCustomers = $rsCustomers['CountCustomers'];
 
+                $this->ordersModel    = new Orders();
                 $rsOrders       = $this->ordersModel->getCountOrders();
                 $CountOrders    = $rsOrders['CountOrders'];
 
@@ -51,11 +53,11 @@ class dashboardController{
                 require_once 'View/footer.php';
 
                }else{
-                header('Location:index.php?c=login&a=index');
+                    header('Location:index.php?c=login&a=index');
                }
                
          }else{
-         header('Location:index.php?c=login&a=index');   
+             header('Location:index.php?c=login&a=index');   
          }
 
          
@@ -66,8 +68,12 @@ class dashboardController{
         if(count($_SESSION) > 0){
 
          if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin" || $_SESSION['UserOnline']->Profile == "manager"){
+                
+            $this->customerType   = new CustomerType();
+                 $this->orderStatus    = new OrderStatus();
 
-            $CustomerTypeList        =  $this->customerType->GetListCustomerTypes();
+                 $CustomerTypeList =  $this->customerType->GetListCustomerTypes();
+                 $OrderStatusList  =  $this->orderStatus->GetListOrderStatus();
 
                 GetRouteView(null, "header");
                 require_once 'View/dashboard/order.php';
@@ -79,45 +85,6 @@ class dashboardController{
             
         }else{
              header('Location:index.php?c=login&a=index');   
-        }
-
-    }
-
-    public function ActualizarPlayListYoutube(){
-
-        if(isset($_POST) && $_POST['Action'] == "ActualizarPlayListYoutube"){
-
-            $Opcion = $_POST['Opcion'];
-            $PlayListYoutube = $_POST['PlayListYoutube'];
-
-            echo json_encode( $this->model->ActualizarPlayListYoutube($PlayListYoutube, $Opcion), true);
-
-        }
-
-    }
-
-
-    public function ActualizarEstadoTurnoController(){
-
-        if(isset($_POST) && $_POST['Action'] == "ActualizarEstadoTurno"){
-
-            $DepartamentoID = $_SESSION['UserOnline']->DepartamentoID;
-            $PuestoCodigo= $_SESSION['UserOnline']->PuestoCodigo;
-
-            $Estado       = $_POST['Estado'];
-            $PuestoID     = $_POST['PuestoID'];
-            $TurnoID      = $_POST['TurnoID'];
-            $SucursalID   = $_POST['SucursalID'];
-            $Turno        = $_POST['Turno'];
-            $Puesto       = $_POST['Puesto'];
-            $Comentario   = $_POST['Comentario'];
-            $DiaHoy = getdate();
-            $DiaHoy = $DiaHoy['mday'];
-
-            echo json_encode($this->model->ActualizarEstadoTurnoModel($Estado, $TurnoID, $PuestoID, $Comentario, $PuestoCodigo, $Turno), true);
-
-        }else{
-            echo json_encode("false", true);
         }
 
     }

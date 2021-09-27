@@ -9,9 +9,8 @@
     <meta content="" name="ofermin" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-        <!-- Plugins css -->
     <link href="plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    
     <link href="plugins/huebee/huebee.min.css" rel="stylesheet" type="text/css" />
     <link href="plugins/timepicker/bootstrap-material-datetimepicker.css" rel="stylesheet">
     <link href="plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
@@ -24,26 +23,25 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="plugins/jquery-steps/jquery.steps.css">
     <script src="plugins/sweet-alert2/sweetalert2.min.js"></script>
-    <!--
-
     
+    <!--
     <link href="plugins/sweet-alert2/bootstrap-4.css" rel="stylesheet">
     -->
 
           <!-- DataTables -->
-          <link href="plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <!-- Responsive datatable examples -->
         <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
 
     <style>
-        .select2-container--open {
+     .select2-container--open {
             z-index: 9999999 !important;
         }
 
-        .pac-container {
+         /*  .pac-container {
             z-index: 9999999 !important;
-        }
+        }*/
 
     </style>
 </head>
@@ -230,7 +228,7 @@
                     </li>
                     <li class="creat-btn">
                         <div class="nav-link">
-                            <a class="btn btn-sm btn-soft-primary" href="index.php?c=Dashboard&a=order" target="_blank"><i class="fas fa-plus me-2"></i>New Orden</a>
+                            <a class="btn btn-sm btn-soft-primary" href="index.php?c=Dashboard&a=order"><i class="fas fa-plus me-2"></i>New Orden</a>
                             <!--<button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewOrder"></button>-->
                         </div>
                     </li>
