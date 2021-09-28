@@ -144,7 +144,6 @@ class CustomersController
         }   
     }
 
-        //Vista Editar
         public function GetInfoCustomerById(){
 
             if(isset($_POST['Id'])){
@@ -157,7 +156,15 @@ class CustomersController
         }
 
         public function GetListCustomers(){
-            echo json_encode($this->model->GetListCustomers(), true);
+
+            $response = array(
+                    'OriginList' => $this->model->GetListCustomersOrigin(),
+                    "DestinationList" => $this->model->GetListCustomersDestination(),
+            );
+         
+            echo json_encode($response, true);
         }
-    
+
+     
 }
+

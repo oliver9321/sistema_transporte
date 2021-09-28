@@ -141,12 +141,12 @@ $result=   $this->pdo->prepare($sql)
     }
 
     
-    public function GetListCustomers()
+    public function GetListCustomersOrigin()
     {
         try
         {
 
-            $stm = $this->pdo->prepare("SELECT Id, CONCAT(Name,' ',LastName, ' - ', Phone1, ' - ', NameType) AS Customer FROM vw_customers WHERE IsActive = 1");
+            $stm = $this->pdo->prepare("SELECT Id, CONCAT(Name,' ',LastName, ' - ', Phone1) AS Customer FROM vw_customers WHERE IsActive = 1 AND NameType='Origin'");
             $stm->execute();
 
             return $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -157,6 +157,26 @@ $result=   $this->pdo->prepare($sql)
             die($e->getMessage());
         }
     }
+
+
+    public function GetListCustomersDestination()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT Id, CONCAT(Name,' ',LastName, ' - ', Phone1) AS Customer FROM vw_customers WHERE IsActive = 1 AND NameType = 'Destination'");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
+    
 
 
 

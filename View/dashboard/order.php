@@ -36,7 +36,7 @@
                             <div class="mb-1">
                                 <label class="form-label text-danger" for="Phone1NewCustomer">*Phone #1</label>
                                 <div class="input-group"> <span class="input-group-text"><i
-                                            class="las la-phone"></i></span>
+                                            class="fa fa-mobile"></i></span>
                                     <input type="tel" class="form-control" id="Phone1NewCustomer"
                                         name="Phone1NewCustomer" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
@@ -295,8 +295,7 @@
                 <h3>Basic info</h3>
                 <fieldset>
                     <div class="row">
-                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="map-pin"></i> Origin
-                                    Information</b></span>
+                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="map-pin"></i> Origin information</b></span>
                             <hr>
                             <div class="row">
                                 <div class="col-md-12" style="position: relative;">
@@ -305,7 +304,6 @@
                                         <select style="width: 90%;" id="IdCustomerOrigin" name="IdCustomerOrigin"
                                             class="select2 form-control mb-3 custom-select originInput"
                                             aria-describedby="button-addon1">
-                                            <option value="" selected>Select customer origin</option>
                                         </select>
                                         <button class="btn btn-dark" type="button" id="SearchCustomerName"><i
                                                 class="ti ti-reload"></i></button>
@@ -317,7 +315,7 @@
                         <!--end col-->
                         <div class="col-md-6"> <span class="text-dark"><b><i data-feather="arrow-right-circle"></i>
                                     Destination
-                                    Information</b></span>
+                                    information</b></span>
                             <hr>
                             <div class="row">
 
@@ -328,7 +326,6 @@
                                             name="IdCustomerDestination"
                                             class="select2 form-control mb-3 custom-select DestinationInput"
                                             aria-describedby="button-addon1">
-                                            <option value="" selected>Select customer destination</option>
                                         </select>
                                         <button class="btn btn-dark" type="button" id="SearchDestinationCustomer"><i
                                                 class="ti ti-reload"></i></button>
@@ -380,7 +377,7 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" style="position: relative;">
-                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Origin phone
+                                                <label class="mb-1"><i class="fa fa-mobile"></i> Origin phone
                                                     #1</label>
                                                 <input id="OriginPhone1" name="OriginPhone1" type="tel"
                                                     class="form-control originInput" placeholder="+1 (555) 555-5555">
@@ -394,7 +391,7 @@
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" style="position: relative;">
-                                                <label class="mb-1">Origin email</label>
+                                                <label class="mb-1"><i class="fa fa-envelope"></i> Origin email</label>
                                                 <input id="OriginEmail" name="OriginEmail" type="email"
                                                     class="form-control originInput" placeholder="cus@domain.com">
                                             </div>
@@ -407,7 +404,7 @@
                                     <div class="col-md-12" style="position: relative;">
                                         <label class="mb-1"><i class="fa fa-sticky-note"></i> Origin note</label>
                                         <textarea id="OriginNote" name="OriginNote" class="form-control originInput"
-                                            placeholder="Opcional information"></textarea>
+                                            placeholder="Opcional information" rows="3"></textarea>
                                     </div>
                                     <!-- end row -->
                                 </div>
@@ -454,7 +451,7 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" style="position: relative;">
-                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Destination phone
+                                                <label class="mb-1"><i class="fa fa-mobile"></i> Destination phone
                                                     #1</label>
                                                 <input id="DestinationPhone1" name="DestinationPhone1" type="tel"
                                                     class="form-control DestinationInput"
@@ -470,7 +467,7 @@
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" style="position: relative;">
-                                                <label class="mb-1">Destination email</label>
+                                                <label class="mb-1"><i class="fa fa-envelope"></i> Destination email</label>
                                                 <input id="DestinationEmail" name="DestinationEmail" type="email"
                                                     class="form-control DestinationInput" placeholder="cus@domain.com">
                                             </div>
@@ -484,7 +481,7 @@
                                         <label class="mb-1"><i class="fa fa-sticky-note"></i> Destination note</label>
                                         <textarea id="DestinationNote" name="DestinationNote"
                                             class="form-control DestinationInput"
-                                            placeholder="Opcional information"></textarea>
+                                            placeholder="Opcional information" rows="3"></textarea>
                                     </div>
                                     <!-- end row -->
                                 </div>
@@ -496,6 +493,10 @@
                 <h3>Vehicles</h3>
                 <fieldset>
                     <div class="row">
+                    <div class="col-md-12"> 
+                    <span class="text-dark"><b><i data-feather="file-text"></i> Vehicles to order</b></span>
+                            <hr>
+                            </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
@@ -549,8 +550,7 @@
                                         class="btn btn-sm btn-dark tippy-btn" type="button" id="SearchVehicles"><i
                                             class="ti ti-reload"></i></button>
                                     <button type="button" onclick="AddVehicleList()"
-                                        class="btn btn-sm btn-outline-primary"> <i class="fas fa-plus"></i> Add vehicles
-                                        to order</button>
+                                        class="btn btn-sm btn-outline-primary"> <i class="fas fa-plus"></i> Add vehicles</button>
                                 </div>
                                 <!--end card-header-->
                                 <div class="card-body">
@@ -559,12 +559,12 @@
                                             <div data-repeater-item="">
                                                 <div class="form-group row d-flex align-items-end">
                                                     <div class="row">
-                                                        <div class="col-md-12" id="contentVehicle" style="overflow-y: auto; height:220px">
+                                                        <div class="col-md-12" id="contentVehicle" style="overflow-y: auto; height:210px">
 
                                                             <div class="row" id="templateVehiculo" style="padding-bottom:20px !important">
 
-                                                                <div class="col-sm-3" style="position: relative;">
-                                                                    <label class="mb-1">Brand</label>
+                                                                <div class="col-sm-2" style="position: relative;">
+                                                                    <label class="mb-1"><b>Brand</b></label>
                                                                     <select style="width: 90%;" name="Brand[]"
                                                                         class="select2 form-control mb-3 custom-select BrandVehicle">
                                                                         <option value="" selected>Select brand</option>
@@ -572,16 +572,32 @@
                                                                 </div>
 
                                                                 <div class="col-sm-3" style="position: relative;">
-                                                                    <label class="mb-1">Model</label>
+                                                                    <label class="mb-1"><b>Model</b></label>
                                                                     <select style="width: 90%;" name="Model[]"
                                                                         class="select2 form-control mb-3 custom-select ModelVehicle">
                                                                         <option value="" selected>Select model</option>
                                                                     </select>
                                                                 </div>
 
+                                                                <div class="col-sm-1" style="position: relative;">
+                                                                    <label class="mb-1"><b>Condition</b></label>
+                                                                    <select style="width: 100%;" name="Condition[]" class="form-control ConditionVehicle">
+                                                                        <option selected value="Running">Running</option>
+                                                                        <option value="Non-running">Non-running</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                  <div class="col-sm-1" style="position: relative;">
+                                                                    <label class="mb-1"><b>Carrier type</b></label>
+                                                                    <select style="width: 100%;" name="CarrierType[]" class="form-control CarrierTypeVehicle">
+                                                                        <option value="Open">Open</option>
+                                                                        <option value="Enclosed">Enclosed</option>
+                                                                    </select>
+                                                                </div>
+
                                                                 <!-- end row -->
                                                                 <div class="col-sm-1" style="position: relative;">
-                                                                    <label class="mb-1">Color</label>
+                                                                    <label class="mb-1"><b>Color</b></label>
                                                                     <select style="width: 100%;" name="Color[]"
                                                                         class="form-control ColorVehicle">
                                                                         <option value="White"> White</option>
@@ -601,31 +617,25 @@
                                                                 </div>
                                                                 <!--end col-->
                                                                 <div class="col-sm-1" style="position: relative;">
-                                                                    <label class="mb-1">Year</label>
-                                                                    <input type="number" name="Year[]"
+                                                                    <label class="mb-1"><b>Year</b></label>
+                                                                    <input type="number"  min="1900" name="Year[]"
                                                                         class="form-control YearVehicle" placeholder="">
                                                                 </div>
-                                                                <!--end col-->
-                                                                <div class="col-sm-3" style="position: relative;">
-                                                                    <label class="mb-1">Vin</label>
-                                                                    <input type="text" name="Vin[]"
-                                                                        class="form-control VinVehicle">
-                                                                </div>
 
-                                                                <div class="col-sm-1" style="position: relative;">
-                                                                    <br>
-                                                                    <button type="button"
-                                                                        onclick="EliminarVehiculo(this)"
-                                                                        class="btn btn-outline-danger"> <span
-                                                                            class="far fa-trash-alt me-1"></span>
-                                                                    </button>
+                                                                <div class="col-sm-3" style="position: relative;">
+                                                                <label class="mb-1"><b>Vin</b></label>
+                                                                    <div class="input-group">
+                                                                         <input type="text" name="Vin[]" class="form-control VinVehicle">
+                                                                         <button type="button" title="Delete vehicle" onclick="EliminarVehiculo(this)"  class="btn btn-outline-danger"> <span class="far fa-trash-alt me-1"></span> </button>
+                                                                    </div>
                                                                 </div>
+                                                           
                                                                 <!--end col-->
 
                                                             </div>
                                                         </div>
                                                         <hr>
-                                                        <p class="text-muted text-danger"><i class="fa fa-trash"></i>
+                                                        <p class="text-secondary"><i class="fa fa-trash text-danger"></i>
                                                             Don't delete the first row.</p>
                                                     </div>
                                                     <!--end col-->
@@ -647,13 +657,14 @@
                 <!--end fieldset-->
                 <h3>Payment</h3>
                 <fieldset>
+
                     <div class="row">
                         <div class="col-md-6"> <span class="text-dark"><b><i data-feather="credit-card"></i> Credit Card
                                     info</b></span>
                             <hr>
                             <div class="row">
                                 <div class="col-md-12" style="position: relative;">
-                                    <label class="mb-1">Card holder name</label>
+                                    <label class="mb-1"> Card holder name</label>
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder="Input the name of card"
                                             name="CardHolderName" id="CardHolderName">
@@ -667,21 +678,22 @@
                         </div>
                         <!--end col-->
                         <div class="col-md-6"> <span class="text-dark"><b><i data-feather="dollar-sign"></i>
-                                    Payment</b></span>
+                                    Payment's customer </b></span>
                             <hr>
                             <div class="row">
                                 <div class="col-md-6" style="position: relative;">
-                                    <label class="mb-1">Total</label>
+                                    <label class="mb-1"><b>Total</b></label>
                                     <input type="number" class="form-control" name="Total" id="Total"
                                         placeholder="$0000">
                                 </div>
                                 <div class="col-md-6" style="position: relative;">
-                                    <label class="mb-1">Deposit</label>
+                                    <label class="mb-1"><b>Deposit</b></label>
                                     <input id="Deposit" name="Deposit" type="number" class="form-control"
                                         placeholder="$0000">
                                 </div>
                                 <!-- end row -->
                             </div>
+
                             <br>
                             <!--end form-group-->
                         </div>
@@ -694,7 +706,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-5" style="position: relative;">
-                                            <label class="mb-1">Credit card number</label>
+                                            <label class="mb-1"><i class="fa fa-credit-card"></i> Credit card number</label>
                                             <input id="CreditCard" name="CreditCard" type="text" class="form-control"
                                                 placeholder="#### #### #### ####">
                                         </div>
@@ -719,15 +731,15 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-8" style="position: relative;">
-                                            <label class="mb-1">Biling address</label>
-                                            <input id="BilingAddress" name="BilingAddress" type="text"
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing address</label>
+                                            <input id="BillingAddress" name="BillingAddress" type="text"
                                                 class="form-control" placeholder="Ex. 12141 Pembroke Rd....">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" style="position: relative;">
                                             <label class="mb-1">Reference</label>
                                             <input id="Reference" name="Reference" type="text" class="form-control"
-                                                placeholder="0000000">
+                                                placeholder="">
                                         </div>
                                         <!-- end row -->
                                     </div>
@@ -738,7 +750,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone number #1</label>
+                                            <label class="mb-1"><i class="fa fa-mobile"></i> Phone number #1</label>
                                             <input id="Tel1" name="Tel1" type="tel" class="form-control"
                                                 placeholder="+1 (555) 555-5555">
                                         </div>
@@ -750,174 +762,32 @@
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1">Email</label>
+                                            <label class="mb-1"><i class="fa fa-envelope"></i> Email</label>
                                             <input id="PaymentEmail" name="PaymentEmail" type="email"
-                                                class="form-control" placeholder="ez@domain.com">
+                                                class="form-control" placeholder="us@domain.com">
                                         </div>
                                         <!-- end row -->
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                            <div class="row">
+        
+                        </div>
+
+                        <div class="col-md-6">
+                        <div class="row">
                                 <div class="col-md-12" style="position: relative;">
-                                    <label class="mb-1">Payment Note</label>
+                                    <label class="mb-1"><i class="fa fa-sticky-note"></i> Payment note</label>
                                     <textarea id="PaymentNote" name="PaymentNote" class="form-control"
-                                        placeholder="Opcional information"></textarea>
+                                        placeholder="Opcional information" rows="5"></textarea>
                                 </div>
                                 <!-- end row -->
                             </div>
-                            <br>
                         </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1">Extra truker Fee</label>
-                                            <input id="ExtraTrukerFee" name="ExtraTrukerFee" type="number"
-                                                class="form-control" placeholder="$0000">
-                                        </div>
-                                        <!-- end row -->
-                                        <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1">Cod</label>
-                                            <input id="Cod" name="Cod" type="number" class="form-control"
-                                                placeholder="$0000">
-                                        </div>
-                                        <!-- end row -->
-                                        <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1">Truker rate</label>
-                                            <input id="TrukerRate" name="TrukerRate" type="number" class="form-control"
-                                                placeholder="$0000">
-                                        </div>
-                                        <!-- end row -->
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1">Earnings</label>
-                                            <input id="Earnings" name="Earnings" type="number" class="form-control"
-                                                placeholder="$0000">
-                                        </div>
-                                        <!-- end row -->
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                        </div>
+             
                     </div>
                 </fieldset>
-                <!--end fieldset-->
-                <h3>Trucker and Drivers</h3>
-                <fieldset>
-                    <div class="row">
-                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="truck"></i> Trucker
-                                    company</b></span>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12" style="position: relative;">
-                                    <label class="mb-1">Trucker's company name</label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control"
-                                            placeholder="Input the company service's name" name="CompanyName"
-                                            id="CompanyName">
-                                        <button class="btn btn-dark" id="SearchCompanyName" type="button"
-                                            id="button-addon2"><i class="fas fa-search"></i></button>
-                                    </div>
-                                </div>
-                                <!-- end row -->
-                            </div>
-                        </div>
-                        <!--end col-->
-                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="users"></i>
-                                    Drivers</b></span>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12" style="position: relative;">
-                                    <label class="mb-1">Driver's name</label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Input the driver's name"
-                                            name="DriverName" id="DriverName">
-                                        <button class="btn btn-dark" id="SearchDriverName" type="button"><i
-                                                class="fas fa-search"></i></button>
-                                    </div>
-                                </div>
-                                <!-- end row -->
-                            </div>
-                            <!--end form-group-->
-                        </div>
-                        <!--end col-->
-                    </div>
-                    <!--end row-->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12" style="position: relative;">
-                                            <label class="mb-1">Company's address</label>
-                                            <input id="CompanyAddress" name="CompanyAddress" type="text"
-                                                class="form-control" placeholder="Input the company's address">
-                                        </div>
-                                        <!-- end row -->
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
-                                            <input id="CompanyPhone1" name="CompanyPhone1" type="tel"
-                                                class="form-control" placeholder="+1 (555) 555-5555">
-                                        </div>
-                                        <!-- end row -->
-                                        <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
-                                            <input id="CompanyPhone2" name="CompanyPhone2" type="tel"
-                                                class="form-control" placeholder="+1 (555) 555-5555">
-                                        </div>
-                                        <!-- end row -->
-                                        <div class="col-md-4" style="position: relative;">
-                                            <label class="mb-1">Email</label>
-                                            <input id="CompanyEmail" name="CompanyEmail" type="email"
-                                                class="form-control" placeholder="ez@domain.com">
-                                        </div>
-                                        <!-- end row -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-6" style="position: relative;">
-                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
-                                            <input id="DriverPhone1" name="DriverPhone1" type="number"
-                                                class="form-control" placeholder="+1 (555) 555-5555">
-                                        </div>
-                                        <!-- end row -->
-                                        <div class="col-md-6" style="position: relative;">
-                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
-                                            <input id="DriverPhone2" name="DriverPhone2" type="number"
-                                                class="form-control" placeholder="+1 (555) 555-5555">
-                                        </div>
-                                        <!-- end row -->
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                        </div>
-                    </div>
-                </fieldset>
-                <!--end fieldset-->
-                <h3>Confirm Order</h3>
+
+                <h3>Confirm order</h3>
                 <fieldset>
                     <div class="row">
                         <div class="col-lg-12 mx-auto">
@@ -1082,8 +952,7 @@
                                         <div class="col-lg-12 col-xl-4">
                                             <div class="float-end d-print-none"> <a href="javascript:window.print()"
                                                     class="btn btn-soft-info btn-sm">Print</a> <a href="#"
-                                                    class="btn btn-soft-primary btn-sm">Submit</a> <a href="#"
-                                                    class="btn btn-soft-danger btn-sm">Cancel</a> </div>
+                                                    class="btn btn-soft-success btn-sm">Submit</a> 
                                         </div>
                                         <!--end col-->
                                     </div>
@@ -1098,6 +967,172 @@
                     <!--end row-->
                 </fieldset>
                 <!--end fieldset-->
+                <!--end fieldset-->
+                <h3>Trucker and drivers</h3>
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="truck"></i> Trucker
+                                    company</b></span>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12" style="position: relative;">
+                                    <label class="mb-1">Trucker's company name</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control"
+                                            placeholder="Input the company service's name" name="CompanyName"
+                                            id="CompanyName">
+                                        <button class="btn btn-dark" id="SearchCompanyName" type="button"
+                                            id="button-addon2"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="dollar-sign"></i>
+                                    Payment's driver</b></span>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+
+                                                    <div class="col-md-4" style="position: relative;">
+                                                        <label class="mb-1">Cod</label>
+                                                        <input id="Cod" name="Cod" type="number" class="form-control"
+                                                            placeholder="$0000">
+                                                    </div>
+
+                                                    <div class="col-md-4" style="position: relative;">
+                                                        <label class="mb-1">Truker rate</label>
+                                                        <input id="TrukerRate" name="TrukerRate" type="number" class="form-control"
+                                                            placeholder="$0000">
+                                                    </div>
+
+                                                    <div class="col-md-4" style="position: relative;">
+                                                        <label class="mb-1">Extra truker Fee</label>
+                                                        <input id="ExtraTrukerFee" name="ExtraTrukerFee" type="number"
+                                                            class="form-control" placeholder="$0000">
+                                                    </div>
+                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    
+                                    </div>
+                                </div>
+                            <!--end form-group-->
+                        </div>
+                        <!--end col-->
+                    </div>
+
+            
+                    
+                    <!--end row-->
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-12" style="position: relative;">
+                                            <label class="mb-1">Company's address</label>
+                                            <input id="CompanyAddress" name="CompanyAddress" type="text"
+                                                class="form-control" placeholder="Input the company's address">
+                                        </div>
+                                        <!-- end row -->
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-4" style="position: relative;">
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
+                                            <input id="CompanyPhone1" name="CompanyPhone1" type="tel"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+                                        <!-- end row -->
+                                        <div class="col-md-4" style="position: relative;">
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
+                                            <input id="CompanyPhone2" name="CompanyPhone2" type="tel"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+                                        <!-- end row -->
+                                        <div class="col-md-4" style="position: relative;">
+                                            <label class="mb-1"><i class="fa fa-envelope"></i> Email</label>
+                                            <input id="CompanyEmail" name="CompanyEmail" type="email"
+                                                class="form-control" placeholder="ez@domain.com">
+                                        </div>
+                                        <!-- end row -->
+                                    </div>
+                                </div>
+                            </div><hr>
+
+                            <div class="row">
+                            
+                                 <div class="col-md-12">
+                                        <span class="text-dark"><b><i class="fa fa-address-card fa-2x"></i> Drivers</b></span><hr>
+
+                                        <div class="row">
+                                            <div class="col-md-12" style="position: relative;">
+                                                <label class="mb-1">Driver's name</label>
+                                                <div class="input-group">
+                                                    <select style="width: 92%;" id="IdDriver" name="IdDriver" class="select2 form-control mb-3 custom-select"> </select>
+                                                    <button class="btn btn-dark" type="button" id="SearchDriverName"><iconv_get_encoding class="ti ti-reload"></i></button>
+                                                </div>
+                                            </div>
+                                            <!-- end row -->
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                </div><br>
+
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6" style="position: relative;">
+                                            <label class="mb-1"><i class="fa fa-mobile"></i> Driver's phone #1</label>
+                                            <input id="DriverPhone1" name="DriverPhone1" type="number"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+                                        <!-- end row -->
+                                        <div class="col-md-6" style="position: relative;">
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Driver's phone #2</label>
+                                            <input id="DriverPhone2" name="DriverPhone2" type="number"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+                                        <!-- end row -->
+                                    </div>
+                                </div><br>
+                        </div>
+                        
+                        <div class="col-md-6">
+                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-4" style="position: relative;">
+                                                        <label class="mb-1"><i class="fa fa-money-bill"></i><b class="text-success"> Earnings</b></label>
+                                                        <input id="Earnings" name="Earnings" type="number" class="form-control" placeholder="$0000">
+                                                    </div>
+
+                                                    <div class="col-md-4" style="position: relative;">
+                                                        <label class="mb-1"><i class="fa fa-truck" aria-hidden="true"></i> <b class="text-danger">Truker owes us</b></label>
+                                                        <input id="TrukerOwesUs" name="TrukerOwesUs" type="number" class="form-control"  placeholder="$0000">
+                                                    </div>
+                                                    <!-- end row -->
+                                                </div>
+                                            </div>
+                                        </div>
+                        </div>
+                       
+                    </div>
+
+                </fieldset>
+                <!--end fieldset-->
+             
             </form>
             <!--end form-->
         </div>
@@ -1132,9 +1167,9 @@ $("#form-horizontal").steps({
 });
 
 //Execute select2 functions 
-GetListCustomerOrigin();
-GetListCustomerDestination();
+GetListCustomer();
 GetListVehicles();
+GetListDrivers();
 
 function AddVehicleList() {
 
@@ -1152,7 +1187,7 @@ function AddVehicleList() {
 }
 
 function EliminarVehiculo(e) {
-    $(e).parent().parent().remove();
+    $(e).parent().parent().parent().remove();
 }
 
 //Input Search Select2
@@ -1166,17 +1201,6 @@ $(document).ready(function() {
 
     $("body").addClass("enlarge-menu");
 
-    /*$("#IdCustomerOrigin, #IdCustomerDestination").select2({
-      dropdownParent: $("#ModalNewOrder")
-    });*/
-
-    //, .BrandVehicle, .ModelVehicle
-    //$("#IdCustomerOrigin, #IdCustomerDestination, #OrderStatusID").select2();
-
-});
-
-$("#SearchCustomerName").click(function() {
-    GetListCustomerOrigin();
 });
 
 $("#SearchVehicles").click(function() {
@@ -1198,7 +1222,7 @@ function GetListVehicles() {
         if (data.BrandsList.length > 0) {
 
             data.BrandsList.forEach(element => {
-                var optionBucle = new Option(element.Brand, element.Id, true, true);
+                var optionBucle = new Option(element.Brand, element.Brand, true, true);
                 $('.BrandVehicle').append(optionBucle); //.trigger('change');
             });
         }
@@ -1206,7 +1230,7 @@ function GetListVehicles() {
         if (data.ModelsList.length > 0) {
 
             data.ModelsList.forEach(element => {
-                var optionBucle = new Option(element.Model, element.Id, true, true);
+                var optionBucle = new Option(element.Model, element.Model, true, true);
                 $('.ModelVehicle').append(optionBucle); //.trigger('change');
             });
 
@@ -1229,70 +1253,117 @@ function GetListVehicles() {
 }
 
 //Destination Customer
-$("#SearchDestinationCustomer").click(function() {
-    GetListCustomerDestination();
+$("#SearchDestinationCustomer, #SearchCustomerName").click(function() {
+    GetListCustomer();
 });
 
-function GetListCustomerOrigin() {
+
+function GetListCustomer() {
 
     $.ajax({
         type: 'POST',
         url: "index.php?c=customers&a=GetListCustomers",
     }).then(function(response) {
 
-        $('#IdCustomerOrigin').empty();
-
         var data = JSON.parse(response);
 
-        if (data.length > 0) {
+        if (data.OriginList.length > 0) {
 
-            data.forEach(element => {
+            data.OriginList.forEach(element => {
                 var optionBucle = new Option(element.Customer, element.Id, true, true);
                 $('#IdCustomerOrigin').append(optionBucle); //.trigger('change');
             });
         }
 
-        var optionDefault = new Option("Select customer origin", "", true, true);
-        $('#IdCustomerOrigin').append(optionDefault); //.trigger('change');
-        $('#IdCustomerOrigin').val("").trigger('change');
+        if (data.DestinationList.length > 0) {
 
-        $(".toast-success").html("Customer origin list ready");
-        var myAlert = document.getElementById('toastSuccess');
-        var bsAlert = new bootstrap.Toast(myAlert);
-        bsAlert.show();
-    });
-
-}
-
-
-function GetListCustomerDestination() {
-
-    $('#IdCustomerDestination').empty();
-
-    $.ajax({
-        type: 'POST',
-        url: "index.php?c=customers&a=GetListCustomers",
-    }).then(function(response) {
-
-        var data = JSON.parse(response);
-
-        if (data.length > 0) {
-
-            data.forEach(element => {
-                var optionBucle = new Option(element.Customer, element.Id, true, true);
-                $('#IdCustomerDestination').append(optionBucle); //.trigger('change');
+            data.DestinationList.forEach(element => {
+                var optionBucle2 = new Option(element.Customer, element.Id, true, true);
+                $('#IdCustomerDestination').append(optionBucle2); //.trigger('change');
             });
+
         }
 
-        var optionDefault = new Option("Select customer destination", "", true, true);
-        $('#IdCustomerDestination').append(optionDefault); //.trigger('change');
-        $('#IdCustomerDestination').val("").trigger('change');
+        var optionDefault = new Option("Select origin customer", "", true, true);
+        $('#IdCustomerOrigin').append(optionDefault);
+        $('#IdCustomerOrigin').val("").trigger('change');
 
-        $(".toast-success").html("Customer destination list ready");
+        $('#IdCustomerDestination').val("").trigger('change');
+        var optionDefault2 = new Option("Select destination customer", "", true, true);
+        $('#IdCustomerDestination').append(optionDefault2);
+
+        $(".toast-success").html("Customer list ready");
         var myAlert = document.getElementById('toastSuccess');
         var bsAlert = new bootstrap.Toast(myAlert);
         bsAlert.show();
+
+
+        });
+}
+
+function GetListDrivers() {
+
+$.ajax({
+    type: 'POST',
+    url: "index.php?c=drivers&a=GetListDrivers",
+}).then(function(response) {
+
+    var data = JSON.parse(response);
+
+    if (data.length > 0) {
+
+        data.forEach(element => {
+            var optionBucle = new Option(element.Driver, element.Id, true, true);
+            $('#IdDriver').append(optionBucle); //.trigger('change');
+        });
+    }
+
+    var optionDefault = new Option("Select driver ", "", true, true);
+    $('#IdDriver').append(optionDefault);
+    $('#IdDriver').val("").trigger('change');
+
+    $(".toast-success").html("Driver's list ready");
+    var myAlert = document.getElementById('toastSuccess');
+    var bsAlert = new bootstrap.Toast(myAlert);
+    bsAlert.show();
+
+
+    });
+}
+
+$("#SearchDriverName").click(function() {
+    SearchDriverName();
+});
+
+function SearchDriverName(){
+
+    $.ajax({
+    type: 'POST',
+    url: "index.php?c=drivers&a=GetListDrivers",
+}).then(function(response) {
+
+    var data = JSON.parse(response);
+
+    if (data.length > 0) {
+
+        data.forEach(element => {
+            var optionBucle = new Option(element.Driver, element.Id, true, true);
+            $('#IdDriver').append(optionBucle); //.trigger('change');
+        });
+    }
+
+    var optionDefault = new Option("Select driver ", "", true, true);
+    $('#IdDriver').append(optionDefault);
+    $('#IdDriver').val("").trigger('change');
+
+    $(".toast-success").html("Driver's list ready");
+    var myAlert = document.getElementById('toastSuccess');
+    var bsAlert = new bootstrap.Toast(myAlert);
+    bsAlert.show();
+
+
     });
 
 }
+
 </script>

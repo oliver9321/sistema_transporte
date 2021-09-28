@@ -129,5 +129,21 @@ class Drivers {
         return $stm2->fetch();
     }
 
+    public function GetListDrivers()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT Id, CONCAT(DriverName,' - ',DriverPhone1) AS Driver FROM tbl_drivers WHERE IsActive = 1");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
 
 }

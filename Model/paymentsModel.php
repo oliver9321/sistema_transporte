@@ -10,7 +10,7 @@ class Payments {
     public $CreditCard;
     public $ExpDate;
     public $Cvv;
-    public $BilingAddress;
+    public $BillingAddress;
     public $Reference;
     public $Tel1;
     public $Tel2;
@@ -79,7 +79,7 @@ class Payments {
                         CreditCard= ?,
                         ExpDate= ?,
                         Cvv = ?,
-                        BilingAddress= ?,
+                        BillingAddress= ?,
                         Reference= ?,
                         Tel1= ?,
                         Tel2= ?,
@@ -98,7 +98,7 @@ $result=  $this->pdo->prepare($sql)
                         $data->CreditCard,
                         $data->ExpDate,
                         $data->Cvv,
-                        $data->BilingAddress,
+                        $data->BillingAddress,
                         $data->Reference,
                         $data->Tel1,
                         $data->Tel2,
@@ -127,7 +127,7 @@ $result=  $this->pdo->prepare($sql)
                     CreditCard,
                     ExpDate,
                     Cvv,
-                    BilingAddress,
+                    BillingAddress,
                     Reference,
                     Tel1,
                     Tel2,
@@ -146,7 +146,7 @@ $result=   $this->pdo->prepare($sql)
                         $data->CreditCard,
                         $data->ExpDate,
                         $data->Cvv,
-                        $data->BilingAddress,
+                        $data->BillingAddress,
                         $data->Reference,
                         $data->Tel1,
                         $data->Tel2,

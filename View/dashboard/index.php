@@ -116,52 +116,67 @@
                             </div><!--end card--> 
                         </div><!--end col-->
                         <div class="col-lg-3">
-                            <div class="card">   
+                            <div class="card"> 
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Activity</h4>                      
-                                        </div><!--end col-->
+                                            <h4 class="card-title">Earning Reports</h4>                   
+                                        </div><!--end col-->  
                                         <div class="col-auto"> 
-                                              
-                                        </div><!--end col-->
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   This Week<i class="las la-angle-down ms-1"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end" style="">
+                                                    <a class="dropdown-item" href="#">Today</a>
+                                                    <a class="dropdown-item" href="#">Last Week</a>
+                                                    <a class="dropdown-item" href="#">Last Mont</a>
+                                                    <a class="dropdown-item" href="#">This Year</a>
+                                                </div>
+                                            </div>               
+                                        </div><!--end col-->                                      
                                     </div>  <!--end row-->                                  
-                                </div><!--end card-header-->                                              
-                                <div class="card-body"> 
-                                    <div class="analytic-dash-activity" data-simplebar>
-                                        <div class="activity">
-                                            <div class="activity-info">
-                                                <div class="icon-info-activity">
-                                                    <i class="las la-user-clock bg-soft-primary"></i>
-                                                </div>
-                                                <div class="activity-info-text">
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <p class="text-muted mb-0 font-13 w-75"><span>User test</span> 
-                                                            updated the status of <a href="#">Refund #1234</a> to awaiting customer response
-                                                        </p>
-                                                        <small class="text-muted">10 Min ago</small>
-                                                    </div>    
-                                                </div>
-                                            </div>   
-
-                                            <div class="activity-info">
-                                                <div class="icon-info-activity">
-                                                    <i class="mdi mdi-timer-off bg-soft-primary"></i>
-                                                </div>
-                                                <div class="activity-info-text">
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <p class="text-muted mb-0 font-13 w-75"><span>User test 2</span> 
-                                                            was added to the group, group name is <a href="#">Overtake</a>
-                                                        </p>
-                                                        <small class="text-muted">50 Min ago</small>
-                                                    </div>    
-                                                </div>
-                                            </div>   
-
-                                                                                                                                                                    
-                                        </div><!--end activity-->
-                                    </div><!--end analytics-dash-activity-->
-                                </div>  <!--end card-body-->                                     
+                                </div><!--end card-header-->
+                                <div class="card-body border-bottom-dashed">
+                                    <div class="earning-data text-center">
+                                        <img src="assets/images/money-beg.png" alt="" class="money-bag my-3" height="60">
+                                        <h5 class="earn-money mb-1">$51,255</h5>
+                                        <p class="text-muted font-15 mb-4">Total Revenue</p>
+                                        <div class="text-center my-2">
+                                            <h6 class="text-primary bg-soft-primary p-3 mb-0 font-11 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target align-self-center icon-xs me-1"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                                Target $90,000
+                                                <span class="mx-2">/</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign align-self-center icon-xs me-1"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                                Last Month $68,550
+                                            </h6>
+                                        </div> 
+                                    </div>                                                                                                          
+                                </div><!--end card-body-->
+                                <div class="card-body my-1">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="media">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart align-self-center icon-md text-secondary me-2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                                <div class="media-body align-self-center"> 
+                                                    <h6 class="m-0 font-20">128</h6>
+                                                    <p class="text-muted mb-0">New Orders</p>                                                                                                                                               
+                                                </div><!--end media body-->
+                                            </div>
+                                        </div><!--end col--> 
+                                        <div class="col">
+                                            <div class="media">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign align-self-center icon-md text-secondary me-2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                                <div class="media-body align-self-center"> 
+                                                    <h6 class="m-0 font-20">$5,335</h6>
+                                                    <p class="text-muted mb-0">Revenue</p>                                                                                          
+                                                </div><!--end media body-->
+                                            </div>
+                                        </div><!--end col-->                                         
+                                    </div><!--end row-->  
+                                </div><!--end card-body-->
+                                                       
+                                                             
                             </div><!--end card--> 
                         </div> <!--end col--> 
                     </div><!--end row-->
@@ -173,7 +188,7 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Order status</h4>                      
+                                            <h4 class="card-title">Order in process</h4>                      
                                         </div><!--end col-->                                        
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
@@ -215,7 +230,7 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Orders status 2</h4>                      
+                                            <h4 class="card-title">Orders pending</h4>                      
                                         </div><!--end col-->                                        
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->

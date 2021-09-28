@@ -45,7 +45,7 @@ $(document).ready(function() {
             $("#OriginPhone2, #OriginPhone1, #OriginEmail").val("");
 
             $.ajax({
-                url: "index.php?c=customers&a=GetInfoCustomerById",
+                url: "index.php?c=drivers&a=GetInfoDriverById",
                 type: "POST",
                 data: {
                     Id: CustomerID
@@ -85,10 +85,6 @@ $(document).ready(function() {
 
         }
     });
-
-});
-
-$(document).ready(function() {
 
     $('#IdCustomerDestination').on("change", function(e) {
 
@@ -141,7 +137,51 @@ $(document).ready(function() {
 
     });
 
+    $('#IdDriver').on("change", function(e) {
+
+        var IdDriver = this.value;
+
+        if (IdDriver != '') {
+
+            $("#DriverPhone1, #DriverPhone2").css("border-color", "#e3ebf6");
+            $("#DriverPhone1, #DriverPhone2").val("");
+
+            $.ajax({
+                url: "index.php?c=drivers&a=GetInfoDriverById",
+                type: "POST",
+                data: {
+                    Id: IdDriver
+                },
+                success: function(data) {
+
+                    var value = JSON.parse(data);
+
+                    if (value.DriverPhone1 != '') {
+                        $("#DriverPhone1").val(value.DriverPhone1);
+                        $("#DriverPhone1").css("border-color", "green");
+                    } else {
+                        $("#DriverPhone1").css("border-color", "orange");
+                        $("#DriverPhone1").val("");
+                    }
+
+                    if (value.DriverPhone2 != '') {
+                        $("#DriverPhone2").val(value.DriverPhone2);
+                        $("#DriverPhone2").css("border-color", "green");
+                    } else {
+                        $("#DriverPhone2").css("border-color", "orange");
+                        $("#DriverPhone2").val("");
+                    }
+
+
+
+                }
+            });
+
+        }
+    });
+
 });
+
 //End Customers
 
 
@@ -248,8 +288,6 @@ function newVehicle() {
     });
 }
 
-
-
 //End vehicles
 
 //Google Maps Origin Info
@@ -265,7 +303,6 @@ $(document).ready(function() {
     let autocomplete2;
     let address1Field2;
     let postalField2;
-
 
     function initAutocomplete() {
 
@@ -286,7 +323,6 @@ $(document).ready(function() {
             fields: ["address_components", "geometry"],
             types: ["address"],
         });
-        //  address1Field.focus();
 
         autocomplete.addListener("place_changed", fillInAddress);
         autocomplete2.addListener("place_changed", fillInAddress2);
@@ -353,10 +389,7 @@ $(document).ready(function() {
                         break;
 
                     }
-                    /*	case "country":
-                    		document.querySelector("#country").value = component.long_name;
-                    		break;
-                    	}*/
+
             }
 
             if (postcode != '') {
@@ -451,6 +484,14 @@ $(document).ready(function() {
         }
     }
 
+
+    function init() {
+        var input = document.getElementById('BillingAddress');
+        var autocomplete3 = new google.maps.places.Autocomplete(input);
+    }
+
+
+    init();
     initAutocomplete();
 
 

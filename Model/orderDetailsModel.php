@@ -11,6 +11,8 @@ class OrderDetails {
     public $Color;
     public $Year;
     public $Vin;
+    public $Condition;
+    public $CarrierType;
     public $DateCreation;
     public $UserIdCreation;
     public $LastModificationDate;
@@ -75,6 +77,8 @@ class OrderDetails {
                         Color = ?,
                         Year =?,
                         Vin =?,
+                        Condition =?,
+                        CarrierType = ?,
 						LastModificationDate = ?,
 						UserIdLastModification = ?,
 						IsActive = ?
@@ -89,6 +93,8 @@ $result=  $this->pdo->prepare($sql)
                         $data->Color,
                         $data->Year,
                         $data->Vin,
+                        $data->Condition,
+                        $data->CarrierType,
                         $data->LastModificationDate,
                         (int)$data->UserIdLastModification,
                         (int)$data->IsActive,
@@ -106,7 +112,7 @@ $result=  $this->pdo->prepare($sql)
     {
         try
         {
-            $sql = "INSERT INTO tbl_order_details (IdOrder,Brand,Model,Color,Year,Vin,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tbl_order_details (IdOrder,Brand,Model,Color,Year,Vin,Condition,CarrierType,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
             $result= $this->pdo->prepare($sql)
                 ->execute(
@@ -117,6 +123,8 @@ $result=  $this->pdo->prepare($sql)
                         $data->Color,
                         $data->Year,
                         $data->Vin,
+                        $data->Condition,
+                        $data->CarrierType,
                         date('Y-m-d'),
                         (int)$data->UserIdCreation,
                         1

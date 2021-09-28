@@ -135,4 +135,18 @@ class DriversController
         echo "Please, complete the required fields (*)";
     }   
 }
+
+    public function GetListDrivers(){
+        echo json_encode($this->model->GetListDrivers(), true);
+    }
+
+    public function GetInfoDriverById(){
+
+        if(isset($_POST['Id'])){
+            echo json_encode($this->model->Edit($_POST['Id']), true);
+        }else{
+            echo json_encode(false, true);
+        }
+
+    }
 }
