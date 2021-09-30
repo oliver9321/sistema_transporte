@@ -275,9 +275,9 @@
 
 
 
-<div class="modal-body bg-dark">
+<div class="modal-body bg-dark d-print-non">
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-print-none">
             <button type="button" class="btn btn-sm btn-soft-info" data-bs-toggle="modal"
                 data-bs-target="#ModalNewCustomer"><i class="fas fa-user-plus me-2"></i>New customer</button>
             <button type="button" class="btn btn-sm btn-soft-info" data-bs-toggle="modal"
@@ -625,10 +625,7 @@
                                                         </div>
 
                                                     <!--- HASTA AQUI-->
-                                                        <div class="col-md-12" id="contentVehicle" style="overflow-y: auto; height:210px">
-
-                                                            
-                                                        </div>
+                                                        <div class="col-md-12" id="contentVehicle" style="overflow-y: auto; height:210px"></div>
                                                         <hr>
                                                         <p class="text-secondary"><i class="fa fa-trash text-danger"></i>
                                                             Don't delete the first row.</p>
@@ -731,9 +728,9 @@
                                     <div class="row">
                                         <div class="col-md-8" >
                                             <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing address</label>
+
                                             <input style="display:none;" />
-                                            <input id="BillingAddress" name="BillingAddress" type="text"
-                                                class="form-control" placeholder="Ex. 12141 Pembroke Rd....">
+                                            <input id="BillingAddress" name="BillingAddress" type="text" class="form-control" placeholder="Ex. 12141 Pembroke Rd...." autocomplete="disabled">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" >
@@ -787,44 +784,33 @@
                     </div>
                 </fieldset>
 
-                <h3>Save order</h3>
+                <h3>Confirm order and print</h3>
                 <fieldset>
                     <div class="row">
-                        <div class="col-lg-12 mx-auto">
+                        <div class="col-lg-12 mx-auto" id="zonaPrint">
                             <div class="card">
                                 <div class="card-body invoice-head">
                                     <div class="row">
-                                        <div class="col-md-3 align-self-center">
-                                            <!--<img src="assets/images/logoTransport.png" alt="logo-small" class="logo-sm me-1" height="24">--><img
-                                                src="assets/images/logopdf1.png" alt="logo-large"
-                                                class="logo-lg logo-dark" height="130">
-                                            <!--<img src="assets/images/logoTransport.png" alt="logo-large" class="logo-lg logo-light" height="20">-->
-                                            <!--<p class="mt-2 mb-0 text-muted">Ez Auto Transportation</p>-->
-                                        </div>
-                                        <!--end col-->
-                                        <div class="col-md-8">
-                                            <br>
-                                            <ul class="list-inline mb-0 contact-detail float-end">
-                                                <li class="list-inline-item">
-                                                    <div class="ps-3">
-                                                        <p class="text-muted mb-0"><i class="mdi mdi-web text-dark"></i>
-                                                            www.ezautotransportationusa.com</p>
-                                                    </div>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <div class="ps-3">
-                                                        <p class="text-muted mb-0"><i class="mdi mdi-phone text-dark"></i> +123
-                                                            123456789</p>
-                                                    </div>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <div class="ps-3">
-                                                        <p class="text-muted mb-0"><i class="mdi mdi-map-marker text-dark"></i>
-                                                            2821 Kensington Road, Avondale Estates, GA 30002 USA.</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
+
+                                        <div class="card mb-0" style="border:0px solid rgba(0, 0, 0, 0.125) !important">
+                                               
+                                            <div class="row g-1">
+                                                    
+                                                    <div class="col-md-3 align-self-center">
+                                                        <img src="assets/images/logopdf1.png" alt="LogoPdf1" class="img-fluid">
+                                                    </div><!--end col-->
+
+                                                    <div class="col-md-4 ms-auto align-self-center">
+                                                        <div class="card-body">
+                                                            <p class="card-text mb-0 text-muted"><i class="mdi mdi-web text-dark"></i> www.ezautotransportationusa.com</p>
+                                                            <p class="card-text mb-0 text-muted"><i class="mdi mdi-phone text-dark"></i> +1-888-888-8888</p>
+                                                            <p class="card-text mb-0 text-muted"><i class="mdi mdi-map-marker text-dark"></i> 2821 Kensington Road, Avondale Estates, GA 30002 USA.</p>
+                                                        </div>
+                                                    </div><!--end col-->
+
+                                                </div><!--end row-->
+
+                                            </div>
                                         <!--end col-->
                                     </div>
                                     <!--end row-->
@@ -832,9 +818,9 @@
                                 <!--end card-body-->
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="">
-                                                <h6 class="mb-0"><b>Order number: </b><span id="OrderIDForm">0000000</span></h6>
+                                                <h6 class="mb-0"><b>Order number: </b><span id="OrderIDForm">Pending to save</span></h6>
                                                 <h6 class="mb-0"><b>Order date: </b><span id="OrderDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Pick up date: </b><span id="PickUpDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Delivery date: </b><span id="DeliveryDateForm">0000-00-00</span></h6><br>
@@ -852,7 +838,7 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="">
                                             <address class="font-13">
                                                     <strong class="font-14">Destination:</strong><br>
@@ -897,78 +883,76 @@
                                                         <tr class="bg-black text-white">
                                                             <th colspan="2" class="border-0"></th>
                                                             <th colspan="2" class="border-0"></th>
-                                                            <td class="border-0 font-14"><b>Total</b></td>
+                                                            <td class="border-0 font-14" style="text-align:right !important"><b>Total</b></td>
                                                             <td class="border-0 font-14"><b id="TotalForm">$00.00</b></td>
                                                         </tr>
                                                     </tfoot>
                                                 </table>
                                                 <br>
 
-                                                <div class="table-responsive project-invoice">
-                                                <table class="table mb-0" border="0" cellspacing="0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th style="border-style: none;"><b><i class="fa fa-money-check"></i> Payment information</b></th>
-                                                        <tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="border-style: none;">
-                                                                <h6 class="mt-0 mb-1 font-14"><b>Card holder name</b></h6>
-                                                                <p class="mb-0 text-muted" id="CardHolderNameForm"></p>
-                                                            </td>
-
-                                                            <td style="border-style: none;"> 
-                                                                <h5 class="mt-0 mb-1 font-14"><b>Credit card number</b></h5>
-                                                                <p class="mb-0 text-muted" id="CreditCardNumberForm"></p>
-                                                            </td>
-
-                                                            <td style="border-style: none;">
-                                                                <h5 class="mt-0 mb-1 font-14"><b>Billing address</b></h5>
-                                                                <p class="mb-0 text-muted" id="BillingAddressForm"></p>
-                                                            </td>
-
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td style="border-style: none;">
-                                                                <h5 class="mt-0 mb-1 font-14"><b>Expiration date</b></h5>
-                                                                <p class="mb-0 text-muted" id="ExperationDateForm"></p>
-                                                            </td>
-
-                                                            <td  style="border-style: none;">
-                                                                <h5 class="mt-0 mb-1 font-14"><b>CVV</b></h5>
-                                                                <p class="mb-0 text-muted" id="CVVForm"></p>
-                                                            </td>
-
-                                                        </tr>
-
-                                                        <!--end tr-->
-                                                    </tbody>
-                                                    
-                                                    <tfoot>
-                                                         <tr>
-                                                             <td class="text-muted" id="OriginDestinationNotesForm"></td>
-                                                        </tr>
-                                                    </tfoot>
-                                                </table>
-                                                <!--end table-->
-                                            </div>
+                                             
                                                 <!--end table-->
                                             </div>
                                             <!--end /div-->
                                         </div>
                                         <!--end col-->
                                     </div>
-                                    <!--end row-->
-                                    <div class="row justify-content-left">
-                                        <div class="col-lg-6">
-                                            <!--<h6 class="mt-4"><b>Payment information</b> - Note:</h6>
-                                            <ul class="ps-3">
-                                                <li><small class="font-12">All accounts are to be paid within 7 days from receipt of invoice. </small></li>
-                                            </ul>-->
+
+                                    <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive project-invoice">
+                                                    <table class="table mb-0" border="0" cellspacing="0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="border-style: none;"><b><i class="fa fa-money-check"></i> Payment information</b></th>
+                                                            <tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="border-style: none;">
+                                                                    <h6 class="mt-0 mb-1 font-14"><b>Card holder name</b></h6>
+                                                                    <p class="mb-0 text-muted" id="CardHolderNameForm"></p>
+                                                                </td>
+
+                                                                <td style="border-style: none;"> 
+                                                                    <h5 class="mt-0 mb-1 font-14"><b>Credit card number</b></h5>
+                                                                    <p class="mb-0 text-muted" id="CreditCardNumberForm"></p>
+                                                                </td>
+
+                                                                <td style="border-style: none;">
+                                                                    <h5 class="mt-0 mb-1 font-14"><b>Billing address</b></h5>
+                                                                    <p class="mb-0 text-muted" id="BillingAddressForm"></p>
+                                                                </td>
+
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="border-style: none;">
+                                                                    <h5 class="mt-0 mb-1 font-14"><b>Expiration date</b></h5>
+                                                                    <p class="mb-0 text-muted" id="ExperationDateForm"></p>
+                                                                </td>
+
+                                                                <td  style="border-style: none;">
+                                                                    <h5 class="mt-0 mb-1 font-14"><b>CVV</b></h5>
+                                                                    <p class="mb-0 text-muted" id="CVVForm"></p>
+                                                                </td>
+
+                                                            </tr>
+
+                                                            <!--end tr-->
+                                                        </tbody>   
+                                                    </table>
                                         </div>
-                                        <!--end col-->
+                                    </div>
+                                    
+                                    </div>
+
+                                    <div class="row">
+                                         <div class="col-md-8" style="width: 900px;">
+                                            <div class="card-body">
+                                                <span class="d-flew justify-content" id="OriginDestinationNotesForm"></span>
+                                            </div>
+                                         </div>
                                     </div>
                                     <!--end row-->
                                     <hr>
@@ -978,9 +962,8 @@
                                         </div>
                                         <!--end col-->
                                         <div class="col-lg-12 col-xl-4">
-                                            <div class="float-end d-print-none"> <a href="javascript:window.print()"
-                                                    class="btn btn-soft-info btn-sm">Print</a> <a href="#"
-                                                    class="btn btn-soft-success btn-sm">Submit</a> 
+                                            <div class="float-end d-print-none"> 
+                                            <a href="javascript:window.print()" class="btn btn-soft-info btn-sm">Print</a> 
                                         </div>
                                         <!--end col-->
                                     </div>
@@ -1017,11 +1000,8 @@
 <script src="assets/js/orders.js"></script>
 
 <script type="text/javascript">
-/*
-if($(".select2").length > 0) {
-	$('.select2').select2();
-}*/
 
+$("body").addClass("enlarge-menu");
 
 $("#form-horizontal").steps({
     headerTag: "h3",
@@ -1032,7 +1012,6 @@ $("#form-horizontal").steps({
 //Execute select2 functions 
 GetListCustomer();
 GetListVehicles();
-
 
 function AddVehicleList() {
 
@@ -1056,28 +1035,31 @@ function AddVehicleList() {
    clonado.removeAttr('hidden');
    clonado.appendTo("#contentVehicle");
    $(clonado).find(".select2").select2();
-  
-    //$(".BrandVehicle, .ModelVehicle").select2();
-}
 
+}
 
 
 function EliminarVehiculo(e) {
     $(e).parent().parent().parent().remove();
 }
 
+
+
 //Input Search Select2
 $(document).ready(function() {
-
+   
     $('.select2').select2();
 
     $(".originInput, .DestinationInput").change(function() {
         $(this).css("border-color", "#A6A6A6");
     });
 
-    $("body").addClass("enlarge-menu");
 
     AddVehicleList();
+    
+    $(".steps").addClass("d-print-none");
+    $(".actions").addClass("d-print-none");
+    $("#ListVehiclesPDF").html("");
 
 });
 
@@ -1183,6 +1165,7 @@ function GetListCustomer() {
 function loadInfoPDF1(){
  
     $("#OrderDateForm").text($("#PickUpOrderDateDate").val());
+    $("#ListVehiclesPDF").html("");
 
     //Origin Info
     $("#OriginNameForm").html($("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) != "" ? $("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) : "<span class='text-danger'>Check origin customer name</span>");
@@ -1218,8 +1201,6 @@ function loadInfoPDF1(){
     var Vin, Brand, Model, Condition, CarrierType, Color, Year, Vin = "";
     var markup = "";
 
-    $("#ListVehiclesPDF").html("");
-
     $(".registroVehiculo").each(function(){
        
        Brand       = $(this).find("select[name='Brand[]']").val();
@@ -1230,7 +1211,9 @@ function loadInfoPDF1(){
        Condition   = $(this).find("select[name='Condition[]']").val();
        CarrierType = $(this).find("select[name='CarrierType[]']").val();
 
-       markup += "<tr>"
+       if(Brand != ""){
+
+        markup += "<tr>"
                      +"<td><h5 class='mt-0 mb-1 font-14'>"+Brand+"</h5><p class='mb-0 text-muted'>Vin "+Vin+"</p></td>"
                      +"<td>" + Model + "</td>"
                      +"<td>" + Color + "</td>"
@@ -1238,6 +1221,8 @@ function loadInfoPDF1(){
                      +"<td>" + Condition + "</td>"
                      +"<td>" + CarrierType + "</td>"
                      +"</tr>";
+       }
+       
       
     });
 
@@ -1256,11 +1241,11 @@ function loadInfoPDF1(){
     var OriginDestinationNote = "";
 
     if($("#OriginNote").val() != ""){
-        OriginNote+="<br> "+$("#OriginNote").val();
+        OriginNote+="<br> "+$("#OriginNote").val()+"<br>";
     }
 
     if($("#DestinationNote").val() != ""){
-        DestinationNote+="<br></br> "+$("#DestinationNote").val();
+        DestinationNote+="</br> "+$("#DestinationNote").val();
     }
 
     OriginDestinationNote = OriginNote + "<br>" + DestinationNote;
