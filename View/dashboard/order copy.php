@@ -301,8 +301,12 @@
                                 <div class="col-md-12" >
                                     <label class="mb-1">Origin customer name</label>
                                     <div class="input-group">
-                                        <select style="width: 90%;" id="IdCustomerOrigin" name="IdCustomerOrigin" class="select2 form-control mb-3 custom-select originInput"> </select>
-                                        <button class="btn btn-dark" type="button" id="SearchCustomerName"><i class="ti ti-reload"></i></button>
+                                        <select style="width: 90%;" id="IdCustomerOrigin" name="IdCustomerOrigin"
+                                            class="select2 form-control mb-3 custom-select originInput"
+                                            aria-describedby="button-addon1">
+                                        </select>
+                                        <button class="btn btn-dark" type="button" id="SearchCustomerName"><i
+                                                class="ti ti-reload"></i></button>
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -318,8 +322,13 @@
                                 <div class="col-md-12" >
                                     <label class="mb-1">Destination customer name</label>
                                     <div class="input-group">
-                                        <select style="width: 90%;" id="IdCustomerDestination" name="IdCustomerDestination" class="select2 form-control mb-3 custom-select DestinationInput"> </select>
-                                        <button class="btn btn-dark" type="button" id="SearchDestinationCustomer"><i  class="ti ti-reload"></i></button>
+                                        <select style="width: 90%;" id="IdCustomerDestination"
+                                            name="IdCustomerDestination"
+                                            class="select2 form-control mb-3 custom-select DestinationInput"
+                                            aria-describedby="button-addon1">
+                                        </select>
+                                        <button class="btn btn-dark" type="button" id="SearchDestinationCustomer"><i
+                                                class="ti ti-reload"></i></button>
                                     </div>
                                 </div>
                                 <br>
@@ -333,8 +342,8 @@
                                 <div class="row">
                                     <div class="col-md-12" >
                                         <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin address</label>
-                                        <input style="display:none;" />
-                                        <input id="OriginAddress" name="OriginAddress" type="text" class="form-control originInput" placeholder="Ex. 12141 Pembroke Rd,..."  >
+                                        <input id="OriginAddress" name="OriginAddress" type="text"
+                                            class="form-control originInput" placeholder="Ex. 12141 Pembroke Rd,...">
                                     </div>
                                     <!-- end row -->
                                 </div>
@@ -406,8 +415,9 @@
                                     <div class="col-md-12" >
                                         <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination
                                             address</label>
-                                            <input style="display:none;" />
-                                        <input id="DestinationAddress" name="DestinationAddress" type="text" class="form-control DestinationInput" placeholder="Ex. 1600 Pennsylvania...">
+                                        <input id="DestinationAddress" name="DestinationAddress" type="text"
+                                            class="form-control DestinationInput"
+                                            placeholder="Ex. 1600 Pennsylvania...">
                                     </div>
                                     <!-- end row -->
                                 </div>
@@ -549,85 +559,82 @@
                                             <div data-repeater-item="">
                                                 <div class="form-group row d-flex align-items-end">
                                                     <div class="row">
-
-                                                    <div class="row registroVehiculo" id="templateVehiculo" style="padding-bottom:20px !important" hidden>
-
-                                                        <div class="col-sm-2" >
-                                                            <label class="mb-1"><b>Brand</b></label>
-                                                            <select style="width: 90%;" name="Brand[]"
-                                                                class="select2 form-control mb-3 custom-select BrandVehicle">
-                                                                <option value="" selected>Select brand</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="col-sm-3" >
-                                                            <label class="mb-1"><b>Model</b></label>
-                                                            <select style="width: 90%;" name="Model[]"
-                                                                class="select2 form-control mb-3 custom-select ModelVehicle">
-                                                                <option value="" selected>Select model</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Condition</b></label>
-                                                            <select style="width: 100%;" name="Condition[]" class="form-control ConditionVehicle">
-                                                                <option value="" selected></option>
-                                                                <option value="Running">Running</option>
-                                                                <option value="Non-running">Non-running</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Carrier</b></label>
-                                                            <select style="width: 100%;" name="CarrierType[]" class="form-control CarrierTypeVehicle">
-                                                                <option value="" selected></option>
-                                                                <option value="Open">Open</option>
-                                                                <option value="Enclosed">Enclosed</option>
-                                                            </select>
-                                                        </div>
-
-
-
-                                                        <!-- end row -->
-                                                        <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Color</b></label>
-                                                            <select style="width: 100%;" name="Color[]" class="form-control ColorVehicle">
-                                                            <option value="" selected></option>
-                                                                <option value="White"> White</option>
-                                                                <option value="Black"> Black</option>
-                                                                <option value="Gray"> Gray</option>
-                                                                <option value="Silver"> Silver</option>
-                                                                <option value="Blue"> Blue</option>
-                                                                <option value="Red"> Red</option>
-                                                                <option value="Brown/Beige"> Brown/Beige</option>
-                                                                <option value="Yellow/Gold"> Yellow/Gold</option>
-                                                                <option value="Green"> Green</option>
-                                                                <option value="Other"> Other</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <!--end col-->
-                                                        <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Year</b></label>
-                                                            <input type="number"  min="1900" name="Year[]"  class="form-control YearVehicle" placeholder="">
-                                                        </div>
-
-                                                        <div class="col-sm-3" >
-                                                        <label class="mb-1"><b>Vin</b></label>
-                                                            <div class="input-group">
-                                                                <input type="text" name="Vin[]" class="form-control VinVehicle">
-                                                                <button type="button" title="Delete vehicle" onclick="EliminarVehiculo(this)"  class="btn btn-outline-danger"> <span class="far fa-trash-alt me-1"></span> </button>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--end col-->
-
-                                                        </div>
-
-                                                    <!--- HASTA AQUI-->
                                                         <div class="col-md-12" id="contentVehicle" style="overflow-y: auto; height:210px">
 
-                                                            
+                                                            <div class="row" id="templateVehiculo" style="padding-bottom:20px !important">
+
+                                                                <div class="col-sm-2" >
+                                                                    <label class="mb-1"><b>Brand</b></label>
+                                                                    <select style="width: 90%;" name="Brand[]"
+                                                                        class="select2 form-control mb-3 custom-select BrandVehicle">
+                                                                        <option value="" selected>Select brand</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-sm-3" >
+                                                                    <label class="mb-1"><b>Model</b></label>
+                                                                    <select style="width: 90%;" name="Model[]"
+                                                                        class="select2 form-control mb-3 custom-select ModelVehicle">
+                                                                        <option value="" selected>Select model</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-sm-1" >
+                                                                    <label class="mb-1"><b>Condition</b></label>
+                                                                    <select style="width: 100%;" name="Condition[]" class="form-control ConditionVehicle">
+                                                                        <option selected value="Running">Running</option>
+                                                                        <option value="Non-running">Non-running</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                  <div class="col-sm-1" >
+                                                                    <label class="mb-1"><b>Carrier</b></label>
+                                                                    <select style="width: 100%;" name="CarrierType[]" class="form-control CarrierTypeVehicle">
+                                                                        <option value="Open">Open</option>
+                                                                        <option value="Enclosed">Enclosed</option>
+                                                                    </select>
+                                                                </div>
+
+                                                        
+
+                                                                <!-- end row -->
+                                                                <div class="col-sm-1" >
+                                                                    <label class="mb-1"><b>Color</b></label>
+                                                                    <select style="width: 100%;" name="Color[]"
+                                                                        class="form-control ColorVehicle">
+                                                                        <option value="White"> White</option>
+                                                                        <option value="Black"> Black</option>
+                                                                        <option value="Gray"> Gray</option>
+                                                                        <option value="Silver"> Silver</option>
+                                                                        <option value="Blue"> Blue</option>
+                                                                        <option value="Red"> Red</option>
+                                                                        <option value="Brown/Beige"> Brown/Beige
+                                                                        </option>
+                                                                        <option value="Yellow/Gold"> Yellow/Gold
+                                                                        </option>
+                                                                        <option value="Green"> Green</option>
+                                                                        <option value="Other"> Other</option>
+
+                                                                    </select>
+                                                                </div>
+                                                                <!--end col-->
+                                                                <div class="col-sm-1" >
+                                                                    <label class="mb-1"><b>Year</b></label>
+                                                                    <input type="number"  min="1900" name="Year[]"
+                                                                        class="form-control YearVehicle" placeholder="">
+                                                                </div>
+
+                                                                <div class="col-sm-3" >
+                                                                <label class="mb-1"><b>Vin</b></label>
+                                                                    <div class="input-group">
+                                                                         <input type="text" name="Vin[]" class="form-control VinVehicle">
+                                                                         <button type="button" title="Delete vehicle" onclick="EliminarVehiculo(this)"  class="btn btn-outline-danger"> <span class="far fa-trash-alt me-1"></span> </button>
+                                                                    </div>
+                                                                </div>
+                                                           
+                                                                <!--end col-->
+
+                                                            </div>
                                                         </div>
                                                         <hr>
                                                         <p class="text-secondary"><i class="fa fa-trash text-danger"></i>
@@ -654,23 +661,19 @@
                 <fieldset>
 
                     <div class="row">
-                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="credit-card"></i> Credit Card info</b></span>
+                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="credit-card"></i> Credit Card
+                                    info</b></span>
                             <hr>
-                            <div class="row">	
-
-                                <div class="col-md-6" >
+                            <div class="row">
+                                <div class="col-md-12" >
                                     <label class="mb-1"> Card holder name</label>
-                                    <input type="text" class="form-control" name="CardHolderName" id="CardHolderName" style="text-transform:uppercase">
-                                </div>
-
-                                <div class="col-md-6" >
-                                    <label class="mb-1"> Payment Owner Name</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" name="PaymentOwnerName" id="PaymentOwnerName">
+                                        <input type="text" class="form-control" placeholder="Input the name of card"
+                                            name="CardHolderName" id="CardHolderName">
+                                        <button class="btn btn-dark" type="button" id="SearchCardHolderName"><i
+                                                class="fas fa-search"></i></button>
                                     </div>
                                 </div>
-
-                           
                                 <!-- end row -->
                             </div>
                             <br>
@@ -731,7 +734,6 @@
                                     <div class="row">
                                         <div class="col-md-8" >
                                             <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing address</label>
-                                            <input style="display:none;" />
                                             <input id="BillingAddress" name="BillingAddress" type="text"
                                                 class="form-control" placeholder="Ex. 12141 Pembroke Rd....">
                                         </div>
@@ -787,7 +789,7 @@
                     </div>
                 </fieldset>
 
-                <h3>Save order</h3>
+                <h3>Save and print order</h3>
                 <fieldset>
                     <div class="row">
                         <div class="col-lg-12 mx-auto">
@@ -796,8 +798,8 @@
                                     <div class="row">
                                         <div class="col-md-3 align-self-center">
                                             <!--<img src="assets/images/logoTransport.png" alt="logo-small" class="logo-sm me-1" height="24">--><img
-                                                src="assets/images/logopdf1.png" alt="logo-large"
-                                                class="logo-lg logo-dark" height="130">
+                                                src="assets/images/logoTransport.png" alt="logo-large"
+                                                class="logo-lg logo-dark" height="150">
                                             <!--<img src="assets/images/logoTransport.png" alt="logo-large" class="logo-lg logo-light" height="20">-->
                                             <!--<p class="mt-2 mb-0 text-muted">Ez Auto Transportation</p>-->
                                         </div>
@@ -807,19 +809,19 @@
                                             <ul class="list-inline mb-0 contact-detail float-end">
                                                 <li class="list-inline-item">
                                                     <div class="ps-3">
-                                                        <p class="text-muted mb-0"><i class="mdi mdi-web text-dark"></i>
+                                                        <p class="text-muted mb-0"><i class="mdi mdi-web"></i>
                                                             www.ezautotransportationusa.com</p>
                                                     </div>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <div class="ps-3">
-                                                        <p class="text-muted mb-0"><i class="mdi mdi-phone text-dark"></i> +123
+                                                        <p class="text-muted mb-0"><i class="mdi mdi-phone"></i> +123
                                                             123456789</p>
                                                     </div>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <div class="ps-3">
-                                                        <p class="text-muted mb-0"><i class="mdi mdi-map-marker text-dark"></i>
+                                                        <p class="text-muted mb-0"><i class="mdi mdi-map-marker"></i>
                                                             2821 Kensington Road, Avondale Estates, GA 30002 USA.</p>
                                                     </div>
                                                 </li>
@@ -832,12 +834,10 @@
                                 <!--end card-body-->
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="">
-                                                <h6 class="mb-0"><b>Order number: </b><span id="OrderIDForm">0000000</span></h6>
-                                                <h6 class="mb-0"><b>Order date: </b><span id="OrderDateForm">0000-00-00</span></h6>
-                                                <h6 class="mb-0"><b>Pick up date: </b><span id="PickUpDateForm">0000-00-00</span></h6>
-                                                <h6 class="mb-0"><b>Delivery date: </b><span id="DeliveryDateForm">0000-00-00</span></h6><br>
+                                                <h6 class="mb-0"><b>Order Date :</b> 11/05/2020</h6>
+                                                <h6><b>Order ID :</b> # 23654789</h6>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -845,20 +845,22 @@
                                             <div class="float-left">
                                                 <address class="font-13">
                                                     <strong class="font-14">Origin:</strong><br>
-                                                    <b id="OriginNameForm">Field empty</b><br>
-                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i id="OriginAddressForm">Field empty</i><br>
-                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span id="OriginPhone1Form"></span> <span id="OriginPhone2Form"></span></span>
+                                                    Joe Smith<br>
+                                                    795 Folsom Ave<br>
+                                                    San Francisco, CA 94107<br>
+                                                    <abbr title="Phone">P:</abbr> (123) 456-7890
                                                 </address>
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="">
-                                            <address class="font-13">
+                                                <address class="font-13">
                                                     <strong class="font-14">Destination:</strong><br>
-                                                    <b id="DestinationNameForm">Field empty</b><br>
-                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i id="DestinationAddressForm">Field empty</i><br>
-                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span id="DestinationPhone1Form"></span> <span id="DestinationPhone2Form"></span></span>
+                                                    Joe Smith<br>
+                                                    795 Folsom Ave<br>
+                                                    San Francisco, CA 94107<br>
+                                                    <abbr title="Phone">P:</abbr> (123) 456-7890
                                                 </address>
                                             </div>
                                         </div>
@@ -866,7 +868,6 @@
                                     </div>
                                     <!--end row-->
                                     <div class="row">
-                                    
                                         <div class="col-lg-12">
                                             <div class="table-responsive project-invoice">
                                                 <table class="table table-bordered mb-0">
@@ -881,11 +882,31 @@
                                                         </tr>
                                                         <!--end tr-->
                                                     </thead>
-                                                    <tbody id="ListVehiclesPDF">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <h5 class="mt-0 mb-1 font-14">Honda</h5>
+                                                                <p class="mb-0 text-muted">Vin 132157878421212</p>
+                                                            </td>
+                                                            <td>Accord</td>
+                                                            <td>White</td>
+                                                            <td>2021</td>
+                                                            <td>Running</td>
+                                                            <td>Open</td>
+                                                        </tr>
                                                         <!--end tr-->
-                                                    </tbody>
-                                                    <tfoot>
-                                                    <tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h5 class="mt-0 mb-1 font-14">Honda</h5>
+                                                                <p class="mb-0 text-muted">Vin 465465465454545</p>
+                                                            </td>
+                                                            <td>Civic</td>
+                                                            <td>Red</td>
+                                                            <td>2018</td>
+                                                            <td>Running</td>
+                                                            <td>Open</td>
+                                                        </tr>
+                                                        <tr>
                                                             <td colspan="2" class="border-0"></td>
                                                             <th colspan="2" class="border-0"></th>
                                                             <td class="border-0 font-14 text-dark"><b></b></td>
@@ -898,59 +919,47 @@
                                                             <th colspan="2" class="border-0"></th>
                                                             <th colspan="2" class="border-0"></th>
                                                             <td class="border-0 font-14"><b>Total</b></td>
-                                                            <td class="border-0 font-14"><b id="TotalForm">$00.00</b></td>
+                                                            <td class="border-0 font-14"><b>$82,000.00</b></td>
                                                         </tr>
-                                                    </tfoot>
+                                                        <!--end tr-->
+                                                    </tbody>
                                                 </table>
                                                 <br>
 
                                                 <div class="table-responsive project-invoice">
-                                                <table class="table mb-0" border="0" cellspacing="0">
+                                                <table class="table mb-0">
                                                     <thead>
                                                         <tr>
-                                                            <th style="border-style: none;"><b><i class="fa fa-money-check"></i> Payment information</b></th>
-                                                        <tr>
+                                                            <th><b>Payment information</b></th>
+                                                            <th><b>Notes</b></th>
+                                                        </tr>
+                                                        <!--end tr-->
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td style="border-style: none;">
-                                                                <h6 class="mt-0 mb-1 font-14"><b>Card holder name</b></h6>
-                                                                <p class="mb-0 text-muted" id="CardHolderNameForm"></p>
-                                                            </td>
+                                                            <td>
+                                                                <h5 class="mt-0 mb-1 font-14"><b>Card holder name</b></h5>
+                                                                <p class="mb-0 text-muted">OLIVER FERMIN</p>
 
-                                                            <td style="border-style: none;"> 
                                                                 <h5 class="mt-0 mb-1 font-14"><b>Credit card number</b></h5>
-                                                                <p class="mb-0 text-muted" id="CreditCardNumberForm"></p>
-                                                            </td>
+                                                                <p class="mb-0 text-muted">4764 4555 1234 5896</p>
 
-                                                            <td style="border-style: none;">
-                                                                <h5 class="mt-0 mb-1 font-14"><b>Billing address</b></h5>
-                                                                <p class="mb-0 text-muted" id="BillingAddressForm"></p>
-                                                            </td>
-
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td style="border-style: none;">
                                                                 <h5 class="mt-0 mb-1 font-14"><b>Expiration date</b></h5>
-                                                                <p class="mb-0 text-muted" id="ExperationDateForm"></p>
-                                                            </td>
+                                                                <p class="mb-0 text-muted">12/24</p>
 
-                                                            <td  style="border-style: none;">
                                                                 <h5 class="mt-0 mb-1 font-14"><b>CVV</b></h5>
-                                                                <p class="mb-0 text-muted" id="CVVForm"></p>
+                                                                <p class="mb-0 text-muted">896</p>
+
+                                                                <h5 class="mt-0 mb-1 font-14"><b>Billing address</b></h5>
+                                                                <p class="mb-0 text-muted">2821 Kensington Road, Avondale Estates, GA 30002 USA</p>
+
                                                             </td>
 
+                                                            <td class="text-muted"> Origin notes / Destination notes</td>
                                                         </tr>
 
                                                         <!--end tr-->
                                                     </tbody>
-                                                    
-                                                    <tfoot>
-                                                         <tr>
-                                                             <td class="text-muted" id="OriginDestinationNotesForm"></td>
-                                                        </tr>
-                                                    </tfoot>
                                                 </table>
                                                 <!--end table-->
                                             </div>
@@ -974,7 +983,7 @@
                                     <hr>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12 col-xl-4 ms-auto align-self-center">
-                                            <div class="text-center text-muted"><small class="font-12">Thank you very much for doing business with us.</small></div>
+                                            <div class="text-center"><small class="font-12">Thank you very much for doing business with us.</small></div>
                                         </div>
                                         <!--end col-->
                                         <div class="col-lg-12 col-xl-4">
@@ -995,7 +1004,149 @@
                     <!--end row-->
                 </fieldset>
                 <!--end fieldset-->
-              
+                <!--end fieldset-->
+                <h3>Trucker and drivers</h3>
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="truck"></i> Trucker company</b></span><hr>
+                          
+                            <div class="row">
+                                <label class="mb-1">Company name</label>
+                                    <div class="input-group">
+                                        <select style="width: 92%;" id="IdCompanyService" name="IdCompanyService" class="select2 form-control mb-3 custom-select">
+                                        </select>
+                                        <button class="btn btn-dark" type="button" id="SearchCompanyName"><i class="ti ti-reload"></i></button>
+                                    </div>
+                            </div>
+
+                            <div class="row inputpadding">
+                                  <div class="col-md-12" >
+                                     <label class="mb-1">Company address</label>
+                                       <input id="CompanyAddress" name="CompanyAddress" type="text"  class="form-control" placeholder="Input the company's address">
+                                   </div>
+                            </div>
+
+                                <div class="row inputpadding">
+
+                                         <div class="col-md-4" >
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
+                                            <input id="CompanyPhone1" name="CompanyPhone1" type="tel"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+
+                                        
+                                         <div class="col-md-4" >
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
+                                            <input id="CompanyPhone2" name="CompanyPhone2" type="tel"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+                                       
+                                        <div class="col-md-4" >
+                                            <label class="mb-1"><i class="fa fa-envelope"></i> Email</label>
+                                            <input id="CompanyEmail" name="CompanyEmail" type="email"
+                                                class="form-control" placeholder="ez@domain.com">
+                                        </div>
+                                </div>
+                                <br>
+
+                                <div class="row inputpadding">
+                                        <span class="text-dark"><b><i class="fa fa-address-card fa-2x"></i> Drivers</b></span><hr>
+                                            <div class="row">
+                                                <label class="mb-1">Driver name</label>
+                                                <div class="input-group">
+                                                    <select style="width: 93%;" id="IdDriver" name="IdDriver" class="select2 form-control mb-3 custom-select"> </select>
+                                                    <button class="btn btn-dark" type="button" id="SearchDriverName"><iconv_get_encoding class="ti ti-reload"></i></button>
+                                                </div>
+                                            </div>
+                                </div>
+
+                               
+                                    <div class="row inputpadding">
+                                        <div class="col-md-6" >
+                                            <label class="mb-1"><i class="fa fa-mobile"></i> Driver phone #1</label>
+                                            <input id="DriverPhone1" name="DriverPhone1" type="number"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+                                      
+                                        <div class="col-md-6" >
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Driver phone #2</label>
+                                            <input id="DriverPhone2" name="DriverPhone2" type="number"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+
+                                    </div>
+
+                        </div>
+                        <!--end col-->
+                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="dollar-sign"></i>Driver payment </b></span>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                     
+
+                                            <div class="row">
+                                                <div class="col-md-6" >
+                                                    <label class="mb-1"><b>Total</b></label>
+                                                    <input type="number" class="form-control" name="TotalOrder" id="TotalOrder"
+                                                        placeholder="$0000" readonly>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                    <label class="mb-1"><b>Deposit</b></label>
+                                                    <input id="DepositOrder" name="DepositOrder" type="number" class="form-control"
+                                                        placeholder="$0000" readonly>
+                                                </div>
+
+                                                <div class="col-md-3" >
+                                                  <label class="mb-1"><i class="fa fa-money-bill"></i><b class="text-success"> Earnings</b></label>
+                                                  <input id="Earnings" name="Earnings" type="number" class="form-control" placeholder="$0000">
+                                                 </div>
+
+                                            </div><br>
+
+                                            
+                                                <div class="row">
+
+                                                    <div class="col-md-6" >
+                                                        <label class="mb-1">Cod</label>
+                                                        <input id="Cod" name="Cod" type="number" class="form-control"
+                                                            placeholder="$0000">
+                                                    </div>
+
+                                                    <div class="col-md-6" >
+                                                        <label class="mb-1">Truker rate</label>
+                                                        <input id="TrukerRate" name="TrukerRate" type="number" class="form-control"
+                                                            placeholder="$0000">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row inputpadding">
+
+                                                    <div class="col-md-6">
+                                                        <label class="mb-1">Extra truker Fee</label>
+                                                        <input id="ExtraTrukerFee" name="ExtraTrukerFee" type="number"
+                                                            class="form-control" placeholder="$0000">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label class="mb-1"><i class="fa fa-truck" aria-hidden="true"></i> <b class="text-danger">Truker owes us</b></label>
+                                                        <input id="TrukerOwesUs" name="TrukerOwesUs" type="number" class="form-control"  placeholder="$0000">
+                                                    </div>
+                                                </div>
+
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--end form-group-->
+                        </div>
+                        <!--end col-->
+                    </div>
+
+                    <!--end row-->
+                 
+
+                </fieldset>
+                <!--end fieldset-->
+             
             </form>
             <!--end form-->
         </div>
@@ -1032,12 +1183,12 @@ $("#form-horizontal").steps({
 //Execute select2 functions 
 GetListCustomer();
 GetListVehicles();
-
+GetListDrivers();
+GetListCompanyServices();
 
 function AddVehicleList() {
 
     var div = $("#contentVehicle");
-   // templateVehiculo
 
     div.find(".select2").each(function(index) {
         if ($(this).data('select2')) {
@@ -1045,22 +1196,10 @@ function AddVehicleList() {
         }
     });
 
-    $('#templateVehiculo').find(".select2").each(function(index) {
-        if ($(this).data('select2')) {
-            $(this).select2('destroy');
-        }
-    });
-
-
-   var clonado =  $('#templateVehiculo').clone().val('');
-   clonado.removeAttr('hidden');
-   clonado.appendTo("#contentVehicle");
-   $(clonado).find(".select2").select2();
-  
+    $('#templateVehiculo').clone().val('').appendTo("#contentVehicle");
+    $('.select2').select2();
     //$(".BrandVehicle, .ModelVehicle").select2();
 }
-
-
 
 function EliminarVehiculo(e) {
     $(e).parent().parent().parent().remove();
@@ -1076,8 +1215,6 @@ $(document).ready(function() {
     });
 
     $("body").addClass("enlarge-menu");
-
-    AddVehicleList();
 
 });
 
@@ -1145,12 +1282,6 @@ function GetListCustomer() {
 
         var data = JSON.parse(response);
 
-        var optionDefault = new Option("Select origin customer", "", true, true);
-        $('#IdCustomerOrigin').append(optionDefault);
-
-        var optionDefault2 = new Option("Select destination customer", "", true, true);
-        $('#IdCustomerDestination').append(optionDefault2);
-
         if (data.OriginList.length > 0) {
 
             data.OriginList.forEach(element => {
@@ -1168,9 +1299,14 @@ function GetListCustomer() {
 
         }
 
+        var optionDefault = new Option("Select origin customer", "", true, true);
+        $('#IdCustomerOrigin').append(optionDefault);
         $('#IdCustomerOrigin').val("").trigger('change');
+
         $('#IdCustomerDestination').val("").trigger('change');
-       
+        var optionDefault2 = new Option("Select destination customer", "", true, true);
+        $('#IdCustomerDestination').append(optionDefault2);
+
         $(".toast-success").html("Customer list ready");
         var myAlert = document.getElementById('toastSuccess');
         var bsAlert = new bootstrap.Toast(myAlert);
@@ -1180,93 +1316,103 @@ function GetListCustomer() {
         });
 }
 
-function loadInfoPDF1(){
- 
-    $("#OrderDateForm").text($("#PickUpOrderDateDate").val());
+function GetListDrivers() {
 
-    //Origin Info
-    $("#OriginNameForm").html($("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) != "" ? $("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) : "<span class='text-danger'>Check origin customer name</span>");
-    
-    $("#OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() :  "<span class='text-danger'>Check origin address</span>");
+$.ajax({
+    type: 'POST',
+    url: "index.php?c=drivers&a=GetListDrivers",
+}).then(function(response) {
 
-    $("#PickUpDateForm").html($("#PickUpDate").val() != "" ? $("#PickUpDate").val() :  "<span class='text-danger'>Check pick up date</span>");
-    $("#DeliveryDateForm").html($("#DeliveryDate").val() != "" ? $("#DeliveryDate").val() :  "<span class='text-danger'>Check delivery date</span>");
+    var data = JSON.parse(response);
 
-    if($("#OriginZip").val() != ""){
-        $("#OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() + "<br> Zip code: "+$("#OriginZip").val() :  "<span class='text-danger'>Check origin address</span>");
+    if (data.length > 0) {
+
+        data.forEach(element => {
+            var optionBucle = new Option(element.Driver, element.Id, true, true);
+            $('#IdDriver').append(optionBucle); //.trigger('change');
+        });
     }
-   
-    $("#OriginPhone1Form").html($("#OriginPhone1").val() != "" ? $("#OriginPhone1").val() :  "<span class='text-danger'>Check origin phone1</span>");
-    $("#OriginPhone2Form").html($("#OriginPhone2").val() != "" ? "/ "+$("#OriginPhone2").val() :  "");
 
-    
-    //Destination Info
-    $("#DestinationNameForm").html($("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) != "" ? $("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) : "<span class='text-danger'>Check destination customer name</span>");
-    
-    $("#DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() :  "<span class='text-danger'>Check destination address</span>");
+    var optionDefault = new Option("Select driver ", "", true, true);
+    $('#IdDriver').append(optionDefault);
+    $('#IdDriver').val("").trigger('change');
 
-    if($("#DestinationZip").val() != ""){
-        $("#DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() + "<br> Zip code: "+$("#DestinationZip").val() :  "<span class='text-danger'>Check destination address</span>");
-    }
-   
-    $("#DestinationPhone1Form").html($("#DestinationPhone1").val() != "" ? $("#DestinationPhone1").val() :  "<span class='text-danger'>Check destination phone1</span>");
-    $("#DestinationPhone2Form").html($("#DestinationPhone2").val() != "" ? "/ "+$("#DestinationPhone2").val() :  "");
+    $(".toast-success").html("Driver's list ready");
+    var myAlert = document.getElementById('toastSuccess');
+    var bsAlert = new bootstrap.Toast(myAlert);
+    bsAlert.show();
 
 
-    //Vehicles Step info
-
-    var Vin, Brand, Model, Condition, CarrierType, Color, Year, Vin = "";
-    var markup = "";
-
-    $("#ListVehiclesPDF").html("");
-
-    $(".registroVehiculo").each(function(){
-       
-       Brand       = $(this).find("select[name='Brand[]']").val();
-       Vin         = $(this).find("input[name^='Vin']").val();
-       Model       = $(this).find("select[name='Model[]']").val();
-       Color       = $(this).find("select[name='Color[]']").val();
-       Year        = $(this).find("input[name='Year[]']").val();
-       Condition   = $(this).find("select[name='Condition[]']").val();
-       CarrierType = $(this).find("select[name='CarrierType[]']").val();
-
-       markup += "<tr>"
-                     +"<td><h5 class='mt-0 mb-1 font-14'>"+Brand+"</h5><p class='mb-0 text-muted'>Vin "+Vin+"</p></td>"
-                     +"<td>" + Model + "</td>"
-                     +"<td>" + Color + "</td>"
-                     +"<td>" + Year + "</td>"
-                     +"<td>" + Condition + "</td>"
-                     +"<td>" + CarrierType + "</td>"
-                     +"</tr>";
-      
     });
-
-     $("#ListVehiclesPDF").append(markup);
-
-     //Payment info
-    $("#TotalForm").html($("#Total").val() != "" ? "US$ "+$("#Total").val() :  "<span class='text-danger'>Check total payment</span>");
-    $("#CardHolderNameForm").html($("#CardHolderName").val() != "" ? $("#CardHolderName").val() :  "<span class='text-danger'>Check card holder name</span>");
-    $("#CreditCardNumberForm").html($("#CreditCard").val() != "" ? $("#CreditCard").val() :  "<span class='text-danger'>Check credit card number</span>");
-    $("#ExperationDateForm").html($("#ExpDate").val() != "" ? $("#ExpDate").val() :  "<span class='text-danger'>Check experation date</span>");
-    $("#CVVForm").html($("#Cvv").val() != "" ? $("#Cvv").val() :  "<span class='text-danger'>Check CVV code</span>");
-    $("#BillingAddressForm").html($("#BillingAddress").val() != "" ? $("#BillingAddress").val() :  "<span class='text-danger'>Check billing address</span>");
-
-    var OriginNote = "<b>Origin notes:</b>";
-    var DestinationNote = "<b>Destination notes:</b>";
-    var OriginDestinationNote = "";
-
-    if($("#OriginNote").val() != ""){
-        OriginNote+="<br> "+$("#OriginNote").val();
-    }
-
-    if($("#DestinationNote").val() != ""){
-        DestinationNote+="<br></br> "+$("#DestinationNote").val();
-    }
-
-    OriginDestinationNote = OriginNote + "<br>" + DestinationNote;
-    $("#OriginDestinationNotesForm").html(OriginDestinationNote != "" ? OriginDestinationNote :  "");
-                                                  
 }
 
+//
+
+$("#SearchDriverName").click(function() {
+    SearchDriverName();
+});
+
+
+
+function GetListCompanyServices() {
+
+$.ajax({
+    type: 'POST',
+    url: "index.php?c=companyServices&a=GetListCompanyServices",
+}).then(function(response) {
+
+    var data = JSON.parse(response);
+
+    if (data.length > 0) {
+
+        data.forEach(element => {
+            var optionBucle = new Option(element.CompanyName, element.Id, true, true);
+            $('#IdCompanyService').append(optionBucle); //.trigger('change');
+        });
+    }
+
+    var optionDefault = new Option("Select trucker company", "", true, true);
+    $('#IdCompanyService').append(optionDefault);
+    $('#IdCompanyService').val("").trigger('change');
+
+    $(".toast-success").html("Trucker list ready");
+    var myAlert = document.getElementById('toastSuccess');
+    var bsAlert = new bootstrap.Toast(myAlert);
+    bsAlert.show();
+
+    });
+}
+
+
+function SearchDriverName(){
+
+    $.ajax({
+    type: 'POST',
+    url: "index.php?c=drivers&a=GetListDrivers",
+}).then(function(response) {
+
+    var data = JSON.parse(response);
+
+    if (data.length > 0) {
+
+        data.forEach(element => {
+            var optionBucle = new Option(element.Driver, element.Id, true, true);
+            $('#IdDriver').append(optionBucle); //.trigger('change');
+        });
+    }
+
+    var optionDefault = new Option("Select driver ", "", true, true);
+    $('#IdDriver').append(optionDefault);
+    $('#IdDriver').val("").trigger('change');
+
+    $(".toast-success").html("Driver's list ready");
+    var myAlert = document.getElementById('toastSuccess');
+    var bsAlert = new bootstrap.Toast(myAlert);
+    bsAlert.show();
+
+
+    });
+
+}
 
 </script>

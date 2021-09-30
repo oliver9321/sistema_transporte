@@ -45,40 +45,30 @@ $(document).ready(function() {
             $("#OriginPhone2, #OriginPhone1, #OriginEmail").val("");
 
             $.ajax({
-                url: "index.php?c=drivers&a=GetInfoDriverById",
+                url: "index.php?c=customers&a=GetInfoCustomerById",
                 type: "POST",
                 data: {
                     Id: CustomerID
                 },
                 success: function(data) {
 
+                    $("#OriginPhone1, #OriginEmail,#OriginPhone2 ").css("border-color", "orange");
+
                     var value = JSON.parse(data);
 
                     if (value.Email != '') {
                         $("#OriginEmail").val(value.Email);
                         $("#OriginEmail").css("border-color", "green");
-                    } else {
-                        $("#OriginEmail").css("border-color", "orange");
-                        $("#OriginEmail").val("");
                     }
-
                     if (value.Phone1 != '') {
                         $("#OriginPhone1").val(value.Phone1);
                         $("#OriginPhone1").css("border-color", "green");
-                    } else {
-                        $("#OriginPhone1").css("border-color", "orange");
-                        $("#OriginPhone1").val("");
                     }
 
                     if (value.Phone2 != '') {
                         $("#OriginPhone2").val(value.Phone2);
                         $("#OriginPhone2").css("border-color", "green");
-                    } else {
-                        $("#OriginPhone2").css("border-color", "orange");
-                        $("#OriginPhone2").val("");
                     }
-
-
 
                 }
             });
@@ -92,7 +82,7 @@ $(document).ready(function() {
 
         if (CustomerID != '') {
 
-            $("#DestinationPhone1, #DestinationEmail,#DestinationPhone2 ").css("border-color", "#e3ebf6");
+            $("#DestinationPhone1, #DestinationEmail,#DestinationPhone2").css("border-color", "#e3ebf6");
             $("#DestinationPhone2, #DestinationPhone1, #DestinationEmail").val("");
 
             $.ajax({
@@ -103,33 +93,24 @@ $(document).ready(function() {
                 },
                 success: function(data) {
 
+                    $("#DestinationPhone2, #DestinationPhone1, #DestinationEmail").css("border-color", "orange");
+
                     var value = JSON.parse(data);
 
                     if (value.Email != '') {
                         $("#DestinationEmail").val(value.Email);
                         $("#DestinationEmail").css("border-color", "green");
-                    } else {
-                        $("#DestinationEmail").css("border-color", "orange");
-                        $("#DestinationEmail").val("");
                     }
 
                     if (value.Phone1 != '') {
                         $("#DestinationPhone1").val(value.Phone1);
                         $("#DestinationPhone1").css("border-color", "green");
-                    } else {
-                        $("#DestinationPhone1").css("border-color", "orange");
-                        $("#DestinationPhone1").val("");
                     }
 
                     if (value.Phone2 != '') {
                         $("#DestinationPhone2").val(value.Phone2);
                         $("#DestinationPhone2").css("border-color", "green");
-                    } else {
-                        $("#DestinationPhone2").css("border-color", "orange");
-                        $("#DestinationPhone2").val("");
                     }
-
-
 
                 }
             });
@@ -137,48 +118,7 @@ $(document).ready(function() {
 
     });
 
-    $('#IdDriver').on("change", function(e) {
 
-        var IdDriver = this.value;
-
-        if (IdDriver != '') {
-
-            $("#DriverPhone1, #DriverPhone2").css("border-color", "#e3ebf6");
-            $("#DriverPhone1, #DriverPhone2").val("");
-
-            $.ajax({
-                url: "index.php?c=drivers&a=GetInfoDriverById",
-                type: "POST",
-                data: {
-                    Id: IdDriver
-                },
-                success: function(data) {
-
-                    var value = JSON.parse(data);
-
-                    if (value.DriverPhone1 != '') {
-                        $("#DriverPhone1").val(value.DriverPhone1);
-                        $("#DriverPhone1").css("border-color", "green");
-                    } else {
-                        $("#DriverPhone1").css("border-color", "orange");
-                        $("#DriverPhone1").val("");
-                    }
-
-                    if (value.DriverPhone2 != '') {
-                        $("#DriverPhone2").val(value.DriverPhone2);
-                        $("#DriverPhone2").css("border-color", "green");
-                    } else {
-                        $("#DriverPhone2").css("border-color", "orange");
-                        $("#DriverPhone2").val("");
-                    }
-
-
-
-                }
-            });
-
-        }
-    });
 
 });
 

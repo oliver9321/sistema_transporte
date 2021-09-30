@@ -129,5 +129,22 @@ class CompanyServices {
         }
     }
 
+    public function GetListCompanyServices()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT Id, CompanyName FROM tbl_company_services WHERE IsActive = 1");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
 
 }

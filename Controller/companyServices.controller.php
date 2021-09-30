@@ -139,4 +139,19 @@ class CompanyServicesController
     }   
 }
 
+public function GetListCompanyServices(){
+    echo json_encode($this->model->GetListCompanyServices(), true);
+}
+
+
+public function GetInfoCompanyServicesById(){
+
+    if(isset($_POST['Id'])){
+        echo json_encode($this->model->Edit($_POST['Id']), true);
+    }else{
+        echo json_encode(false, true);
+    }
+
+}
+
 }

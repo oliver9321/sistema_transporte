@@ -188,7 +188,7 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Order in process</h4>                      
+                                            <h4 class="card-title">Order pending</h4>                      
                                         </div><!--end col-->                                        
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
@@ -230,7 +230,7 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Orders pending</h4>                      
+                                            <h4 class="card-title">orders picked up</h4>                      
                                         </div><!--end col-->                                        
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
