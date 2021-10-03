@@ -70,6 +70,7 @@ $(document).ready(function() {
                         $("#OriginPhone2").css("border-color", "green");
                     }
 
+
                 }
             });
 

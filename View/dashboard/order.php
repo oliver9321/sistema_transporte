@@ -554,16 +554,16 @@
 
                                                         <div class="col-sm-2" >
                                                             <label class="mb-1"><b>Brand</b></label>
-                                                            <select style="width: 90%;" name="Brand[]"
-                                                                class="select2 form-control mb-3 custom-select BrandVehicle">
+                                                            <select style="width: 90%;" name="Brand"
+                                                                class="select2 form-control mb-3 custom-select BrandVehicle vehicleList">
                                                                 <option value="" selected>Select brand</option>
                                                             </select>
                                                         </div>
 
                                                         <div class="col-sm-3" >
                                                             <label class="mb-1"><b>Model</b></label>
-                                                            <select style="width: 90%;" name="Model[]"
-                                                                class="select2 form-control mb-3 custom-select ModelVehicle">
+                                                            <select style="width: 90%;" name="Model"
+                                                                class="select2 form-control mb-3 custom-select ModelVehicle vehicleList">
                                                                 <option value="" selected>Select model</option>
                                                             </select>
                                                         </div>
@@ -571,13 +571,13 @@
                                                             <!--end col-->
                                                          <div class="col-sm-1" >
                                                             <label class="mb-1"><b>Year</b></label>
-                                                            <input type="number"  min="1900" name="Year[]"  class="form-control YearVehicle" placeholder="">
+                                                            <input type="number"  min="1900" name="Year"  class="form-control YearVehicle vehicleList" placeholder="">
                                                         </div>
 
                                                               <!-- end row -->
                                                          <div class="col-sm-1" >
                                                             <label class="mb-1"><b>Color</b></label>
-                                                            <select style="width: 100%;" name="Color[]" class="form-control ColorVehicle">
+                                                            <select style="width: 100%;" name="Color" class="form-control ColorVehicle vehicleList">
                                                             <option value="" selected></option>
                                                                 <option value="White"> White</option>
                                                                 <option value="Black"> Black</option>
@@ -595,7 +595,7 @@
 
                                                         <div class="col-sm-1" >
                                                             <label class="mb-1"><b>Carrier</b></label>
-                                                            <select style="width: 100%;" name="CarrierType[]" class="form-control CarrierTypeVehicle">
+                                                            <select style="width: 100%;" name="CarrierType" class="form-control CarrierTypeVehicle vehicleList">
                                                                 <option value="" selected></option>
                                                                 <option value="Open">Open</option>
                                                                 <option value="Enclosed">Enclosed</option>
@@ -606,7 +606,7 @@
 
                                                         <div class="col-sm-1" >
                                                             <label class="mb-1"><b>Condition</b></label>
-                                                            <select style="width: 100%;" name="Condition[]" class="form-control ConditionVehicle">
+                                                            <select style="width: 100%;" name="ConditionVehicle" class="form-control ConditionVehicle vehicleList">
                                                                 <option value="" selected></option>
                                                                 <option value="Running">Running</option>
                                                                 <option value="Non-running">Non-running</option>
@@ -617,7 +617,7 @@
                                                         <div class="col-sm-3" >
                                                         <label class="mb-1"><b>Vin</b></label>
                                                             <div class="input-group">
-                                                                <input type="text" name="Vin[]" class="form-control VinVehicle">
+                                                                <input type="text" name="Vin" class="form-control VinVehicle vehicleList">
                                                                 <button type="button" title="Delete vehicle" onclick="EliminarVehiculo(this)"  class="btn btn-outline-danger"> <span class="far fa-trash-alt me-1"></span> </button>
                                                             </div>
                                                         </div>
@@ -786,7 +786,7 @@
                     </div>
                 </fieldset>
 
-                <h3>Confirm order and print</h3>
+                <h3>Confirm order</h3>
                 <fieldset>
                     <div class="row">
                         <div class="col-lg-12 mx-auto" id="zonaPrint">
@@ -1205,18 +1205,18 @@ function loadInfoPDF1(){
 
     //Vehicles Step info
 
-    var Vin, Brand, Model, Condition, CarrierType, Color, Year, Vin = "";
+    var Vin, Brand, Model, ConditionVehicle, CarrierType, Color, Year, Vin = "";
     var markup = "";
 
     $(".registroVehiculo").each(function(){
        
-       Brand       = $(this).find("select[name='Brand[]']").val();
+       Brand       = $(this).find("select[name='Brand']").val();
        Vin         = $(this).find("input[name^='Vin']").val();
-       Model       = $(this).find("select[name='Model[]']").val();
-       Color       = $(this).find("select[name='Color[]']").val();
-       Year        = $(this).find("input[name='Year[]']").val();
-       Condition   = $(this).find("select[name='Condition[]']").val();
-       CarrierType = $(this).find("select[name='CarrierType[]']").val();
+       Model       = $(this).find("select[name='Model']").val();
+       Color       = $(this).find("select[name='Color']").val();
+       Year        = $(this).find("input[name='Year']").val();
+       ConditionVehicle   = $(this).find("select[name='ConditionVehicle']").val();
+       CarrierType = $(this).find("select[name='CarrierType']").val();
 
        if(Brand != ""){
 
@@ -1225,7 +1225,7 @@ function loadInfoPDF1(){
                      +"<td>" + Model + "</td>"
                      +"<td>" + Color + "</td>"
                      +"<td>" + Year + "</td>"
-                     +"<td>" + Condition + "</td>"
+                     +"<td>" + ConditionVehicle + "</td>"
                      +"<td>" + CarrierType + "</td>"
                      +"</tr>";
        }
@@ -1260,5 +1260,61 @@ function loadInfoPDF1(){
                                                   
 }
 
+function saveOrder(){
+
+    vehiclesArray = new Array();
+
+    $(".registroVehiculo").each(function(){
+       
+       Brand       = $(this).find("select[name='Brand']").val();
+       Vin         = $(this).find("input[name^='Vin']").val();
+       Model       = $(this).find("select[name='Model']").val();
+       Color       = $(this).find("select[name='Color']").val();
+       Year        = $(this).find("input[name='Year']").val();
+       ConditionVehicle   = $(this).find("select[name='ConditionVehicle']").val();
+       CarrierType = $(this).find("select[name='CarrierType']").val();
+       
+       if(Brand!=""){
+           vehiclesArray.push({'Brand':Brand, 'Model':Model, 'Year':Year, 'Color':Color, 'ConditionVehicle':ConditionVehicle,'CarrierType':CarrierType, 'Vin':Vin  });
+       }
+});
+
+
+    $.ajax({
+        type: 'POST',
+        url: "index.php?c=orders&a=SaveOrder",
+        data: {'order': $("#form-horizontal").serialize(), 'vehicles': vehiclesArray},
+            success: function(data) {
+                
+                if(data){
+
+                    var response = JSON.parse(data);
+                 
+                    console.log(response);
+                    if(response.Error == false){
+
+                        $("#OrderIDForm").html(response.OrderId);
+                        $(".toast-success").html(response.Message);
+                        var myAlert = document.getElementById('toastSuccess');
+                        var bsAlert = new bootstrap.Toast(myAlert);
+                        bsAlert.show();
+                        setTimeout(() => { bsAlert.hide();}, 3000);
+                        setTimeout(() => {window.print();}, 4000);
+
+                    }else{
+
+                        $(".toast-error").html(response.Message);
+                        var myAlert = document.getElementById('toastError');
+                        var bsAlert = new bootstrap.Toast(myAlert);
+                        bsAlert.show();
+
+                    }
+                }else{
+                    console.log(data);
+                }
+            }
+        })
+
+}
 
 </script>

@@ -31,7 +31,6 @@ class Orders {
     public $Earnings;
     public $Cod;
     public $TrukerRate;
-    public $RequestStatus;
     public $DateCreation;
     public $UserIdCreation;
     public $LastModificationDate;
@@ -116,14 +115,12 @@ class Orders {
                         Earnings  = ?,
                         Cod  = ?,
                         TrukerRate  = ?,
-                        RequestStatus  = ?,                	
 						LastModificationDate = ?,
 						UserIdLastModification = ?,
 						IsActive = ?
 				    WHERE Id = ?";
 
-$result=   $this->pdo->prepare($sql)
-                ->execute(
+$result = $this->pdo->prepare($sql)->execute(
                     array(
                         $data->IdCustomerOrigin,
                         $data->IdCustomerDestination,
@@ -151,14 +148,15 @@ $result=   $this->pdo->prepare($sql)
                         $data->Earnings,
                         $data->Cod,
                         $data->TrukerRate,
-                        $data->RequestStatus,
-                        $data->LastModificationDate,
-                        (int)$data->UserIdLastModification,
+                        date("Y-m-d H:i:s") ,
+                        (int)$_SESSION['UserOnline']->Id,
                         (int)$data->IsActive,
                         $data->Id
                     )
                 );
+
                 return $result;
+
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -167,13 +165,20 @@ $result=   $this->pdo->prepare($sql)
 
     public function Create (Orders $data)
     {
+        /*
+         IdCompanyService,
+         IdDriver,
+         ExtraTrukerFee,
+          TrukerOwesUs,
+          Earnings,
+                Cod,
+                TrukerRate,
+          */
         try
         {
             $sql = "INSERT INTO tbl_orders(
                 IdCustomerOrigin,
                 IdCustomerDestination,
-                IdCompanyService,
-                IdDriver,
                 OrderStatusID,
                 IdPayment,
                 OrderDate,
@@ -191,53 +196,48 @@ $result=   $this->pdo->prepare($sql)
                 DestinationNote,
                 Total,
                 Deposit,
-                ExtraTrukerFee,
-                TrukerOwesUs,
-                Earnings,
-                Cod,
-                TrukerRate,
-                RequestStatus,
                 DateCreation,
                 UserIdCreation,
-                IsActive)
-                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                IsActive) 
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-$result=   $this->pdo->prepare($sql)
-                ->execute(
+   $this->pdo->prepare($sql)->execute(
                     array(
-                        $data-> IdCustomerOrigin,
-                        $data-> IdCustomerDestination,
-                        $data-> IdCompanyService,
-                        $data-> IdDriver,
-                        $data-> OrderStatusID,
-                        $data-> IdPayment,
-                        $data-> OrderDate,
-                        $data-> PickUpDate,
-                        $data-> DeliveryDate,
-                        $data-> OriginAddress,
-                        $data-> OriginCity,
-                        $data-> OriginState,
-                        $data-> OriginZip,
-                        $data-> OriginNote,
-                        $data-> DestinationAddress,
-                        $data-> DestinationCity,
-                        $data-> DestinationState,
-                        $data-> DestinationZip,
-                        $data-> DestinationNote,
-                        $data-> Total,
-                        $data-> Deposit,
-                        $data-> ExtraTrukerFee,
-                        $data->TrukerOwesUs,
-                        $data-> Earnings,
-                        $data-> Cod,
-                        $data-> TrukerRate,
-                        $data-> RequestStatus,
-                        date('Y-m-d'),
-                        (int)$data->UserIdCreation,
+                        $data->IdCustomerOrigin,
+                        $data->IdCustomerDestination,
+                        $data->OrderStatusID,
+                        $data->IdPayment,
+                        $data->OrderDate,
+                        $data->PickUpDate,
+                        $data->DeliveryDate,
+                        $data->OriginAddress,
+                        $data->OriginCity,
+                        $data->OriginState,
+                        $data->OriginZip,
+                        $data->OriginNote,
+                        $data->DestinationAddress,
+                        $data->DestinationCity,
+                        $data->DestinationState,
+                        $data->DestinationZip,
+                        $data->DestinationNote,
+                        $data->Total,
+                        $data->Deposit,
+                        date('Y-m-d H:i:s'),
+                        (int)$_SESSION['UserOnline']->Id,
                         1
                     )
                 );
-                return $result;
+               
+                return $this->pdo->lastInsertId();
+
+                        // $data->ExtraTrukerFee,
+                       // $data->TrukerOwesUs,
+                       // $data->Earnings,
+                       // $data->Cod,
+                       // $data->TrukerRate,
+                        // $data->IdCompanyService,
+                       //$data->IdDriver,
+
         } catch (Exception $e)
         {
             die($e->getMessage());

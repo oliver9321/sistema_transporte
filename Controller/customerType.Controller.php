@@ -45,6 +45,7 @@ class CustomerTypeController
 
           $customerType = new CustomerType();
           $CustomerTypeList  =  $this->customerType->GetListCustomerTypes();
+
         if(isset($_REQUEST['Id'])){
             $customerType =  $this->model->Edit($_REQUEST['Id']);
         }
@@ -68,15 +69,10 @@ class CustomerTypeController
             
             //Campos unicos por tabla
             $CustomerType->Id         = $_REQUEST['Id'];
-            $CustomerType->NameType = $_REQUEST['NameType'];
+            $CustomerType->NameType   = $_REQUEST['NameType'];
            
-
             //Campos genericos
-            $CustomerType->DateCreation            = date('Y-m-d');
-            $CustomerType->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $CustomerType->LastModificationDate    = date('Y-m-d');
-            $CustomerType->UserIdLastModification  = $_SESSION['UserOnline']->Id;
-            $CustomerType->IsActive                = $_REQUEST['IsActive'];
+            $CustomerType->IsActive  = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT
             if ($CustomerType->Id > 0) {

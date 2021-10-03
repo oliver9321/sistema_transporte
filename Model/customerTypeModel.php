@@ -75,8 +75,8 @@ $result= $this->pdo->prepare($sql)
                 ->execute(
                     array(
                         $data->NameType,
-                        $data->LastModificationDate,
-                        (int)$data->UserIdLastModification,
+                        date("Y-m-d H:i:s") ,
+                        (int)$_SESSION['UserOnline']->Id,
                         (int)$data->IsActive,
                         $data->Id
                     )
@@ -94,16 +94,17 @@ $result= $this->pdo->prepare($sql)
         {
             $sql = "INSERT INTO tbl_customer_type (NameType,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?)";
 
-            $result=  $this->pdo->prepare($sql)
-                ->execute(
+           $this->pdo->prepare($sql)->execute(
                     array(
                         $data->NameType,
-                        date('Y-m-d'),
-                        (int)$data->UserIdCreation,
+                        date('Y-m-d H:i:s'),
+                        (int)$_SESSION['UserOnline']->Id,
                         1
                     )
                 );
-                return $result;
+
+                return $this->pdo->lastInsertId();
+                
         } catch (Exception $e)
         {
             die($e->getMessage());

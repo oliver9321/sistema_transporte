@@ -73,9 +73,9 @@ class VehiclesController
            
 
             //Campos genericos
-            $Vehicles->DateCreation            = date('Y-m-d');
+            $Vehicles->DateCreation            = date('Y-m-d H:i:s');
             $Vehicles->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $Vehicles->LastModificationDate    = date('Y-m-d');
+            $Vehicles->LastModificationDate    = date('Y-m-d H:i:s');
             $Vehicles->UserIdLastModification  = $_SESSION['UserOnline']->Id;
             $Vehicles->IsActive                = $_REQUEST['IsActive'];
 
@@ -119,8 +119,6 @@ class VehiclesController
                 $Vehicle->Model  = $_POST['Model'];
 
                 //Campos genericos
-                $Vehicle->DateCreation            = date('Y-m-d');
-                $Vehicle->UserIdCreation          = $_SESSION['UserOnline']->Id;
                 $Vehicle->IsActive                = 1;
 
                 echo json_encode($this->model->Create($Vehicle), true);

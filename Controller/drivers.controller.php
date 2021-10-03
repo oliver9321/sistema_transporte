@@ -69,16 +69,12 @@ class DriversController
             $Driver = new Drivers();
 
             //Campos unicos por tabla
-            $Driver->Id         = $_REQUEST['Id'];
+            $Driver->Id               = $_REQUEST['Id'];
             $Driver->DriverName       = $_REQUEST['DriverName'];
             $Driver->DriverPhone1     = $_REQUEST['DriverPhone1'];
             $Driver->DriverPhone2     = $_REQUEST['DriverPhone2'];
  
             //Campos genericos
-            $Driver->DateCreation            = date('Y-m-d');
-            $Driver->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $Driver->LastModificationDate    = date('Y-m-d');
-            $Driver->UserIdLastModification  = $_SESSION['UserOnline']->Id;
             $Driver->IsActive                = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT
@@ -116,13 +112,11 @@ class DriversController
 
                 $driver= new Drivers();
 
-                $driver->DriverName     = $_POST['DriverName'];
-                $driver->DriverPhone1   = $_POST['DriverPhone1'];
+                $driver->DriverName      = $_POST['DriverName'];
+                $driver->DriverPhone1    = $_POST['DriverPhone1'];
                 $driver->DriverPhone2    = $_POST['DriverPhone2'];
 
                 //Campos genericos
-                $driver->DateCreation     = date('Y-m-d');
-                $driver->UserIdCreation   = $_SESSION['UserOnline']->Id;
                 $driver->IsActive = 1;
 
                 echo json_encode($this->model->Create($driver), true);

@@ -70,19 +70,16 @@ class PaymentsController
             $Payments->Id               = $_REQUEST['Id'];
             $Payments->PaymentOwnerName = $_REQUEST['PaymentOwnerName'];
             $Payments->CardHolderName   = $_REQUEST['CardHolderName'];
+            $Payments->CreditCard       = $_REQUEST['CreditCard'];
             $Payments->ExpDate          = $_REQUEST['ExpDate'];
-            $Payments->BilingAddress    = $_REQUEST['BilingAddress'];
+            $Payments->Cvv              = $_REQUEST['Cvv'];
+            $Payments->BillingAddress   = $_REQUEST['BillingAddress'];
             $Payments->Reference        = $_REQUEST['Reference'];
-            $Payments->Tel              = $_REQUEST['Tel'];
-            $Payments->Email            = $_REQUEST['Email'];
-            $Payments->NotePayment      = $_REQUEST['NotePayment'];
-
-            //Campos genericos
-            $Payments->DateCreation            = date('Y-m-d');
-            $Payments->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $Payments->LastModificationDate    = date('Y-m-d');
-            $Payments->UserIdLastModification  = $_SESSION['UserOnline']->Id;
-            $Payments->IsActive                = $_REQUEST['IsActive'];
+            $Payments->Tel1             = $_REQUEST['Tel1'];
+            $Payments->Tel2             = $_REQUEST['Tel2'];
+            $Payments->PaymentEmail     = $_REQUEST['PaymentEmail'];
+            $Payments->PaymentNote      = $_REQUEST['PaymentNote'];
+            $Payments->IsActive         = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT
             if ($Payments->Id > 0) {

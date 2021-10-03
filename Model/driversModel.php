@@ -81,8 +81,8 @@ class Drivers {
                         $data->DriverName,
                         $data->DriverPhone1,
                         $data->DriverPhone2,
-                        $data->LastModificationDate,
-                        (int)$data->UserIdLastModification,
+                        date("Y-m-d H:i:s") ,
+                        (int)$_SESSION['UserOnline']->Id,
                         (int)$data->IsActive,
                         $data->Id
                     )
@@ -102,19 +102,18 @@ class Drivers {
         {
             $sql = "INSERT INTO tbl_drivers (DriverName,DriverPhone1,DriverPhone2,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?)";
 
-            $result =  $this->pdo->prepare($sql)
-                ->execute(
+           $this->pdo->prepare($sql)->execute(
                     array(
                         $data->DriverName,
                         $data->DriverPhone1,
                         $data->DriverPhone2,
-                        date('Y-m-d'),
-                        (int)$data->UserIdCreation,
+                        date('Y-m-d H:i:s'),
+                        (int)$_SESSION['UserOnline']->Id,
                         1
                     )
                 );
 
-                return $result;
+                return $this->pdo->lastInsertId();
                 
         } catch (Exception $e)
         {

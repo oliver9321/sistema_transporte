@@ -38,7 +38,6 @@ class Payments {
 
                 $stm = $this->pdo->prepare("SELECT * FROM tbl_payments");
                 $stm->execute();
-
                 $row = $stm->fetchAll();
 
                 $response = array();
@@ -104,8 +103,8 @@ $result=  $this->pdo->prepare($sql)
                         $data->Tel2,
                         $data->PaymentEmail,
                         $data->PaymentNote,
-                        $data->LastModificationDate,
-                        (int)$data->UserIdLastModification,
+                        $data->date('Y-m-d H:i:s'),
+                        (int)$_SESSION['UserOnline']->Id,
                         (int)$data->IsActive,
                         $data->Id
                     )
@@ -138,9 +137,7 @@ $result=  $this->pdo->prepare($sql)
                     IsActive) 
                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-$result=   $this->pdo->prepare($sql)
-                ->execute(
-                    array(
+    $this->pdo->prepare($sql)->execute(array(
                         $data->PaymentOwnerName,
                         $data->CardHolderName,
                         $data->CreditCard,
@@ -152,12 +149,14 @@ $result=   $this->pdo->prepare($sql)
                         $data->Tel2,
                         $data->PaymentEmail,
                         $data->PaymentNote,
-                        date('Y-m-d'),
-                        (int)$data->UserIdCreation,
+                        date('Y-m-d H:i:s'),
+                        (int)$_SESSION['UserOnline']->Id,
                         1
                     )
                 );
-                return $result;
+
+                return $this->pdo->lastInsertId();
+                
         } catch (Exception $e)
         {
             die($e->getMessage());

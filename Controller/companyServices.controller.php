@@ -75,11 +75,7 @@ class CompanyServicesController
             $CompanyServices->CompanyEmail      = $_REQUEST['CompanyEmail'];
 
             //Campos genericos
-            $CompanyServices->DateCreation            = date('Y-m-d');
-            $CompanyServices->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $CompanyServices->LastModificationDate    = date('Y-m-d');
-            $CompanyServices->UserIdLastModification  = $_SESSION['UserOnline']->Id;
-            $CompanyServices->IsActive                = $_REQUEST['IsActive'];
+            $CompanyServices->IsActive          = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT
             if ($CompanyServices->Id > 0) {
@@ -124,8 +120,6 @@ class CompanyServicesController
                 $companyServices->CompanyEmail     = $_POST['CompanyEmail'];
 
                 //Campos genericos
-                $companyServices->DateCreation     = date('Y-m-d');
-                $companyServices->UserIdCreation   = $_SESSION['UserOnline']->Id;
                 $companyServices->IsActive          = 1;
 
                 echo json_encode($this->model->Create($companyServices), true);

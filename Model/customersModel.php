@@ -91,9 +91,9 @@ $result=   $this->pdo->prepare($sql)
                         $data->Phone1,
                         $data->Phone2,
                         $data->Email,
-                        $data->LastModificationDate,
-                        (int)$data->UserIdLastModification,
-                        (int)$data->IsActive,
+                        date("Y-m-d H:i:s") ,
+                        (int)$_SESSION['UserOnline']->Id,
+                        $data->IsActive,
                         $data->Id
                     )
                 );
@@ -104,14 +104,13 @@ $result=   $this->pdo->prepare($sql)
         }
     }
 
-    public function Create (Customers $data)
+    public function Create(Customers $data)
     {
         try
         {
             $sql = "INSERT INTO tbl_customers (IdCustomerType,Name,LastName,Phone1,Phone2,Email,DateCreation,UserIdCreation,IsActive) VALUES (?,?,?,?,?,?,?,?,?)";
 
-            $result =  $this->pdo->prepare($sql)
-                ->execute(
+             $this->pdo->prepare($sql)->execute(
                     array(
                         $data->IdCustomerType,
                         $data->Name,
@@ -119,13 +118,13 @@ $result=   $this->pdo->prepare($sql)
                         $data->Phone1,
                         $data->Phone2,
                         $data->Email,
-                        date('Y-m-d'),
-                        (int)$data->UserIdCreation,
+                        date('Y-m-d H:i:s'),
+                        (int)$_SESSION['UserOnline']->Id,
                         $data->IsActive
                     )
                 );
 
-                return $result;
+                return $this->pdo->lastInsertId();
 
         } catch (Exception $e)
         {

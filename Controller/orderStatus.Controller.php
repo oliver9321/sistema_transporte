@@ -71,11 +71,7 @@ class OrderStatusController
             $OrderStatus->Id       = $_REQUEST['Id'];
            
             //Campos genericos
-            $OrderStatus->DateCreation            = date('Y-m-d');
-            $OrderStatus->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $OrderStatus->LastModificationDate    = date('Y-m-d');
-            $OrderStatus->UserIdLastModification  = $_SESSION['UserOnline']->Id;
-            $OrderStatus->IsActive                = $_REQUEST['IsActive'];
+            $OrderStatus->IsActive  = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT
             if ($OrderStatus->Id > 0) {

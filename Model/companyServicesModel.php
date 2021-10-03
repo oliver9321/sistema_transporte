@@ -80,19 +80,16 @@ class CompanyServices {
                 IsActive= ?,
                 WHERE Id = ?";
 
-   $result =  $this->pdo->prepare($sql)
-                ->execute(
+   $result =  $this->pdo->prepare($sql)->execute(
                     array(
-                        
-                  
-                        $data-> CompanyName,
-                        $data-> CompanyAddress,
-                        $data-> CompanyPhone1,
-                        $data-> CompanyPhone2,
-                        $data-> CompanyEmail,
-                        (int)$data-> LastModificationDate,
-                        (int)$data-> UserIdLastModification,
-                        $data-> IsActive,
+                        $data->CompanyName,
+                        $data->CompanyAddress,
+                        $data->CompanyPhone1,
+                        $data->CompanyPhone2,
+                        $data->CompanyEmail,
+                        date("Y-m-d H:i:s") ,
+                        (int)$_SESSION['UserOnline']->Id,
+                        $data->IsActive,
                         $data->Id
                     )
                 );
@@ -112,13 +109,13 @@ class CompanyServices {
             $result =  $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data-> CompanyName,
-                        $data-> CompanyAddress,
-                        $data-> CompanyPhone1,
-                        $data-> CompanyPhone2,
-                        $data-> CompanyEmail,
-                        date('Y-m-d'),
-                        (int)$data->UserIdCreation,
+                        $data->CompanyName,
+                        $data->CompanyAddress,
+                        $data->CompanyPhone1,
+                        $data->CompanyPhone2,
+                        $data->CompanyEmail,
+                        date('Y-m-d H:i:s'),
+                        (int)$_SESSION['UserOnline']->Id,
                         1
                     )
                 );

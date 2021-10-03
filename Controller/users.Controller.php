@@ -76,10 +76,6 @@ class UsersController
             $Users->Image                 = $_REQUEST['Image'];
 
             //Campos genericos
-            $Users->DateCreation            = date('Y-m-d');
-            $Users->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $Users->LastModificationDate    = date('Y-m-d');
-            $Users->UserIdLastModification  = $_SESSION['UserOnline']->Id;
             $Users->IsActive                = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT

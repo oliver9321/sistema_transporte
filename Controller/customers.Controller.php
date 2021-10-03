@@ -79,10 +79,6 @@ class CustomersController
             $Customers->Email           = $_REQUEST['Email'];
 
             //Campos genericos
-            $Customers->DateCreation            = date('Y-m-d');
-            $Customers->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $Customers->LastModificationDate    = date('Y-m-d');
-            $Customers->UserIdLastModification  = $_SESSION['UserOnline']->Id;
             $Customers->IsActive                = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT
@@ -129,9 +125,7 @@ class CustomersController
                     $Customers->Email           = $_POST['Email'];
     
                     //Campos genericos
-                    $Customers->DateCreation            = date('Y-m-d');
-                    $Customers->UserIdCreation          = $_SESSION['UserOnline']->Id;
-                    $Customers->IsActive                = 1;
+                    $Customers->IsActive       = 1;
     
                     echo json_encode($this->model->Create($Customers), true);
                   

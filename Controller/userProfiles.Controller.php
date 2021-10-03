@@ -72,10 +72,6 @@ class UserProfilesController
             $UserProfiles->Description  = $_REQUEST['Description'];
       
             //Campos genericos
-            $UserProfiles->DateCreation            = date('Y-m-d');
-            $UserProfiles->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $UserProfiles->LastModificationDate    = date('Y-m-d');
-            $UserProfiles->UserIdLastModification  = $_SESSION['UserOnline']->Id;
             $UserProfiles->IsActive                = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT

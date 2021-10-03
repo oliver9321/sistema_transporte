@@ -525,7 +525,7 @@
                                         <div class="col-md-6" >
                                             <label class="mb-1"><b>Order date (Today)</b></label>
                                             <input id="PickUpOrderDateDate" name="OrderDate" type="date"
-                                                class="form-control" value="<?php echo date('Y-m-d'); ?>" readonly>
+                                                class="form-control" value="<?php echo date('Y-m-d H:i:s'); ?>" readonly>
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-6" >

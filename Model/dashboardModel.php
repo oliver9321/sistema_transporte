@@ -335,7 +335,7 @@ class Dashboard
                         $DepartamentoID,
                         $SucursalID,
                         $UsuarioID,
-                        date('Y-m-d')
+                        date('Y-m-d H:i:s')
                     )
                 );
         } catch (Exception $e)

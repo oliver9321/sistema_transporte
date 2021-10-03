@@ -72,13 +72,10 @@ class OrderDetailsController
             $OrderDetails->Model           = $_REQUEST['Model'];
             $OrderDetails->Color           = $_REQUEST['Color'];
             $OrderDetails->Year            = $_REQUEST['Year'];
-            $OrderDetails->Vin             = $_REQUEST['Vin'];
-
+            $OrderDetails->ConditionVehicle  = $_REQUEST['ConditionVehicle'];
+            $OrderDetails->CarrierType     = $_REQUEST['CarrierType'];
+  
             //Campos genericos
-            $OrderDetails->DateCreation            = date('Y-m-d');
-            $OrderDetails->UserIdCreation          = $_SESSION['UserOnline']->Id;
-            $OrderDetails->LastModificationDate    = date('Y-m-d');
-            $OrderDetails->UserIdLastModification  = $_SESSION['UserOnline']->Id;
             $OrderDetails->IsActive                = $_REQUEST['IsActive'];
 
             //Si viene un Id, es porque quieres hacer un Update, de lo contrario INSERT
