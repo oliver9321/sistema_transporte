@@ -37,7 +37,7 @@
                                 <label class="form-label text-danger" for="Phone1NewCustomer">*Phone #1</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="fa fa-mobile"></i></span>
-                                    <input type="tel" class="form-control" id="Phone1NewCustomer"
+                                    <input type="tel" class="form-control phone" id="Phone1NewCustomer"
                                         name="Phone1NewCustomer" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -46,7 +46,7 @@
                                 <label class="form-label" for="Phone2NewCustomer">Phone #2</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control" id="Phone2NewCustomer"
+                                    <input type="tel" class="form-control phone" id="Phone2NewCustomer"
                                         name="Phone2NewCustomer" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -148,7 +148,7 @@
                                 <label class="form-label text-danger" for="CompanyPhone1NewCompany">*Phone #1</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control" id="CompanyPhone1NewCompany"
+                                    <input type="tel" class="form-control phone" id="CompanyPhone1NewCompany"
                                         name="CompanyPhone1NewCompany" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -158,7 +158,7 @@
                                 <label class="form-label" for="CompanyPhone2NewCompany">Phone #2</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control" id="CompanyPhone2NewCompany"
+                                    <input type="tel" class="form-control phone" id="CompanyPhone2NewCompany"
                                         name="CompanyPhone2NewCompany" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -215,7 +215,7 @@
                                 <label class="form-label text-danger" for="DriverPhone1NewDriver">*Phone #1</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control" id="DriverPhone1NewDriver"
+                                    <input type="tel" class="form-control phone" id="DriverPhone1NewDriver"
                                         name="DriverPhone1NewDriver" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -225,7 +225,7 @@
                                 <label class="form-label" for="DriverPhone2NewDriver">Phone #2</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control" id="DriverPhone2NewDriver"
+                                    <input type="tel" class="form-control phone id="DriverPhone2NewDriver"
                                         name="DriverPhone2NewDriver" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -371,14 +371,14 @@
                                                 <label class="mb-1"><i class="fa fa-mobile"></i> Origin phone
                                                     #1</label>
                                                 <input id="OriginPhone1" name="OriginPhone1" type="tel"
-                                                    class="form-control originInput" placeholder="+1 (555) 555-5555">
+                                                    class="form-control originInput phone" placeholder="(555) 555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-phone-alt"></i> Origin phone
                                                     #2</label>
                                                 <input id="OriginPhone2" name="OriginPhone2" type="tel"
-                                                    class="form-control originInput" placeholder="+1 (555) 555-5555">
+                                                    class="form-control originInput phone" placeholder="(555) 555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -444,16 +444,16 @@
                                                 <label class="mb-1"><i class="fa fa-mobile"></i> Destination phone
                                                     #1</label>
                                                 <input id="DestinationPhone1" name="DestinationPhone1" type="tel"
-                                                    class="form-control DestinationInput"
-                                                    placeholder="+1 (555) 555-5555">
+                                                    class="form-control DestinationInput phone"
+                                                    placeholder="(555) 555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-phone-alt"></i> Destination phone
                                                     #2</label>
                                                 <input id="DestinationPhone2" name="DestinationPhone2" type="tel"
-                                                    class="form-control DestinationInput"
-                                                    placeholder="+1 (555) 555-5555">
+                                                    class="form-control DestinationInput phone"
+                                                    placeholder="(555) 555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -568,28 +568,14 @@
                                                             </select>
                                                         </div>
 
-                                                        <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Condition</b></label>
-                                                            <select style="width: 100%;" name="Condition[]" class="form-control ConditionVehicle">
-                                                                <option value="" selected></option>
-                                                                <option value="Running">Running</option>
-                                                                <option value="Non-running">Non-running</option>
-                                                            </select>
+                                                            <!--end col-->
+                                                         <div class="col-sm-1" >
+                                                            <label class="mb-1"><b>Year</b></label>
+                                                            <input type="number"  min="1900" name="Year[]"  class="form-control YearVehicle" placeholder="">
                                                         </div>
 
-                                                        <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Carrier</b></label>
-                                                            <select style="width: 100%;" name="CarrierType[]" class="form-control CarrierTypeVehicle">
-                                                                <option value="" selected></option>
-                                                                <option value="Open">Open</option>
-                                                                <option value="Enclosed">Enclosed</option>
-                                                            </select>
-                                                        </div>
-
-
-
-                                                        <!-- end row -->
-                                                        <div class="col-sm-1" >
+                                                              <!-- end row -->
+                                                         <div class="col-sm-1" >
                                                             <label class="mb-1"><b>Color</b></label>
                                                             <select style="width: 100%;" name="Color[]" class="form-control ColorVehicle">
                                                             <option value="" selected></option>
@@ -606,11 +592,27 @@
 
                                                             </select>
                                                         </div>
-                                                        <!--end col-->
+
                                                         <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Year</b></label>
-                                                            <input type="number"  min="1900" name="Year[]"  class="form-control YearVehicle" placeholder="">
+                                                            <label class="mb-1"><b>Carrier</b></label>
+                                                            <select style="width: 100%;" name="CarrierType[]" class="form-control CarrierTypeVehicle">
+                                                                <option value="" selected></option>
+                                                                <option value="Open">Open</option>
+                                                                <option value="Enclosed">Enclosed</option>
+                                                            </select>
                                                         </div>
+
+                                                
+
+                                                        <div class="col-sm-1" >
+                                                            <label class="mb-1"><b>Condition</b></label>
+                                                            <select style="width: 100%;" name="Condition[]" class="form-control ConditionVehicle">
+                                                                <option value="" selected></option>
+                                                                <option value="Running">Running</option>
+                                                                <option value="Non-running">Non-running</option>
+                                                            </select>
+                                                        </div>
+
 
                                                         <div class="col-sm-3" >
                                                         <label class="mb-1"><b>Vin</b></label>
@@ -748,14 +750,14 @@
                                     <div class="row">
                                         <div class="col-md-4" >
                                             <label class="mb-1"><i class="fa fa-mobile"></i> Phone number #1</label>
-                                            <input id="Tel1" name="Tel1" type="tel" class="form-control"
-                                                placeholder="+1 (555) 555-5555">
+                                            <input id="Tel1" name="Tel1" type="tel" class="form-control phone"
+                                                placeholder="(555) 555-5555">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" >
                                             <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone number #2</label>
-                                            <input id="Tel2" name="Tel2" type="tel" class="form-control"
-                                                placeholder="+1 (555) 555-5555">
+                                            <input id="Tel2" name="Tel2" type="tel" class="form-control phone"
+                                                placeholder="(555) 555-5555">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" >
@@ -978,7 +980,6 @@
                     <!--end row-->
                 </fieldset>
                 <!--end fieldset-->
-              
             </form>
             <!--end form-->
         </div>
@@ -998,10 +999,16 @@
 <script src="plugins/jquery-steps/jquery.steps.min.js"></script>
 
 <script src="assets/js/orders.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 <script type="text/javascript">
 
-$("body").addClass("enlarge-menu");
+$(document).ready(function($){
+    $('.phone').mask('(000) 000-0000');
+    $("#ExpDate").mask('00/00');
+    $("#Cvv").mask('000');
+    $("#CreditCard").mask("0000 0000 0000 0000");
+});
+
 
 $("#form-horizontal").steps({
     headerTag: "h3",
@@ -1049,12 +1056,12 @@ function EliminarVehiculo(e) {
 $(document).ready(function() {
    
     $('.select2').select2();
-
+   
     $(".originInput, .DestinationInput").change(function() {
         $(this).css("border-color", "#A6A6A6");
     });
 
-
+    $("body").addClass("enlarge-menu");
     AddVehicleList();
     
     $(".steps").addClass("d-print-none");
@@ -1236,16 +1243,16 @@ function loadInfoPDF1(){
     $("#CVVForm").html($("#Cvv").val() != "" ? $("#Cvv").val() :  "<span class='text-danger'>Check CVV code</span>");
     $("#BillingAddressForm").html($("#BillingAddress").val() != "" ? $("#BillingAddress").val() :  "<span class='text-danger'>Check billing address</span>");
 
-    var OriginNote = "<b>Origin notes:</b>";
-    var DestinationNote = "<b>Destination notes:</b>";
+    var OriginNote = "";
+    var DestinationNote = "";
     var OriginDestinationNote = "";
 
     if($("#OriginNote").val() != ""){
-        OriginNote+="<br> "+$("#OriginNote").val()+"<br>";
+        OriginNote ="<b>Origin notes:</b><br> "+$("#OriginNote").val()+"<br>";
     }
 
     if($("#DestinationNote").val() != ""){
-        DestinationNote+="</br> "+$("#DestinationNote").val();
+        DestinationNote ="<b>Destination notes:</b></br> "+$("#DestinationNote").val();
     }
 
     OriginDestinationNote = OriginNote + "<br>" + DestinationNote;
