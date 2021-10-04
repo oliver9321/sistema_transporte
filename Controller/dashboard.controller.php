@@ -6,24 +6,19 @@ require_once 'Model/driversModel.php';
 require_once 'Model/ordersModel.php'; 
 require_once 'Model/paymentsModel.php'; 
 require_once 'Model/customersModel.php'; 
-require_once 'Model/customerTypeModel.php';
-require_once 'Model/orderStatusModel.php';
-
 
 class dashboardController{
 
     private $model;
     private $driversModel;
     private $ordersModel;
-    private $paymentsModel;
     private $customersModel;
-    private $customerType;
-    private $orderStatus;
 
+ 
     public function __CONSTRUCT(){
 
         $this->model          = new dashboard();
-        $this->paymentsModel  = new Payments();
+      //  $this->paymentsModel  = new Payments();
        
     }
 
@@ -48,6 +43,12 @@ class dashboardController{
                 $rsSumEarnings  = $this->ordersModel->getSumEarnings();
                 $SumEarnings    = $rsSumEarnings['Earnings'];
 
+                $rsSumTotal = $this->ordersModel->getSumTotal();
+                $SumTotal   = $rsSumTotal['Total'];
+
+                $rsSumTrukerOwesUs = $this->ordersModel->getSumTrukerOwesUs();
+                $SumTrukerOwesUs    = $rsSumTrukerOwesUs['TrukerOwesUs'];
+
                 GetRouteView(null, "header");
                 require_once 'View/dashboard/index.php';
                 require_once 'View/footer.php';
@@ -61,32 +62,6 @@ class dashboardController{
          }
 
          
-    }
-
-    public function Order(){
-
-        if(count($_SESSION) > 0){
-
-         if(isset($_SESSION['UserOnline']) && $_SESSION['UserOnline']->Profile == "admin" || $_SESSION['UserOnline']->Profile == "manager"){
-                
-            $this->customerType   = new CustomerType();
-                 $this->orderStatus    = new OrderStatus();
-
-                 $CustomerTypeList =  $this->customerType->GetListCustomerTypes();
-                 $OrderStatusList  =  $this->orderStatus->GetListOrderStatus();
-
-                GetRouteView(null, "header");
-                require_once 'View/dashboard/order.php';
-                GetRouteView(null, "footer");
-
-        }else{
-            header('Location:index.php?c=login&a=index');
-            }
-            
-        }else{
-             header('Location:index.php?c=login&a=index');   
-        }
-
     }
 
     public function GetListTurnosBySucursal(){

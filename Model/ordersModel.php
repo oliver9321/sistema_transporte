@@ -50,8 +50,7 @@ class Orders {
     {
         try
         {
-
-                $stm = $this->pdo->prepare("SELECT * FROM tbl_orders");
+                $stm = $this->pdo->prepare("SELECT Id, Status, CustomerOrigin, CustomerOriginPhone1, CustomerOriginEmail, CustomerDestination, CustomerDestinationPhone1, CustomerDestinationEmail, OrderDate, PickUpDate, DeliveryDate, OriginCity, DestinationCity, Total, Deposit, ExtraTrukerFee, TrukerOwesUs, Earnings, Cod, TrukerRate FROM vw_orders where IsActive = 1");
                 $stm->execute();
 
                 $row = $stm->fetchAll();
@@ -69,15 +68,89 @@ class Orders {
         }
     }
 
+    public function OrderPending()
+    {
+        try
+        {
+                $stm = $this->pdo->prepare("SELECT Id, CustomerOrigin, CustomerDestination, PickUpDate, DeliveryDate, OriginCity, DestinationCity FROM vw_orders where IsActive = 1 AND Status ='Pending'");
+                $stm->execute();
+
+                $row = $stm->fetchAll();
+
+                $response = array();
+                $response['success'] = true;
+                $response['aaData'] = $row;
+                
+                return $response;
+
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
+    public function OrderPickedUp()
+    {
+        try
+        {
+                $stm = $this->pdo->prepare("SELECT Id, CustomerOrigin, CustomerDestination, PickUpDate, DeliveryDate, OriginCity, DestinationCity FROM vw_orders where IsActive = 1 AND Status ='Picked Up'");
+                $stm->execute();
+
+                $row = $stm->fetchAll();
+
+                $response = array();
+                $response['success'] = true;
+                $response['aaData'] = $row;
+                
+                return $response;
+
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
+
     public function Edit($id)
     {
         try
         {
+            $OrderData = array();
             $stm = $this->pdo->prepare("SELECT *  FROM tbl_orders WHERE Id = ?");
             $stm->execute(array($id));
+            $Order = $stm->fetch(PDO::FETCH_OBJ);
 
-            return $stm->fetch(PDO::FETCH_OBJ);
+            if($Order){
 
+                $stm2 = $this->pdo->prepare("SELECT *  FROM tbl_order_details WHERE IdOrder = ?");
+                $stm2->execute(array($id));
+    
+                $IdPayment = $Order->IdPayment;
+                $stm3 = $this->pdo->prepare("SELECT *  FROM tbl_payments WHERE Id = ?");
+                $stm3->execute(array($IdPayment));
+
+                $IdCustomerOrigin = $Order->IdCustomerOrigin;
+                $stm4 = $this->pdo->prepare("SELECT *  FROM tbl_payments WHERE Id = ?");
+                $stm4->execute(array($IdCustomerOrigin));
+
+                $IdCustomerDestination = $Order->IdCustomerDestination;
+                $stm5 = $this->pdo->prepare("SELECT *  FROM tbl_payments WHERE Id = ?");
+                $stm5->execute(array($IdCustomerDestination));
+               
+                $OrderData['order']               = $Order;
+                $OrderData['order_details']       = $stm2->fetchAll(PDO::FETCH_ASSOC);
+                $OrderData['payments']            = $stm3->fetch(PDO::FETCH_OBJ);
+                $OrderData['CustomerOrigin']      = $stm4->fetch(PDO::FETCH_OBJ);
+                $OrderData['CustomerDestination'] = $stm5->fetch(PDO::FETCH_OBJ);
+
+                return $OrderData;
+
+            }else{
+                return $OrderData;
+            }
+          
         } catch (Exception $e)
         {
             die($e->getMessage());
@@ -251,6 +324,34 @@ $result = $this->pdo->prepare($sql)->execute(
         return $stm2->fetch();
     }
 
+    public function getCountOrdersPending(){
+
+        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountOrders FROM vw_orders WHERE IsActive = 1 and Status = 'Pending'");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+    public function getCountOrdersCancelled(){
+
+        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountOrders FROM vw_orders WHERE IsActive = 1 and Status = 'Canceled'");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+    public function getCountOrdersDelivered(){
+
+        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountOrders FROM vw_orders WHERE IsActive = 1 and Status = 'Delivered'");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+    public function getCountOrdersPickedUp(){
+
+        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountOrders FROM vw_orders WHERE IsActive = 1 and Status = 'Picked up'");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
     
     public function getSumEarnings(){
 
@@ -258,6 +359,21 @@ $result = $this->pdo->prepare($sql)->execute(
         $stm2->execute();
         return $stm2->fetch();
     }
+
+    public function getSumTotal(){
+
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Total),0) as Total FROM tbl_orders WHERE IsActive = 1");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+    public function getSumTrukerOwesUs(){
+
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(TrukerOwesUs),0) as TrukerOwesUs FROM tbl_orders WHERE IsActive = 1");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
 
 
 }

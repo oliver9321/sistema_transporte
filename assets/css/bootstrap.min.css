@@ -668,7 +668,7 @@ progress {
     .container-md,
     .container-lg,
     .container-xl {
-        max-width: 1140px
+        max-width: 1326px
     }
 }
 
@@ -8662,6 +8662,7 @@ fieldset:disabled .btn {
 }
 
 .bg-dark {
+    border-radius: .25rem !important;
     background-color: #1d2c48 !important
 }
 

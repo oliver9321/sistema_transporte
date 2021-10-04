@@ -22,17 +22,23 @@
     <link href="plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="plugins/jquery-steps/jquery.steps.css">
-    <script src="plugins/sweet-alert2/sweetalert2.min.js"></script>
-    
-    <!--
-    <link href="plugins/sweet-alert2/bootstrap-4.css" rel="stylesheet">
-    -->
 
-          <!-- DataTables -->
-        <link href="plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <!-- Responsive datatable examples -->
-        <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="plugins/sweet-alert2/sweetalert2.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/r-2.2.9/sc-2.0.5/datatables.min.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/r-2.2.9/sc-2.0.5/datatables.min.js"></script>
+
+    
+
+   <!-- <link rel="stylesheet" href="plugins/RWD-Table-Patterns/dist/css/rwd-table.min.css">
+    <link href="plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/sweet-alert2/bootstrap-4.css" rel="stylesheet">
+    <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
+    <link href="plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css"/>-->
 
     <style>
      .select2-container--open {
@@ -76,7 +82,30 @@
                     <a href="?c=Dashboard&a=Index"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span></a>
                 </li>
 
-               <li>
+                
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="user-check" class="align-self-center menu-icon"></i><span>Customers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=Customers&a=Index"><i class="ti-control-record"></i>List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=Customers&a=Edit"><i class="ti-control-record"></i>Create</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="index.php?c=Orders&a=Index"><i data-feather="clipboard" class="align-self-center menu-icon"></i><span>Orders</span></a>
+                </li>
+           
+
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="briefcase" class="align-self-center menu-icon"></i><span>Company services</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=companyServices&a=Index"><i class="ti-control-record"></i>List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=companyServices&a=Edit"><i class="ti-control-record"></i>Create</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
                     <a href="javascript: void(0);"><i  class="fa fa-address-card align-self-center menu-icon"></i><span>Drivers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=Drivers&a=Index"><i class="ti-control-record"></i>List</a></li>
@@ -89,22 +118,6 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=Vehicles&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=Vehicles&a=Edit"><i class="ti-control-record"></i>Create</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="briefcase" class="align-self-center menu-icon"></i><span>Company services</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="index.php?c=companyServices&a=Index"><i class="ti-control-record"></i>List</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?c=companyServices&a=Edit"><i class="ti-control-record"></i>Create</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="user-check" class="align-self-center menu-icon"></i><span>Customers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="index.php?c=Customers&a=Index"><i class="ti-control-record"></i>List</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?c=Customers&a=Edit"><i class="ti-control-record"></i>Create</a></li>
                     </ul>
                 </li>
 
@@ -232,7 +245,7 @@
                     </li>
                     <li class="creat-btn">
                         <div class="nav-link">
-                            <a class="btn btn-sm btn-soft-primary" href="index.php?c=Dashboard&a=order"><i class="fas fa-plus me-2"></i>New Orden</a>
+                            <a class="btn btn-sm btn-soft-primary" href="index.php?c=Orders&a=order"><i class="fas fa-plus me-2"></i>New Order</a>
                             <!--<button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewOrder"></button>-->
                         </div>
                     </li>
@@ -246,5 +259,5 @@
 
         <!-- Page Content-->
         <div class="page-content">
-            <div class="container-fluid">
+            <div class="container">
         

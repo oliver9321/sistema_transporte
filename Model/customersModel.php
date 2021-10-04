@@ -31,7 +31,7 @@ class Customers {
         try
         {
 
-                $stm = $this->pdo->prepare("SELECT * FROM tbl_customers");
+                $stm = $this->pdo->prepare("SELECT * FROM vw_customers");
                 $stm->execute();
 
                 $row = $stm->fetchAll();
@@ -147,8 +147,9 @@ $result=   $this->pdo->prepare($sql)
 
             $stm = $this->pdo->prepare("SELECT Id, CONCAT(Name,' ',LastName, ' - ', Phone1) AS Customer FROM vw_customers WHERE IsActive = 1 AND NameType='Origin'");
             $stm->execute();
-
-            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+          
+            return $result;
             
         }
         catch(Exception $e)
@@ -165,8 +166,9 @@ $result=   $this->pdo->prepare($sql)
 
             $stm = $this->pdo->prepare("SELECT Id, CONCAT(Name,' ',LastName, ' - ', Phone1) AS Customer FROM vw_customers WHERE IsActive = 1 AND NameType = 'Destination'");
             $stm->execute();
-
-            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+         
+            return $result;
             
         }
         catch(Exception $e)

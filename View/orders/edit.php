@@ -1,4 +1,9 @@
-
+<br>
+<style>
+    .modal-body {
+    padding: 0.2rem !important;
+}
+</style>
 <div class="modal fade" id="ModalNewCustomer" role="dialog" aria-labelledby="ModalNewCustomerLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -292,6 +297,7 @@
         <!--end card-header-->
         <div class="card-body">
             <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
+                <input type="text" name="Id" id="Id" value="<?=$Order->Id?>" hidden>
                 <h3>Basic info</h3>
                 <fieldset>
                     <div class="row">
@@ -515,7 +521,7 @@
                                         <div class="col-md-6" >
                                             <label class="mb-1"><b>Order date (Today)</b></label>
                                             <input id="PickUpOrderDateDate" name="OrderDate" type="date"
-                                                class="form-control" value="<?php echo date('Y-m-d'); ?>" readonly>
+                                                class="form-control" value="" readonly>
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-6" >
@@ -1062,7 +1068,8 @@ $(document).ready(function() {
     });
 
     $("body").addClass("enlarge-menu");
-    AddVehicleList();
+   // AddVehicleList();
+    
     
     $(".steps").addClass("d-print-none");
     $(".actions").addClass("d-print-none");
@@ -1202,7 +1209,6 @@ function loadInfoPDF1(){
     $("#DestinationPhone1Form").html($("#DestinationPhone1").val() != "" ? $("#DestinationPhone1").val() :  "<span class='text-danger'>Check destination phone1</span>");
     $("#DestinationPhone2Form").html($("#DestinationPhone2").val() != "" ? "/ "+$("#DestinationPhone2").val() :  "");
 
-
     //Vehicles Step info
 
     var Vin, Brand, Model, ConditionVehicle, CarrierType, Color, Year, Vin = "";
@@ -1289,8 +1295,7 @@ function saveOrder(){
                 if(data){
 
                     var response = JSON.parse(data);
-                 
-                    console.log(response);
+
                     if(response.Error == false){
 
                         $("#OrderIDForm").html(response.OrderId);
@@ -1317,4 +1322,144 @@ function saveOrder(){
 
 }
 
+function LoadEditFields(){
+
+    //Colocarel ID de la orden para hacer el update
+
+    var IdCustomerOrigin = "<?= $Order->IdCustomerOrigin; ?>";
+    $("#IdCustomerOrigin").select2("val", IdCustomerOrigin);
+
+    var OriginAddress = "<?= $Order->OriginAddress; ?>";
+    $("#OriginAddress").val(OriginAddress);
+
+    var OriginCity = "<?= $Order->OriginCity; ?>";
+    $("#OriginCity").val(OriginCity);
+
+    var OriginState = "<?= $Order->OriginState; ?>";
+    $("#OriginState").val(OriginState);
+
+    var OriginZip = "<?= $Order->OriginZip; ?>";
+    $("#OriginZip").val(OriginZip);
+
+    var OriginNote = "<?= $Order->OriginNote; ?>";
+    $("#OriginNote").val(OriginNote);
+
+    //Destination
+
+    var IdCustomerDestination = "<?= $Order->IdCustomerDestination; ?>";
+    $("#IdCustomerDestination").select2("val", IdCustomerDestination);
+
+    var DestinationAddress = "<?= $Order->DestinationAddress; ?>";
+    $("#DestinationAddress").val(DestinationAddress);
+
+    var DestinationCity = "<?= $Order->DestinationCity; ?>";
+    $("#DestinationCity").val(DestinationCity);
+
+    var DestinationState = "<?= $Order->DestinationState; ?>";
+    $("#DestinationState").val(DestinationState);
+
+    var DestinationZip = "<?= $Order->DestinationZip; ?>";
+    $("#DestinationZip").val(DestinationZip);
+
+    var DestinationNote = "<?= $Order->DestinationNote; ?>";
+    $("#DestinationNote").val(DestinationNote);
+
+    //Vehicles Step
+
+    var PickUpDate = "<?= $Order->PickUpDate; ?>";
+    $("#PickUpDate").val(PickUpDate);
+
+    var DeliveryDate = "<?= $Order->DeliveryDate; ?>";
+    $("#DeliveryDate").val(DeliveryDate);
+
+    var OrderDate = "<?= $Order->OrderDate; ?>";
+    $("#PickUpOrderDateDate").val(OrderDate);
+
+    var OrderStatusID = "<?= $Order->OrderStatusID; ?>";
+    $("#OrderStatusID").val(OrderStatusID);
+
+    <?php
+        $js_array = json_encode($OrderDetail);
+        echo "var vehicleJSON = JSON.parse(".$js_array.");";
+     ?>
+
+    if(vehicleJSON.length >0){
+
+        vehicleJSON.forEach(element => {
+            EditVehicleList(element.Brand, element.Model, element.Year, element.Color, element.ConditionVehicle, element.CarrierType, element.Vin);
+        });
+    }
+
+    //$Payment Step
+
+    var CardHolderName = "<?= $Payment->CardHolderName; ?>";
+    $("#CardHolderName").val(CardHolderName);
+
+    var CreditCard = "<?= $Payment->CreditCard; ?>";
+    $("#CreditCard").val(CreditCard);
+
+    var PaymentOwnerName = "<?= $Payment->PaymentOwnerName; ?>";
+    $("#PaymentOwnerName").val(PaymentOwnerName);
+
+    var ExpDate = "<?= $Payment->ExpDate; ?>";
+    $("#ExpDate").val(ExpDate);
+
+    var Cvv = "<?= $Payment->Cvv; ?>";
+    $("#Cvv").val(Cvv);
+   
+    var BillingAddress = "<?= $Payment->BillingAddress; ?>";
+    $("#BillingAddress").val(BillingAddress);
+
+    var Tel1 = "<?= $Payment->Tel1; ?>";
+    $("#Tel1").val(Tel1);
+
+    var Tel2 = "<?= $Payment->Tel2; ?>";
+    $("#Tel2").val(Tel2);
+
+    var PaymentEmail = "<?= $Payment->PaymentEmail; ?>";
+    $("#PaymentEmail").val(PaymentEmail);
+
+    var PaymentNote = "<?= $Payment->PaymentNote; ?>";
+    $("#PaymentNote").val(PaymentNote);
+
+    var Reference = "<?= $Payment->Reference; ?>";
+    $("#Reference").val(Reference);
+
+    var Total = "<?= $Order->Total; ?>";
+    $("#Total").val(Total);
+
+    var Deposit = "<?= $Order->Deposit; ?>";
+    $("#Deposit").val(Deposit);
+
+}
+
+function EditVehicleList(Brand, Model, Year, Color, ConditionVehicle, CarrierType, Vin) {
+//#contentVehicle"
+$("#templateVehiculo").find(".select2").each(function(index) {
+    if ($(this).data('select2')) {
+        $(this).select2('destroy');
+    }
+});
+
+
+var clonado =  $('#templateVehiculo').clone().val('');
+clonado.removeAttr('hidden');
+clonado.appendTo("#contentVehicle");
+$(clonado).find(".BrandVehicle").val(Brand);
+$(clonado).find(".ModelVehicle").val(Model);
+$(clonado).find(".YearVehicle").val(Year);
+$(clonado).find(".CarrierTypeVehicle ").val(CarrierType);
+$(clonado).find(".ConditionVehicle ").val(ConditionVehicle);
+$(clonado).find(".ColorVehicle").val(Color);
+$(clonado).find(".VinVehicle").val(Vin);
+$(clonado).find(".select2").select2();
+
+}
+
+
+$(document).ready(function($){
+
+setTimeout(() => {LoadEditFields();}, 2000);
+
+});
 </script>

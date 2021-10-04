@@ -56,6 +56,7 @@
       
 <script>
 $(document).ready(function() {
+    
     $.noConflict();
    
   var datatable = $('#CustomersList').DataTable({
@@ -74,11 +75,11 @@ $(document).ready(function() {
       "bDestroy": true,
         "responsive": true,
             "ajax": {
-                "url": "index.php?c=Customers&a=View",
+                "url": "index.php?c=Customers&a=List",
             },
         columns:[
             {data: "Id"},
-            {data: "IdCustomerType"},
+            {data: "NameType"},
             {data: "Name"},
             {data: "LastName"},
             {data: "Phone1"},

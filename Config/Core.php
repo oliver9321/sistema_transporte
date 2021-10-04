@@ -3,7 +3,7 @@
 //CONFIGURACIONES DE LA APLICACION
 
 define ("NOMBRE_APLICATION", "Ez autotransportation");
-define ("SYSTEM_NAME", "Logistic Transport");
+define ("SYSTEM_NAME", "Ez Auto Transportation");
 define ("VERSION", "v1.5");
 define ("DEBUG", true);
 define ("MODE", "develop mode");
