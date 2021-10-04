@@ -104,7 +104,7 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Traffic Orders - Example grafic</h4>                      
+                                            <h4 class="card-title">Orders pending</h4>                      
                                         </div><!--end col-->
                                         <div class="col-auto"> 
                                             <div class="dropdown">
@@ -122,9 +122,28 @@
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
                                 <div class="card-body">
-                                    <div class="">
-                                        <div id="ana_dash_1" class="apex-charts"></div>
-                                    </div> 
+                                  
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="table-responsive browser_users">
+                                                    <table id="OrdersPending" class="table-light nowrap" style="width:100%" >
+                                                        <thead>
+                                                        <tr>
+                                                                <th></th>
+                                                                <th class="text-center">Order ID</th>
+                                                                <th>Customer Origin</th>
+                                                                <th>PickUp Date</th>
+                                                                <th>Delivery Date</th>
+                                                                <th>Origin City</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>                                            
+                                                </div><!--end /div-->
+                                            </div><!--end card-body--> 
+                                        </div><!--end card--> 
+                                    </div> <!--end col--> 
+                                  
                                 </div><!--end card-body--> 
                             </div><!--end card--> 
                         </div><!--end col-->
@@ -191,43 +210,17 @@
 
                 
                     <div class="row">                        
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header bg-light">
-                                    <div class="row align-items-center">
-                                        <div class="col">                      
-                                            <h4 class="card-title">Order pending</h4>                      
-                                        </div><!--end col-->                                        
-                                    </div>  <!--end row-->                                  
-                                </div><!--end card-header-->
-                                <div class="card-body">
-                                    <div class="table-responsive browser_users">
-                                          <table id="OrdersPending" class="table-light nowrap" style="width:100%" >
-                                            <thead>
-                                            <tr>
-                                                     <th></th>
-                                                    <th class="text-center">Order ID</th>
-                                                    <th>Customer Origin</th>
-                                                    <th>PickUp Date</th>
-                                                    <th>Delivery Date</th>
-                                                    <th>Origin City</th>
-                                                </tr>
-                                            </thead>
-                                        </table>                                            
-                                    </div><!--end /div-->
-                                </div><!--end card-body--> 
-                            </div><!--end card--> 
-                        </div> <!--end col-->   
+                       
                         
-                        <div class="col-lg-6">
+                       <!-- <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header bg-light">
                                     <div class="row align-items-center">
                                         <div class="col">                      
                                             <h4 class="card-title">orders picked up</h4>                      
-                                        </div><!--end col-->                                        
-                                    </div>  <!--end row-->                                  
-                                </div><!--end card-header-->
+                                        </div>                                       
+                                    </div>                               
+                                </div>
                                 <div class="card-body">
                                     <div class="table-responsive browser_users">
                                         <table class="table mb-0">
@@ -243,10 +236,10 @@
                                                 </tr>
                                             </thead>
                                         </table>                                       
-                                    </div><!--end /div--> 
-                                </div><!--end card-body--> 
-                            </div><!--end card--> 
-                        </div> <!--end col-->
+                                    </div>
+                                </div>
+                            </div> 
+                        </div> end col-->
                     </div><!--end row-->
                     
 <script>
@@ -273,7 +266,7 @@
             "targets":0,
             "data": "Editar",
             "render": function ( data) {
-                return '<center><a class="btn btn-primary" href="index.php?c=Orders&a=View&Id='+data+'"><i class="ti-file"></i></a></center>';
+                return '<center><a class="btn btn-primary" href="index.php?c=Orders&a=Edit&Id='+data+'"><i class="ti-file"></i></a></center>';
             }},
             {
             "targets":1,
@@ -284,7 +277,7 @@
         }]
     });
 
-    $('#OrdersPickeUp').DataTable({
+   /* $('#OrdersPickeUp').DataTable({
       'responsive': true,
         dom: 'Bfrtip',
       "bDestroy": true,
@@ -311,7 +304,7 @@
                 return '<center>'+data+'</center>';
             }
         }]
-    });
+    });*/
 
 });
 </script>
