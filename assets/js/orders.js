@@ -245,6 +245,11 @@ $(document).ready(function() {
     let address1Field2;
     let postalField2;
 
+    //Google Maps API Billing Address
+    let autocomplete3;
+    let address1Field3;
+    let postalField3;
+
     function initAutocomplete() {
 
         address1Field = document.querySelector("#OriginAddress");
@@ -252,6 +257,9 @@ $(document).ready(function() {
 
         address1Field2 = document.querySelector("#DestinationAddress");
         postalField2 = document.querySelector("#DestinationZip");
+
+        address1Field3 = document.querySelector("#BillingAddress");
+        postalField3 = document.querySelector("#BillingZipCode");
 
         autocomplete = new google.maps.places.Autocomplete(address1Field, {
             componentRestrictions: { country: ["us", "ca"] },
@@ -265,8 +273,15 @@ $(document).ready(function() {
             types: ["address"],
         });
 
+        autocomplete3 = new google.maps.places.Autocomplete(address1Field3, {
+            componentRestrictions: { country: ["us", "ca"] },
+            fields: ["address_components", "geometry"],
+            types: ["address"],
+        });
+
         autocomplete.addListener("place_changed", fillInAddress);
         autocomplete2.addListener("place_changed", fillInAddress2);
+        autocomplete3.addListener("place_changed", fillInAddress3);
     }
 
     function fillInAddress() {
@@ -426,13 +441,91 @@ $(document).ready(function() {
     }
 
 
-    function init() {
-        var input = document.getElementById('BillingAddress');
-        var autocomplete3 = new google.maps.places.Autocomplete(input);
+    function fillInAddress3() {
+        // Get the place details from the autocomplete object.
+        const place3 = autocomplete3.getPlace();
+        let address13 = "";
+        let postcode3 = "";
+        $("#BillingState, #BillingCity, #BillingnZipCode").css("border-color", "#e3ebf6;");
+
+        for (const component3 of place3.address_components) {
+
+            const componentType3 = component3.types[0];
+
+            switch (componentType3) {
+                case "street_number":
+                    {
+                        address13 = `${component3.long_name} ${address13}`;
+                        break;
+                    }
+
+                case "route":
+                    {
+                        address13 += component3.short_name;
+                        break;
+                    }
+
+                case "postal_code":
+                    {
+                        postcode3 = `${component3.long_name}${postcode3}`;
+                        break;
+                    }
+
+                case "postal_code_suffix":
+                    {
+                        postcode3 = `${postcode}-${component3.long_name}`;
+                        break;
+                    }
+                case "locality":
+
+                    if (component3.long_name != '') {
+                        document.querySelector("#BillingCity").value = component3.long_name;
+                        $("#BillingCity").css("border-color", "green");
+                    } else {
+                        $("#BillingCity").css("border-color", "orange");
+                        document.querySelector("#BillingCity").value = "";
+                    }
+
+                    break;
+                case "administrative_area_level_1":
+                    {
+
+                        if (component3.short_name != '') {
+                            document.querySelector("#BillingState").value = component3.short_name;
+                            $("#BillingState").css("border-color", "green");
+                        } else {
+                            $("#BillingState").css("border-color", "orange");
+                            document.querySelector("#BillingState").value = "";
+                        }
+
+                        break;
+
+                    }
+                    /*	case "country":
+                    		document.querySelector("#country").value = component.long_name;
+                    		break;
+                    	}*/
+            }
+
+            if (postcode3 != '') {
+                postalField3.value = postcode3;
+                $("#BillingZipCode").css("border-color", "green");
+            } else {
+                $("#BillingZipCode").css("border-color", "orange");
+                postalField3.value = "";
+            }
+
+        }
     }
 
 
-    init();
+    /* function init() {
+         var input = document.getElementById('BillingAddress');
+         var autocomplete3 = new google.maps.places.Autocomplete(input);
+     }
+*/
+
+    //  init();
     initAutocomplete();
 
 

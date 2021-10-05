@@ -75,7 +75,7 @@ $(document).ready(function() {
       "bDestroy": true,
         "responsive": true,
             "ajax": {
-                "url": "index.php?c=Customers&a=List",
+                "url": "index.php?c=Customers&a=View",
             },
         columns:[
             {data: "Id"},

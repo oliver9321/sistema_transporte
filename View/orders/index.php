@@ -102,7 +102,6 @@ $(document).ready(function() {
    
   var datatable = $('#CustomersList').DataTable({
             'responsive': true,
-            "processing": true,
             dom: 'Bfrtip',
             buttons: [{
             extend: 'copy',

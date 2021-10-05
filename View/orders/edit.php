@@ -305,7 +305,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-12" >
-                                    <label class="mb-1">Origin customer name</label>
+                                <label class="mb-1">Origin customer name<b class="text-danger">*</b></label>
                                     <div class="input-group">
                                         <select style="width: 90%;" id="IdCustomerOrigin" name="IdCustomerOrigin" class="select2 form-control mb-3 custom-select originInput"> </select>
                                         <button class="btn btn-dark" type="button" id="SearchCustomerName"><i class="ti ti-reload"></i></button>
@@ -322,7 +322,7 @@
                             <div class="row">
 
                                 <div class="col-md-12" >
-                                    <label class="mb-1">Destination customer name</label>
+                                <label class="mb-1">Destination customer name<b class="text-danger">*</b></label>
                                     <div class="input-group">
                                         <select style="width: 90%;" id="IdCustomerDestination" name="IdCustomerDestination" class="select2 form-control mb-3 custom-select DestinationInput"> </select>
                                         <button class="btn btn-dark" type="button" id="SearchDestinationCustomer"><i  class="ti ti-reload"></i></button>
@@ -338,7 +338,7 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-md-12" >
-                                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin address</label>
+                                    <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin address<b class="text-danger">*</b></label>
                                         <input style="display:none;" />
                                         <input id="OriginAddress" name="OriginAddress" type="text" class="form-control originInput" placeholder="Ex. 12141 Pembroke Rd,..."  >
                                     </div>
@@ -349,20 +349,23 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Origin city</label>
-                                                <input id="OriginCity" name="OriginCity" type="text"
+                                            <label class="mb-1">Origin city<b class="text-danger">*</b></label>
+                                                <input style="display:none;" />
+                                                <input autocomplete="off" id="OriginCity" name="OriginCity" type="text"
                                                     class="form-control originInput" placeholder="City">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Origin state</label>
-                                                <input id="OriginState" name="OriginState" type="text"
+                                            <label class="mb-1">Origin state<b class="text-danger">*</b></label>
+                                                <input style="display:none;" />
+                                                <input autocomplete="off" id="OriginState" name="OriginState" type="text"
                                                     class="form-control originInput" placeholder="State">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
                                                 <label class="mb-1">Origin zip code</label>
-                                                <input id="OriginZip" name="OriginZip" type="text"
+                                                <input style="display:none;" />
+                                                <input autocomplete="off" id="OriginZip" name="OriginZip" type="text"
                                                     class="form-control originInput" placeholder="00000">
                                             </div>
                                             <!-- end row -->
@@ -373,9 +376,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
-                                            <div class="col-md-4" >
+                                        <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-mobile"></i> Origin phone
-                                                    #1</label>
+                                                    #1<b class="text-danger">*</b></label>
                                                 <input id="OriginPhone1" name="OriginPhone1" type="tel"
                                                     class="form-control originInput phone" placeholder="(555) 555-5555">
                                             </div>
@@ -383,13 +386,15 @@
                                             <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-phone-alt"></i> Origin phone
                                                     #2</label>
-                                                <input id="OriginPhone2" name="OriginPhone2" type="tel"
+                                                    <input style="display:none;" />
+                                                <input autocomplete="off" id="OriginPhone2" name="OriginPhone2" type="tel"
                                                     class="form-control originInput phone" placeholder="(555) 555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-envelope"></i> Origin email</label>
-                                                <input id="OriginEmail" name="OriginEmail" type="email"
+                                                <input style="display:none;" />
+                                                <input autocomplete="off" id="OriginEmail" name="OriginEmail" type="email"
                                                     class="form-control originInput" placeholder="cus@domain.com">
                                             </div>
                                             <!-- end row -->
@@ -411,7 +416,7 @@
                                 <div class="row">
                                     <div class="col-md-12" >
                                         <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination
-                                            address</label>
+                                        address<b class="text-danger">*</b></label>
                                             <input style="display:none;" />
                                         <input id="DestinationAddress" name="DestinationAddress" type="text" class="form-control DestinationInput" placeholder="Ex. 1600 Pennsylvania...">
                                     </div>
@@ -422,13 +427,13 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Destination city</label>
+                                            <label class="mb-1">Destination city<b class="text-danger">*</b></label>
                                                 <input id="DestinationCity" name="DestinationCity" type="text"
                                                     class="form-control DestinationInput" placeholder="City">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Destination state</label>
+                                            <label class="mb-1">Destination state<b class="text-danger">*</b></label>
                                                 <input id="DestinationState" name="DestinationState" type="text"
                                                     class="form-control DestinationInput" placeholder="State">
                                             </div>
@@ -448,7 +453,7 @@
                                         <div class="row">
                                             <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-mobile"></i> Destination phone
-                                                    #1</label>
+                                                #1<b class="text-danger">*</b></label>
                                                 <input id="DestinationPhone1" name="DestinationPhone1" type="tel"
                                                     class="form-control DestinationInput phone"
                                                     placeholder="(555) 555-5555">
@@ -498,12 +503,12 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-6" >
-                                            <label class="mb-1"><b>Pick up date</b></label>
+                                        <label class="mb-1"><b>Pick up date</b><b class="text-danger">*</b></label>
                                             <input id="PickUpDate" name="PickUpDate" type="date" class="form-control">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-6" >
-                                            <label class="mb-1"><b>Delivery date</b></label>
+                                        <label class="mb-1"><b>Delivery date</b><b class="text-danger">*</b></label>
                                             <input id="DeliveryDate" name="DeliveryDate" type="date"
                                                 class="form-control">
                                         </div>
@@ -525,7 +530,7 @@
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-6" >
-                                            <label class="mb-1"><b>Order status</b></label>
+                                        <label class="mb-1"><b>Order status</b><b class="text-danger">*</b></label>
                                             <select style="width: 100%;" id="OrderStatusID" name="OrderStatusID"
                                                 class="form-control">
                                                 <?php foreach($OrderStatusList  as $key => $value): ?>
@@ -559,7 +564,7 @@
                                                     <div class="row registroVehiculo" id="templateVehiculo" style="padding-bottom:20px !important" hidden>
 
                                                         <div class="col-sm-2" >
-                                                            <label class="mb-1"><b>Brand</b></label>
+                                                        <label class="mb-1"><b>Brand</b><b class="text-danger">*</b></label>
                                                             <select style="width: 90%;" name="Brand"
                                                                 class="select2 form-control mb-3 custom-select BrandVehicle vehicleList">
                                                                 <option value="" selected>Select brand</option>
@@ -567,7 +572,7 @@
                                                         </div>
 
                                                         <div class="col-sm-3" >
-                                                            <label class="mb-1"><b>Model</b></label>
+                                                        <label class="mb-1"><b>Model</b><b class="text-danger">*</b></label>
                                                             <select style="width: 90%;" name="Model"
                                                                 class="select2 form-control mb-3 custom-select ModelVehicle vehicleList">
                                                                 <option value="" selected>Select model</option>
@@ -576,13 +581,13 @@
 
                                                             <!--end col-->
                                                          <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Year</b></label>
+                                                         <label class="mb-1"><b>Year</b><b class="text-danger">*</b></label>
                                                             <input type="number"  min="1900" name="Year"  class="form-control YearVehicle vehicleList" placeholder="">
                                                         </div>
 
                                                               <!-- end row -->
                                                          <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Color</b></label>
+                                                         <label class="mb-1"><b>Color</b><b class="text-danger">*</b></label>
                                                             <select style="width: 100%;" name="Color" class="form-control ColorVehicle vehicleList">
                                                             <option value="" selected></option>
                                                                 <option value="White"> White</option>
@@ -600,7 +605,7 @@
                                                         </div>
 
                                                         <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Carrier</b></label>
+                                                        <label class="mb-1"><b>Carrier</b><b class="text-danger">*</b></label>
                                                             <select style="width: 100%;" name="CarrierType" class="form-control CarrierTypeVehicle vehicleList">
                                                                 <option value="" selected></option>
                                                                 <option value="Open">Open</option>
@@ -611,7 +616,7 @@
                                                 
 
                                                         <div class="col-sm-1" >
-                                                            <label class="mb-1"><b>Condition</b></label>
+                                                        <label class="mb-1"><b>Condition</b><b class="text-danger">*</b></label>
                                                             <select style="width: 100%;" name="ConditionVehicle" class="form-control ConditionVehicle vehicleList">
                                                                 <option value="" selected></option>
                                                                 <option value="Running">Running</option>
@@ -664,18 +669,15 @@
                             <div class="row">	
 
                                 <div class="col-md-6" >
-                                    <label class="mb-1"> Card holder name</label>
+                                <label class="mb-1"> Card holder name<b class="text-danger">*</b></label>
                                     <input type="text" class="form-control" name="CardHolderName" id="CardHolderName" style="text-transform:uppercase">
                                 </div>
 
                                 <div class="col-md-6" >
-                                    <label class="mb-1"> Payment Owner Name</label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" name="PaymentOwnerName" id="PaymentOwnerName">
-                                    </div>
+                                            <label class="mb-1">Reference</label>
+                                            <input id="Reference" name="Reference" type="text" class="form-control" placeholder="0000000">
                                 </div>
 
-                           
                                 <!-- end row -->
                             </div>
                             <br>
@@ -686,12 +688,12 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-6" >
-                                    <label class="mb-1"><b>Total</b></label>
+                                <label class="mb-1"><b>Total</b><b class="text-danger">*</b></label>
                                     <input type="number" class="form-control" name="Total" id="Total"
                                         placeholder="$0000">
                                 </div>
                                 <div class="col-md-6" >
-                                    <label class="mb-1"><b>Deposit</b></label>
+                                <label class="mb-1"><b>Deposit</b><b class="text-danger">*</b></label>
                                     <input id="Deposit" name="Deposit" type="number" class="form-control"
                                         placeholder="$0000">
                                 </div>
@@ -710,40 +712,20 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-5" >
-                                            <label class="mb-1"><i class="fa fa-credit-card"></i> Credit card number</label>
+                                        <label class="mb-1"><i class="fa fa-credit-card"></i> Credit card number<b class="text-danger">*</b></label>
                                             <input id="CreditCard" name="CreditCard" type="text" class="form-control"
                                                 placeholder="#### #### #### ####">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-3" >
-                                            <label class="mb-1">Expiration date</label>
+                                        <label class="mb-1">Expiration date<b class="text-danger">*</b></label>
                                             <input id="ExpDate" name="ExpDate" type="text" class="form-control"
                                                 placeholder="00/00">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" >
-                                            <label class="mb-1">CVV</label>
+                                        <label class="mb-1">CVV<b class="text-danger">*</b></label>
                                             <input id="Cvv" name="Cvv" type="text" class="form-control"
-                                                placeholder="000">
-                                        </div>
-                                        <!-- end row -->
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-8" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing address</label>
-
-                                            <input style="display:none;" />
-                                            <input id="BillingAddress" name="BillingAddress" type="text" class="form-control" placeholder="Ex. 12141 Pembroke Rd...." autocomplete="disabled">
-                                        </div>
-                                        <!-- end row -->
-                                        <div class="col-md-4" >
-                                            <label class="mb-1">Reference</label>
-                                            <input id="Reference" name="Reference" type="text" class="form-control"
                                                 placeholder="">
                                         </div>
                                         <!-- end row -->
@@ -754,8 +736,45 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
+                                        <div class="col-md-12" >
+                                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing address<b class="text-danger">*</b></label>
+                                            <input style="display:none;" />
+                                            <input id="BillingAddress" name="BillingAddress" type="text" class="form-control" placeholder="Ex. 12141 Pembroke Rd...." autocomplete="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4" >
+                                            <label class="mb-1">Billing city<b class="text-danger">*</b></label>
+                                                <input id="BillingCity" name="BillingCity" type="text"
+                                                    class="form-control BillingInput" placeholder="City">
+                                            </div>
+                                            <!-- end row -->
+                                            <div class="col-md-4" >
+                                            <label class="mb-1">Billing state<b class="text-danger">*</b></label>
+                                                <input id="BillingState" name="BillingState" type="text"
+                                                    class="form-control BillingInput" placeholder="State">
+                                            </div>
+                                            <!-- end row -->
+                                            <div class="col-md-4" >
+                                                <label class="mb-1">Billing zip code</label>
+                                                <input id="BillingZipCode" name="BillingZipCode" type="text"
+                                                    class="form-control BillingInput" placeholder="00000">
+                                            </div>
+                                            <!-- end row -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
                                         <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-mobile"></i> Phone number #1</label>
+                                        <label class="mb-1"><i class="fa fa-mobile"></i> Phone number #1<b class="text-danger">*</b></label>
                                             <input id="Tel1" name="Tel1" type="tel" class="form-control phone"
                                                 placeholder="(555) 555-5555">
                                         </div>
@@ -792,7 +811,7 @@
                     </div>
                 </fieldset>
 
-                <h3>Confirm order</h3>
+                <h3>Confirm order (PDF1)</h3>
                 <fieldset>
                     <div class="row">
                         <div class="col-lg-12 mx-auto" id="zonaPrint">
@@ -888,6 +907,13 @@
                                                         </tr>
                                                         <!--end tr-->
                                                         <!--end tr-->
+
+                                                        <tr class="bg-secondary text-white">
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <td class="border-0 font-14" style="text-align:right !important"><b>Deposit</b></td>
+                                                            <td class="border-0 font-14"><b id="DepositForm">$00.00</b></td>
+                                                        </tr>                                                  
                                                         <tr class="bg-black text-white">
                                                             <th colspan="2" class="border-0"></th>
                                                             <th colspan="2" class="border-0"></th>
@@ -927,6 +953,10 @@
                                                                     <p class="mb-0 text-muted" id="CreditCardNumberForm"></p>
                                                                 </td>
 
+                                                                <td  style="border-style: none;">
+                                                                    <h5 class="mt-0 mb-1 font-14"><b>City</b></h5>
+                                                                    <p class="mb-0 text-muted" id="BillingCityForm"></p>
+                                                                </td>
                                                                 <td style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Billing address</b></h5>
                                                                     <p class="mb-0 text-muted" id="BillingAddressForm"></p>
@@ -944,7 +974,15 @@
                                                                     <h5 class="mt-0 mb-1 font-14"><b>CVV</b></h5>
                                                                     <p class="mb-0 text-muted" id="CVVForm"></p>
                                                                 </td>
+                                                                <td  style="border-style: none;">
+                                                                    <h5 class="mt-0 mb-1 font-14"><b>State</b></h5>
+                                                                    <p class="mb-0 text-muted" id="BillingStateForm"></p>
+                                                                </td>
 
+                                                                <td  style="border-style: none;">
+                                                                    <h5 class="mt-0 mb-1 font-14"><b>Zip code</b></h5>
+                                                                    <p class="mb-0 text-muted" id="BillingZipCodeForm"></p>
+                                                                </td>
                                                             </tr>
 
                                                             <!--end tr-->
@@ -985,6 +1023,149 @@
                     </div>
                     <!--end row-->
                 </fieldset>
+
+                  <!--end fieldset-->
+                  <h3>Trucker and drivers</h3>
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="truck"></i> Trucker company</b></span><hr>
+                          
+                            <div class="row">
+                                <label class="mb-1">Company name</label>
+                                    <div class="input-group">
+                                        <select style="width: 92%;" id="IdCompanyService" name="IdCompanyService" class="select2 form-control mb-3 custom-select">
+                                        </select>
+                                        <button class="btn btn-dark" type="button" id="SearchCompanyName"><i class="ti ti-reload"></i></button>
+                                    </div>
+                            </div>
+
+                            <div class="row inputpadding">
+                                  <div class="col-md-12" >
+                                     <label class="mb-1">Company address</label>
+                                       <input id="CompanyAddress" name="CompanyAddress" type="text"  class="form-control" placeholder="Input the company's address">
+                                   </div>
+                            </div>
+
+                                <div class="row inputpadding">
+
+                                         <div class="col-md-4" >
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
+                                            <input id="CompanyPhone1" name="CompanyPhone1" type="tel"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+
+                                        
+                                         <div class="col-md-4" >
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
+                                            <input id="CompanyPhone2" name="CompanyPhone2" type="tel"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+                                       
+                                        <div class="col-md-4" >
+                                            <label class="mb-1"><i class="fa fa-envelope"></i> Email</label>
+                                            <input id="CompanyEmail" name="CompanyEmail" type="email"
+                                                class="form-control" placeholder="ez@domain.com">
+                                        </div>
+                                </div>
+                                <br>
+
+                                <div class="row inputpadding">
+                                        <span class="text-dark"><b><i class="fa fa-address-card fa-2x"></i> Drivers</b></span><hr>
+                                            <div class="row">
+                                                <label class="mb-1">Driver name</label>
+                                                <div class="input-group">
+                                                    <select style="width: 93%;" id="IdDriver" name="IdDriver" class="select2 form-control mb-3 custom-select"> </select>
+                                                    <button class="btn btn-dark" type="button" id="SearchDriverName"><iconv_get_encoding class="ti ti-reload"></i></button>
+                                                </div>
+                                            </div>
+                                </div>
+
+                               
+                                    <div class="row inputpadding">
+                                        <div class="col-md-6" >
+                                            <label class="mb-1"><i class="fa fa-mobile"></i> Driver phone #1</label>
+                                            <input id="DriverPhone1" name="DriverPhone1" type="number"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+                                      
+                                        <div class="col-md-6" >
+                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Driver phone #2</label>
+                                            <input id="DriverPhone2" name="DriverPhone2" type="number"
+                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                        </div>
+
+                                    </div>
+
+                        </div>
+                        <!--end col-->
+                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="dollar-sign"></i>Driver payment </b></span>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                     
+
+                                            <div class="row">
+                                                <div class="col-md-6" >
+                                                    <label class="mb-1"><b>Total</b></label>
+                                                    <input type="number" class="form-control" name="TotalOrder" id="TotalOrder"
+                                                        placeholder="$0000" readonly>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                    <label class="mb-1"><b>Deposit</b></label>
+                                                    <input id="DepositOrder" name="DepositOrder" type="number" class="form-control"
+                                                        placeholder="$0000" readonly>
+                                                </div>
+
+                                                <div class="col-md-3" >
+                                                  <label class="mb-1"><i class="fa fa-money-bill"></i><b class="text-success"> Earnings</b></label>
+                                                  <input id="Earnings" name="Earnings" type="number" class="form-control" placeholder="$0000">
+                                                 </div>
+
+                                            </div><br>
+
+                                            
+                                                <div class="row">
+
+                                                    <div class="col-md-6" >
+                                                        <label class="mb-1">Cod</label>
+                                                        <input id="Cod" name="Cod" type="number" class="form-control"
+                                                            placeholder="$0000">
+                                                    </div>
+
+                                                    <div class="col-md-6" >
+                                                        <label class="mb-1">Truker rate</label>
+                                                        <input id="TrukerRate" name="TrukerRate" type="number" class="form-control"
+                                                            placeholder="$0000">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row inputpadding">
+
+                                                    <div class="col-md-6">
+                                                        <label class="mb-1">Extra truker Fee</label>
+                                                        <input id="ExtraTrukerFee" name="ExtraTrukerFee" type="number"
+                                                            class="form-control" placeholder="$0000">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label class="mb-1"><i class="fa fa-truck" aria-hidden="true"></i> <b class="text-danger">Truker owes us</b></label>
+                                                        <input id="TrukerOwesUs" name="TrukerOwesUs" type="number" class="form-control"  placeholder="$0000">
+                                                    </div>
+                                                </div>
+
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--end form-group-->
+                        </div>
+                        <!--end col-->
+                    </div>
+
+                    <!--end row-->
+                 
+
+                </fieldset>
+                <!--end fieldset-->
                 <!--end fieldset-->
             </form>
             <!--end form-->
@@ -1011,7 +1192,7 @@
 $(document).ready(function($){
     $('.phone').mask('(000) 000-0000');
     $("#ExpDate").mask('00/00');
-    $("#Cvv").mask('000');
+    $("#Cvv").mask('0000');
     $("#CreditCard").mask("0000 0000 0000 0000");
 });
 
@@ -1019,7 +1200,80 @@ $(document).ready(function($){
 $("#form-horizontal").steps({
     headerTag: "h3",
     bodyTag: "fieldset",
-    transitionEffect: "slide"
+    transitionEffect: "slide",
+    onStepChanging: function (event, currentIndex, newIndex)
+    {
+        console.log(currentIndex + "-" + newIndex);
+        switch (currentIndex + "-" + newIndex) {
+            case "0-1":
+
+                if($("#IdCustomerOrigin").val() !="" && $("#OriginAddress").val() != "" &&  $("#OriginCity").val() != "" && $("#OriginState").val() != "" &&  $("#OriginPhone1").val() != "" && $("#IdCustomerDestination").val() !="" && $("#DestinationAddress").val() != "" &&  $("#DestinationCity").val() != "" && $("#DestinationState").val() != "" &&  $("#DestinationPhone1").val() != ""){
+                      return true;
+                }else{
+                   
+                    $(".toast-error").html("(*) empty required fields [Step 1]");
+                      var myAlert = document.getElementById('toastError');
+                      var bsAlert = new bootstrap.Toast(myAlert);
+                      bsAlert.show();
+
+                    return false;
+                }
+                
+                break;
+
+                case "1-2":
+
+                    if($("#PickUpDate").val() != "" &&  $("#DeliveryDate").val() != "" &&  $("#OrderStatusID").val() != ""){
+                        return true;
+                    }else{
+                        
+                        $(".toast-error").html("(*) empty required fields [Step 2]");
+                        var myAlert = document.getElementById('toastError');
+                        var bsAlert = new bootstrap.Toast(myAlert);
+                        bsAlert.show();
+
+                        return false;
+                    }
+
+                    break;
+
+               case "2-3":
+
+                if($("#CardHolderName").val() != "" &&  $("#CreditCard").val() != "" &&  $("#ExpDate").val() != "" &&  $("#Cvv").val() != ""  &&  $("#BillingAddress").val() != "" &&  $("#BillingCity").val() != "" && $("#BillingState").val() != "" &&  $("#Tel1").val() != "" &&  $("#Total").val() != "" && $("#Deposit").val() != ""){
+                   
+                    if(parseFloat($("#Total").val()) < parseFloat($("#Deposit").val())){
+
+                        $(".toast-error").html("(!) the Deposit is less than the Total [Step 3]");
+                        var myAlert = document.getElementById('toastError');
+                        var bsAlert = new bootstrap.Toast(myAlert);
+                        bsAlert.show();
+
+                    return false;
+
+                    }else{
+                        loadInfoPDF1();
+                        return true;
+                    }
+                    
+                   
+                }else{
+
+                    $(".toast-error").html("(*) empty required fields [Step 3]");
+                    var myAlert = document.getElementById('toastError');
+                    var bsAlert = new bootstrap.Toast(myAlert);
+                    bsAlert.show();
+
+                    return false;
+                }
+
+                break;
+
+            default:
+                return true;
+                break;
+        }
+
+    }
 });
 
 //Execute select2 functions 
@@ -1242,12 +1496,17 @@ function loadInfoPDF1(){
      $("#ListVehiclesPDF").append(markup);
 
      //Payment info
-    $("#TotalForm").html($("#Total").val() != "" ? "US$ "+$("#Total").val() :  "<span class='text-danger'>Check total payment</span>");
+     $("#TotalForm").html($("#Total").val() != "" ? "US$ "+$("#Total").val() :  "<span class='text-danger'>Check total payment</span>");
+    $("#DepositForm").html($("#Deposit").val() != "" ? "US$ "+$("#Deposit").val() :  "<span class='text-danger'>Check deposit payment</span>");
     $("#CardHolderNameForm").html($("#CardHolderName").val() != "" ? $("#CardHolderName").val() :  "<span class='text-danger'>Check card holder name</span>");
     $("#CreditCardNumberForm").html($("#CreditCard").val() != "" ? $("#CreditCard").val() :  "<span class='text-danger'>Check credit card number</span>");
     $("#ExperationDateForm").html($("#ExpDate").val() != "" ? $("#ExpDate").val() :  "<span class='text-danger'>Check experation date</span>");
     $("#CVVForm").html($("#Cvv").val() != "" ? $("#Cvv").val() :  "<span class='text-danger'>Check CVV code</span>");
+  
     $("#BillingAddressForm").html($("#BillingAddress").val() != "" ? $("#BillingAddress").val() :  "<span class='text-danger'>Check billing address</span>");
+    $("#BillingCityForm").html($("#BillingCity").val() != "" ? $("#BillingCity").val() :  "<span class='text-danger'>Check billing city</span>");
+    $("#BillingStateForm").html($("#BillingState").val() != "" ? $("#BillingState").val() :  "<span class='text-danger'>Check billing state</span>");
+    $("#BillingZipCodeForm").html($("#BillingZipCode").val() != "" ? $("#BillingZipCode").val() :  "<span class='text-danger'>Check billing zipcode</span>");
 
     var OriginNote = "";
     var DestinationNote = "";
@@ -1327,7 +1586,8 @@ function LoadEditFields(){
     //Colocarel ID de la orden para hacer el update
 
     var IdCustomerOrigin = "<?= $Order->IdCustomerOrigin; ?>";
-    $("#IdCustomerOrigin").select2("val", IdCustomerOrigin);
+    $('#IdCustomerOrigin').val(IdCustomerOrigin);
+    $('#IdCustomerOrigin').select2().trigger('change');
 
     var OriginAddress = "<?= $Order->OriginAddress; ?>";
     $("#OriginAddress").val(OriginAddress);
@@ -1347,8 +1607,9 @@ function LoadEditFields(){
     //Destination
 
     var IdCustomerDestination = "<?= $Order->IdCustomerDestination; ?>";
-    $("#IdCustomerDestination").select2("val", IdCustomerDestination);
-
+    $('#IdCustomerDestination').val(IdCustomerDestination);
+    $('#IdCustomerDestination').select2().trigger('change');
+    
     var DestinationAddress = "<?= $Order->DestinationAddress; ?>";
     $("#DestinationAddress").val(DestinationAddress);
 
@@ -1398,9 +1659,6 @@ function LoadEditFields(){
     var CreditCard = "<?= $Payment->CreditCard; ?>";
     $("#CreditCard").val(CreditCard);
 
-    var PaymentOwnerName = "<?= $Payment->PaymentOwnerName; ?>";
-    $("#PaymentOwnerName").val(PaymentOwnerName);
-
     var ExpDate = "<?= $Payment->ExpDate; ?>";
     $("#ExpDate").val(ExpDate);
 
@@ -1409,6 +1667,15 @@ function LoadEditFields(){
    
     var BillingAddress = "<?= $Payment->BillingAddress; ?>";
     $("#BillingAddress").val(BillingAddress);
+
+    var BillingState = "<?= $Payment->BillingState; ?>";
+    $("#BillingState").val(BillingState);
+
+    var BillingCity = "<?= $Payment->BillingCity; ?>";
+    $("#BillingCity").val(BillingCity);
+
+    var BillingZipCode = "<?= $Payment->BillingZipCode; ?>";
+    $("#BillingZipCode").val(BillingZipCode);
 
     var Tel1 = "<?= $Payment->Tel1; ?>";
     $("#Tel1").val(Tel1);
@@ -1445,8 +1712,13 @@ $("#templateVehiculo").find(".select2").each(function(index) {
 var clonado =  $('#templateVehiculo').clone().val('');
 clonado.removeAttr('hidden');
 clonado.appendTo("#contentVehicle");
+
 $(clonado).find(".BrandVehicle").val(Brand);
+$(clonado).find(".BrandVehicle").select2().trigger('change');
+
 $(clonado).find(".ModelVehicle").val(Model);
+$(clonado).find(".ModelVehicle").select2().trigger('change');
+
 $(clonado).find(".YearVehicle").val(Year);
 $(clonado).find(".CarrierTypeVehicle ").val(CarrierType);
 $(clonado).find(".ConditionVehicle ").val(ConditionVehicle);
@@ -1458,8 +1730,6 @@ $(clonado).find(".select2").select2();
 
 
 $(document).ready(function($){
-
-setTimeout(() => {LoadEditFields();}, 2000);
-
+setTimeout(() => {LoadEditFields();}, 4000);
 });
 </script>

@@ -173,7 +173,7 @@ class OrdersController
         if(isset($_POST['order']) && isset($_POST['vehicles'])){
 
             parse_str($_POST['order'], $params);
-            $vehicles  = $_POST['vehicles'];
+            $vehicles      = $_POST['vehicles'];
             $responseOrder = array("Error" => false, "Message"=>"", "OrderId"=>"");
 
             //Insertar
@@ -184,12 +184,14 @@ class OrdersController
                     $Payment = new Payments();
                     $IdPayment = "";
     
-                    $Payment->PaymentOwnerName = $params['PaymentOwnerName'];
                     $Payment->CardHolderName   = $params['CardHolderName'];
                     $Payment->CreditCard       = $params['CreditCard'];
                     $Payment->ExpDate          = $params['ExpDate'];
                     $Payment->Cvv              = $params['Cvv'];
                     $Payment->BillingAddress   = $params['BillingAddress'];
+                    $Payment->BillingCity      = $params['BillingCity'];
+                    $Payment->BillingState     = $params['BillingState'];
+                    $Payment->BillingZipCode   = $params['BillingZipCode'];
                     $Payment->Reference        = $params['Reference'];
                     $Payment->Tel1             = $params['Tel1'];
                     $Payment->Tel2             = $params['Tel2'];
@@ -283,7 +285,7 @@ class OrdersController
         
                 }else{
                     $responseOrder['Error'] = true;
-                    $responseOrder['Message'] = "Step [1] - Error in payment module. Please check required fields: [PaymentOwnerName,CardHolderName,CreditCard,ExpDate,Cvv]";
+                    $responseOrder['Message'] = "Step [1] - Error in payment module. Please check required fields: [CardHolderName,CreditCard,ExpDate,Cvv]";
                     echo json_encode($responseOrder, true);
                 }
                     
