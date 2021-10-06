@@ -50,7 +50,7 @@ class Orders {
     {
         try
         {
-                $stm = $this->pdo->prepare("SELECT Id, Status, CustomerOrigin, CustomerOriginPhone1, CustomerOriginEmail, CustomerDestination, CustomerDestinationPhone1, CustomerDestinationEmail, OrderDate, PickUpDate, DeliveryDate, OriginCity, DestinationCity, Total, Deposit, ExtraTrukerFee, TrukerOwesUs, Earnings, Cod, TrukerRate FROM vw_orders where IsActive = 1");
+                $stm = $this->pdo->prepare("SELECT Id, Status, Debemos, NosDeben, CustomerOrigin, CustomerOriginPhone1, CustomerOriginEmail, CustomerDestination, CustomerDestinationPhone1, CustomerDestinationEmail, OrderDate, PickUpDate, DeliveryDate, OriginCity, DestinationCity, Total, Deposit, ExtraTrukerFee, TrukerOwesUs, Earnings, Cod, TrukerRate FROM vw_orders where IsActive = 1");
                 $stm->execute();
 
                 $row = $stm->fetchAll();

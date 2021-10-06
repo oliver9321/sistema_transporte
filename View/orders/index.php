@@ -66,8 +66,10 @@
                             <thead>
                                <tr>
                                     <th>Order ID</th>
-                                    <th></th>
+                                    <th class="text-center">Options</th>
                                     <th>Status</th>
+                                    <th>Debemos</th>
+                                    <th class="text-center">Nos deben</th>
                                     <th>Customer Origin</th>
                                     <th>Customer Origin Phone1</th>
                                     <th>Customer Destination</th>
@@ -122,6 +124,8 @@ $(document).ready(function() {
             {data: "Id"},
             {data: "Id"},
             {data: "Status"},
+            {data: "Debemos"},
+            {data: "NosDeben"},
             {data: "CustomerOrigin"},
             {data: "CustomerOriginPhone1"},
             {data: "CustomerDestination"},
@@ -139,14 +143,13 @@ $(document).ready(function() {
             {data: "Cod"},
             {data: "TrukerRate"},
             
-        ],"columnDefs": [{
+        ],"columnDefs": [
+            {
             "targets":1,
             "data": "Editar",
             "render": function ( data) {
-                return '<center><a class="btn btn-primary" href="index.php?c=Orders&a=View&Id='+data+'"> <i class="ti-file"></i></a><a class="btn btn-warning" href="index.php?c=Orders&a=Edit&Id='+data+'" aria-label="Editar"> <i class="ti-pencil"></i></a></center>';
-            }
-        },
-         {
+                return '<center><a class="btn btn-secondary" href="index.php?c=Orders&a=View&Id='+data+'"> <i class="ti-file"></i></a><a class="btn btn-warning" href="index.php?c=Orders&a=Edit&Id='+data+'" aria-label="Editar"> <i class="ti-pencil"></i></a></center>';
+            }}, {
                 "targets": 2,
                 "render": function (data, type, row) {
 
@@ -174,9 +177,18 @@ $(document).ready(function() {
                     }
 
                     return data;
-                }   
-                
-         }]
+                }}, {
+                "targets": 3,
+                "render": function (data, type, row) {
+                    return (data == "Yes" ?  '<center><span class="badge badge-soft-danger px-2">'+data+'</span></center>'  : '<center><span class="badge badge-soft-success px-2">'+data+'</span></center>')
+         
+                }},{
+                "targets": 4,
+                "render": function (data, type, row) {
+                    return (data == "Yes" ?  '<center><span class="badge badge-soft-danger px-2">'+data+'</span></center>'  : '<center><span class="badge badge-soft-success px-2">'+data+'</span></center>')
+         
+                }} 
+            ]
     });
 
 });

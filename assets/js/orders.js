@@ -119,6 +119,90 @@ $(document).ready(function() {
 
     });
 
+    $('#IdCompanyService').on("change", function(e) {
+
+        var IdCompanyService = $("#IdCompanyService").val();
+
+        if (IdCompanyService != '') {
+
+            $("#CompanyAddress, #CompanyPhone1, #CompanyPhone2, #CompanyEmail").css("border-color", "#e3ebf6");
+            $("#CompanyAddress, #CompanyPhone1, #CompanyPhone2, #CompanyEmail").val("");
+
+            $.ajax({
+                url: "index.php?c=companyServices&a=GetInfoCompanyServicesById",
+                type: "POST",
+                data: {
+                    Id: IdCompanyService
+                },
+                success: function(data) {
+
+                    var value = JSON.parse(data);
+
+                    $("#CompanyAddress, #CompanyPhone1, #CompanyPhone2, #CompanyEmail").css("border-color", "orange");
+                    $("#CompanyAddress, #CompanyPhone1, #CompanyPhone2, #CompanyEmail").val("");
+
+                    if (value.CompanyAddress != '') {
+                        $("#CompanyAddress").val(value.CompanyAddress);
+                        $("#CompanyAddress").css("border-color", "green");
+                    }
+
+                    if (value.CompanyPhone1 != '') {
+                        $("#CompanyPhone1").val(value.CompanyPhone1);
+                        $("#CompanyPhone1").css("border-color", "green");
+                    }
+
+                    if (value.CompanyPhone2 != '') {
+                        $("#CompanyPhone2").val(value.CompanyPhone2);
+                        $("#CompanyPhone2").css("border-color", "green");
+                    }
+
+                    if (value.CompanyEmail != '') {
+                        $("#CompanyEmail").val(value.CompanyEmail);
+                        $("#CompanyEmail").css("border-color", "green");
+                    }
+
+                }
+            });
+
+        }
+    });
+
+    $('#IdDriver').on("change", function(e) {
+
+        var IdDriver = this.value;
+
+        if (IdDriver != '') {
+
+            $("#DriverPhone1, #DriverPhone2").css("border-color", "#e3ebf6");
+            $("#DriverPhone1, #DriverPhone2").val("");
+
+            $.ajax({
+                url: "index.php?c=drivers&a=GetInfoDriverById",
+                type: "POST",
+                data: {
+                    Id: IdDriver
+                },
+                success: function(data) {
+
+                    $("#DriverPhone1, #DriverPhone2").css("border-color", "orange");
+                    $("#DriverPhone1, #DriverPhone2").val("");
+
+                    var value = JSON.parse(data);
+
+                    if (value.DriverPhone1 != '') {
+                        $("#DriverPhone1").val(value.DriverPhone1);
+                        $("#DriverPhone1").css("border-color", "green");
+                    }
+
+                    if (value.DriverPhone2 != '') {
+                        $("#DriverPhone2").val(value.DriverPhone2);
+                        $("#DriverPhone2").css("border-color", "green");
+                    }
+                }
+            });
+
+        }
+    });
 
 
 });
