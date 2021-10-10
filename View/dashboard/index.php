@@ -102,22 +102,16 @@
                             </div><!--end row-->
                             <br>
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header bg-dark">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title">Orders pending</h4>                      
+                                            <h4 class="card-title text-white">Orders pending</h4>                      
                                         </div><!--end col-->
                                         <div class="col-auto"> 
                                             <div class="dropdown">
-                                                <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                   This Year<i class="las la-angle-down ms-1"></i>
+                                                <a href="#" class="btn btn-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   This Month</i>
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">Today</a>
-                                                    <a class="dropdown-item" href="#">Last Week</a>
-                                                    <a class="dropdown-item" href="#">Last Month</a>
-                                                    <a class="dropdown-item" href="#">This Year</a>
-                                                </div>
                                             </div>               
                                         </div><!--end col-->
                                     </div>  <!--end row-->                                  
@@ -128,15 +122,15 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="table-responsive browser_users">
-                                                    <table id="OrdersPending" class="table-light nowrap" style="width:100%" >
+                                                    <table id="OrdersPending" class="table table-bordered table-hover" style="width:100%" >
                                                         <thead>
-                                                        <tr>
+                                                        <tr class="bg-light">
                                                                 <th></th>
                                                                 <th class="text-center">Order ID</th>
-                                                                <th>Customer Origin</th>
-                                                                <th>PickUp Date</th>
-                                                                <th>Delivery Date</th>
-                                                                <th>Origin City</th>
+                                                                <th class="text-center">Customer Origin</th>
+                                                                <th class="text-center">PickUp Date</th>
+                                                                <th class="text-center">Delivery Date</th>
+                                                                <th class="text-center">Origin City</th>
                                                             </tr>
                                                         </thead>
                                                     </table>                                            
@@ -153,7 +147,7 @@
                             <div class="row align-items-center">
                                         <div class="col-auto"> 
                                             <div class="dropdown">
-                                                <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a href="#" class="btn btn-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 Today
                                                 </a>
                                             </div>               
@@ -197,7 +191,7 @@
                             <div class="row align-items-center">
                                         <div class="col-auto"> 
                                             <div class="dropdown">
-                                                <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a href="#" class="btn btn-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                    This Month
                                                 </a>
                                             </div>               
@@ -236,9 +230,6 @@
                                                              
                             </div><!--end card--> 
                         </div> <!--end col--> 
-
-                        
-
                         
                     </div><!--end row-->
   
@@ -267,7 +258,7 @@
             "targets":0,
             "data": "Editar",
             "render": function ( data) {
-                return '<center><a class="btn btn-primary" href="index.php?c=Orders&a=Edit&Id='+data+'"><i class="ti-file"></i></a></center>';
+                return '<center><a class="btn btn-primary" title="View order" href="index.php?c=Orders&a=View&Id='+data+'"><i class="ti-file"></i></a></center>';
             }},
             {
             "targets":1,
@@ -277,6 +268,8 @@
             }
         }]
     });
+
+
 
 });
 </script>

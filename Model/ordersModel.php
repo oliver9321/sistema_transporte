@@ -387,6 +387,13 @@ $result = $this->pdo->prepare($sql)->execute(
         return $stm2->fetch();
     }
 
+    public function GetStatusOrderById($data){
+
+        $stm = $this->pdo->prepare("SELECT Id, CustomerOrigin, Status, OrderDate, PickUpDate, DeliveryDate, LastModificationDate FROM vw_orders WHERE Id = ?");
+        $stm->execute(array($data->Id));
+        return  $stm->fetch(PDO::FETCH_OBJ);
+    }
+
     public function UpdateStatusOrder($data){
 
         try{

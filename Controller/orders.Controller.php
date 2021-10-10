@@ -516,4 +516,23 @@ class OrdersController
         }
     }
 
+    public function GetStatusOrder(){
+
+        if(isset($_POST['OrderID']) && $_POST['OrderID'] != ""){
+
+            $Orders = new Orders();
+            $Orders->Id  = str_ireplace(array('&lt;b&gt;', '&lt;/b&gt;', '&lt;h2&gt;', '&lt;/h2&gt;'), '',htmlspecialchars(trim($_POST['OrderID'])));
+            $result = $Orders->GetStatusOrderById($Orders);
+
+            if($result){
+                echo json_encode($result, true);
+            }else{
+                echo json_encode(false, true);
+            }
+ 
+        }else{
+            echo json_encode(false, true);
+        }
+    }
+
 }
