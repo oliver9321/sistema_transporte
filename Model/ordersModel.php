@@ -238,15 +238,6 @@ $result = $this->pdo->prepare($sql)->execute(
 
     public function Create (Orders $data)
     {
-        /*
-         IdCompanyService,
-         IdDriver,
-         ExtraTrukerFee,
-          TrukerOwesUs,
-          Earnings,
-                Cod,
-                TrukerRate,
-          */
         try
         {
             $sql = "INSERT INTO tbl_orders(
@@ -355,25 +346,58 @@ $result = $this->pdo->prepare($sql)->execute(
     
     public function getSumEarnings(){
 
-        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Earnings),0) as Earnings FROM tbl_orders WHERE IsActive = 1");
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Earnings),0) as Earnings FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND MONTH(LastModificationDate) = MONTH(curdate())");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+    public function getSumEarningsToday(){
+        // 4-> Canceled
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Earnings),0) as Earnings FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4  AND DATE(LastModificationDate) = curdate()");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+
+    public function getSumTotalToday(){
+
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Total),0) as Total FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND DATE(LastModificationDate) = curdate()");
         $stm2->execute();
         return $stm2->fetch();
     }
 
     public function getSumTotal(){
 
-        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Total),0) as Total FROM tbl_orders WHERE IsActive = 1");
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Total),0) as Total FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND MONTH(LastModificationDate) = MONTH(curdate())");
+        $stm2->execute();
+        return $stm2->fetch();
+    }
+
+    public function getSumTrukerOwesUsToday(){
+
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(TrukerOwesUs),0) as TrukerOwesUs FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND DATE(LastModificationDate) = curdate()");
         $stm2->execute();
         return $stm2->fetch();
     }
 
     public function getSumTrukerOwesUs(){
 
-        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(TrukerOwesUs),0) as TrukerOwesUs FROM tbl_orders WHERE IsActive = 1");
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(TrukerOwesUs),0) as TrukerOwesUs FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND MONTH(LastModificationDate) = MONTH(curdate())");
         $stm2->execute();
         return $stm2->fetch();
     }
 
+    public function UpdateStatusOrder($data){
+
+        try{
+            $sql = "UPDATE tbl_orders SET OrderStatusID  = ? WHERE Id = ?";
+            return $this->pdo->prepare($sql)->execute(array($data->OrderStatusID,$data->Id));
+
+    } catch (Exception $e){
+        die($e->getMessage());
+    }
+
+ }
 
 
 }

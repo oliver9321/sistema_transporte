@@ -1,5 +1,30 @@
 <br>
 
+<div class="position-fixed top-0 end-0 p-3" style=" z-index: 9999999 !important;">
+    <div id="toastSuccess" class="toast align-items-center text-white bg-success border-0" role="alert"
+        aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body toast-success">
+                <!-- Message from js -->
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+    <div id="toastError" class="toast align-items-center text-white bg-danger border-0" role="alert"
+        aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body toast-error">
+                <!-- Message from js -->
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+
+
         <div class="row">
         <div class="col-md-12">
 
@@ -66,7 +91,7 @@
                             <table id="CustomersList" class="table table-bordered table-hover" style="width:100%" >
                             <thead>
                                <tr class="bg-light ">
-                               <th>Order ID</th>
+                               <th class="text-center">Order #</th>
                                     <th class="text-center">Options</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-center">Debemos</th>
@@ -91,7 +116,7 @@
                                 </tr>
                             </thead>
                             <tfoot>
-                                     <th>Order ID</th>
+                                     <th class="text-center">Order #</th>
                                     <th class="text-center">Options</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-center">Debemos</th>
@@ -120,14 +145,60 @@
             </div> <!-- end col -->
         </div> <!-- end row -->
 
+        
+<div class="modal fade" id="ModalChangeStatus" role="dialog" aria-labelledby="ModalChangeStatusLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h6 class="modal-title m-0" id="ModalChangeStatusLabel"> <i class="fas fa-car me-2"></i> Change status order</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!--end modal-header-->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card-body">
+
+                                      <div class="col-md-12" >
+                                            <label class="mb-1"><b>Order ID</b></label>
+                                            <input type="text" id="Id" readonly class="form-control">
+                                        </div><br>
+                                                    
+                                    <div class="col-md-12" >
+                                            <label class="mb-1"><b>Order status</b><b class="text-danger">*</b></label>
+                                            <select style="width: 100%;" id="OrderStatusID" name="OrderStatusID" class="form-control">
+                                                <option selected value="">Select a status</option>
+                                                <?php foreach($OrderStatusList  as $key => $value): ?>
+                                                <option value="<?= $value['Id']; ?>"> <?= $value['Status']; ?> </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                 </div>
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row-->
+            </div>
+            <!--end modal-body-->
+            <div class="modal-footer">
+                <button type="button" onclick="UpdateStatusOrder()" class="btn btn-soft-primary btn-sm">Update order</button>
+                <button type="button" class="btn btn-soft-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+            <!--end modal-footer-->
+        </div>
+        <!--end modal-content-->
+    </div>
+    <!--end modal-dialog-->
+</div>
+<script src="assets/js/bootstrap.min.js"></script>
 <script>
 
  let datatable = "";
   
 $(document).ready(function() {
+
     $("body").addClass("enlarge-menu");
     $.noConflict();
-
 
     $('#CustomersList tfoot th').each( function () {
         var title = $(this).text();
@@ -195,7 +266,7 @@ datatable = $('#CustomersList').DataTable({
             "targets":1,
             "data": "Editar",
             "render": function ( data) {
-                return '<center><a class="btn btn-secondary" href="index.php?c=Orders&a=View&Id='+data+'"> <i class="ti-file"></i></a><a class="btn btn-warning" href="index.php?c=Orders&a=Edit&Id='+data+'" aria-label="Editar"> <i class="ti-pencil"></i></a></center>';
+                return '<center><a class="btn btn-info" title="View order" href="index.php?c=Orders&a=View&Id='+data+'"> <i class="ti-file"></i></a><a class="btn btn-warning" href="index.php?c=Orders&a=Edit&Id='+data+'" title="Edit order"> <i class="ti-pencil"></i></a><button class="btn btn-dark" onclick="ChangeStatus('+data+')"  title="Change status"> <i class="ti-new-window"></i></button></center>';
             }}, {
                 "targets": 2,
                 "render": function (data, type, row) {
@@ -240,5 +311,42 @@ datatable = $('#CustomersList').DataTable({
 
 
 });
+
+function ChangeStatus(OrderID){
+    $("#Id").val(OrderID);
+    $("#ModalChangeStatus").modal('show'); 
+}
+
+function UpdateStatusOrder(){
+
+    if($("#Id").val() != '' && $("#OrderStatusID").val() != ''){
+
+    $.ajax({
+        type: 'POST',
+        url: "index.php?c=Orders&a=UpdateStatusOrder",
+        data:{ Id: $("#Id").val(), "OrderStatusID": $("#OrderStatusID").val()}
+     }).then(function(response) {
+
+        if(response == 'true'){
+            
+            $(".toast-success").html("status order update");
+            var myAlert = document.getElementById('toastSuccess');
+            var bsAlert = new bootstrap.Toast(myAlert);
+            bsAlert.show();
+             $("#ModalChangeStatus").modal('hide'); 
+             location.reload();
+        }else{
+
+            $(".toast-error").html("(!) error - Order update");
+            var myAlert = document.getElementById('toastError');
+            var bsAlert = new bootstrap.Toast(myAlert);
+            bsAlert.show();
+
+         $("#ModalChangeStatus").modal('hide'); 
+        }
+
+     });
+    }
+}
 
 </script>

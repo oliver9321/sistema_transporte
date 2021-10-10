@@ -123,8 +123,7 @@
     <!--end modal-dialog-->
 </div>
 
-<div class="modal fade" id="ModalNewCompanyService" role="dialog" aria-labelledby="ModalNewCompanyServiceLabel"
-    >
+<div class="modal fade" id="ModalNewCompanyService" role="dialog" aria-labelledby="ModalNewCompanyServiceLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info">
@@ -294,9 +293,7 @@
                 data-bs-target="#ModalNewDriver"><i class="fa fa-address-card me-2"></i>New driver</button>
             <button type="button" class="btn btn-soft-danger btn-sm"
                 onclick="$('input, textarea, select').val('');">Clear all fields</button>
-
             <button type="button" id="LoadingButton" class="btn btn-soft-light btn-sm"> <div class="spinner-border spinner-border-sm" role="status"></div></button>
-       
         </div>
         <!--end card-header-->
         <div class="card-body">
@@ -855,7 +852,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="">
-                                                <h6 class="mb-0"><b>Order number: </b><span class="OrderIDForm"><?=$Order->Id?></span></h6>
+                                                <h6 class="mb-0"><b>Order ID: </b><span class="OrderIDForm"><?=$Order->Id?></span></h6>
                                                 <h6 class="mb-0"><b>Order date: </b><span class="OrderDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Pick up date: </b><span class="PickUpDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Delivery date: </b><span class="DeliveryDateForm">0000-00-00</span></h6><br>
@@ -1017,7 +1014,7 @@
                                         <!--end col-->
                                         <div class="col-lg-12 col-xl-4">
                                             <div class="float-end d-print-none"> 
-                                            <a href="javascript:window.print()" class="btn btn-soft-info btn-sm">Print</a> 
+                                            <a href="javascript:window.print()" class="btn btn-info btn-sm"><i class="fa fa-print"></i> Print</a> 
                                         </div>
                                         <!--end col-->
                                     </div>
@@ -1146,7 +1143,7 @@
 
                                                 <div class="row inputpadding">
                                                     <div class="col-md-6">
-                                                        <label class="mb-1"><i class="fa fa-dollar-sign"></i><b class="text-warning"> Extra truker Fee</b></label>
+                                                        <label class="mb-1"><i class="fa fa-dollar-sign"></i><b class="text-dark"> Extra truker Fee</b></label>
                                                         <input id="ExtraTrukerFee" name="ExtraTrukerFee" type="number" class="form-control" placeholder="$0000" value="0">
                                                     </div>
 
@@ -1201,7 +1198,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="">
-                                                <h6 class="mb-0"><b>Order number: </b><span class="OrderIDForm"><?=$Order->Id?></span></h6>
+                                                <h6 class="mb-0"><b>Order ID: </b><span class="OrderIDForm"><?=$Order->Id?></span></h6>
                                                 <h6 class="mb-0"><b>Order date: </b><span class="OrderDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Pick up date: </b><span class="PickUpDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Delivery date: </b><span class="DeliveryDateForm">0000-00-00</span></h6><br>
@@ -1265,7 +1262,7 @@
                                                         <tr class="bg-light text-secondary">
                                                             <th colspan="2" class="border-0"></th>
                                                             <th colspan="2" class="border-0"></th>
-                                                            <td class="border-0 font-14" style="text-align:right !important"><b>Trucker fee</b></td>
+                                                            <td class="border-0 font-14" style="text-align:right !important"><b>Extra truker Fee</b></td>
                                                             <td class="border-0 font-14"><b id="TruckerFeeForm">$00.00</b></td>
                                                         </tr>                                                  
                                                         <tr class="bg-secondary text-white">
@@ -1309,7 +1306,8 @@
                                         <!--end col-->
                                         <div class="col-lg-12 col-xl-4">
                                             <div class="float-end d-print-none"> 
-                                            <a href="javascript:window.print()" class="btn btn-soft-info btn-sm">Print</a> 
+                                            <a href="index.php?c=Orders&a=View&Id=<?=$Order->Id?>" class="btn btn-success btn-sm"><i class="fa fa-file"></i> View order</a> 
+                                            <a href="javascript:window.print()" class="btn btn-info btn-sm"><i class="fa fa-print"></i> Print</a> 
                                         </div>
                                         <!--end col-->
                                     </div>
@@ -1343,7 +1341,7 @@
 <script src="plugins/jquery-steps/jquery.steps.min.js"></script>
 
 <script src="assets/js/orders.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+<script src="assets/js/jquery.mask.js"></script>
 <script type="text/javascript">
    $("#LoadingButton").hide();
 function SumNumber(number1, number2){
@@ -1412,7 +1410,6 @@ $("#form-horizontal").steps({
     transitionEffect: "slide",
     onStepChanging: function (event, currentIndex, newIndex)
     {
-
         switch (newIndex) {
             case 1:
 
@@ -1548,21 +1545,11 @@ GetListVehicles();
 
 function AddVehicleList() {
 
-    var div = $("#contentVehicle");
-   // templateVehiculo
-
-    div.find(".select2").each(function(index) {
-        if ($(this).data('select2')) {
-            $(this).select2('destroy');
-        }
-    });
-
     $('#templateVehiculo').find(".select2").each(function(index) {
         if ($(this).data('select2')) {
             $(this).select2('destroy');
         }
     });
-
 
    var clonado =  $('#templateVehiculo').clone().val('');
    clonado.removeAttr('hidden');
@@ -2162,6 +2149,6 @@ $(clonado).find(".select2").select2();
 
 
 $(document).ready(function($){
-setTimeout(() => {LoadEditFields();}, 4000);
+setTimeout(() => {LoadEditFields();}, 3000);
 });
 </script>

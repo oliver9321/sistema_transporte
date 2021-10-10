@@ -31,6 +31,8 @@ class OrdersController
 
             $rsOrders4              = $this->model->getCountOrdersPickedUp();
             $CountOrdersPickedUp    = $rsOrders4['CountOrders'];
+            $this->orderStatus    = new OrderStatus();
+            $OrderStatusList  =  $this->orderStatus->GetListOrderStatus();
 
             GetRouteView(null, "header");
             require_once 'View/orders/index.php';
@@ -496,6 +498,22 @@ class OrdersController
             }
 
             }
+    }
+
+    public function UpdateStatusOrder(){
+
+        if(isset($_POST['Id']) && isset($_POST['OrderStatusID'])){
+
+            $Orders = new Orders();
+            $Orders->Id             = $_POST['Id'];
+            $Orders->OrderStatusID  = $_POST['OrderStatusID'];
+            $result = $Orders->UpdateStatusOrder($Orders);
+
+            echo json_encode($result, true);
+
+        }else{
+            echo json_encode(false, true);
+        }
     }
 
 }

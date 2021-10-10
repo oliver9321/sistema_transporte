@@ -73,11 +73,11 @@
                 </li>
 
                 <li>
-                    <a href="index.php?c=Orders&a=Index"><i class="fa fa-file align-self-center menu-icon"></i><span>Orders</span></a>
+                    <a href="index.php?c=Orders&a=Index"><i class="fa fa-file align-self-center menu-icon"></i><span>Order list</span></a>
                 </li>
 
                 <li>
-                    <a href="index.php?c=Payments&a=Index"><i data-feather="dollar-sign" class="align-self-center menu-icon"></i><span>Payments</span></a>
+                    <a href="index.php?c=Payments&a=Index"><i data-feather="dollar-sign" class="align-self-center menu-icon"></i><span>Payment list</span></a>
                 </li>
            
 
@@ -107,7 +107,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i  class="fa fa-user-circle align-self-center menu-icon"></i><span>Customer types</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i class="fa fa-male align-self-center menu-icon"></i><span>Customer types</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=customerType&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=customerType&a=Edit"><i class="ti-control-record"></i>Create</a></li>
@@ -131,7 +131,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i class="fa fa-male align-self-center menu-icon"></i><span>Users</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i class="fa fa-user-circle align-self-center menu-icon"></i><span>Users</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=users&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=users&a=Edit"><i class="ti-control-record"></i>Create</a></li>
@@ -212,8 +212,8 @@
                     </li>
                     <li class="creat-btn">
                         <div class="nav-link">
-                            <a class="btn btn-sm btn-soft-primary" href="index.php?c=Orders&a=order"><i class="fas fa-plus me-2"></i>New Order</a>
-                            <a class="btn btn-sm btn-soft-success" href="index.php?c=Orders&a=index"><i class="fas fa-list me-2"></i>Order List</a>
+                            <a class="btn btn-sm btn-soft-primary" href="index.php?c=Orders&a=order"><i class="fas fa-plus me-2"></i>New order</a>
+                            <a class="btn btn-sm btn-soft-success" href="index.php?c=Orders&a=index"><i class="fas fa-list me-2"></i>Order list</a>
                             <!--<button type="button" class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#ModalNewOrder"></button>-->
                         </div>
                     </li>

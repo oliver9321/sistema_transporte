@@ -30,10 +30,10 @@
 </div>
 
 
-        
-<div class="modal-body bg-dark d-print-non">
+<span class="text-dark"><h4>Order # <?= $Order->Id ?></h4></span>
+<div class="modal-body d-print-non">
     <div class="card">
-        <a href="index.php?c=Orders&a=Edit&Id=<?=$Order->Id?>" class="btn btn-warning text-white"> <i class="fa fa-edit text-white"></i> Edit order</a>
+   <!-- <a href="javascript:window.print()" class="d-print-none btn btn-info"><i class="fa fa-print"></i> Print</a> -->
         <!--end card-header-->
         <div class="card-body">
             <form id="form-horizontal" class="form-horizontal">
@@ -230,7 +230,7 @@
                 <!--end fieldset-->
                 <fieldset>
                     <div class="row">
-                    <div class="col-md-12"> <span class="text-dark"><b><i class="fa fa-car fa-2x"></i> Vehicles</b></span>
+                    <div class="col-md-12"> <span class="text-dark"><b><i class="fa fa-car fa-2x"></i> Vehicles list</b></span>
                     <div class="col-md-12"> <hr>
                 
                                     <div class="row">
@@ -520,7 +520,7 @@
                 <fieldset>
                 <div class="row">
                         <div class="col-md-6"> 
-                        <span class="text-dark"><b><i data-feather="truck"></i> Trucker and drivers</b></span><br>
+                        <span class="text-dark"><b><i data-feather="truck"></i> Company services</b></span><br>
                         <hr>
                                 <div class="row">
                                     <label class="mb-1">Company name</label>
@@ -561,7 +561,7 @@
                                     <br>
 
                                     <div class="row inputpadding">
-                                            <span class="text-dark"><b><i class="fa fa-address-card fa-2x"></i> Drivers</b></span><br/><hr>
+                                            <span class="text-dark"><b><i class="fa fa-bus fa-2x"></i> Drivers</b></span><br/><hr>
                                                 <div class="row">
                                                     <label class="mb-1">Driver name</label>
                                                     <div class="input-group">
@@ -648,6 +648,7 @@
             <!--end form-->
         </div>
         <!--end card-body-->
+        <a href="index.php?c=Orders&a=Edit&Id=<?=$Order->Id?>" class="d-print-none btn btn-warning text-white"><i class="fa fa-edit text-white"></i> Edit order</a>
     </div>
     <!--end card-->
 </div>
@@ -713,7 +714,7 @@ function GetListVehicles() {
         var myAlert = document.getElementById('toastSuccess');
         var bsAlert = new bootstrap.Toast(myAlert);
         bsAlert.show();
-        $("#LoadingButton").hide();
+        
     });
 
 }
@@ -725,9 +726,6 @@ function GetListCustomer() {
     $.ajax({
         type: 'POST',
         url: "index.php?c=customers&a=GetListCustomers",
-        beforeSend: function() {
-            $("#LoadingButton").show();
-    }
     }).then(function(response) {
 
         var data = JSON.parse(response);
@@ -762,7 +760,7 @@ function GetListCustomer() {
         var myAlert = document.getElementById('toastSuccess');
         var bsAlert = new bootstrap.Toast(myAlert);
         bsAlert.show();
-        $("#LoadingButton").hide();
+        
 
         });
 }
@@ -884,9 +882,6 @@ function GetListDrivers() {
 $.ajax({
     type: 'POST',
     url: "index.php?c=drivers&a=GetListDrivers",
-    beforeSend: function() {
-            $("#LoadingButton").show();
-    },
 }).then(function(response) {
 
     var data = JSON.parse(response);
@@ -907,7 +902,7 @@ $.ajax({
     var myAlert = document.getElementById('toastSuccess');
     var bsAlert = new bootstrap.Toast(myAlert);
     bsAlert.show();
-    $("#LoadingButton").hide();
+    
 
 
     });

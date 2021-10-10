@@ -18,7 +18,7 @@
 <!-- jQuery  -->
 
 <!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery-3.5.1.js"></script>
 <script src="plugins/select2/select2.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/metismenu.min.js"></script>

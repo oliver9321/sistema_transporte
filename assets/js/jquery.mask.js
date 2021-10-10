@@ -1,11 +1,11 @@
 /**
  * jquery.mask.js
- * @version: v1.14.16
+ * @version: v1.14.10
  * @author: Igor Escobar
  *
- * Created by Igor Escobar on 2012-03-10. Please report any bug at github.com/igorescobar/jQuery-Mask-Plugin
+ * Created by Igor Escobar on 2012-03-10. Please report any bug at http://blog.igorescobar.com
  *
- * Copyright (c) 2012 Igor Escobar http://igorescobar.com
+ * Copyright (c) 2012 Igor Escobar http://blog.igorescobar.com
  *
  * The MIT License (http://www.opensource.org/licenses/mit-license.php)
  *
@@ -35,20 +35,21 @@
 /* jshint maxcomplexity:17 */
 /* global define */
 
+'use strict';
+
 // UMD (Universal Module Definition) patterns for JavaScript modules that work everywhere.
-// https://github.com/umdjs/umd/blob/master/templates/jqueryPlugin.js
+// https://github.com/umdjs/umd/blob/master/jqueryPluginCommonjs.js
 (function (factory, jQuery, Zepto) {
 
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
-    } else if (typeof exports === 'object' && typeof Meteor === 'undefined') {
+    } else if (typeof exports === 'object') {
         module.exports = factory(require('jquery'));
     } else {
         factory(jQuery || Zepto);
     }
 
 }(function ($) {
-    'use strict';
 
     var Mask = function (el, mask, options) {
 
@@ -99,8 +100,6 @@
                 .on('keydown.mask', function(e) {
                     el.data('mask-keycode', e.keyCode || e.which);
                     el.data('mask-previus-value', el.val());
-                    el.data('mask-previus-caret-pos', p.getCaret());
-                    p.maskDigitPosMapOld = p.maskDigitPosMap;
                 })
                 .on($.jMaskGlobals.useInput ? 'input.mask' : 'keyup.mask', p.behaviour)
                 .on('paste.mask drop.mask', function() {
@@ -187,64 +186,26 @@
 
                 return r;
             },
-            calculateCaretPosition: function(oldVal) {
-                var newVal = p.getMasked(),
-                    caretPosNew = p.getCaret();
-                if (oldVal !== newVal) {
-                    var caretPosOld = el.data('mask-previus-caret-pos') || 0,
-                        newValL = newVal.length,
-                        oldValL = oldVal.length,
-                        maskDigitsBeforeCaret = 0,
-                        maskDigitsAfterCaret = 0,
-                        maskDigitsBeforeCaretAll = 0,
-                        maskDigitsBeforeCaretAllOld = 0,
-                        i = 0;
+            calculateCaretPosition: function(caretPos, newVal) {
+                var newValL = newVal.length,
+                    oValue  = el.data('mask-previus-value') || '',
+                    oValueL = oValue.length;
 
-                    for (i = caretPosNew; i < newValL; i++) {
-                        if (!p.maskDigitPosMap[i]) {
-                            break;
-                        }
-                        maskDigitsAfterCaret++;
-                    }
+                // edge cases when erasing digits
+                if (el.data('mask-keycode') === 8 && oValue !== newVal) {
+                    caretPos = caretPos - (newVal.slice(0, caretPos).length - oValue.slice(0, caretPos).length);
 
-                    for (i = caretPosNew - 1; i >= 0; i--) {
-                        if (!p.maskDigitPosMap[i]) {
-                            break;
-                        }
-                        maskDigitsBeforeCaret++;
-                    }
-
-                    for (i = caretPosNew - 1; i >= 0; i--) {
-                        if (p.maskDigitPosMap[i]) {
-                            maskDigitsBeforeCaretAll++;
-                        }
-                    }
-
-                    for (i = caretPosOld - 1; i >= 0; i--) {
-                        if (p.maskDigitPosMapOld[i]) {
-                            maskDigitsBeforeCaretAllOld++;
-                        }
-                    }
-
+                // edge cases when typing new digits
+                } else if (oValue !== newVal) {
                     // if the cursor is at the end keep it there
-                    if (caretPosNew > oldValL) {
-                      caretPosNew = newValL * 10;
-                    } else if (caretPosOld >= caretPosNew && caretPosOld !== oldValL) {
-                        if (!p.maskDigitPosMapOld[caretPosNew])  {
-                          var caretPos = caretPosNew;
-                          caretPosNew -= maskDigitsBeforeCaretAllOld - maskDigitsBeforeCaretAll;
-                          caretPosNew -= maskDigitsBeforeCaret;
-                          if (p.maskDigitPosMap[caretPosNew])  {
-                            caretPosNew = caretPos;
-                          }
-                        }
-                    }
-                    else if (caretPosNew > caretPosOld) {
-                        caretPosNew += maskDigitsBeforeCaretAll - maskDigitsBeforeCaretAllOld;
-                        caretPosNew += maskDigitsAfterCaret;
+                    if (caretPos >= oValueL) {
+                        caretPos = newValL;
+                    } else {
+                        caretPos = caretPos + (newVal.slice(0, caretPos).length - oValue.slice(0, caretPos).length);
                     }
                 }
-                return caretPosNew;
+
+                return caretPos;
             },
             behaviour: function(e) {
                 e = e || window.event;
@@ -253,15 +214,12 @@
                 var keyCode = el.data('mask-keycode');
 
                 if ($.inArray(keyCode, jMask.byPassKeys) === -1) {
-                    var newVal = p.getMasked(),
-                        caretPos = p.getCaret(),
-                        oldVal = el.data('mask-previus-value') || '';
+                    var newVal   = p.getMasked(),
+                        caretPos = p.getCaret();
 
-                    // this is a compensation to devices/browsers that don't compensate
-                    // caret positioning the right way
-                    setTimeout(function() {
-                      p.setCaret(p.calculateCaretPosition(oldVal));
-                    }, $.jMaskGlobals.keyStrokeCompensation);
+                    setTimeout(function(caretPos, newVal) {
+                      p.setCaret(p.calculateCaretPosition(caretPos, newVal));
+                    }, 10, caretPos, newVal);
 
                     p.val(newVal);
                     p.setCaret(caretPos);
@@ -275,8 +233,6 @@
                     v = 0, valLen = value.length,
                     offset = 1, addMethod = 'push',
                     resetPos = -1,
-                    maskDigitCount = 0,
-                    maskDigitPosArr = [],
                     lastMaskChar,
                     check;
 
@@ -308,7 +264,7 @@
                              if (translation.recursive) {
                                 if (resetPos === -1) {
                                     resetPos = m;
-                                } else if (m === lastMaskChar && m !== resetPos) {
+                                } else if (m === lastMaskChar) {
                                     m = resetPos - offset;
                                 }
 
@@ -321,7 +277,6 @@
                             // matched the last untranslated (raw) mask character that we encountered
                             // likely an insert offset the mask character from the last entry; fall
                             // through and only increment v
-                            maskDigitCount--;
                             lastUntranslatedMaskChar = undefined;
                         } else if (translation.optional) {
                             m += offset;
@@ -340,12 +295,9 @@
                         }
 
                         if (valDigit === maskDigit) {
-                            maskDigitPosArr.push(v);
                             v += offset;
                         } else {
                             lastUntranslatedMaskChar = maskDigit;
-                            maskDigitPosArr.push(v + maskDigitCount);
-                            maskDigitCount++;
                         }
 
                         m += offset;
@@ -357,16 +309,7 @@
                     buf.push(lastMaskCharDigit);
                 }
 
-                var newVal = buf.join('');
-                p.mapMaskdigitPositions(newVal, maskDigitPosArr, valLen);
-                return newVal;
-            },
-            mapMaskdigitPositions: function(newVal, maskDigitPosArr, valLen) {
-              var maskDiff = options.reverse ? newVal.length - valLen : 0;
-              p.maskDigitPosMap = {};
-              for (var i = 0; i < maskDigitPosArr.length; i++) {
-                p.maskDigitPosMap[maskDigitPosArr[i] + maskDiff] = 1;
-              }
+                return buf.join('');
             },
             callbacks: function (e) {
                 var val = p.val(),
@@ -395,12 +338,6 @@
         jMask.options = options;
         jMask.remove = function() {
             var caret = p.getCaret();
-            if (jMask.options.placeholder) {
-                el.removeAttr('placeholder');
-            }
-            if (el.data('mask-maxlength')) {
-                el.removeAttr('maxlength');
-            }
             p.destroyEvents();
             p.val(jMask.getCleanVal());
             p.setCaret(caret);
@@ -455,7 +392,7 @@
                 }
 
                 if (maxlength) {
-                    el.attr('maxlength', mask.length).data('mask-maxlength', true);
+                    el.attr('maxlength', mask.length);
                 }
 
                 p.destroyEvents();
@@ -570,11 +507,10 @@
 
     var globals = {
         maskElements: 'input,td,span,div',
-        dataMaskAttr: '[data-mask]',
+        dataMaskAttr: '*[data-mask]',
         dataMask: true,
         watchInterval: 300,
         watchInputs: true,
-        keyStrokeCompensation: 10,
         // old versions of chrome dont work great with input event
         useInput: !/Chrome\/[2-4][0-9]|SamsungBrowser/.test(window.navigator.userAgent) && eventSupported('input'),
         watchDataMask: false,
@@ -602,3 +538,4 @@
         }
     }, globals.watchInterval);
 }, window.jQuery, window.Zepto));
+

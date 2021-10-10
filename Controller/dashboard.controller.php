@@ -40,14 +40,26 @@ class dashboardController{
                 $rsOrders       = $this->ordersModel->getCountOrders();
                 $CountOrders    = $rsOrders['CountOrders'];
 
+              
                 $rsSumEarnings  = $this->ordersModel->getSumEarnings();
                 $SumEarnings    = $rsSumEarnings['Earnings'];
+
+                $rsSumEarningsToday  = $this->ordersModel->getSumEarningsToday();
+                $SumEarningsToday    = $rsSumEarningsToday['Earnings'];
+
+               
+                $rsSumTotalToday = $this->ordersModel->getSumTotalToday();
+                $SumTotalToday   = $rsSumTotalToday['Total'];
 
                 $rsSumTotal = $this->ordersModel->getSumTotal();
                 $SumTotal   = $rsSumTotal['Total'];
 
-                $rsSumTrukerOwesUs = $this->ordersModel->getSumTrukerOwesUs();
-                $SumTrukerOwesUs    = $rsSumTrukerOwesUs['TrukerOwesUs'];
+               
+                $rsSumTrukerOwesUsToday = $this->ordersModel->getSumTrukerOwesUsToday();
+                $SumTrukerOwesUsToday    = $rsSumTrukerOwesUsToday['TrukerOwesUs'];
+
+                $rsSumTrukerOwesUs   = $this->ordersModel->getSumTrukerOwesUs();
+                $SumTrukerOwesUs     = $rsSumTrukerOwesUs['TrukerOwesUs'];
 
                 GetRouteView(null, "header");
                 require_once 'View/dashboard/index.php';

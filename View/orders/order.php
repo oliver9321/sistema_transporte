@@ -4,7 +4,7 @@
     padding: 0.2rem !important;
 }
 </style>
-<div class="modal fade" id="ModalNewCustomer" role="dialog" aria-labelledby="ModalNewCustomerLabel" aria-hidden="true">
+<div class="modal fade" id="ModalNewCustomer" role="dialog" aria-labelledby="ModalNewCustomerLabel" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info">
@@ -83,7 +83,7 @@
     <!--end modal-dialog-->
 </div>
 
-<div class="modal fade" id="ModalNewVehicle" role="dialog" aria-labelledby="ModalNewVehicleLabel" aria-hidden="true">
+<div class="modal fade" id="ModalNewVehicle" role="dialog" aria-labelledby="ModalNewVehicleLabel" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info">
@@ -122,8 +122,7 @@
     <!--end modal-dialog-->
 </div>
 
-<div class="modal fade" id="ModalNewCompanyService" role="dialog" aria-labelledby="ModalNewCompanyServiceLabel"
-    aria-hidden="true">
+<div class="modal fade" id="ModalNewCompanyService" role="dialog" aria-labelledby="ModalNewCompanyServiceLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info">
@@ -196,7 +195,7 @@
     <!--end modal-dialog-->
 </div>
 
-<div class="modal fade" id="ModalNewDriver" role="dialog" aria-labelledby="ModalNewDriverLabel" aria-hidden="true">
+<div class="modal fade" id="ModalNewDriver" role="dialog" aria-labelledby="ModalNewDriverLabel" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info">
@@ -230,7 +229,7 @@
                                 <label class="form-label" for="DriverPhone2NewDriver">Phone #2</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control phone id="DriverPhone2NewDriver"
+                                            <input type="tel" class="form-control phone" id="DriverPhone2NewDriver"
                                         name="DriverPhone2NewDriver" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -293,6 +292,7 @@
                 data-bs-target="#ModalNewDriver"><i class="fa fa-address-card me-2"></i>New driver</button>
             <button type="button" class="btn btn-soft-danger btn-sm"
                 onclick="$('input, textarea, select').val('');">Clear all fields</button>
+                <button type="button" id="LoadingButton" class="btn btn-soft-light btn-sm"> <div class="spinner-border spinner-border-sm" role="status"></div></button>
         </div>
         <!--end card-header-->
         <div class="card-body">
@@ -305,7 +305,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-12" >
-                                    <label class="mb-1">Origin customer name<b class="text-danger">*</b></label>
+                                <label class="mb-1"><i class="fa fa-user"></i> Origin customer name<b class="text-danger">*</b></label>
                                     <div class="input-group">
                                         <select style="width: 90%;" id="IdCustomerOrigin" name="IdCustomerOrigin" class="select2 form-control mb-3 custom-select originInput"> </select>
                                         <button class="btn btn-dark" type="button" id="SearchCustomerName"><i class="ti ti-reload"></i></button>
@@ -322,7 +322,7 @@
                             <div class="row">
 
                                 <div class="col-md-12" >
-                                    <label class="mb-1">Destination customer name<b class="text-danger">*</b></label>
+                                <label class="mb-1"><i class="fa fa-user"></i> Destination customer name<b class="text-danger">*</b></label>
                                     <div class="input-group">
                                         <select style="width: 90%;" id="IdCustomerDestination" name="IdCustomerDestination" class="select2 form-control mb-3 custom-select DestinationInput"> </select>
                                         <button class="btn btn-dark" type="button" id="SearchDestinationCustomer"><i  class="ti ti-reload"></i></button>
@@ -349,21 +349,21 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Origin city<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin city<b class="text-danger">*</b></label>
                                                 <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginCity" name="OriginCity" type="text"
                                                     class="form-control originInput" placeholder="City">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                            <label class="mb-1">Origin state<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin state<b class="text-danger">*</b></label>
                                                 <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginState" name="OriginState" type="text"
                                                     class="form-control originInput" placeholder="State">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Origin zip code</label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin zip code</label>
                                                 <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginZip" name="OriginZip" type="text"
                                                     class="form-control originInput" placeholder="00000">
@@ -427,19 +427,19 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Destination city<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination city<b class="text-danger">*</b></label>
                                                 <input id="DestinationCity" name="DestinationCity" type="text"
                                                     class="form-control DestinationInput" placeholder="City">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Destination state<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination state<b class="text-danger">*</b></label>
                                                 <input id="DestinationState" name="DestinationState" type="text"
                                                     class="form-control DestinationInput" placeholder="State">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1">Destination zip code</label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination zip code</label>
                                                 <input id="DestinationZip" name="DestinationZip" type="text"
                                                     class="form-control DestinationInput" placeholder="00000">
                                             </div>
@@ -690,12 +690,12 @@
             <div class="col-md-6" >
                 <label class="mb-1"><b>Total</b><b class="text-danger">*</b></label>
                 <input type="number" class="form-control" name="Total" id="Total"
-                    placeholder="$0000">
+                placeholder="$0000" value="0">
             </div>
             <div class="col-md-6" >
                 <label class="mb-1"><b>Deposit</b><b class="text-danger">*</b></label>
                 <input id="Deposit" name="Deposit" type="number" class="form-control"
-                    placeholder="$0000">
+                placeholder="$0000" value="0">
             </div>
             <!-- end row -->
         </div>
@@ -749,19 +749,19 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-4" >
-                            <label class="mb-1">Billing city<b class="text-danger">*</b></label>
+                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing city<b class="text-danger">*</b></label>
                             <input id="BillingCity" name="BillingCity" type="text"
                                 class="form-control BillingInput" placeholder="City">
                         </div>
                         <!-- end row -->
                         <div class="col-md-4" >
-                            <label class="mb-1">Billing state<b class="text-danger">*</b></label>
+                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing state<b class="text-danger">*</b></label>
                             <input id="BillingState" name="BillingState" type="text"
                                 class="form-control BillingInput" placeholder="State">
                         </div>
                         <!-- end row -->
                         <div class="col-md-4" >
-                            <label class="mb-1">Billing zip code</label>
+                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing zip code</label>
                             <input id="BillingZipCode" name="BillingZipCode" type="text"
                                 class="form-control BillingInput" placeholder="00000">
                         </div>
@@ -847,7 +847,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="">
-                                                <h6 class="mb-0"><b>Order number: </b><span id="OrderIDForm">Pending to save</span></h6>
+                                            <h6 class="mb-0"><b>Order ID: </b><span class="OrderIDForm"><?=$Order->Id?></span></h6>
                                                 <h6 class="mb-0"><b>Order date: </b><span class="OrderDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Pick up date: </b><span class="PickUpDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Delivery date: </b><span class="DeliveryDateForm">0000-00-00</span></h6><br>
@@ -1015,7 +1015,7 @@
                                         <!--end col-->
                                         <div class="col-lg-12 col-xl-4">
                                             <div class="float-end d-print-none"> 
-                                            <a href="javascript:window.print()" class="btn btn-soft-info btn-sm">Print</a> 
+                                            <a href="javascript:window.print()" class="btn btn-info btn-sm"><i class="fa fa-print"></i> Print</a> 
                                         </div>
                                         <!--end col-->
                                     </div>
@@ -1049,8 +1049,60 @@
 <script src="plugins/jquery-steps/jquery.steps.min.js"></script>
 
 <script src="assets/js/orders.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
-<script type="text/javascript">
+<script src="assets/js/jquery.mask.js"></script>
+<script type="text/javascript"> 
+  $("#LoadingButton").hide();
+function SumNumber(number1, number2){
+
+var x1, x2 = 0;
+
+    if(!number1 || number1 == undefined || number1 == "" || number1.length == 0){
+        x1 = 0;
+    }else{
+        x1 = parseFloat(number1);
+    }
+
+    if(!number2 || number2 == undefined || number2 == "" || number2.length == 0){
+        x2 = 0;
+    }else{
+        x2 = parseFloat(number2);
+    }
+
+    return x1 + x2;
+}
+
+function ConvertNumber(number1){
+
+var x1 = 0;
+
+    if(!number1 || number1 == undefined || number1 == "" || number1.length == 0){
+        x1 = 0;
+    }else{
+        x1 = parseFloat(number1);
+    }
+
+    return x1;
+}
+
+function RestNumber(number1, number2){
+
+var x1, x2 = 0;
+
+if(!number1 || number1 == undefined || number1 == "" || number1.length == 0){
+    x1 = 0;
+}else{
+    x1 = parseFloat(number1);
+}
+
+if(!number2 || number2 == undefined || number2 == "" || number2.length == 0){
+    x2 = 0;
+}else{
+    x2 = parseFloat(number2);
+}
+
+return x1- x2;
+
+}
 
 $(document).ready(function($){
     $('.phone').mask('(000) 000-0000');
@@ -1066,9 +1118,8 @@ $("#form-horizontal").steps({
     transitionEffect: "slide",
     onStepChanging: function (event, currentIndex, newIndex)
     {
-        console.log(currentIndex + "-" + newIndex);
-        switch (currentIndex + "-" + newIndex) {
-            case "0-1":
+        switch (newIndex) {
+            case 1:
 
                 if($("#IdCustomerOrigin").val() !="" && $("#OriginAddress").val() != "" &&  $("#OriginCity").val() != "" && $("#OriginState").val() != "" &&  $("#OriginPhone1").val() != "" && $("#IdCustomerDestination").val() !="" && $("#DestinationAddress").val() != "" &&  $("#DestinationCity").val() != "" && $("#DestinationState").val() != "" &&  $("#DestinationPhone1").val() != ""){
                       return true;
@@ -1084,7 +1135,7 @@ $("#form-horizontal").steps({
                 
                 break;
 
-                case "1-2":
+                case 2:
 
                     if($("#PickUpDate").val() != "" &&  $("#DeliveryDate").val() != "" &&  $("#OrderStatusID").val() != ""){
                         return true;
@@ -1100,13 +1151,13 @@ $("#form-horizontal").steps({
 
                     break;
 
-               case "2-3":
+                    case 3:
 
                 if($("#CardHolderName").val() != "" &&  $("#CreditCard").val() != "" &&  $("#ExpDate").val() != "" &&  $("#Cvv").val() != ""  &&  $("#BillingAddress").val() != "" &&  $("#BillingCity").val() != "" && $("#BillingState").val() != "" &&  $("#Tel1").val() != "" &&  $("#Total").val() != "" && $("#Deposit").val() != ""){
                    
-                    if(parseFloat($("#Total").val()) < parseFloat($("#Deposit").val())){
+                    if(ConvertNumber($("#Deposit").val()) > ConvertNumber($("#Total").val())){
 
-                        $(".toast-error").html("(!) the Deposit is less than the Total [Step 3]");
+                        $(".toast-error").html("(!) the deposit is greater than the total [Step 3]");
                         var myAlert = document.getElementById('toastError');
                         var bsAlert = new bootstrap.Toast(myAlert);
                         bsAlert.show();
@@ -1151,21 +1202,11 @@ GetListVehicles();
 
 function AddVehicleList() {
 
-    var div = $("#contentVehicle");
-   // templateVehiculo
-
-    div.find(".select2").each(function(index) {
-        if ($(this).data('select2')) {
-            $(this).select2('destroy');
-        }
-    });
-
     $('#templateVehiculo').find(".select2").each(function(index) {
         if ($(this).data('select2')) {
             $(this).select2('destroy');
         }
     });
-
 
    var clonado =  $('#templateVehiculo').clone().val('');
    clonado.removeAttr('hidden');
@@ -1178,7 +1219,6 @@ function AddVehicleList() {
 function EliminarVehiculo(e) {
     $(e).parent().parent().parent().remove();
 }
-
 
 
 //Input Search Select2
@@ -1209,7 +1249,9 @@ function GetListVehicles() {
     $.ajax({
         type: 'POST',
         url: "index.php?c=vehicles&a=GetListVehicles",
-    }).then(function(response) {
+        beforeSend: function() {
+            $("#LoadingButton").show();
+    }}).then(function(response) {
 
         $('.BrandVehicle, .ModelVehicle').empty();
 
@@ -1243,7 +1285,8 @@ function GetListVehicles() {
         $(".toast-success").html("Vehicles list ready");
         var myAlert = document.getElementById('toastSuccess');
         var bsAlert = new bootstrap.Toast(myAlert);
-        bsAlert.show();
+        bsAlert.show(); 
+        $("#LoadingButton").hide();
     });
 
 }
@@ -1259,6 +1302,9 @@ function GetListCustomer() {
     $.ajax({
         type: 'POST',
         url: "index.php?c=customers&a=GetListCustomers",
+        beforeSend: function() {
+            $("#LoadingButton").show();
+    }
     }).then(function(response) {
 
         var data = JSON.parse(response);
@@ -1293,7 +1339,7 @@ function GetListCustomer() {
         var myAlert = document.getElementById('toastSuccess');
         var bsAlert = new bootstrap.Toast(myAlert);
         bsAlert.show();
-
+        $("#LoadingButton").hide();
 
         });
 }
@@ -1417,7 +1463,10 @@ function saveOrder(){
         type: 'POST',
         url: "index.php?c=orders&a=SaveOrder",
         data: {'order': $("#form-horizontal").serialize(), 'vehicles': vehiclesArray},
-            success: function(data) {
+         beforeSend: function() {
+            $("#LoadingButton").show();
+        },
+        success: function(data) {
                 
                 if(data){
 
@@ -1441,6 +1490,7 @@ function saveOrder(){
                         bsAlert.show();
 
                     }
+                    $("#LoadingButton").hide();
                 }else{
                     console.log(data);
                 }
