@@ -27,10 +27,10 @@
             <input type="hidden" name="IsActive" id="IsActive" value="<?= ($Customer->Id != null) ? $Customer->IsActive : 1 ?>"/>
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-8 offset-sm-2">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title text-primary">Customer maintenance</h4>
+                            <div class="card-header  bg-dark">
+                                <h1 class="card-title text-white">Customer maintenance</h1>
                                 <p class="text-muted mb-0">Form</p>
                             </div>
                    
@@ -101,12 +101,12 @@
         });
 
         var IdCustomerType = "<?= $Customer->IdCustomerType;?>";
-        $("#IdCustomerType").select2("val", IdCustomerType);
+        $("#IdCustomerType").val(IdCustomerType);
 
         if($("#IsActive").val() > 0){
-            $('#IsActiveToogle').bootstrapToggle('on');
+         //   $('#IsActiveToogle').bootstrapToggle('on');
         }else{
-            $('#IsActiveToogle').bootstrapToggle('off');
+            //$('#IsActiveToogle').bootstrapToggle('off');
         }
 
         $('#IsActiveToogle').change(function() {

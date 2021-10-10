@@ -1475,9 +1475,10 @@ hr.hr-dashed {
 }
 
 .card {
-    margin-bottom: 16px;
+    margin-bottom: 0px !important;
     background-color: #fff;
-    border: 1px solid #e3ebf6
+    border: 1px solid #e3ebf6 !important;
+    border-radius: .25rem !important;
 }
 
 .card .card-header {

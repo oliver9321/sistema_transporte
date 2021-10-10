@@ -24,12 +24,12 @@
         <div class="row vh-100 d-flex justify-content-center">
             <div class="col-12 align-self-center">
                 <div class="row">
-                    <div class="col-lg-5 mx-auto">
+                    <div class="col-sm-4 offset-sm-4">
                         <div class="card">
                             <div class="card-body p-0 auth-header-box">
                                 <div class="text-center p-3">
                                     <a href="index.html" class="logo logo-admin">
-                                        <img src="assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo">
+                                        <img src="assets/images/logoTransport.png" height="100" alt="logo" class="auth-logo">
                                     </a>
                                     <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Logistic Transport</h4>
                                 </div>
@@ -65,9 +65,9 @@
                                                 <div class="col-sm-6">
                                                 </div>
                                                 <!--end col-->
-                                                <div class="col-sm-6 text-end">
+                                                <!--<div class="col-sm-6 text-end">
                                                     <a href="auth-recover-pw.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>
-                                                </div>
+                                                </div>-->
                                                 <!--end col-->
                                             </div>
                                             <!--end form-group-->

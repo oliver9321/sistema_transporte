@@ -43,8 +43,8 @@ class CustomerTypeController
 
         if($_SESSION['UserOnline']->Profile == "admin") {
 
-          $customerType = new CustomerType();
-          $CustomerTypeList  =  $this->customerType->GetListCustomerTypes();
+          $customerType     = new CustomerType();
+          $CustomerTypeList  =  $this->model->GetListCustomerTypes();
 
         if(isset($_REQUEST['Id'])){
             $customerType =  $this->model->Edit($_REQUEST['Id']);

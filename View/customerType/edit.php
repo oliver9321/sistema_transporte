@@ -27,10 +27,10 @@
             <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($customerType->Id != null) ? $customerType->IsActive : 1 ?>" >
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-6 offset-sm-3">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title text-primary">Customer type maintenance</h4>
+                            <div class="card-header bg-dark">
+                                <h4 class="card-title text-white">Customer type maintenance</h4>
                                 <p class="text-muted mb-0">Form</p>
                             </div>
                    
@@ -69,9 +69,9 @@
         });
 
         if($("#IsActive").val() > 0){
-            $('#IsActiveToogle').bootstrapToggle('on');
+           // $('#IsActiveToogle').bootstrapToggle('on');
         }else{
-            $('#IsActiveToogle').bootstrapToggle('off');
+           // $('#IsActiveToogle').bootstrapToggle('off');
         }
 
         $('#IsActiveToogle').change(function() {

@@ -4,9 +4,10 @@
 
 define ("NOMBRE_APLICATION", "Ez autotransportation");
 define ("SYSTEM_NAME", "Ez Auto Transportation");
-define ("VERSION", "v1.5");
+define ("VERSION", "v2.1");
 define ("DEBUG", true);
-define ("MODE", "develop mode");
+define("COLOR","text-warning");
+define ("MODE", "Test mode");
 define("USUARIO_DB", "delimar1_logisti");
 define("PASSWORD_DB", "logistics_transport123");
 //define("SERVIDOR", "127.0.0.1"); //local

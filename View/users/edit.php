@@ -27,25 +27,25 @@
             <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($User->Id != null) ? $User->IsActive : 1 ?>" >
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-8 offset-sm-2">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title text-primary">User maintenance</h4>
+                            <div class="card-header bg-dark">
+                                <h4 class="card-title text-white">User maintenance</h4>
                                 <p class="text-muted mb-0">Form</p>
                             </div>
                    
                             <div class="card-body">
 
-
                                     <div class="mb-3">
                                     <label for="ProfileUserId"><b>*Profile:</b></label>
                                     <select id="ProfileUserId" name="ProfileUserId" class="form-control select2">
                                         <option value="" selected>Select user profile</option>
-                                        <?php foreach($Sucursal as $a): ?>
-                                            <option value="<?php echo $a->Id; ?>"><?php echo $a->Nombre; ?></option>
+                                        <?php foreach($userProfileList as $a): ?>
+                                            <option value="<?=  $a['Id']; ?>"><?=  $a['userProfile']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                            
 
                                     <div class="mb-3">
                                         <label class="form-label text-danger" for="Name">*Name:</label>
@@ -53,17 +53,17 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="LastName">*Last Name:</label>
+                                        <label class="form-label text-danger" for="LastName">*Last name:</label>
                                         <input type="text" class="form-control" id="LastName" name="LastName" aria-describedby="LastName" placeholder="Enter Last Name" value="<?php echo $User->LastName; ?>"> 
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="UserName">*User Name:</label>
+                                        <label class="form-label text-danger" for="UserName">*User name:</label>
                                         <input type="text" class="form-control" id="UserName" name="UserName" aria-describedby="UserName" placeholder="Enter User Name" value="<?php echo $User->UserName; ?>"> 
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="Password">*Profile Password:</label>
+                                        <label class="form-label text-danger" for="Password">*Profile password:</label>
                                         <input type="text" class="form-control" id="Password" name="Password" aria-describedby="Password" placeholder="Enter Password" value="<?php echo $User->Password; ?>"> 
                                     </div>
 
@@ -72,10 +72,10 @@
                                         <input type="text" class="form-control" id="Email" name="Email" aria-describedby="Email" placeholder="Enter Email" value="<?php echo $User->Email; ?>"> 
                                     </div>
 
-                                    <div class="mb-3">
+                                    <!--<div class="mb-3">
                                         <label class="form-label text-danger" for="Image">Imagen:</label>
                                         <input type="text" class="form-control" id="Image" name="Image" aria-describedby="Image" placeholder="" value="<?php echo $User->Image; ?>"> 
-                                    </div>
+                                    </div>-->
                             
                                     <?php if($User->Id != null){?>
                                         <button type="submit" class="btn btn-warning">Update <i class="fa fa-refresh"></i> </button>
@@ -103,10 +103,13 @@
             return $(this).validate();
         });
 
+        var ProfileUserId = "<?= $User->ProfileUserId;?>";
+        $("#ProfileUserId").val(ProfileUserId);
+
         if($("#IsActive").val() > 0){
-            $('#IsActiveToogle').bootstrapToggle('on');
+           // $('#IsActiveToogle').bootstrapToggle('on');
         }else{
-            $('#IsActiveToogle').bootstrapToggle('off');
+            //$('#IsActiveToogle').bootstrapToggle('off');
         }
 
         $('#IsActiveToogle').change(function() {

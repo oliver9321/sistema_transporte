@@ -32,7 +32,7 @@ class Users {
         try
         {
 
-                $stm = $this->pdo->prepare("SELECT * FROM tbl_users");
+                $stm = $this->pdo->prepare("SELECT * FROM vw_users");
                 $stm->execute();
 
                 $row = $stm->fetchAll();

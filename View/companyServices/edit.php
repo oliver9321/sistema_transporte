@@ -27,10 +27,10 @@
             <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($CompanyService->Id != null) ? $CompanyService->IsActive : 1 ?>" >
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-8 offset-sm-2">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title text-primary">Company service maintenance</h4>
+                            <div class="card-header bg-dark">
+                                <h4 class="card-title text-white">Company service maintenance</h4>
                                 <p class="text-muted mb-0">Form</p>
                             </div>
                    
@@ -43,7 +43,7 @@
 
                                     <div class="mb-3">
                                         <label class="form-label" for="CompanyAddress">Company address:</label>
-                                        <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress"  aria-describedby="CompanyAddress" placeholder="Enter the CompanyAddress" value="<?php echo $CompanyService->CompanyAddress; ?>">
+                                        <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress"  aria-describedby="CompanyAddress" placeholder="Enter the address" value="<?php echo $CompanyService->CompanyAddress; ?>">
                                     </div>
 
                                     <div class="mb-3">
@@ -59,8 +59,8 @@
                                     
                                     
                                     <div class="mb-3">
-                                        <label class="form-label" for="CompanyEmail">CompanyEmail:</label>
-                                        <input type="CompanyEmail" class="form-control" id="CompanyEmail" name="CompanyEmail"  aria-describedby="CompanyEmail" placeholder="Enter the CompanyEmail (optional)" value="<?php echo $CompanyService->CompanyEmail; ?>">
+                                        <label class="form-label" for="CompanyEmail">Company email:</label>
+                                        <input type="CompanyEmail" class="form-control" id="CompanyEmail" name="CompanyEmail"  aria-describedby="CompanyEmail" placeholder="Enter the email (optional)" value="<?php echo $CompanyService->CompanyEmail; ?>">
                                     </div>
 
                                     <?php if($CompanyService->Id != null){?>
@@ -90,9 +90,9 @@
         });
 
         if($("#IsActive").val() > 0){
-            $('#IsActiveToogle').bootstrapToggle('on');
+          //  $('#IsActiveToogle').bootstrapToggle('on');
         }else{
-            $('#IsActiveToogle').bootstrapToggle('off');
+          //  $('#IsActiveToogle').bootstrapToggle('off');
         }
 
         $('#IsActiveToogle').change(function() {

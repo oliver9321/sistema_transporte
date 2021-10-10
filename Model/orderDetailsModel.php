@@ -137,4 +137,22 @@ $result=  $this->pdo->prepare($sql)
         }
     }
 
+    public function DeleteOrderDetail($OrderDetailsID)
+    {
+        try
+        {
+       
+           $sql = "DELETE FROM tbl_order_details WHERE IdOrder = ?";
+           $result = $this->pdo->prepare($sql)->execute(array($OrderDetailsID));
+          
+           return $result;
+                
+        } catch (Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
+    
+
 }

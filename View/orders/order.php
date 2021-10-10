@@ -848,9 +848,9 @@
                                         <div class="col-md-4">
                                             <div class="">
                                                 <h6 class="mb-0"><b>Order number: </b><span id="OrderIDForm">Pending to save</span></h6>
-                                                <h6 class="mb-0"><b>Order date: </b><span id="OrderDateForm">0000-00-00</span></h6>
-                                                <h6 class="mb-0"><b>Pick up date: </b><span id="PickUpDateForm">0000-00-00</span></h6>
-                                                <h6 class="mb-0"><b>Delivery date: </b><span id="DeliveryDateForm">0000-00-00</span></h6><br>
+                                                <h6 class="mb-0"><b>Order date: </b><span class="OrderDateForm">0000-00-00</span></h6>
+                                                <h6 class="mb-0"><b>Pick up date: </b><span class="PickUpDateForm">0000-00-00</span></h6>
+                                                <h6 class="mb-0"><b>Delivery date: </b><span class="DeliveryDateForm">0000-00-00</span></h6><br>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -858,9 +858,9 @@
                                             <div class="float-left">
                                                 <address class="font-13">
                                                     <strong class="font-14">Origin:</strong><br>
-                                                    <b id="OriginNameForm">Field empty</b><br>
-                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i id="OriginAddressForm">Field empty</i><br>
-                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span id="OriginPhone1Form"></span> <span id="OriginPhone2Form"></span></span>
+                                                    <b class="OriginNameForm">Field empty</b><br>
+                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i class="OriginAddressForm">Field empty</i><br>
+                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span class="OriginPhone1Form"></span> <span class="OriginPhone2Form"></span></span>
                                                 </address>
                                             </div>
                                         </div>
@@ -869,9 +869,9 @@
                                             <div class="">
                                             <address class="font-13">
                                                     <strong class="font-14">Destination:</strong><br>
-                                                    <b id="DestinationNameForm">Field empty</b><br>
-                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i id="DestinationAddressForm">Field empty</i><br>
-                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span id="DestinationPhone1Form"></span> <span id="DestinationPhone2Form"></span></span>
+                                                    <b class="DestinationNameForm">Field empty</b><br>
+                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i class="DestinationAddressForm">Field empty</i><br>
+                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span class="DestinationPhone1Form"></span> <span class="DestinationPhone2Form"></span></span>
                                                 </address>
                                             </div>
                                         </div>
@@ -894,7 +894,7 @@
                                                         </tr>
                                                         <!--end tr-->
                                                     </thead>
-                                                    <tbody id="ListVehiclesPDF">
+                                                    <tbody class="ListVehiclesPDF">
                                                         <!--end tr-->
                                                     </tbody>
                                                     <tfoot>
@@ -912,14 +912,14 @@
                                                             <th colspan="2" class="border-0"></th>
                                                             <th colspan="2" class="border-0"></th>
                                                             <td class="border-0 font-14" style="text-align:right !important"><b>Deposit</b></td>
-                                                            <td class="border-0 font-14"><b id="DepositForm">$00.00</b></td>
+                                                            <td class="border-0 font-14"><b class="DepositForm">$00.00</b></td>
                                                         </tr>
 
                                                         <tr class="bg-black text-white">
                                                             <th colspan="2" class="border-0"></th>
                                                             <th colspan="2" class="border-0"></th>
                                                             <td class="border-0 font-14" style="text-align:right !important"><b>Total</b></td>
-                                                            <td class="border-0 font-14"><b id="TotalForm">$00.00</b></td>
+                                                            <td class="border-0 font-14"><b class="TotalForm">$00.00</b></td>
                                                         </tr>
                                                       
                                                     </tfoot>
@@ -947,22 +947,22 @@
                                                             <tr>
                                                                 <td style="border-style: none;">
                                                                     <h6 class="mt-0 mb-1 font-14"><b>Card holder name</b></h6>
-                                                                    <p class="mb-0 text-muted" id="CardHolderNameForm"></p>
+                                                                    <p class="mb-0 text-muted CardHolderNameForm"></p>
                                                                 </td>
 
                                                                 <td style="border-style: none;"> 
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Credit card number</b></h5>
-                                                                    <p class="mb-0 text-muted" id="CreditCardNumberForm"></p>
+                                                                    <p class="mb-0 text-muted CreditCardNumberForm"></p>
                                                                 </td>
 
                                                                 <td  style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>City</b></h5>
-                                                                    <p class="mb-0 text-muted" id="BillingCityForm"></p>
+                                                                    <p class="mb-0 text-muted BillingCityForm"></p>
                                                                 </td>
 
                                                                 <td style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Billing address</b></h5>
-                                                                    <p class="mb-0 text-muted" id="BillingAddressForm"></p>
+                                                                    <p class="mb-0 text-muted BillingAddressForm"></p>
                                                                 </td>
 
                                                             </tr>
@@ -970,23 +970,23 @@
                                                             <tr>
                                                                 <td style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Expiration date</b></h5>
-                                                                    <p class="mb-0 text-muted" id="ExperationDateForm"></p>
+                                                                    <p class="mb-0 text-muted ExperationDateForm"></p>
                                                                 </td>
 
                                                                 <td  style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>CVV</b></h5>
-                                                                    <p class="mb-0 text-muted" id="CVVForm"></p>
+                                                                    <p class="mb-0 text-muted CVVForm"></p>
                                                                 </td>
 
 
                                                                 <td  style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>State</b></h5>
-                                                                    <p class="mb-0 text-muted" id="BillingStateForm"></p>
+                                                                    <p class="mb-0 text-muted BillingStateForm"></p>
                                                                 </td>
 
                                                                 <td  style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Zip code</b></h5>
-                                                                    <p class="mb-0 text-muted" id="BillingZipCodeForm"></p>
+                                                                    <p class="mb-0 text-muted BillingZipCodeForm"></p>
                                                                 </td>
 
                                                             </tr>
@@ -1002,7 +1002,7 @@
                                     <div class="row">
                                          <div class="col-md-8" style="width: 900px;">
                                             <div class="card-body">
-                                                <span class="d-flew justify-content" id="OriginDestinationNotesForm"></span>
+                                                <span class="d-flew justify-content OriginDestinationNotesForm"></span>
                                             </div>
                                          </div>
                                     </div>
@@ -1136,7 +1136,13 @@ $("#form-horizontal").steps({
                 break;
         }
 
-    }
+    }, onContentLoaded: function() {},
+            onInit: function() {},
+            labels: { cancel: "Cancel", current: "current step:", pagination: "Pagination", finish: "Save order", next: "Next", previous: "Previous", loading: "Loading ..." },         
+            onFinishing: function(event, currentIndex) {
+                saveOrder();
+                return true;
+            }
 });
 
 //Execute select2 functions 
@@ -1189,7 +1195,7 @@ $(document).ready(function() {
     
     $(".steps").addClass("d-print-none");
     $(".actions").addClass("d-print-none");
-    $("#ListVehiclesPDF").html("");
+    $(".ListVehiclesPDF").html("");
 
 });
 
@@ -1294,36 +1300,36 @@ function GetListCustomer() {
 
 function loadInfoPDF1(){
 
-    $("#OrderDateForm").text($("#PickUpOrderDateDate").val());
-    $("#ListVehiclesPDF").html("");
+    $(".OrderDateForm").text($("#PickUpOrderDateDate").val());
+    $(".ListVehiclesPDF").html("");
 
     //Origin Info
-    $("#OriginNameForm").html($("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) != "" ? $("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) : "<span class='text-danger'>Check origin customer name</span>");
+    $(".OriginNameForm").html($("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) != "" ? $("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) : "<span class='text-danger'>Check origin customer name</span>");
     
-    $("#OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() :  "<span class='text-danger'>Check origin address</span>");
+    $(".OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() :  "<span class='text-danger'>Check origin address</span>");
 
-    $("#PickUpDateForm").html($("#PickUpDate").val() != "" ? $("#PickUpDate").val() :  "<span class='text-danger'>Check pick up date</span>");
-    $("#DeliveryDateForm").html($("#DeliveryDate").val() != "" ? $("#DeliveryDate").val() :  "<span class='text-danger'>Check delivery date</span>");
+    $(".PickUpDateForm").html($("#PickUpDate").val() != "" ? $("#PickUpDate").val() :  "<span class='text-danger'>Check pick up date</span>");
+    $(".DeliveryDateForm").html($("#DeliveryDate").val() != "" ? $("#DeliveryDate").val() :  "<span class='text-danger'>Check delivery date</span>");
 
     if($("#OriginZip").val() != ""){
-        $("#OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() + "<br> Zip code: "+$("#OriginZip").val() :  "<span class='text-danger'>Check origin address</span>");
+        $(".OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() + "<br> Zip code: "+$("#OriginZip").val() :  "<span class='text-danger'>Check origin address</span>");
     }
    
-    $("#OriginPhone1Form").html($("#OriginPhone1").val() != "" ? $("#OriginPhone1").val() :  "<span class='text-danger'>Check origin phone1</span>");
-    $("#OriginPhone2Form").html($("#OriginPhone2").val() != "" ? "/ "+$("#OriginPhone2").val() :  "");
+    $(".OriginPhone1Form").html($("#OriginPhone1").val() != "" ? $("#OriginPhone1").val() :  "<span class='text-danger'>Check origin phone1</span>");
+    $(".OriginPhone2Form").html($("#OriginPhone2").val() != "" ? "/ "+$("#OriginPhone2").val() :  "");
 
     
     //Destination Info
-    $("#DestinationNameForm").html($("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) != "" ? $("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) : "<span class='text-danger'>Check destination customer name</span>");
+    $(".DestinationNameForm").html($("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) != "" ? $("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) : "<span class='text-danger'>Check destination customer name</span>");
     
-    $("#DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() :  "<span class='text-danger'>Check destination address</span>");
+    $(".DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() :  "<span class='text-danger'>Check destination address</span>");
 
     if($("#DestinationZip").val() != ""){
-        $("#DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() + "<br> Zip code: "+$("#DestinationZip").val() :  "<span class='text-danger'>Check destination address</span>");
+        $(".DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() + "<br> Zip code: "+$("#DestinationZip").val() :  "<span class='text-danger'>Check destination address</span>");
     }
    
-    $("#DestinationPhone1Form").html($("#DestinationPhone1").val() != "" ? $("#DestinationPhone1").val() :  "<span class='text-danger'>Check destination phone1</span>");
-    $("#DestinationPhone2Form").html($("#DestinationPhone2").val() != "" ? "/ "+$("#DestinationPhone2").val() :  "");
+    $(".DestinationPhone1Form").html($("#DestinationPhone1").val() != "" ? $("#DestinationPhone1").val() :  "<span class='text-danger'>Check destination phone1</span>");
+    $(".DestinationPhone2Form").html($("#DestinationPhone2").val() != "" ? "/ "+$("#DestinationPhone2").val() :  "");
 
     //Vehicles Step info
 
@@ -1355,20 +1361,20 @@ function loadInfoPDF1(){
       
     });
 
-     $("#ListVehiclesPDF").append(markup);
+     $(".ListVehiclesPDF").append(markup);
 
      //Payment info
-    $("#TotalForm").html($("#Total").val() != "" ? "US$ "+$("#Total").val() :  "<span class='text-danger'>Check total payment</span>");
-    $("#DepositForm").html($("#Deposit").val() != "" ? "US$ "+$("#Deposit").val() :  "<span class='text-danger'>Check deposit payment</span>");
-    $("#CardHolderNameForm").html($("#CardHolderName").val() != "" ? $("#CardHolderName").val() :  "<span class='text-danger'>Check card holder name</span>");
-    $("#CreditCardNumberForm").html($("#CreditCard").val() != "" ? $("#CreditCard").val() :  "<span class='text-danger'>Check credit card number</span>");
-    $("#ExperationDateForm").html($("#ExpDate").val() != "" ? $("#ExpDate").val() :  "<span class='text-danger'>Check experation date</span>");
-    $("#CVVForm").html($("#Cvv").val() != "" ? $("#Cvv").val() :  "<span class='text-danger'>Check CVV code</span>");
+    $(".TotalForm").html($("#Total").val() != "" ? "US$ "+$("#Total").val() :  "<span class='text-danger'>Check total payment</span>");
+    $(".DepositForm").html($("#Deposit").val() != "" ? "US$ "+$("#Deposit").val() :  "<span class='text-danger'>Check deposit payment</span>");
+    $(".CardHolderNameForm").html($("#CardHolderName").val() != "" ? $("#CardHolderName").val() :  "<span class='text-danger'>Check card holder name</span>");
+    $(".CreditCardNumberForm").html($("#CreditCard").val() != "" ? $("#CreditCard").val() :  "<span class='text-danger'>Check credit card number</span>");
+    $(".ExperationDateForm").html($("#ExpDate").val() != "" ? $("#ExpDate").val() :  "<span class='text-danger'>Check experation date</span>");
+    $(".CVVForm").html($("#Cvv").val() != "" ? $("#Cvv").val() :  "<span class='text-danger'>Check CVV code</span>");
   
-    $("#BillingAddressForm").html($("#BillingAddress").val() != "" ? $("#BillingAddress").val() :  "<span class='text-danger'>Check billing address</span>");
-    $("#BillingCityForm").html($("#BillingCity").val() != "" ? $("#BillingCity").val() :  "<span class='text-danger'>Check billing city</span>");
-    $("#BillingStateForm").html($("#BillingState").val() != "" ? $("#BillingState").val() :  "<span class='text-danger'>Check billing state</span>");
-    $("#BillingZipCodeForm").html($("#BillingZipCode").val() != "" ? $("#BillingZipCode").val() :  "<span class='text-danger'>Check billing zipcode</span>");
+    $(".BillingAddressForm").html($("#BillingAddress").val() != "" ? $("#BillingAddress").val() :  "<span class='text-danger'>Check billing address</span>");
+    $(".BillingCityForm").html($("#BillingCity").val() != "" ? $("#BillingCity").val() :  "<span class='text-danger'>Check billing city</span>");
+    $(".BillingStateForm").html($("#BillingState").val() != "" ? $("#BillingState").val() :  "<span class='text-danger'>Check billing state</span>");
+    $(".BillingZipCodeForm").html($("#BillingZipCode").val() != "" ? $("#BillingZipCode").val() :  "<span class='text-danger'>Check billing zipcode</span>");
 
     var OriginNote = "";
     var DestinationNote = "";
@@ -1383,7 +1389,7 @@ function loadInfoPDF1(){
     }
 
     OriginDestinationNote = OriginNote + "<br>" + DestinationNote;
-    $("#OriginDestinationNotesForm").html(OriginDestinationNote != "" ? OriginDestinationNote :  "");
+    $(".OriginDestinationNotesForm").html(OriginDestinationNote != "" ? OriginDestinationNote :  "");
                                                   
 }
 
@@ -1419,7 +1425,7 @@ function saveOrder(){
                                
                     if(response.Error == false){
 
-                        $("#OrderIDForm").html(response.OrderId);
+                        $(".OrderIDForm").html(response.OrderId);
                         $(".toast-success").html(response.Message);
                         var myAlert = document.getElementById('toastSuccess');
                         var bsAlert = new bootstrap.Toast(myAlert);

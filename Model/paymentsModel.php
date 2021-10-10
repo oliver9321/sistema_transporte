@@ -38,7 +38,7 @@ class Payments {
         try
         {
 
-                $stm = $this->pdo->prepare("SELECT * FROM tbl_payments");
+                $stm = $this->pdo->prepare("SELECT * FROM vw_payments");
                 $stm->execute();
                 $row = $stm->fetchAll();
 
@@ -109,13 +109,15 @@ $result=  $this->pdo->prepare($sql)
                         $data->Tel2,
                         $data->PaymentEmail,
                         $data->PaymentNote,
-                        $data->date('Y-m-d H:i:s'),
+                         date('Y-m-d H:i:s'),
                         (int)$_SESSION['UserOnline']->Id,
                         (int)$data->IsActive,
                         $data->Id
                     )
                 );
+
                 return $result;
+
         } catch (Exception $e)
         {
             die($e->getMessage());

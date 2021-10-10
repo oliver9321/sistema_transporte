@@ -33,8 +33,8 @@ class Customers {
 
                 $stm = $this->pdo->prepare("SELECT * FROM vw_customers");
                 $stm->execute();
-
                 $row = $stm->fetchAll();
+                $this->pdo = null;
 
                 $response = array();
                 $response['success'] = true;
@@ -55,8 +55,10 @@ class Customers {
         {
             $stm = $this->pdo->prepare("SELECT *  FROM tbl_customers WHERE Id = ?");
             $stm->execute(array($id));
+            $result = $stm->fetch(PDO::FETCH_OBJ);
+            $this->pdo = null;
 
-            return $stm->fetch(PDO::FETCH_OBJ);
+            return $result;
 
         } catch (Exception $e)
         {
@@ -81,7 +83,7 @@ class Customers {
 						IsActive = ?
 				    WHERE Id = ?";
 
-$result=   $this->pdo->prepare($sql)
+$result = $this->pdo->prepare($sql)
                 ->execute(
                     array(
 
@@ -97,7 +99,11 @@ $result=   $this->pdo->prepare($sql)
                         $data->Id
                     )
                 );
+
+                $this->pdo = null;
+
                 return $result;
+
         } catch (Exception $e)
         {
             die($e->getMessage());

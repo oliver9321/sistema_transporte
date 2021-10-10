@@ -4,7 +4,7 @@
 	<script>
 	document.write(new Date().getFullYear())
 	</script>
-	<?=NOMBRE_APLICATION." ".VERSION ?> - <span class="text-danger"><?=MODE?></span><span class="text-muted d-none d-sm-inline-block float-end">developed by
+	<?=NOMBRE_APLICATION." ".VERSION ?> - <span class="<?=COLOR?>"><?=MODE?></span><span class="text-muted d-none d-sm-inline-block float-end">developed by
         <i class="mdi mdi-heart text-danger"></i>devsarrollando.org</span> </footer>
 <!--end footer-->
 </div>

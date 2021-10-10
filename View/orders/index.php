@@ -5,7 +5,7 @@
 
         <div class="row">
                                 <div class="col-12 col-lg-6 col-xl"> 
-                                    <div class="card">
+                                    <div class="card" id="PendingBlock">
                                         <div class="card-body bg-warning">
                                             <div class="row align-items-center">
                                                 <div class="col text-center">                                                                        
@@ -53,6 +53,7 @@
                                     </div> <!--end card-->                     
                                 </div><!--end col-->                                
                             </div>
+                            <br/>
             <div class="card">
                 <div class="card-header bg-dark">
                     <h4 class="card-title text-white">ORDER LIST</h4>
@@ -62,32 +63,56 @@
                     <div class="card-body">  
                     <!-- <table id="CustomerList" width="100%" class="table table-striped table-bordered dataTable mb-0  table-responsive">-->
                         <div>
-                            <table id="CustomersList" class="table table-bordered table-hover nowrap" style="width:100%" >
+                            <table id="CustomersList" class="table table-bordered table-hover" style="width:100%" >
                             <thead>
-                               <tr>
-                                    <th>Order ID</th>
+                               <tr class="bg-light ">
+                               <th>Order ID</th>
                                     <th class="text-center">Options</th>
-                                    <th>Status</th>
-                                    <th>Debemos</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">Debemos</th>
                                     <th class="text-center">Nos deben</th>
-                                    <th>Customer Origin</th>
-                                    <th>Customer Origin Phone1</th>
-                                    <th>Customer Destination</th>
-                                    <th>Customer Dest Phone1</th>
-                                    <th>Order Date</th>
-                                    <th>PickUp Date</th>
-                                    <th>Delivery Date</th>
-                                    <th>Origin City</th>
-                                    <th>Destination City</th>
-                                    <th>Total</th>
-                                    <th>Deposit</th>
-                                    <th>Extra Truker Fee</th>
-                                    <th>Truker Owes Us</th>
-                                    <th>Earnings</th>
-                                    <th>Cod</th>
-                                    <th>Trucker Rate</th>
+                                    <th class="text-center">Customer Origin</th>
+                                    <th class="text-center">Origin Phone1</th>
+                                    <th class="text-center">Customer Destination</th>
+                                    <th class="text-center">Destination Phone1</th>
+                                    <th class="text-center">Order Date</th>
+                                    <th class="text-center">PickUp Date</th>
+                                    <th class="text-center">Delivery Date</th>
+                                    <th class="text-center">Origin City</th>
+                                    <th class="text-center">Destination City</th>
+                                    <th class="text-center">Total</th>
+                                    <th class="text-center">Deposit</th>
+                                    <th class="text-center">Extra Truker Fee</th>
+                                    <th class="text-center">Truker Owes Us</th>
+                                    <th class="text-center">Earnings</th>
+                                    <th class="text-center">Cod</th>
+                                    <th class="text-center">Trucker Rate</th>
+                            </tfoot>
                                 </tr>
                             </thead>
+                            <tfoot>
+                                     <th>Order ID</th>
+                                    <th class="text-center">Options</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">Debemos</th>
+                                    <th class="text-center">Nos deben</th>
+                                    <th class="text-center">Customer Origin</th>
+                                    <th class="text-center">Origin Phone1</th>
+                                    <th class="text-center">Destination</th>
+                                    <th class="text-center">Destination Phone1</th>
+                                    <th class="text-center">Order Date</th>
+                                    <th class="text-center">PickUp Date</th>
+                                    <th class="text-center">Delivery Date</th>
+                                    <th class="text-center">Origin City</th>
+                                    <th class="text-center">Destination City</th>
+                                    <th class="text-center">Total</th>
+                                    <th class="text-center">Deposit</th>
+                                    <th class="text-center">Extra Truker Fee</th>
+                                    <th class="text-center">Truker Owes Us</th>
+                                    <th class="text-center">Earnings</th>
+                                    <th class="text-center">Cod</th>
+                                    <th class="text-center">Trucker Rate</th>
+                            </tfoot>
                         </table>
                         </div>
                     </div>
@@ -97,15 +122,37 @@
 
 <script>
 
+ let datatable = "";
   
 $(document).ready(function() {
     $("body").addClass("enlarge-menu");
     $.noConflict();
+
+
+    $('#CustomersList tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Buscar por '+title+'" />' );
+    } );
+ 
    
-  var datatable = $('#CustomersList').DataTable({
-            'responsive': true,
-            dom: 'Bfrtip',
-            buttons: [{
+datatable = $('#CustomersList').DataTable({
+    initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that.search(this.value).draw();
+                    }
+                } );
+            } );
+        },
+        "autoWidth": true,
+        scrollX:        true,
+        scrollCollapse: true,
+       dom: 'Bfrtip',
+       buttons: [{
             extend: 'copy',
             text: 'Copy to clipboard'
         },{
@@ -190,6 +237,7 @@ $(document).ready(function() {
                 }} 
             ]
     });
+
 
 });
 

@@ -1,14 +1,15 @@
 <?php
 
-require_once 'Config/Core.php'; // Obligatorio en todos los controladores
-require_once 'Model/usersModel.php'; //Insertar Modelo correspondiente al controlador
+require_once 'Config/Core.php'; 
+require_once 'Model/usersModel.php'; 
+require_once 'Model/userProfilesModel.php';
 
 class UsersController
 {
     private $model;
 
     public function __CONSTRUCT(){
-        $this->model = new Users(); // Se instancia el Modelo. Nombre de la clase del modelo
+        $this->model = new Users(); 
     }
 
     //Vista Index
@@ -44,9 +45,12 @@ class UsersController
         if($_SESSION['UserOnline']->Profile == "admin") {
 
           $User = new Users();
+          $userProfile = new UserProfiles();
+          $userProfileList =  $userProfile->GetListUserProfiles();
 
         if(isset($_REQUEST['Id'])){
             $User =  $this->model->Edit($_REQUEST['Id']);
+            $User->Password = trim($this->decryptIt($User->Password, KEY));
         }
 
        GetRouteView(null, "header");
@@ -68,12 +72,12 @@ class UsersController
             
             //Campos unicos por tabla
             $Users->ProfileUserId         = $_REQUEST['ProfileUserId'];
-            $Users->Name                  =  $_REQUEST['Name'];
+            $Users->Name                  = $_REQUEST['Name'];
             $Users->LastName              = $_REQUEST['LastName'];
             $Users->UserName              = $_REQUEST['UserName'];
             $Users->Password              = $_REQUEST['Password'];
             $Users->Email                 = $_REQUEST['Email'];
-            $Users->Image                 = $_REQUEST['Image'];
+            $Users->Image                 = 'logoTransport.png';
 
             //Campos genericos
             $Users->IsActive                = $_REQUEST['IsActive'];
@@ -104,5 +108,31 @@ class UsersController
             header('Location:index.php?c=users&a=Edit');
         }
     }
+
+    function encryptIt($string, $key) {
+
+        $result = '';
+        for($i=0; $i<strlen($string)*5; $i++) {
+           $char = substr($string, $i, 1);
+           $keychar = substr($key, ($i % strlen($key))-1, 1);
+           $char = chr(ord($char)+ord($keychar));
+           $result.=$char;
+        }
+        return base64_encode($result);
+ }
+
+
+ function decryptIt($string, $key) {
+
+        $result = '';
+        $string = base64_decode($string);
+        for($i=0; $i<strlen($string); $i++) {
+           $char = substr($string, $i, 1);
+           $keychar = substr($key, ($i % strlen($key))-1, 1);
+           $char = chr(ord($char)-ord($keychar));
+           $result.=$char;
+        }
+        return $result;
+     }
 
 }

@@ -114,5 +114,22 @@ $result= $this->pdo->prepare($sql)
         }
     }
 
+    public function GetListUserProfiles()
+    {
+        try
+        {
+
+            $stm = $this->pdo->prepare("SELECT Id, Profile as userProfile FROM tbl_user_profiles WHERE IsActive = 1");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
 
 }

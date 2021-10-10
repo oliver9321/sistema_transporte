@@ -14,7 +14,7 @@ function newCustomer() {
         },
         success: function(data) {
 
-            if (data == "true") {
+            if (data) {
 
                 $("#ModalNewCustomer").modal('hide');
                 $(".toast-success").html("Customer created");
@@ -225,7 +225,7 @@ function newCompany() {
         },
         success: function(data) {
 
-            if (data == "true") {
+            if (data) {
 
                 $("#ModalNewCompanyService").modal('hide');
                 $(".toast-success").html("Company created");
@@ -250,6 +250,7 @@ function newCompany() {
 
 function newDriver() {
 
+
     $.ajax({
         url: "index.php?c=Drivers&a=NewDriver",
         type: "POST",
@@ -260,10 +261,9 @@ function newDriver() {
         },
         success: function(data) {
 
-            if (data == "true") {
+            if (data) {
 
                 $("#ModalNewDriver").modal('hide');
-
                 $(".toast-success").html("Driver created");
                 var myAlert = document.getElementById('toastSuccess');
                 var bsAlert = new bootstrap.Toast(myAlert);
@@ -294,7 +294,7 @@ function newVehicle() {
         },
         success: function(data) {
 
-            if (data == "true") {
+            if (data) {
 
                 $("#ModalNewVehicle").modal('hide');
                 $(".toast-success").html("Vehicle created");

@@ -18,6 +18,7 @@
                     <div class="col-lg-12">
                         <div class="card-body">
                             <div class="mb-1">
+                           
                                 <label for="IdCustomerTypeNewCustomer" class="text-danger">*Customer type:</label>
                                 <select style="width: 100%;" id="IdCustomerTypeNewCustomer"
                                     name="IdCustomerTypeNewCustomer" class="select2 form-control mb-3 custom-select">
@@ -230,7 +231,7 @@
                                 <label class="form-label" for="DriverPhone2NewDriver">Phone #2</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control phone id="DriverPhone2NewDriver"
+                                    <input type="tel" class="form-control phone" id="DriverPhone2NewDriver"
                                         name="DriverPhone2NewDriver" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -279,7 +280,7 @@
 </div>
 
 
-
+        
 <div class="modal-body bg-dark d-print-non">
     <div class="card">
         <div class="card-header d-print-none">
@@ -293,11 +294,15 @@
                 data-bs-target="#ModalNewDriver"><i class="fa fa-address-card me-2"></i>New driver</button>
             <button type="button" class="btn btn-soft-danger btn-sm"
                 onclick="$('input, textarea, select').val('');">Clear all fields</button>
+
+            <button type="button" id="LoadingButton" class="btn btn-soft-light btn-sm"> <div class="spinner-border spinner-border-sm" role="status"></div></button>
+       
         </div>
         <!--end card-header-->
         <div class="card-body">
             <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
                 <input type="text" name="Id" id="Id" value="<?=$Order->Id?>" hidden>
+              
                 <h3>Basic info</h3>
                 <fieldset>
                     <div class="row">
@@ -490,6 +495,7 @@
                             </div>
                         </div>
                 </fieldset>
+
                 <!--end fieldset-->
                 <h3>Vehicles</h3>
                 <fieldset>
@@ -499,6 +505,7 @@
                             <hr>
                             </div>
                         <div class="col-md-6">
+                  
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
@@ -660,6 +667,7 @@
                     </div>
                 </fieldset>
                 <!--end fieldset-->
+
                 <h3>Payment</h3>
                 <fieldset>
 
@@ -667,7 +675,7 @@
                         <div class="col-md-6"> <span class="text-dark"><b><i data-feather="credit-card"></i> Credit Card info</b></span>
                             <hr>
                             <div class="row">	
-
+                                <input type="text" id="PaymentID" name="PaymentID" value="<?= $Payment->Id; ?>" hidden/>
                                 <div class="col-md-6" >
                                 <label class="mb-1"> Card holder name<b class="text-danger">*</b></label>
                                     <input type="text" class="form-control" name="CardHolderName" id="CardHolderName" style="text-transform:uppercase">
@@ -847,10 +855,10 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="">
-                                                <h6 class="mb-0"><b>Order number: </b><span id="OrderIDForm">Pending to save</span></h6>
-                                                <h6 class="mb-0"><b>Order date: </b><span id="OrderDateForm">0000-00-00</span></h6>
-                                                <h6 class="mb-0"><b>Pick up date: </b><span id="PickUpDateForm">0000-00-00</span></h6>
-                                                <h6 class="mb-0"><b>Delivery date: </b><span id="DeliveryDateForm">0000-00-00</span></h6><br>
+                                                <h6 class="mb-0"><b>Order number: </b><span class="OrderIDForm"><?=$Order->Id?></span></h6>
+                                                <h6 class="mb-0"><b>Order date: </b><span class="OrderDateForm">0000-00-00</span></h6>
+                                                <h6 class="mb-0"><b>Pick up date: </b><span class="PickUpDateForm">0000-00-00</span></h6>
+                                                <h6 class="mb-0"><b>Delivery date: </b><span class="DeliveryDateForm">0000-00-00</span></h6><br>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -858,9 +866,9 @@
                                             <div class="float-left">
                                                 <address class="font-13">
                                                     <strong class="font-14">Origin:</strong><br>
-                                                    <b id="OriginNameForm">Field empty</b><br>
-                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i id="OriginAddressForm">Field empty</i><br>
-                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span id="OriginPhone1Form"></span> <span id="OriginPhone2Form"></span></span>
+                                                    <b class="OriginNameForm">Field empty</b><br>
+                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i class="OriginAddressForm">Field empty</i><br>
+                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span class="OriginPhone1Form"></span> <span class="OriginPhone2Form"></span></span>
                                                 </address>
                                             </div>
                                         </div>
@@ -869,9 +877,9 @@
                                             <div class="">
                                             <address class="font-13">
                                                     <strong class="font-14">Destination:</strong><br>
-                                                    <b id="DestinationNameForm">Field empty</b><br>
-                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i id="DestinationAddressForm">Field empty</i><br>
-                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span id="DestinationPhone1Form"></span> <span id="DestinationPhone2Form"></span></span>
+                                                    <b class="DestinationNameForm">Field empty</b><br>
+                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i class="DestinationAddressForm">Field empty</i><br>
+                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span class="DestinationPhone1Form"></span> <span class="DestinationPhone2Form"></span></span>
                                                 </address>
                                             </div>
                                         </div>
@@ -894,7 +902,7 @@
                                                         </tr>
                                                         <!--end tr-->
                                                     </thead>
-                                                    <tbody id="ListVehiclesPDF">
+                                                    <tbody class="ListVehiclesPDF">
                                                         <!--end tr-->
                                                     </tbody>
                                                     <tfoot>
@@ -912,13 +920,13 @@
                                                             <th colspan="2" class="border-0"></th>
                                                             <th colspan="2" class="border-0"></th>
                                                             <td class="border-0 font-14" style="text-align:right !important"><b>Deposit</b></td>
-                                                            <td class="border-0 font-14"><b id="DepositForm">$00.00</b></td>
+                                                            <td class="border-0 font-14"><b class="DepositForm">$00.00</b></td>
                                                         </tr>                                                  
                                                         <tr class="bg-black text-white">
                                                             <th colspan="2" class="border-0"></th>
                                                             <th colspan="2" class="border-0"></th>
                                                             <td class="border-0 font-14" style="text-align:right !important"><b>Total</b></td>
-                                                            <td class="border-0 font-14"><b id="TotalForm">$00.00</b></td>
+                                                            <td class="border-0 font-14"><b class="TotalForm">$00.00</b></td>
                                                         </tr>
                                                     </tfoot>
                                                 </table>
@@ -945,21 +953,21 @@
                                                             <tr>
                                                                 <td style="border-style: none;">
                                                                     <h6 class="mt-0 mb-1 font-14"><b>Card holder name</b></h6>
-                                                                    <p class="mb-0 text-muted" id="CardHolderNameForm"></p>
+                                                                    <p class="mb-0 text-muted CardHolderNameForm"></p>
                                                                 </td>
 
                                                                 <td style="border-style: none;"> 
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Credit card number</b></h5>
-                                                                    <p class="mb-0 text-muted" id="CreditCardNumberForm"></p>
+                                                                    <p class="mb-0 text-muted CreditCardNumberForm"></p>
                                                                 </td>
 
                                                                 <td  style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>City</b></h5>
-                                                                    <p class="mb-0 text-muted" id="BillingCityForm"></p>
+                                                                    <p class="mb-0 text-muted BillingCityForm"></p>
                                                                 </td>
                                                                 <td style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Billing address</b></h5>
-                                                                    <p class="mb-0 text-muted" id="BillingAddressForm"></p>
+                                                                    <p class="mb-0 text-muted BillingAddressForm"></p>
                                                                 </td>
 
                                                             </tr>
@@ -967,21 +975,21 @@
                                                             <tr>
                                                                 <td style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Expiration date</b></h5>
-                                                                    <p class="mb-0 text-muted" id="ExperationDateForm"></p>
+                                                                    <p class="mb-0 text-muted ExperationDateForm"></p>
                                                                 </td>
 
                                                                 <td  style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>CVV</b></h5>
-                                                                    <p class="mb-0 text-muted" id="CVVForm"></p>
+                                                                    <p class="mb-0 text-muted CVVForm"></p>
                                                                 </td>
                                                                 <td  style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>State</b></h5>
-                                                                    <p class="mb-0 text-muted" id="BillingStateForm"></p>
+                                                                    <p class="mb-0 text-muted BillingStateForm"></p>
                                                                 </td>
 
                                                                 <td  style="border-style: none;">
                                                                     <h5 class="mt-0 mb-1 font-14"><b>Zip code</b></h5>
-                                                                    <p class="mb-0 text-muted" id="BillingZipCodeForm"></p>
+                                                                    <p class="mb-0 text-muted BillingZipCodeForm"></p>
                                                                 </td>
                                                             </tr>
 
@@ -996,7 +1004,7 @@
                                     <div class="row">
                                          <div class="col-md-8" style="width: 900px;">
                                             <div class="card-body">
-                                                <span class="d-flew justify-content" id="OriginDestinationNotesForm"></span>
+                                                <span class="d-flew justify-content OriginDestinationNotesForm"></span>
                                             </div>
                                          </div>
                                     </div>
@@ -1024,63 +1032,64 @@
                     <!--end row-->
                 </fieldset>
 
+          
                   <!--end fieldset-->
                   <h3>Trucker and drivers</h3>
                 <fieldset>
-                    <div class="row">
-                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="truck"></i> Trucker company</b></span><hr>
-                          
-                            <div class="row">
-                                <label class="mb-1">Company name</label>
-                                    <div class="input-group">
-                                        <select style="width: 92%;" id="IdCompanyService" name="IdCompanyService" class="select2 form-control mb-3 custom-select">
-                                        </select>
-                                        <button class="btn btn-dark" type="button" id="SearchCompanyName"><i class="ti ti-reload"></i></button>
+                <div class="row">
+                        <div class="col-md-6"> 
+                        <span class="text-dark"><b><i data-feather="truck"></i> Trucker company</b></span>
+                        <hr>
+                                <div class="row">
+                                    <label class="mb-1">Company name</label>
+                                        <div class="input-group">
+                                            <select style="width: 92%;" id="IdCompanyService" name="IdCompanyService" class="select2 form-control mb-3 custom-select">
+                                            </select>
+                                            <button class="btn btn-dark" type="button" id="SearchCompanyName"><i class="ti ti-reload"></i></button>
+                                        </div>
+                                </div>
+
+                                <div class="row inputpadding">
+                                    <div class="col-md-12" >
+                                        <label class="mb-1">Company address</label>
+                                        <input id="CompanyAddress" name="CompanyAddress" type="text"  class="form-control" placeholder="Input the company's address">
                                     </div>
-                            </div>
-
-                            <div class="row inputpadding">
-                                  <div class="col-md-12" >
-                                     <label class="mb-1">Company address</label>
-                                       <input id="CompanyAddress" name="CompanyAddress" type="text"  class="form-control" placeholder="Input the company's address">
-                                   </div>
-                            </div>
-
-                                <div class="row inputpadding">
-
-                                         <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
-                                            <input id="CompanyPhone1" name="CompanyPhone1" type="tel"
-                                                class="form-control" placeholder="+1 (555) 555-5555">
-                                        </div>
-
-                                        
-                                         <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
-                                            <input id="CompanyPhone2" name="CompanyPhone2" type="tel"
-                                                class="form-control" placeholder="+1 (555) 555-5555">
-                                        </div>
-                                       
-                                        <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-envelope"></i> Email</label>
-                                            <input id="CompanyEmail" name="CompanyEmail" type="email"
-                                                class="form-control" placeholder="ez@domain.com">
-                                        </div>
                                 </div>
-                                <br>
 
-                                <div class="row inputpadding">
-                                        <span class="text-dark"><b><i class="fa fa-address-card fa-2x"></i> Drivers</b></span><hr>
-                                            <div class="row">
-                                                <label class="mb-1">Driver name</label>
-                                                <div class="input-group">
-                                                    <select style="width: 93%;" id="IdDriver" name="IdDriver" class="select2 form-control mb-3 custom-select"> </select>
-                                                    <button class="btn btn-dark" type="button" id="SearchDriverName"><iconv_get_encoding class="ti ti-reload"></i></button>
-                                                </div>
+                                    <div class="row inputpadding">
+
+                                            <div class="col-md-4" >
+                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
+                                                <input id="CompanyPhone1" name="CompanyPhone1" type="tel"
+                                                    class="form-control" placeholder="+1 (555) 555-5555">
                                             </div>
-                                </div>
 
-                               
+                                            
+                                            <div class="col-md-4" >
+                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
+                                                <input id="CompanyPhone2" name="CompanyPhone2" type="tel"
+                                                    class="form-control" placeholder="+1 (555) 555-5555">
+                                            </div>
+                                        
+                                            <div class="col-md-4" >
+                                                <label class="mb-1"><i class="fa fa-envelope"></i> Email</label>
+                                                <input id="CompanyEmail" name="CompanyEmail" type="email"
+                                                    class="form-control" placeholder="ez@domain.com">
+                                            </div>
+                                    </div>
+                                    <br>
+
+                                    <div class="row inputpadding">
+                                            <span class="text-dark"><b><i class="fa fa-address-card fa-2x"></i> Drivers</b></span><hr>
+                                                <div class="row">
+                                                    <label class="mb-1">Driver name</label>
+                                                    <div class="input-group">
+                                                        <select style="width: 93%;" id="IdDriver" name="IdDriver" class="select2 form-control mb-3 custom-select"> </select>
+                                                        <button class="btn btn-dark" type="button" id="SearchDriverName"><iconv_get_encoding class="ti ti-reload"></i></button>
+                                                    </div>
+                                                </div>
+                                    </div>
+
                                     <div class="row inputpadding">
                                         <div class="col-md-6" >
                                             <label class="mb-1"><i class="fa fa-mobile"></i> Driver phone #1</label>
@@ -1095,15 +1104,14 @@
                                         </div>
 
                                     </div>
-
                         </div>
-                        <!--end col-->
-                        <div class="col-md-6"> <span class="text-dark"><b><i data-feather="dollar-sign"></i>Driver payment </b></span>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12">
-                                     
 
+                        <!--end col-->
+                              <div class="col-md-6"> 
+                                    <span class="text-dark"><b><i data-feather="dollar-sign"></i>Driver payment </b></span>
+                                        <hr>
+                                     <div class="row">
+                                        <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col-md-6" >
                                                     <label class="mb-1"><i class="fa fa-lock text-secondary" ></i> <b>Total</b></label>
@@ -1125,7 +1133,6 @@
 
                                             
                                                 <div class="row">
-
                                                     <div class="col-md-6" >
                                                         <label class="mb-1"><i class="fa fa-lock text-secondary" ></i> Cod</label>
                                                         <input id="Cod" name="Cod" type="number" class="form-control" placeholder="$0000" readonly value="0">
@@ -1138,7 +1145,6 @@
                                                 </div>
 
                                                 <div class="row inputpadding">
-
                                                     <div class="col-md-6">
                                                         <label class="mb-1"><i class="fa fa-dollar-sign"></i><b class="text-warning"> Extra truker Fee</b></label>
                                                         <input id="ExtraTrukerFee" name="ExtraTrukerFee" type="number" class="form-control" placeholder="$0000" value="0">
@@ -1150,20 +1156,174 @@
                                                     </div>
                                                 </div>
 
-                                                </div>
+                                          </div>
                                     </div>
                                 </div>
                             <!--end form-group-->
                         </div>
-                        <!--end col-->
-                    </div>
-
-                    <!--end row-->
-                 
-
+            
                 </fieldset>
                 <!--end fieldset-->
-                <!--end fieldset-->
+          
+                <h3>Print PDF2</h3>
+                <fieldset>
+                <div class="row">
+                        <div class="col-lg-12 mx-auto" id="zonaPrint">
+                            <div class="card">
+                                <div class="card-body invoice-head">
+                                    <div class="row">
+
+                                        <div class="card mb-0" style="border:0px solid rgba(0, 0, 0, 0.125) !important">
+                                               
+                                            <div class="row g-1">
+                                                    
+                                                    <div class="col-md-3 align-self-center">
+                                                        <img src="assets/images/logopdf1.png" alt="LogoPdf1" class="img-fluid">
+                                                    </div><!--end col-->
+
+                                                    <div class="col-md-4 ms-auto align-self-center">
+                                                        <div class="card-body">
+                                                            <p class="card-text mb-0 text-muted"><i class="mdi mdi-web text-dark"></i> www.ezautotransportationusa.com</p>
+                                                            <p class="card-text mb-0 text-muted"><i class="mdi mdi-phone text-dark"></i> +1-888-888-8888</p>
+                                                            <p class="card-text mb-0 text-muted"><i class="mdi mdi-map-marker text-dark"></i> 2821 Kensington Road, Avondale Estates, GA 30002 USA.</p>
+                                                        </div>
+                                                    </div><!--end col-->
+
+                                                </div><!--end row-->
+
+                                            </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end row-->
+                                </div>
+                                <!--end card-body-->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <h6 class="mb-0"><b>Order number: </b><span class="OrderIDForm"><?=$Order->Id?></span></h6>
+                                                <h6 class="mb-0"><b>Order date: </b><span class="OrderDateForm">0000-00-00</span></h6>
+                                                <h6 class="mb-0"><b>Pick up date: </b><span class="PickUpDateForm">0000-00-00</span></h6>
+                                                <h6 class="mb-0"><b>Delivery date: </b><span class="DeliveryDateForm">0000-00-00</span></h6><br>
+                                            </div>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-md-4">
+                                            <div class="float-left">
+                                                <address class="font-13">
+                                                    <strong class="font-14">Origin:</strong><br>
+                                                    <b class="OriginNameForm">Field empty</b><br>
+                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i class="OriginAddressForm">Field empty</i><br>
+                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span class="OriginPhone1Form"></span> <span class="OriginPhone2Form"></span></span>
+                                                </address>
+                                            </div>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-md-4">
+                                            <div class="">
+                                            <address class="font-13">
+                                                    <strong class="font-14">Destination:</strong><br>
+                                                    <b class="DestinationNameForm">Field empty</b><br>
+                                                    <span><i class="fa fa-map-marker-alt"></i> </span><i class="DestinationAddressForm">Field empty</i><br>
+                                                    <span title="Phone"><i class="fa fa-phone-alt"></i>  <span class="DestinationPhone1Form"></span> <span class="DestinationPhone2Form"></span></span>
+                                                </address>
+                                            </div>
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end row-->
+                                    <div class="row">
+                                    
+                                        <div class="col-lg-12">
+                                            <div class="table-responsive project-invoice">
+                                                <table class="table table-bordered mb-0">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th>Brand</th>
+                                                            <th>Model</th>
+                                                            <th>Color</th>
+                                                            <th>Year</th>
+                                                            <th>Condition</th>
+                                                            <th>Carrier type</th>
+                                                        </tr>
+                                                        <!--end tr-->
+                                                    </thead>
+                                                    <tbody class="ListVehiclesPDF">
+                                                        <!--end tr-->
+                                                    </tbody>
+                                                    <tfoot>
+                                                    <tr>
+                                                            <td colspan="2" class="border-0"></td>
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <td class="border-0 font-14 text-dark"><b></b></td>
+                                                            <td class="border-0 font-14 text-dark"><b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <!--end tr-->
+                                                        <!--end tr-->
+
+                                                        <tr class="bg-light text-secondary">
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <td class="border-0 font-14" style="text-align:right !important"><b>Trucker fee</b></td>
+                                                            <td class="border-0 font-14"><b id="TruckerFeeForm">$00.00</b></td>
+                                                        </tr>                                                  
+                                                        <tr class="bg-secondary text-white">
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <td class="border-0 font-14" style="text-align:right !important"><b>Trucker COD</b></td>
+                                                            <td class="border-0 font-14"><b id="TruckerCODForm">$00.00</b></td>
+                                                        </tr>
+
+                                                        <tr class="bg-black text-white">
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <th colspan="2" class="border-0"></th>
+                                                            <td class="border-0 font-14" style="text-align:right !important"><b>Total rate</b></td>
+                                                            <td class="border-0 font-14"><b id="TruckerRateForm">$00.00</b></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                                <br>
+
+                                             
+                                                <!--end table-->
+                                            </div>
+                                            <!--end /div-->
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+
+                                    <div class="row">
+                                         <div class="col-md-8" style="width: 900px;">
+                                            <div class="card-body">
+                                                <span class="d-flew justify-content OriginDestinationNotesForm"></span>
+                                            </div>
+                                         </div>
+                                    </div>
+                                    <!--end row-->
+                                    <hr>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-lg-12 col-xl-4 ms-auto align-self-center">
+                                            <div class="text-center text-muted"><small class="font-12">Thank you very much for doing business with us.</small></div>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-lg-12 col-xl-4">
+                                            <div class="float-end d-print-none"> 
+                                            <a href="javascript:window.print()" class="btn btn-soft-info btn-sm">Print</a> 
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end row-->
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                    </div>
+                </fieldset>
+
+
             </form>
             <!--end form-->
         </div>
@@ -1185,7 +1345,7 @@
 <script src="assets/js/orders.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 <script type="text/javascript">
-
+   $("#LoadingButton").hide();
 function SumNumber(number1, number2){
 
 var x1, x2 = 0;
@@ -1350,13 +1510,36 @@ $("#form-horizontal").steps({
 
                break;
 
+               case 5:
+
+                    if($("#Cod").val() != "" ){
+                             loadInfoPDF1();
+                             loadInfoPDF2();
+                            return true;
+                    }else{
+
+                        $(".toast-error").html("(*) Check COD Field [Step 5]");
+                        var myAlert = document.getElementById('toastError');
+                        var bsAlert = new bootstrap.Toast(myAlert);
+                        bsAlert.show();
+
+                        return false;
+                    }
+
+                    break;
 
             default:
                 return true;
                 break;
         }
 
-    }
+    }, onContentLoaded: function() {},
+            onInit: function() {},
+            labels: { cancel: "Cancel", current: "current step:", pagination: "Pagination", finish: "Update order", next: "Next", previous: "Previous", loading: "Loading ..." }, 
+             onFinishing: function(event, currentIndex) {
+                saveAndUpdateOrder();
+                return true;
+            }
 });
 
 //Execute select2 functions 
@@ -1420,7 +1603,7 @@ $(document).ready(function() {
     
     $(".steps").addClass("d-print-none");
     $(".actions").addClass("d-print-none");
-    $("#ListVehiclesPDF").html("");
+    $(".ListVehiclesPDF").html("");
 
 });
 
@@ -1430,11 +1613,13 @@ $("#SearchVehicles").click(function() {
 
 
 function GetListVehicles() {
-
+  
     $.ajax({
         type: 'POST',
         url: "index.php?c=vehicles&a=GetListVehicles",
-    }).then(function(response) {
+        beforeSend: function() {
+            $("#LoadingButton").show();
+    }}).then(function(response) {
 
         $('.BrandVehicle, .ModelVehicle').empty();
 
@@ -1469,6 +1654,7 @@ function GetListVehicles() {
         var myAlert = document.getElementById('toastSuccess');
         var bsAlert = new bootstrap.Toast(myAlert);
         bsAlert.show();
+        $("#LoadingButton").hide();
     });
 
 }
@@ -1484,6 +1670,9 @@ function GetListCustomer() {
     $.ajax({
         type: 'POST',
         url: "index.php?c=customers&a=GetListCustomers",
+        beforeSend: function() {
+            $("#LoadingButton").show();
+    }
     }).then(function(response) {
 
         var data = JSON.parse(response);
@@ -1518,43 +1707,43 @@ function GetListCustomer() {
         var myAlert = document.getElementById('toastSuccess');
         var bsAlert = new bootstrap.Toast(myAlert);
         bsAlert.show();
-
+        $("#LoadingButton").hide();
 
         });
 }
 
 function loadInfoPDF1(){
  
-    $("#OrderDateForm").text($("#PickUpOrderDateDate").val());
-    $("#ListVehiclesPDF").html("");
+    $(".OrderDateForm").text($("#PickUpOrderDateDate").val());
+    $(".ListVehiclesPDF").html("");
 
     //Origin Info
-    $("#OriginNameForm").html($("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) != "" ? $("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) : "<span class='text-danger'>Check origin customer name</span>");
+    $(".OriginNameForm").html($("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) != "" ? $("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) : "<span class='text-danger'>Check origin customer name</span>");
     
-    $("#OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() :  "<span class='text-danger'>Check origin address</span>");
+    $(".OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() :  "<span class='text-danger'>Check origin address</span>");
 
-    $("#PickUpDateForm").html($("#PickUpDate").val() != "" ? $("#PickUpDate").val() :  "<span class='text-danger'>Check pick up date</span>");
-    $("#DeliveryDateForm").html($("#DeliveryDate").val() != "" ? $("#DeliveryDate").val() :  "<span class='text-danger'>Check delivery date</span>");
+    $(".PickUpDateForm").html($("#PickUpDate").val() != "" ? $("#PickUpDate").val() :  "<span class='text-danger'>Check pick up date</span>");
+    $(".DeliveryDateForm").html($("#DeliveryDate").val() != "" ? $("#DeliveryDate").val() :  "<span class='text-danger'>Check delivery date</span>");
 
     if($("#OriginZip").val() != ""){
-        $("#OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() + "<br> Zip code: "+$("#OriginZip").val() :  "<span class='text-danger'>Check origin address</span>");
+        $(".OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() + "<br> Zip code: "+$("#OriginZip").val() :  "<span class='text-danger'>Check origin address</span>");
     }
    
-    $("#OriginPhone1Form").html($("#OriginPhone1").val() != "" ? $("#OriginPhone1").val() :  "<span class='text-danger'>Check origin phone1</span>");
-    $("#OriginPhone2Form").html($("#OriginPhone2").val() != "" ? "/ "+$("#OriginPhone2").val() :  "");
+    $(".OriginPhone1Form").html($("#OriginPhone1").val() != "" ? $("#OriginPhone1").val() :  "<span class='text-danger'>Check origin phone1</span>");
+    $(".OriginPhone2Form").html($("#OriginPhone2").val() != "" ? "/ "+$("#OriginPhone2").val() :  "");
 
     
     //Destination Info
-    $("#DestinationNameForm").html($("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) != "" ? $("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) : "<span class='text-danger'>Check destination customer name</span>");
+    $(".DestinationNameForm").html($("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) != "" ? $("#IdCustomerDestination :selected").text().substr(0, $("#IdCustomerDestination :selected").text().indexOf("-")) : "<span class='text-danger'>Check destination customer name</span>");
     
-    $("#DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() :  "<span class='text-danger'>Check destination address</span>");
+    $(".DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() :  "<span class='text-danger'>Check destination address</span>");
 
     if($("#DestinationZip").val() != ""){
-        $("#DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() + "<br> Zip code: "+$("#DestinationZip").val() :  "<span class='text-danger'>Check destination address</span>");
+        $(".DestinationAddressForm").html($("#DestinationAddress").val() != "" ? $("#DestinationAddress").val() + "<br> Zip code: "+$("#DestinationZip").val() :  "<span class='text-danger'>Check destination address</span>");
     }
    
-    $("#DestinationPhone1Form").html($("#DestinationPhone1").val() != "" ? $("#DestinationPhone1").val() :  "<span class='text-danger'>Check destination phone1</span>");
-    $("#DestinationPhone2Form").html($("#DestinationPhone2").val() != "" ? "/ "+$("#DestinationPhone2").val() :  "");
+    $(".DestinationPhone1Form").html($("#DestinationPhone1").val() != "" ? $("#DestinationPhone1").val() :  "<span class='text-danger'>Check destination phone1</span>");
+    $(".DestinationPhone2Form").html($("#DestinationPhone2").val() != "" ? "/ "+$("#DestinationPhone2").val() :  "");
 
     //Vehicles Step info
 
@@ -1586,20 +1775,20 @@ function loadInfoPDF1(){
       
     });
 
-     $("#ListVehiclesPDF").append(markup);
+     $(".ListVehiclesPDF").append(markup);
 
      //Payment info
-     $("#TotalForm").html($("#Total").val() != "" ? "US$ "+$("#Total").val() :  "<span class='text-danger'>Check total payment</span>");
-    $("#DepositForm").html($("#Deposit").val() != "" ? "US$ "+$("#Deposit").val() :  "<span class='text-danger'>Check deposit payment</span>");
-    $("#CardHolderNameForm").html($("#CardHolderName").val() != "" ? $("#CardHolderName").val() :  "<span class='text-danger'>Check card holder name</span>");
-    $("#CreditCardNumberForm").html($("#CreditCard").val() != "" ? $("#CreditCard").val() :  "<span class='text-danger'>Check credit card number</span>");
-    $("#ExperationDateForm").html($("#ExpDate").val() != "" ? $("#ExpDate").val() :  "<span class='text-danger'>Check experation date</span>");
-    $("#CVVForm").html($("#Cvv").val() != "" ? $("#Cvv").val() :  "<span class='text-danger'>Check CVV code</span>");
+     $(".TotalForm").html($("#Total").val() != "" ? "US$ "+$("#Total").val() :  "<span class='text-danger'>Check total payment</span>");
+    $(".DepositForm").html($("#Deposit").val() != "" ? "US$ "+$("#Deposit").val() :  "<span class='text-danger'>Check deposit payment</span>");
+    $(".CardHolderNameForm").html($("#CardHolderName").val() != "" ? $("#CardHolderName").val() :  "<span class='text-danger'>Check card holder name</span>");
+    $(".CreditCardNumberForm").html($("#CreditCard").val() != "" ? $("#CreditCard").val() :  "<span class='text-danger'>Check credit card number</span>");
+    $(".ExperationDateForm").html($("#ExpDate").val() != "" ? $("#ExpDate").val() :  "<span class='text-danger'>Check experation date</span>");
+    $(".CVVForm").html($("#Cvv").val() != "" ? $("#Cvv").val() :  "<span class='text-danger'>Check CVV code</span>");
   
-    $("#BillingAddressForm").html($("#BillingAddress").val() != "" ? $("#BillingAddress").val() :  "<span class='text-danger'>Check billing address</span>");
-    $("#BillingCityForm").html($("#BillingCity").val() != "" ? $("#BillingCity").val() :  "<span class='text-danger'>Check billing city</span>");
-    $("#BillingStateForm").html($("#BillingState").val() != "" ? $("#BillingState").val() :  "<span class='text-danger'>Check billing state</span>");
-    $("#BillingZipCodeForm").html($("#BillingZipCode").val() != "" ? $("#BillingZipCode").val() :  "<span class='text-danger'>Check billing zipcode</span>");
+    $(".BillingAddressForm").html($("#BillingAddress").val() != "" ? $("#BillingAddress").val() :  "<span class='text-danger'>Check billing address</span>");
+    $(".BillingCityForm").html($("#BillingCity").val() != "" ? $("#BillingCity").val() :  "<span class='text-danger'>Check billing city</span>");
+    $(".BillingStateForm").html($("#BillingState").val() != "" ? $("#BillingState").val() :  "<span class='text-danger'>Check billing state</span>");
+    $(".BillingZipCodeForm").html($("#BillingZipCode").val() != "" ? $("#BillingZipCode").val() :  "<span class='text-danger'>Check billing zipcode</span>");
 
     var OriginNote = "";
     var DestinationNote = "";
@@ -1614,11 +1803,27 @@ function loadInfoPDF1(){
     }
 
     OriginDestinationNote = OriginNote + "<br>" + DestinationNote;
-    $("#OriginDestinationNotesForm").html(OriginDestinationNote != "" ? OriginDestinationNote :  "");
+    $(".OriginDestinationNotesForm").html(OriginDestinationNote != "" ? OriginDestinationNote :  "");
                                                   
 }
 
-function saveOrder(){
+function loadInfoPDF2(){
+ 
+
+ //Origin Info
+ //$(".OriginNameForm").html($("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) != "" ? $("#IdCustomerOrigin :selected").text().substr(0, $("#IdCustomerOrigin :selected").text().indexOf("-")) : "<span class='text-danger'>Check origin customer name</span>");
+ 
+ //$(".OriginAddressForm").html($("#OriginAddress").val() != "" ? $("#OriginAddress").val() :  "<span class='text-danger'>Check origin address</span>");
+
+  //Payment info
+  $("#TruckerCODForm").html($("#Cod").val() != "" ? "US$ "+$("#Cod").val() :  "<span class='text-danger'>Check Cod field</span>");
+  $("#TruckerFeeForm").html($("#ExtraTrukerFee").val() != "" ? "US$ "+$("#ExtraTrukerFee").val() :  "");
+  $("#TruckerRateForm").html($("#TrukerRate").val() != "" ? "US$ "+$("#TrukerRate").val() :  "");
+  
+
+}
+
+function saveAndUpdateOrder(){
 
     vehiclesArray = new Array();
 
@@ -1637,12 +1842,16 @@ function saveOrder(){
        }
 });
 
+    if($("#Id").val() != ""){
 
-    $.ajax({
+        $.ajax({
         type: 'POST',
-        url: "index.php?c=orders&a=SaveOrder",
+        url: "index.php?c=orders&a=UpdateOrder",
         data: {'order': $("#form-horizontal").serialize(), 'vehicles': vehiclesArray},
-            success: function(data) {
+        beforeSend: function() {
+            $("#LoadingButton").show();
+        },
+        success: function(data) {
                 
                 if(data){
 
@@ -1650,7 +1859,6 @@ function saveOrder(){
 
                     if(response.Error == false){
 
-                        $("#OrderIDForm").html(response.OrderId);
                         $(".toast-success").html(response.Message);
                         var myAlert = document.getElementById('toastSuccess');
                         var bsAlert = new bootstrap.Toast(myAlert);
@@ -1666,11 +1874,21 @@ function saveOrder(){
                         bsAlert.show();
 
                     }
+                   
+                    $("#LoadingButton").hide();
+
                 }else{
                     console.log(data);
                 }
             }
-        })
+        });
+
+    }else{
+         $(".toast-error").html("(!) OrderID not found");
+         var myAlert = document.getElementById('toastError');
+         var bsAlert = new bootstrap.Toast(myAlert);
+         bsAlert.show();
+    }
 
 }
 
@@ -1680,6 +1898,9 @@ function GetListDrivers() {
 $.ajax({
     type: 'POST',
     url: "index.php?c=drivers&a=GetListDrivers",
+    beforeSend: function() {
+            $("#LoadingButton").show();
+    },
 }).then(function(response) {
 
     var data = JSON.parse(response);
@@ -1700,6 +1921,7 @@ $.ajax({
     var myAlert = document.getElementById('toastSuccess');
     var bsAlert = new bootstrap.Toast(myAlert);
     bsAlert.show();
+    $("#LoadingButton").hide();
 
 
     });
@@ -1710,6 +1932,9 @@ function SearchDriverName(){
     $.ajax({
     type: 'POST',
     url: "index.php?c=drivers&a=GetListDrivers",
+    beforeSend: function() {
+            $("#LoadingButton").show();
+    },
 }).then(function(response) {
 
     var data = JSON.parse(response);
@@ -1730,7 +1955,7 @@ function SearchDriverName(){
     var myAlert = document.getElementById('toastSuccess');
     var bsAlert = new bootstrap.Toast(myAlert);
     bsAlert.show();
-
+    $("#LoadingButton").hidden();
 
     });
 
@@ -1742,6 +1967,9 @@ function GetListCompanyServices() {
 $.ajax({
     type: 'POST',
     url: "index.php?c=companyServices&a=GetListCompanyServices",
+    beforeSend: function() {
+            $("#LoadingButton").show();
+    }
 }).then(function(response) {
 
     var data = JSON.parse(response);
@@ -1762,7 +1990,7 @@ $.ajax({
     var myAlert = document.getElementById('toastSuccess');
     var bsAlert = new bootstrap.Toast(myAlert);
     bsAlert.show();
-
+    $("#LoadingButton").hide();
     });
 }
 
@@ -1775,12 +2003,20 @@ $("#SearchDriverName").click(function() {
 
 
 function LoadEditFields(){
-
+    $("#LoadingButton").show();
     //Colocarel ID de la orden para hacer el update
 
     var IdCustomerOrigin = "<?= $Order->IdCustomerOrigin; ?>";
     $('#IdCustomerOrigin').val(IdCustomerOrigin);
     $('#IdCustomerOrigin').select2().trigger('change');
+
+    var IdCompanyService = "<?= $Order->IdCompanyService; ?>";
+    $('#IdCompanyService').val(IdCompanyService);
+    $('#IdCompanyService').select2().trigger('change');
+
+    var IdDriver = "<?= $Order->IdDriver; ?>";
+    $('#IdDriver').val(IdDriver);
+    $('#IdDriver').select2().trigger('change');
 
     var OriginAddress = "<?= $Order->OriginAddress; ?>";
     $("#OriginAddress").val(OriginAddress);
@@ -1849,6 +2085,7 @@ function LoadEditFields(){
     var CardHolderName = "<?= $Payment->CardHolderName; ?>";
     $("#CardHolderName").val(CardHolderName);
 
+
     var CreditCard = "<?= $Payment->CreditCard; ?>";
     $("#CreditCard").val(CreditCard);
 
@@ -1890,6 +2127,8 @@ function LoadEditFields(){
 
     var Deposit = "<?= $Order->Deposit; ?>";
     $("#Deposit").val(Deposit);
+
+    $("#LoadingButton").hide();
 
 }
 

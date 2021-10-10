@@ -7,7 +7,7 @@
                                     <h4 class="page-title">Users Profiles</h4>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="?c=Dashboard&a=Index">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="?c=userProfiles&a=Index">Users Profiles list</a></li>
+                                        <li class="breadcrumb-item"><a href="?c=userProfiles&a=Index">Users profiles list</a></li>
                                         <li class="breadcrumb-item active"><a href="#"><b>Form</b></a></li>
                                     </ol>
                                 </div>
@@ -27,22 +27,22 @@
             <input type="hidden" name="IsActive" id="IsActive" value="<?php echo ($UserProfile->Id != null) ? $UserProfile->IsActive : 1 ?>" >
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-8 offset-sm-2">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title text-primary">User Profiles maintenance</h4>
+                            <div class="card-header bg-dark">
+                                <h4 class="card-title text-white">User Profiles maintenance</h4>
                                 <p class="text-muted mb-0">Form</p>
                             </div>
                    
                             <div class="card-body">
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="Profile">*User Profile name:</label>
+                                        <label class="form-label text-danger" for="Profile">*User profile name:</label>
                                         <input type="text" class="form-control" id="Profile" name="Profile" aria-describedby="Profile" placeholder="Enter User Profile name" value="<?php echo $UserProfile->Profile; ?>"> 
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label text-danger" for="Description">* Profile Description:</label>  
+                                        <label class="form-label text-danger" for="Description">* Profile description:</label>  
                                         <input type="text" class="form-control" id="Description" name="Description" aria-describedby="Description" placeholder="Enter Description name" value="<?php echo $UserProfile->Description; ?>"> 
                                     </div>
 
@@ -73,9 +73,9 @@
         });
 
         if($("#IsActive").val() > 0){
-            $('#IsActiveToogle').bootstrapToggle('on');
+           // $('#IsActiveToogle').bootstrapToggle('on');
         }else{
-            $('#IsActiveToogle').bootstrapToggle('off');
+          //  $('#IsActiveToogle').bootstrapToggle('off');
         }
 
         $('#IsActiveToogle').change(function() {
