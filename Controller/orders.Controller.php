@@ -516,6 +516,35 @@ class OrdersController
         }
     }
 
+    public function PayOrder(){
+
+        if(isset($_POST['Id']) && $_POST['Id'] != "" && isset($_POST['FieldSelected']) && $_POST['FieldSelected'] != ""){
+
+            $Orders = new Orders();
+            $result = "";
+
+            if($_POST['FieldSelected'] == "ExtraTruckerFee"){
+               
+                $Orders->Id = $_POST['Id'];
+                $Orders->ExtraTrukerFee  = 0;
+                $result = $Orders->PayExtraTruckerFee($Orders);
+                
+            }else if($_POST['FieldSelected'] == "TruckerOwesUS"){
+                
+                $Orders->Id = $_POST['Id'];
+                $Orders->TrukerOwesUs = 0;
+                $result = $Orders->PayTruckerOwesUS($Orders);
+
+            }
+           
+            echo json_encode($result, true);
+
+        }else{
+            echo json_encode(false, true);
+        }
+    }
+
+
     public function GetStatusOrder(){
 
         if(isset($_POST['OrderID']) && $_POST['OrderID'] != ""){

@@ -349,21 +349,21 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin city<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> City<b class="text-danger">*</b></label>
                                                 <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginCity" name="OriginCity" type="text"
                                                     class="form-control originInput" placeholder="City">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin state<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> State<b class="text-danger">*</b></label>
                                                 <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginState" name="OriginState" type="text"
                                                     class="form-control originInput" placeholder="State">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Origin zip code</label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Zip Code</label>
                                                 <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginZip" name="OriginZip" type="text"
                                                     class="form-control originInput" placeholder="00000">
@@ -377,22 +377,22 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                                <label class="mb-1"><i class="fa fa-mobile"></i> Origin phone
+                                                <label class="mb-1"><i class="fa fa-mobile"></i> Phone
                                                     #1<b class="text-danger">*</b></label>
                                                 <input id="OriginPhone1" name="OriginPhone1" type="tel"
-                                                    class="form-control originInput phone" placeholder="1-555-555-5555">
+                                                    class="form-control originInput phone" placeholder="(555)555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Origin phone
+                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone
                                                     #2</label>
                                                     <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginPhone2" name="OriginPhone2" type="tel"
-                                                    class="form-control originInput phone" placeholder="1-555-555-5555">
+                                                    class="form-control originInput phone" placeholder="(555)555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1"><i class="fa fa-envelope"></i> Origin email</label>
+                                                <label class="mb-1"><i class="fa fa-envelope"></i> Email</label>
                                                 <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginEmail" name="OriginEmail" type="email"
                                                     class="form-control originInput" placeholder="cus@domain.com">
@@ -404,7 +404,7 @@
                                 <br>
                                 <div class="row">
                                     <div class="col-md-12" >
-                                        <label class="mb-1"><i class="fa fa-sticky-note"></i> Origin note</label>
+                                        <label class="mb-1"><i class="fa fa-sticky-note"></i> Note</label>
                                         <textarea id="OriginNote" name="OriginNote" class="form-control originInput"
                                             placeholder="Opcional information" rows="3"></textarea>
                                     </div>
@@ -427,19 +427,19 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination city<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> City<b class="text-danger">*</b></label>
                                                 <input id="DestinationCity" name="DestinationCity" type="text"
                                                     class="form-control DestinationInput" placeholder="City">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination state<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> State<b class="text-danger">*</b></label>
                                                 <input id="DestinationState" name="DestinationState" type="text"
                                                     class="form-control DestinationInput" placeholder="State">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Destination zip code</label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Zip Code</label>
                                                 <input id="DestinationZip" name="DestinationZip" type="text"
                                                     class="form-control DestinationInput" placeholder="00000">
                                             </div>
@@ -452,23 +452,21 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                                <label class="mb-1"><i class="fa fa-mobile"></i> Destination phone
-                                                    #1<b class="text-danger">*</b></label>
+                                                <label class="mb-1"><i class="fa fa-mobile"></i> Phone #1<b class="text-danger">*</b></label>
                                                 <input id="DestinationPhone1" name="DestinationPhone1" type="tel"
                                                     class="form-control DestinationInput phone"
-                                                    placeholder="1-555-555-5555">
+                                                    placeholder="(555)555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Destination phone
-                                                    #2</label>
+                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
                                                 <input id="DestinationPhone2" name="DestinationPhone2" type="tel"
                                                     class="form-control DestinationInput phone"
-                                                    placeholder="1-555-555-5555">
+                                                    placeholder="(555)555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1"><i class="fa fa-envelope"></i> Destination email</label>
+                                                <label class="mb-1"><i class="fa fa-envelope"></i> Email</label>
                                                 <input id="DestinationEmail" name="DestinationEmail" type="email"
                                                     class="form-control DestinationInput" placeholder="cus@domain.com">
                                             </div>
@@ -479,7 +477,7 @@
                                 <br>
                                 <div class="row">
                                     <div class="col-md-12" >
-                                        <label class="mb-1"><i class="fa fa-sticky-note"></i> Destination note</label>
+                                        <label class="mb-1"><i class="fa fa-sticky-note"></i> Note</label>
                                         <textarea id="DestinationNote" name="DestinationNote"
                                             class="form-control DestinationInput"
                                             placeholder="Opcional information" rows="3"></textarea>
@@ -749,19 +747,19 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-4" >
-                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing city<b class="text-danger">*</b></label>
+                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> City<b class="text-danger">*</b></label>
                             <input id="BillingCity" name="BillingCity" type="text"
                                 class="form-control BillingInput" placeholder="City">
                         </div>
                         <!-- end row -->
                         <div class="col-md-4" >
-                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing state<b class="text-danger">*</b></label>
+                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> State<b class="text-danger">*</b></label>
                             <input id="BillingState" name="BillingState" type="text"
                                 class="form-control BillingInput" placeholder="State">
                         </div>
                         <!-- end row -->
                         <div class="col-md-4" >
-                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing zip code</label>
+                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Zip Code</label>
                             <input id="BillingZipCode" name="BillingZipCode" type="text"
                                 class="form-control BillingInput" placeholder="00000">
                         </div>
@@ -776,13 +774,13 @@
                     <div class="col-md-4" >
                         <label class="mb-1"><i class="fa fa-mobile"></i> Phone number #1<b class="text-danger">*</b></label>
                         <input id="Tel1" name="Tel1" type="tel" class="form-control phone"
-                            placeholder="1-555-555-5555">
+                            placeholder="(555)555-5555">
                     </div>
                     <!-- end row -->
                     <div class="col-md-4" >
                         <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone number #2</label>
                         <input id="Tel2" name="Tel2" type="tel" class="form-control phone"
-                            placeholder="1-555-555-5555">
+                            placeholder="(555)555-5555">
                     </div>
                     <!-- end row -->
                     <div class="col-md-4" >
@@ -847,7 +845,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="">
-                                            <h6 class="mb-0"><b>Order ID: </b><span class="OrderIDForm"><?=$Order->Id?></span></h6>
+                                            <h6 class="mb-0"><b>Order ID: </b><span class="OrderIDForm"></span></h6>
                                                 <h6 class="mb-0"><b>Order date: </b><span class="OrderDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Pick up date: </b><span class="PickUpDateForm">0000-00-00</span></h6>
                                                 <h6 class="mb-0"><b>Delivery date: </b><span class="DeliveryDateForm">0000-00-00</span></h6><br>
@@ -1106,7 +1104,7 @@ return x1- x2;
 
 $(document).ready(function($){
 
-    $('.phone').mask('0-000-000-0000');
+    $('.phone').mask('(000)000-0000');
     //$("#ExpDate").mask('00/00');
     $("#Cvv").mask('0000');
     $("#CreditCard").mask("0000 0000 0000 0000");
@@ -1167,7 +1165,6 @@ $(document).ready(function($){
         }
 
         });
-
 });
 
 
@@ -1235,15 +1232,14 @@ $("#form-horizontal").steps({
 
                     case 3:
 
-                    let continueCase3 = false;
+                    let continueCase3 = true;
                    
                     if($("#CardHolderName").val() != "" &&  $("#ExpDate").val() != "" && $("#CreditCard").val() != ""  &&  $("#Cvv").val() != ""  &&  $("#BillingAddress").val() != "" &&  $("#BillingCity").val() != "" && $("#BillingState").val() != "" &&  $("#Tel1").val() != "" &&  $("#Total").val() != "" && $("#Deposit").val() != ""){
-
 
                        let ExpDate =  $("#ExpDate").val();
                        let month = ExpDate.substr(0,2);
                        let year  = ExpDate.substr(3,2);
-                       let day   = 01;
+                       let day   = 28;
 
                        ExpDate = month+'/'+day+'/'+year;
                        let ExpDateConverted    = new Date(ExpDate);
@@ -1255,7 +1251,7 @@ $("#form-horizontal").steps({
                         var myAlert5 = document.getElementById('toastError');
                         var bsAlert5 = new bootstrap.Toast(myAlert5);
                         bsAlert5.show();
-
+                        continueCase3 = false;    
                         return false;
 
                        }
@@ -1267,43 +1263,37 @@ $("#form-horizontal").steps({
                         var myAlert4 = document.getElementById('toastError');
                         var bsAlert4 = new bootstrap.Toast(myAlert4);
                         bsAlert4.show();
-
+                        continueCase3 = false;
                         return false;
 
                     }else if($("#ExpDate").val().length == 5){
 
-                       console.log("ExpDateConverted:" +ExpDateConverted+", OrderDate:"+OrderDate);
+                        if (+ExpDateConverted <= +OrderDate) {
 
-                        $(".toast-error").html("(!) Expiration date of credit card invalid");
-                        var myAlert5 = document.getElementById('toastError');
-                        var bsAlert5 = new bootstrap.Toast(myAlert5);
-                        bsAlert5.show();
+                            $(".toast-error").html("(!) ExpDate of credit card less than today");
+                            var myAlert6 = document.getElementById('toastError');
+                            var bsAlert6 = new bootstrap.Toast(myAlert6);
+                            bsAlert6.show();
+                            continueCase3 = false;
+                            return false;
 
-                        return false;
-                    
-                    }else if (+ExpDateConverted <= +OrderDate) {
-
-                        $(".toast-error").html("(!) ExpDate of credit card less than today");
-                        var myAlert6 = document.getElementById('toastError');
-                        var bsAlert6 = new bootstrap.Toast(myAlert6);
-                        bsAlert6.show();
-
-                        return false;
-                    
-                    }else{
-                        loadInfoPDF1();
-                        return true;
+                         }
                     }
                     
-                    console.log("ExpDateConverted:" +ExpDateConverted+", OrderDate:"+OrderDate);
+
                 } else{
 
                     $(".toast-error").html("(*) empty required fields [Step 3]");
                     var myAlert5 = document.getElementById('toastError');
                     var bsAlert5 = new bootstrap.Toast(myAlert5);
                     bsAlert5.show();
-
+                    continueCase3 = false;
                     return false;
+                }
+
+                if(continueCase3){
+                    loadInfoPDF1();
+                     return true;
                 }
 
                 break;

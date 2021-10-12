@@ -71,7 +71,7 @@
                                             <div class="row align-items-center">
                                                 <div class="col text-center">                                                                        
                                                     <span class="h4 text-white"><?=$CountOrdersCanceled?></span>      
-                                                    <h6 class="text-white mt-2 m-0">Canceled</h6>                
+                                                    <h6 class="text-white mt-2 m-0">Cancelled</h6>                
                                                 </div><!--end col-->
                                             </div> <!-- end row -->
                                         </div><!--end card-body-->
@@ -88,7 +88,7 @@
                     <div class="card-body">  
                     <!-- <table id="CustomerList" width="100%" class="table table-striped table-bordered dataTable mb-0  table-responsive">-->
                         <div>
-                            <table id="CustomersList" class="table table-bordered table-hover" style="width:100%" >
+                            <table id="OrderList" class="table table-bordered table-hover" style="width:100%" >
                             <thead>
                                <tr class="bg-light ">
                                <th class="text-center">Order #</th>
@@ -200,13 +200,17 @@ $(document).ready(function() {
     $("body").addClass("enlarge-menu");
     $.noConflict();
 
-    $('#CustomersList tfoot th').each( function () {
+    $('#OrderList tfoot th').each( function () {
         var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Buscar por '+title+'" />' );
+        $(this).html( '<input type="text" placeholder="Search by '+title+'" />' );
     } );
  
    
-datatable = $('#CustomersList').DataTable({
+datatable = $('#OrderList').DataTable({
+    "language": {
+            "decimal": ",",
+            "thousands": "."
+        },
     initComplete: function () {
             // Apply the search
             this.api().columns().every( function () {
@@ -266,7 +270,7 @@ datatable = $('#CustomersList').DataTable({
             "targets":1,
             "data": "Editar",
             "render": function ( data) {
-                return '<center><a class="btn btn-info" title="View order" href="index.php?c=Orders&a=View&Id='+data+'"> <i class="ti-file"></i></a><a class="btn btn-warning" href="index.php?c=Orders&a=Edit&Id='+data+'" title="Edit order"> <i class="ti-pencil"></i></a><button class="btn btn-dark" onclick="ChangeStatus('+data+')"  title="Change status"> <i class="ti-new-window"></i></button></center>';
+                return '<center><a class="btn btn-primary btn-sm" title="View order" href="index.php?c=Orders&a=View&Id='+data+'"> <i class="ti-file"></i></a><a class="btn btn-warning btn-sm" href="index.php?c=Orders&a=Edit&Id='+data+'" title="Edit order"> <i class="ti-pencil"></i></a><button class="btn btn-dark btn-sm" onclick="ChangeStatus('+data+')"  title="Change status"> <i class="ti-new-window"></i></button></center>';
             }}, {
                 "targets": 2,
                 "render": function (data, type, row) {
@@ -285,7 +289,7 @@ datatable = $('#CustomersList').DataTable({
                                 data = '<center><span class="badge badge-soft-success px-2">'+data+'</span></center>'
                             break;
 
-                            case 'Canceled':
+                            case 'Cancelled':
                                 data = '<center><span class="badge badge-soft-danger px-2">'+data+'</span></center>'
                             break;
                     

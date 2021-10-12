@@ -133,7 +133,7 @@ class Drivers {
         try
         {
 
-            $stm = $this->pdo->prepare("SELECT Id, CONCAT(DriverName,' - ',DriverPhone1) AS Driver FROM tbl_drivers WHERE IsActive = 1");
+            $stm = $this->pdo->prepare("SELECT Id, DriverName AS Driver FROM tbl_drivers WHERE IsActive = 1");
             $stm->execute();
 
             return $stm->fetchAll(PDO::FETCH_ASSOC);

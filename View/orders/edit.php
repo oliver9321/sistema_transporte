@@ -223,7 +223,7 @@
                                 <label class="form-label text-danger" for="DriverPhone1NewDriver">*Phone #1</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control phone" id="DriverPhone1NewDriver"
+                                    <input type="text" class="form-control phone" id="DriverPhone1NewDriver"
                                         name="DriverPhone1NewDriver" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -233,7 +233,7 @@
                                 <label class="form-label" for="DriverPhone2NewDriver">Phone #2</label>
                                 <div class="input-group"> <span class="input-group-text"><i
                                             class="las la-phone"></i></span>
-                                    <input type="tel" class="form-control phone" id="DriverPhone2NewDriver"
+                                    <input type="text" class="form-control phone" id="DriverPhone2NewDriver"
                                         name="DriverPhone2NewDriver" placeholder="555-555-5555"
                                         aria-describedby="basic-addon1">
                                 </div>
@@ -385,7 +385,7 @@
                                                 <label class="mb-1"><i class="fa fa-mobile"></i> Origin phone
                                                     #1<b class="text-danger">*</b></label>
                                                 <input id="OriginPhone1" name="OriginPhone1" type="tel"
-                                                    class="form-control originInput phone" placeholder="1-555-555-5555">
+                                                    class="form-control originInput phone" placeholder="(555)555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -393,7 +393,7 @@
                                                     #2</label>
                                                     <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginPhone2" name="OriginPhone2" type="tel"
-                                                    class="form-control originInput phone" placeholder="1-555-555-5555">
+                                                    class="form-control originInput phone" placeholder="(555)555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -461,7 +461,7 @@
                                                 #1<b class="text-danger">*</b></label>
                                                 <input id="DestinationPhone1" name="DestinationPhone1" type="tel"
                                                     class="form-control DestinationInput phone"
-                                                    placeholder="1-555-555-5555">
+                                                    placeholder="(555)555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -469,7 +469,7 @@
                                                     #2</label>
                                                 <input id="DestinationPhone2" name="DestinationPhone2" type="tel"
                                                     class="form-control DestinationInput phone"
-                                                    placeholder="1-555-555-5555">
+                                                    placeholder="(555)555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -757,19 +757,19 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing city<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> City<b class="text-danger">*</b></label>
                                                 <input id="BillingCity" name="BillingCity" type="text"
                                                     class="form-control BillingInput" placeholder="City">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing state<b class="text-danger">*</b></label>
+                                            <label class="mb-1"><i class="fa fa-map-marker-alt"></i> State<b class="text-danger">*</b></label>
                                                 <input id="BillingState" name="BillingState" type="text"
                                                     class="form-control BillingInput" placeholder="State">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
-                                                <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Billing zip code</label>
+                                                <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Zip code</label>
                                                 <input id="BillingZipCode" name="BillingZipCode" type="text"
                                                     class="form-control BillingInput" placeholder="00000">
                                             </div>
@@ -784,13 +784,13 @@
                                         <div class="col-md-4" >
                                         <label class="mb-1"><i class="fa fa-mobile"></i> Phone number #1<b class="text-danger">*</b></label>
                                             <input id="Tel1" name="Tel1" type="tel" class="form-control phone"
-                                                placeholder="1-555-555-5555">
+                                                placeholder="(555)555-5555">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" >
                                             <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone number #2</label>
                                             <input id="Tel2" name="Tel2" type="tel" class="form-control phone"
-                                                placeholder="1-555-555-5555">
+                                                placeholder="(555)555-5555">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" >
@@ -1041,7 +1041,7 @@
                         <span class="text-dark"><b><i data-feather="truck"></i> Trucker company</b></span>
                         <hr>
                                 <div class="row">
-                                    <label class="mb-1"><b class="text-danger">*</b>Company name</label>
+                                    <label class="mb-1">Company name<b class="text-danger">*</b></label>
                                         <div class="input-group">
                                             <select style="width: 92%;" id="IdCompanyService" name="IdCompanyService" class="select2 form-control mb-3 custom-select">
                                             </select>
@@ -1051,7 +1051,7 @@
 
                                 <div class="row inputpadding">
                                     <div class="col-md-12" >
-                                        <label class="mb-1">Company address</label>
+                                        <label class="mb-1"><i class="fa fa-map-marker-alt"></i> Company address<b class="text-danger">*</b></label>
                                         <input id="CompanyAddress" name="CompanyAddress" type="text"  class="form-control" placeholder="Input the company's address">
                                     </div>
                                 </div>
@@ -1059,16 +1059,16 @@
                                     <div class="row inputpadding">
 
                                             <div class="col-md-4" >
-                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
+                                                <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1<b class="text-danger">*</b></label>
                                                 <input id="CompanyPhone1" name="CompanyPhone1" type="tel"
-                                                    class="form-control" placeholder="+1 1-555-555-5555">
+                                                    class="form-control" placeholder="+1 (555)555-5555">
                                             </div>
 
                                             
                                             <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
                                                 <input id="CompanyPhone2" name="CompanyPhone2" type="tel"
-                                                    class="form-control" placeholder="+1 1-555-555-5555">
+                                                    class="form-control" placeholder="+1 (555)555-5555">
                                             </div>
                                         
                                             <div class="col-md-4" >
@@ -1080,9 +1080,9 @@
                                     <br>
 
                                     <div class="row inputpadding">
-                                            <span class="text-dark"><b><i class="fa fa-address-card fa-2x"></i> Drivers</b></span><hr>
+                                            <span class="text-dark"><b><i class="fa fa-bus fa-2x"></i> Drivers</b></span><hr>
                                                 <div class="row">
-                                                    <label class="mb-1">Driver name</label>
+                                                    <label class="mb-1">Driver name<b class="text-danger">*</b></label>
                                                     <div class="input-group">
                                                         <select style="width: 93%;" id="IdDriver" name="IdDriver" class="select2 form-control mb-3 custom-select"> </select>
                                                         <button class="btn btn-dark" type="button" id="SearchDriverName"><iconv_get_encoding class="ti ti-reload"></i></button>
@@ -1092,15 +1092,15 @@
 
                                     <div class="row inputpadding">
                                         <div class="col-md-6" >
-                                            <label class="mb-1"><i class="fa fa-mobile"></i> Driver phone #1</label>
-                                            <input id="DriverPhone1" name="DriverPhone1" type="number"
-                                                class="form-control" placeholder="+1 1-555-555-5555">
+                                            <label class="mb-1"><i class="fa fa-mobile"></i> Driver phone #1<b class="text-danger">*</b></label>
+                                            <input id="DriverPhone1" name="DriverPhone1" type="text"
+                                                class="form-control" placeholder="+1 (555)555-5555">
                                         </div>
                                       
                                         <div class="col-md-6" >
                                             <label class="mb-1"><i class="fa fa-phone-alt"></i> Driver phone #2</label>
-                                            <input id="DriverPhone2" name="DriverPhone2" type="number"
-                                                class="form-control" placeholder="+1 1-555-555-5555">
+                                            <input id="DriverPhone2" name="DriverPhone2" type="text"
+                                                class="form-control" placeholder="+1 (555)555-5555">
                                         </div>
 
                                     </div>
@@ -1108,7 +1108,7 @@
 
                         <!--end col-->
                               <div class="col-md-6"> 
-                                    <span class="text-dark"><b><i data-feather="dollar-sign"></i>Driver payment </b></span>
+                                    <span class="text-dark"><b><i data-feather="dollar-sign"></i>Trucker Payment</b></span>
                                         <hr>
                                      <div class="row">
                                         <div class="col-md-12">
@@ -1400,10 +1400,67 @@ return x1- x2;
 }
 
 $(document).ready(function($){
-    $('.phone').mask('0-000-000-0000');
-    $("#ExpDate").mask('00/00');
+    
+    $('.phone, #DriverPhone1, #DriverPhone2').mask('(000)000-0000');
     $("#Cvv").mask('0000');
     $("#CreditCard").mask("0000 0000 0000 0000");
+
+    $('#ExpDate').mask("AB/CD", {
+      translation: {
+        A: { pattern: /[0-9]/ },
+        B: { pattern: /[0-9]/ },
+        C: { pattern: /[2-9]/ },
+        D: { pattern: /[0-9]/ }
+      },
+      onKeyPress: function(a, b, c, d) {
+        if (!a) return;
+        let m = a.match(/(\d{1})/g);
+        if (!m) return;
+        if (parseInt(m[0]) === 0) {
+          d.translation.B.pattern = /[1-9]/;
+        } else if (parseInt(m[0]) === 1) {
+          d.translation.B.pattern = /[0-2]/;
+        } else if (parseInt(m[0]) > 1) {
+          c.val("0" + m[0] + "/");
+        } else {
+          d.translation.B.pattern = /[0-9]/;
+        }
+        let temp_value = c.val();
+        c.val("");
+        c.unmask().mask("AB/CD", d);
+        c.val(temp_value);
+      }
+    }).keyup();    
+
+    $("#DeliveryDate").change(function(){
+
+        const PickUpOrderDateDate = new Date($("#PickUpOrderDateDate").val());
+        const DeliveryDate = new Date($("#DeliveryDate").val());
+
+        if(+DeliveryDate < +PickUpOrderDateDate){
+
+            $(".toast-error").html("(!) The delivery date cannot be less than today");
+            var myAlert2 = document.getElementById('toastError');
+            var bsAlert2 = new bootstrap.Toast(myAlert2);
+            bsAlert2.show();
+        }
+
+    });
+
+$("#PickUpDate").change(function(){
+
+        const PickUpDate = new Date($("#PickUpDate").val());
+        const PickUpOrderDateDate = new Date($("#PickUpOrderDateDate").val());
+
+        if(+PickUpDate < +PickUpOrderDateDate){
+
+            $(".toast-error").html("(!) The pick-up date cannot be less than today");
+            var myAlert1 = document.getElementById('toastError');
+            var bsAlert1 = new bootstrap.Toast(myAlert1);
+            bsAlert1.show();
+        }
+
+        });
 });
 
 
@@ -1413,9 +1470,11 @@ $("#form-horizontal").steps({
     transitionEffect: "slide",
     onStepChanging: function (event, currentIndex, newIndex)
     {
+      
         switch (newIndex) {
-            case 1:
 
+            case 1:
+                $("#ManualUpdateButton").show();
                 if($("#IdCustomerOrigin").val() !="" && $("#OriginAddress").val() != "" &&  $("#OriginCity").val() != "" && $("#OriginState").val() != "" &&  $("#OriginPhone1").val() != "" && $("#IdCustomerDestination").val() !="" && $("#DestinationAddress").val() != "" &&  $("#DestinationCity").val() != "" && $("#DestinationState").val() != "" &&  $("#DestinationPhone1").val() != ""){
                       return true;
                 }else{
@@ -1431,54 +1490,111 @@ $("#form-horizontal").steps({
                 break;
 
                 case 2:
+                    $("#ManualUpdateButton").show();
+                    const PickUpOrderDateDate = new Date($("#PickUpOrderDateDate").val());
+                    const DeliveryDate = new Date($("#DeliveryDate").val());
+                    const PickUpDate = new Date($("#PickUpDate").val());
+                    let continueCase = false;
 
-                    if($("#PickUpDate").val() != "" &&  $("#DeliveryDate").val() != "" &&  $("#OrderStatusID").val() != ""){
-                        return true;
+                    if(($("#PickUpDate").val() != "") && (+PickUpDate >= +PickUpOrderDateDate)){
+                        continueCase = true;
                     }else{
-                        
-                        $(".toast-error").html("(*) empty required fields [Step 2]");
-                        var myAlert = document.getElementById('toastError');
-                        var bsAlert = new bootstrap.Toast(myAlert);
-                        bsAlert.show();
-
+                       
+                        $(".toast-error").html("(!) The pick-up date cannot be less than today or empty [Step 2]");
+                        var myAlert2 = document.getElementById('toastError');
+                        var bsAlert2 = new bootstrap.Toast(myAlert2);
+                        bsAlert2.show();
+                        continueCase = false;
                         return false;
                     }
 
-                    break;
+                     if(($("#DeliveryDate").val() != "") && (+DeliveryDate >= +PickUpOrderDateDate)){
+                        continueCase = true;
+                    } else{
 
-               case 3:
-
-                if($("#CardHolderName").val() != "" &&  $("#CreditCard").val() != "" &&  $("#ExpDate").val() != "" &&  $("#Cvv").val() != ""  &&  $("#BillingAddress").val() != "" &&  $("#BillingCity").val() != "" && $("#BillingState").val() != "" &&  $("#Tel1").val() != "" &&  $("#Total").val() != "" && $("#Deposit").val() != ""){
-                   
-                    if(ConvertNumber($("#Deposit").val()) > ConvertNumber($("#Total").val())){
-
-                        $(".toast-error").html("(!) the deposit is greater than the total [Step 3]");
-                        var myAlert = document.getElementById('toastError');
-                        var bsAlert = new bootstrap.Toast(myAlert);
-                        bsAlert.show();
-
-                    return false;
-
-                    }else{
-                        loadInfoPDF1();
-                        return true;
+                        $(".toast-error").html("(!) The delivery date cannot be less than today or empty [Step 2]");
+                        var myAlert1 = document.getElementById('toastError');
+                        var bsAlert1 = new bootstrap.Toast(myAlert1);
+                        bsAlert1.show();
+                        continueCase = false;
+                        return false;
                     }
-                    
+
+                    if(continueCase == true){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                 
+                    break;
+               case 3:
+                $("#ManualUpdateButton").show();
+                let continueCase3 = true;
                    
-                }else{
+                   if($("#CardHolderName").val() != "" &&  $("#ExpDate").val() != "" && $("#CreditCard").val() != ""  &&  $("#Cvv").val() != ""  &&  $("#BillingAddress").val() != "" &&  $("#BillingCity").val() != "" && $("#BillingState").val() != "" &&  $("#Tel1").val() != "" &&  $("#Total").val() != "" && $("#Deposit").val() != ""){
 
-                    $(".toast-error").html("(*) empty required fields [Step 3]");
-                    var myAlert = document.getElementById('toastError');
-                    var bsAlert = new bootstrap.Toast(myAlert);
-                    bsAlert.show();
+                      let ExpDate =  $("#ExpDate").val();
+                      let month = ExpDate.substr(0,2);
+                      let year  = ExpDate.substr(3,2);
+                      let day   = 28;
 
-                    return false;
-                }
+                      ExpDate = month+'/'+day+'/'+year;
+                      let ExpDateConverted    = new Date(ExpDate);
+                      let OrderDate = new Date($("#PickUpOrderDateDate").val());
 
-                break;
+                      if($("#ExpDate").val().length != 5){
+                      
+                       $(".toast-error").html("(!) Expiration date of credit card invalid");
+                       var myAlert5 = document.getElementById('toastError');
+                       var bsAlert5 = new bootstrap.Toast(myAlert5);
+                       bsAlert5.show();
+                       continueCase3 = false;    
+                       return false;
+
+                      }
+
+
+                   if(ConvertNumber($("#Deposit").val()) > ConvertNumber($("#Total").val())){
+
+                       $(".toast-error").html("(!) the deposit is greater than the total [Step 3]");
+                       var myAlert4 = document.getElementById('toastError');
+                       var bsAlert4 = new bootstrap.Toast(myAlert4);
+                       bsAlert4.show();
+                       continueCase3 = false;
+                       return false;
+
+                   }else if($("#ExpDate").val().length == 5){
+
+                       if (+ExpDateConverted <= +OrderDate) {
+
+                           $(".toast-error").html("(!) ExpDate of credit card less than today");
+                           var myAlert6 = document.getElementById('toastError');
+                           var bsAlert6 = new bootstrap.Toast(myAlert6);
+                           bsAlert6.show();
+                           continueCase3 = false;
+                           return false;
+
+                        }
+                   }
+                   
+
+               } else{
+
+                   $(".toast-error").html("(*) empty required fields [Step 3]");
+                   var myAlert5 = document.getElementById('toastError');
+                   var bsAlert5 = new bootstrap.Toast(myAlert5);
+                   bsAlert5.show();
+                   continueCase3 = false;
+                   return false;
+               }
+
+               if(continueCase3){
+                   loadInfoPDF1();
+                    return true;
+               }
 
                 case 4:
-
+                    $("#ManualUpdateButton").show();
                     if(SumNumber($("#Cod").val(),$("#Deposit").val()) > ConvertNumber($("#Total").val())){
 
                         $(".toast-error").html("(!) Cod + Deposit isn't equal to Total [Step 4]");
@@ -1511,25 +1627,34 @@ $("#form-horizontal").steps({
                break;
 
                case 5:
+                  $("#ManualUpdateButton").hide();
+                   if($("#Cod").val() == "" ){
 
-                    if($("#Cod").val() != "" ){
-                             loadInfoPDF1();
-                             loadInfoPDF2();
-                            return true;
+                       $(".toast-error").html("(*) Check COD Field [Step 5]");
+                        var myAlert = document.getElementById('toastError');
+                        var bsAlert = new bootstrap.Toast(myAlert);
+                        bsAlert.show();
+                           
+                    }else if($("#IdCompanyService").val() != "" && $("#CompanyAddress").val() != "" && $("#CompanyPhone1").val() != "" && $("#DriverPhone1").val() != "" && $("#IdDriver").val() != "" ){
+                        
+                        loadInfoPDF1();
+                        loadInfoPDF2();
+                        return true;
+
                     }else{
 
-                        $(".toast-error").html("(*) Check COD Field [Step 5]");
+                        $(".toast-error").html("(*) Check fields required [Step 5]");
                         var myAlert = document.getElementById('toastError');
                         var bsAlert = new bootstrap.Toast(myAlert);
                         bsAlert.show();
 
-                        return false;
+                        return false
                     }
 
                     break;
 
             default:
-                return true;
+               
                 break;
         }
 
@@ -1537,6 +1662,7 @@ $("#form-horizontal").steps({
             onInit: function() {},
             labels: { cancel: "Cancel", current: "current step:", pagination: "Pagination", finish: "Update order", next: "Next", previous: "Previous", loading: "Loading ..." }, 
              onFinishing: function(event, currentIndex) {
+               
                 saveAndUpdateOrder();
                 return true;
             }
@@ -1577,18 +1703,25 @@ $(document).ready(function() {
         $(this).css("border-color", "#A6A6A6");
     });
 
-    $("#Deposit, #ExtraTrukerFee, #Total, #ExtraTrukerFee").keyup(function() {
+    $("#Deposit, #ExtraTrukerFee, #Total, #TrukerOwesUs").keyup(function() {
 
         $("#TotalOrder").val($("#Total").val());
+        
         $("#DepositOrder").val($("#Deposit").val());
-        $("#Earnings").val(RestNumber($("#Deposit").val(), $("#ExtraTrukerFee").val()));
+        
+        $("#Earnings").val(SumNumber(RestNumber($("#Deposit").val(), $("#ExtraTrukerFee").val()),$("#TrukerOwesUs").val()));
+        
         $("#Cod").val(RestNumber($("#Total").val(),$("#Deposit").val()));
-        $("#TrukerRate").val(SumNumber($("#ExtraTrukerFee").val(),$("#Cod").val())); 
+        
+        $("#TrukerRate").val(RestNumber(SumNumber($("#ExtraTrukerFee").val(),$("#Cod").val()),$("#TrukerOwesUs").val())); 
 
     });
 
     $("body").addClass("enlarge-menu");
    // AddVehicleList();
+
+   var $input = $('<li><button id="ManualUpdateButton" type="button" onclick="saveAndUpdateOrder()" class="btn btn-warning">Update info</button></li>');
+    $input.appendTo($('ul[aria-label=Pagination]'));
     
     
     $(".steps").addClass("d-print-none");
@@ -1608,7 +1741,7 @@ $(document).ready(function() {
             bsAlert2.show();
         }
 
-        });
+    });
 
         $("#PickUpDate").change(function(){
 
@@ -1883,9 +2016,7 @@ function saveAndUpdateOrder(){
                         var myAlert = document.getElementById('toastSuccess');
                         var bsAlert = new bootstrap.Toast(myAlert);
                         bsAlert.show();
-                        setTimeout(() => { bsAlert.hide();}, 3000);
-                        setTimeout(() => {window.print();}, 4000);
-
+                      
                     }else{
 
                         $(".toast-error").html(response.Message);
@@ -1898,7 +2029,7 @@ function saveAndUpdateOrder(){
                     $("#LoadingButton").hide();
 
                 }else{
-                    console.log(data);
+                  //  console.log(data);
                 }
             }
         });

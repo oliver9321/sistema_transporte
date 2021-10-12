@@ -66,7 +66,7 @@
                                         <div class="card-body">
                                             <div class="row d-flex justify-content-center">                                                
                                                 <div class="col">
-                                                    <p class="text-white mb-0 fw-semibold">Earnings</p>
+                                                    <p class="text-white mb-0 fw-semibold">Payment List</p>
                                                     <h3 class="m-0 text-white"><?= $SumEarnings ?></h3>
                                                 </div>
                                                 <div class="col-auto align-self-center">

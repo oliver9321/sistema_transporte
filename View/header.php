@@ -73,16 +73,19 @@
                 </li>
 
                 <li>
-                    <a href="index.php?c=Orders&a=Index"><i class="fa fa-file align-self-center menu-icon"></i><span>Order list</span></a>
+                    <a href="index.php?c=Orders&a=Index"><i class="fa fa-file align-self-center menu-icon"></i><span>Order List</span></a>
                 </li>
 
                 <li>
-                    <a href="index.php?c=Payments&a=Index"><i data-feather="dollar-sign" class="align-self-center menu-icon"></i><span>Payment list</span></a>
+                    <a href="javascript: void(0);"><i class="fa fa-book align-self-center menu-icon"></i><span>Payments List</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=Payments&a=Index"><i class="ti-control-record"></i>General Report</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?c=Payments&a=Summary"><i class="ti-control-record"></i>Summary Report</a></li>
+                    </ul>
                 </li>
-           
 
                 <li>
-                    <a href="javascript: void(0);"><i class="fa fa-truck align-self-center menu-icon"></i><span>Company services</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i class="fa fa-truck align-self-center menu-icon"></i><span>Trucker Company</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=companyServices&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=companyServices&a=Edit"><i class="ti-control-record"></i>Create</a></li>
@@ -107,7 +110,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i class="fa fa-male align-self-center menu-icon"></i><span>Customer types</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i class="fa fa-male align-self-center menu-icon"></i><span>Customer Types</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=customerType&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=customerType&a=Edit"><i class="ti-control-record"></i>Create</a></li>
@@ -115,7 +118,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i class="fa fa-check-circle align-self-center menu-icon"></i><span>Status orders </span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i class="fa fa-check-circle align-self-center menu-icon"></i><span>Status Orders </span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=orderStatus&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=orderStatus&a=Edit"><i class="ti-control-record"></i>Create</a></li>
@@ -123,7 +126,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i class="fa fa-check-square align-self-center menu-icon"></i><span>Users profiles</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i class="fa fa-check-square align-self-center menu-icon"></i><span>Users Profiles</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="index.php?c=userProfiles&a=Index"><i class="ti-control-record"></i>List</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?c=userProfiles&a=Edit"><i class="ti-control-record"></i>Create</a></li>

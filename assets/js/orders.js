@@ -188,6 +188,7 @@ $(document).ready(function() {
                     $("#DriverPhone1, #DriverPhone2").val("");
 
                     var value = JSON.parse(data);
+                    console.log(value);
 
                     if (value.DriverPhone1 != '') {
                         $("#DriverPhone1").val(value.DriverPhone1);

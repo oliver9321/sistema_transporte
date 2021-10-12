@@ -112,6 +112,21 @@ class Orders {
         }
     }
 
+    
+    public function GetOrderById($id)
+    {
+        try
+        {
+            $stm = $this->pdo->prepare("SELECT *  FROM tbl_orders WHERE Id = ?");
+            $stm->execute(array($id));
+
+            return $stm->fetch(PDO::FETCH_OBJ);
+
+        } catch (Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
 
     public function Edit($id)
     {
@@ -324,7 +339,7 @@ $result = $this->pdo->prepare($sql)->execute(
 
     public function getCountOrdersCancelled(){
 
-        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountOrders FROM vw_orders WHERE IsActive = 1 and Status = 'Canceled'");
+        $stm2 = $this->pdo->prepare("SELECT COUNT(*) as CountOrders FROM vw_orders WHERE IsActive = 1 and Status = 'Cancelled'");
         $stm2->execute();
         return $stm2->fetch();
     }
@@ -361,14 +376,14 @@ $result = $this->pdo->prepare($sql)->execute(
 
     public function getSumTotalToday(){
 
-        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Total),0) as Total FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND DATE(LastModificationDate) = curdate()");
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Deposit),0) as Total FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND DATE(LastModificationDate) = curdate()");
         $stm2->execute();
         return $stm2->fetch();
     }
 
     public function getSumTotal(){
 
-        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Total),0) as Total FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND MONTH(LastModificationDate) = MONTH(curdate())");
+        $stm2 = $this->pdo->prepare("SELECT IFNULL(SUM(Deposit),0) as Total FROM tbl_orders WHERE IsActive = 1 AND OrderStatusID != 4 AND MONTH(LastModificationDate) = MONTH(curdate())");
         $stm2->execute();
         return $stm2->fetch();
     }
@@ -400,6 +415,28 @@ $result = $this->pdo->prepare($sql)->execute(
             $sql = "UPDATE tbl_orders SET OrderStatusID  = ? WHERE Id = ?";
             return $this->pdo->prepare($sql)->execute(array($data->OrderStatusID,$data->Id));
 
+    } catch (Exception $e){
+        die($e->getMessage());
+    }
+
+ }
+
+ public function PayExtraTruckerFee($data){
+    
+    try{
+        $sql = "UPDATE tbl_orders SET ExtraTrukerFee  = ? WHERE Id = ?";
+        return $this->pdo->prepare($sql)->execute(array($data->ExtraTrukerFee,$data->Id));
+    } catch (Exception $e){
+        die($e->getMessage());
+    }
+
+ }
+
+ public function PayTruckerOwesUS($data){
+    
+    try{
+        $sql = "UPDATE tbl_orders SET TrukerOwesUs  = ? WHERE Id = ?";
+        return $this->pdo->prepare($sql)->execute(array($data->TrukerOwesUs,$data->Id));
     } catch (Exception $e){
         die($e->getMessage());
     }

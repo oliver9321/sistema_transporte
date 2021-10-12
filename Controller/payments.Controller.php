@@ -25,6 +25,20 @@ class PaymentsController
         }
     }
 
+    public function Summary(){
+
+        if($_SESSION['UserOnline']->Profile == "admin") {
+
+        GetRouteView(null, "header");
+        require_once 'View/payments/summary.php';
+        GetRouteView(null, "footer");
+
+        }else{
+            header('Location:index.php?c=login&a=index');
+        }
+    }
+
+
     //Vista
     public function View(){
 
