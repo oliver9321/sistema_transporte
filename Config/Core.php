@@ -14,7 +14,7 @@ define("PASSWORD_DB", "logistics_transport123");
 define("SERVIDOR", "162.241.216.248"); //Produccion
 define("DATABASE", "delimar1_bd_logistics_transport");
 define("KEY", "KeyItick4597136940Turnos");
-
+date_default_timezone_set('America/Santo_Domingo');
 
 global $PathString;
 

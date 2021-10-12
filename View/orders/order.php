@@ -380,7 +380,7 @@
                                                 <label class="mb-1"><i class="fa fa-mobile"></i> Origin phone
                                                     #1<b class="text-danger">*</b></label>
                                                 <input id="OriginPhone1" name="OriginPhone1" type="tel"
-                                                    class="form-control originInput phone" placeholder="(555) 555-5555">
+                                                    class="form-control originInput phone" placeholder="1-555-555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -388,7 +388,7 @@
                                                     #2</label>
                                                     <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginPhone2" name="OriginPhone2" type="tel"
-                                                    class="form-control originInput phone" placeholder="(555) 555-5555">
+                                                    class="form-control originInput phone" placeholder="1-555-555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -456,7 +456,7 @@
                                                     #1<b class="text-danger">*</b></label>
                                                 <input id="DestinationPhone1" name="DestinationPhone1" type="tel"
                                                     class="form-control DestinationInput phone"
-                                                    placeholder="(555) 555-5555">
+                                                    placeholder="1-555-555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -464,7 +464,7 @@
                                                     #2</label>
                                                 <input id="DestinationPhone2" name="DestinationPhone2" type="tel"
                                                     class="form-control DestinationInput phone"
-                                                    placeholder="(555) 555-5555">
+                                                    placeholder="1-555-555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -628,7 +628,7 @@
                                                         <div class="col-sm-3" >
                                                         <label class="mb-1"><b>Vin</b></label>
                                                             <div class="input-group">
-                                                                <input type="text" name="Vin" class="form-control VinVehicle vehicleList">
+                                                                <input type="text" name="Vin" class="form-control VinVehicle vehicleList" style="text-transform:uppercase">
                                                                 <button type="button" title="Delete vehicle" onclick="EliminarVehiculo(this)"  class="btn btn-outline-danger"> <span class="far fa-trash-alt me-1"></span> </button>
                                                             </div>
                                                         </div>
@@ -720,7 +720,7 @@
                     <div class="col-md-3" >
                         <label class="mb-1">Expiration date<b class="text-danger">*</b></label>
                         <input id="ExpDate" name="ExpDate" type="text" class="form-control"
-                            placeholder="00/00">
+                            placeholder="00/00" minlength="4">
                     </div>
                     <!-- end row -->
                     <div class="col-md-4" >
@@ -776,13 +776,13 @@
                     <div class="col-md-4" >
                         <label class="mb-1"><i class="fa fa-mobile"></i> Phone number #1<b class="text-danger">*</b></label>
                         <input id="Tel1" name="Tel1" type="tel" class="form-control phone"
-                            placeholder="(555) 555-5555">
+                            placeholder="1-555-555-5555">
                     </div>
                     <!-- end row -->
                     <div class="col-md-4" >
                         <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone number #2</label>
                         <input id="Tel2" name="Tel2" type="tel" class="form-control phone"
-                            placeholder="(555) 555-5555">
+                            placeholder="1-555-555-5555">
                     </div>
                     <!-- end row -->
                     <div class="col-md-4" >
@@ -1105,10 +1105,69 @@ return x1- x2;
 }
 
 $(document).ready(function($){
-    $('.phone').mask('(000) 000-0000');
-    $("#ExpDate").mask('00/00');
+
+    $('.phone').mask('0-000-000-0000');
+    //$("#ExpDate").mask('00/00');
     $("#Cvv").mask('0000');
     $("#CreditCard").mask("0000 0000 0000 0000");
+
+    $('#ExpDate').mask("AB/CD", {
+      translation: {
+        A: { pattern: /[0-9]/ },
+        B: { pattern: /[0-9]/ },
+        C: { pattern: /[2-9]/ },
+        D: { pattern: /[0-9]/ }
+      },
+      onKeyPress: function(a, b, c, d) {
+        if (!a) return;
+        let m = a.match(/(\d{1})/g);
+        if (!m) return;
+        if (parseInt(m[0]) === 0) {
+          d.translation.B.pattern = /[1-9]/;
+        } else if (parseInt(m[0]) === 1) {
+          d.translation.B.pattern = /[0-2]/;
+        } else if (parseInt(m[0]) > 1) {
+          c.val("0" + m[0] + "/");
+        } else {
+          d.translation.B.pattern = /[0-9]/;
+        }
+        let temp_value = c.val();
+        c.val("");
+        c.unmask().mask("AB/CD", d);
+        c.val(temp_value);
+      }
+    }).keyup();
+
+    $("#DeliveryDate").change(function(){
+
+        const PickUpOrderDateDate = new Date($("#PickUpOrderDateDate").val());
+        const DeliveryDate = new Date($("#DeliveryDate").val());
+
+        if(+DeliveryDate < +PickUpOrderDateDate){
+
+            $(".toast-error").html("(!) The delivery date cannot be less than today");
+            var myAlert2 = document.getElementById('toastError');
+            var bsAlert2 = new bootstrap.Toast(myAlert2);
+            bsAlert2.show();
+        }
+
+        });
+
+        $("#PickUpDate").change(function(){
+
+        const PickUpDate = new Date($("#PickUpDate").val());
+        const PickUpOrderDateDate = new Date($("#PickUpOrderDateDate").val());
+
+        if(+PickUpDate < +PickUpOrderDateDate){
+
+            $(".toast-error").html("(!) The pick-up date cannot be less than today");
+            var myAlert1 = document.getElementById('toastError');
+            var bsAlert1 = new bootstrap.Toast(myAlert1);
+            bsAlert1.show();
+        }
+
+        });
+
 });
 
 
@@ -1120,7 +1179,7 @@ $("#form-horizontal").steps({
     {
         switch (newIndex) {
             case 1:
-
+                
                 if($("#IdCustomerOrigin").val() !="" && $("#OriginAddress").val() != "" &&  $("#OriginCity").val() != "" && $("#OriginState").val() != "" &&  $("#OriginPhone1").val() != "" && $("#IdCustomerDestination").val() !="" && $("#DestinationAddress").val() != "" &&  $("#DestinationCity").val() != "" && $("#DestinationState").val() != "" &&  $("#DestinationPhone1").val() != ""){
                       return true;
                 }else{
@@ -1137,45 +1196,112 @@ $("#form-horizontal").steps({
 
                 case 2:
 
-                    if($("#PickUpDate").val() != "" &&  $("#DeliveryDate").val() != "" &&  $("#OrderStatusID").val() != ""){
-                        return true;
-                    }else{
-                        
-                        $(".toast-error").html("(*) empty required fields [Step 2]");
-                        var myAlert = document.getElementById('toastError');
-                        var bsAlert = new bootstrap.Toast(myAlert);
-                        bsAlert.show();
+                    const PickUpOrderDateDate = new Date($("#PickUpOrderDateDate").val());
+                    const DeliveryDate = new Date($("#DeliveryDate").val());
+                    const PickUpDate = new Date($("#PickUpDate").val());
+                    let continueCase = false;
 
+                    if(($("#PickUpDate").val() != "") && (+PickUpDate >= +PickUpOrderDateDate)){
+                        continueCase = true;
+                    }else{
+                       
+                        $(".toast-error").html("(!) The pick-up date cannot be less than today or empty [Step 2]");
+                        var myAlert2 = document.getElementById('toastError');
+                        var bsAlert2 = new bootstrap.Toast(myAlert2);
+                        bsAlert2.show();
+                        continueCase = false;
                         return false;
                     }
 
+                     if(($("#DeliveryDate").val() != "") && (+DeliveryDate >= +PickUpOrderDateDate)){
+                        continueCase = true;
+                    } else{
+
+                        $(".toast-error").html("(!) The delivery date cannot be less than today or empty [Step 2]");
+                        var myAlert1 = document.getElementById('toastError');
+                        var bsAlert1 = new bootstrap.Toast(myAlert1);
+                        bsAlert1.show();
+                        continueCase = false;
+                        return false;
+                    }
+
+                    if(continueCase == true){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                 
                     break;
 
                     case 3:
 
-                if($("#CardHolderName").val() != "" &&  $("#CreditCard").val() != "" &&  $("#ExpDate").val() != "" &&  $("#Cvv").val() != ""  &&  $("#BillingAddress").val() != "" &&  $("#BillingCity").val() != "" && $("#BillingState").val() != "" &&  $("#Tel1").val() != "" &&  $("#Total").val() != "" && $("#Deposit").val() != ""){
+                    let continueCase3 = false;
                    
+                    if($("#CardHolderName").val() != "" &&  $("#ExpDate").val() != "" && $("#CreditCard").val() != ""  &&  $("#Cvv").val() != ""  &&  $("#BillingAddress").val() != "" &&  $("#BillingCity").val() != "" && $("#BillingState").val() != "" &&  $("#Tel1").val() != "" &&  $("#Total").val() != "" && $("#Deposit").val() != ""){
+
+
+                       let ExpDate =  $("#ExpDate").val();
+                       let month = ExpDate.substr(0,2);
+                       let year  = ExpDate.substr(3,2);
+                       let day   = 01;
+
+                       ExpDate = month+'/'+day+'/'+year;
+                       let ExpDateConverted    = new Date(ExpDate);
+                       let OrderDate = new Date($("#PickUpOrderDateDate").val());
+
+                       if($("#ExpDate").val().length != 5){
+                       
+                        $(".toast-error").html("(!) Expiration date of credit card invalid");
+                        var myAlert5 = document.getElementById('toastError');
+                        var bsAlert5 = new bootstrap.Toast(myAlert5);
+                        bsAlert5.show();
+
+                        return false;
+
+                       }
+
+
                     if(ConvertNumber($("#Deposit").val()) > ConvertNumber($("#Total").val())){
 
                         $(".toast-error").html("(!) the deposit is greater than the total [Step 3]");
-                        var myAlert = document.getElementById('toastError');
-                        var bsAlert = new bootstrap.Toast(myAlert);
-                        bsAlert.show();
+                        var myAlert4 = document.getElementById('toastError');
+                        var bsAlert4 = new bootstrap.Toast(myAlert4);
+                        bsAlert4.show();
 
-                    return false;
+                        return false;
 
+                    }else if($("#ExpDate").val().length == 5){
+
+                       console.log("ExpDateConverted:" +ExpDateConverted+", OrderDate:"+OrderDate);
+
+                        $(".toast-error").html("(!) Expiration date of credit card invalid");
+                        var myAlert5 = document.getElementById('toastError');
+                        var bsAlert5 = new bootstrap.Toast(myAlert5);
+                        bsAlert5.show();
+
+                        return false;
+                    
+                    }else if (+ExpDateConverted <= +OrderDate) {
+
+                        $(".toast-error").html("(!) ExpDate of credit card less than today");
+                        var myAlert6 = document.getElementById('toastError');
+                        var bsAlert6 = new bootstrap.Toast(myAlert6);
+                        bsAlert6.show();
+
+                        return false;
+                    
                     }else{
                         loadInfoPDF1();
                         return true;
                     }
                     
-                   
-                }else{
+                    console.log("ExpDateConverted:" +ExpDateConverted+", OrderDate:"+OrderDate);
+                } else{
 
                     $(".toast-error").html("(*) empty required fields [Step 3]");
-                    var myAlert = document.getElementById('toastError');
-                    var bsAlert = new bootstrap.Toast(myAlert);
-                    bsAlert.show();
+                    var myAlert5 = document.getElementById('toastError');
+                    var bsAlert5 = new bootstrap.Toast(myAlert5);
+                    bsAlert5.show();
 
                     return false;
                 }

@@ -4,6 +4,9 @@
     padding: 0.2rem !important;
 }
 </style>
+<link rel="stylesheet" type="text/css" href="https://printjs-4de6.kxcdn.com/print.min.css"/>
+<script type="text/javascript" src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
 <div class="modal fade" id="ModalNewCustomer" role="dialog" aria-labelledby="ModalNewCustomerLabel" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -382,7 +385,7 @@
                                                 <label class="mb-1"><i class="fa fa-mobile"></i> Origin phone
                                                     #1<b class="text-danger">*</b></label>
                                                 <input id="OriginPhone1" name="OriginPhone1" type="tel"
-                                                    class="form-control originInput phone" placeholder="(555) 555-5555">
+                                                    class="form-control originInput phone" placeholder="1-555-555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -390,7 +393,7 @@
                                                     #2</label>
                                                     <input style="display:none;" />
                                                 <input autocomplete="off" id="OriginPhone2" name="OriginPhone2" type="tel"
-                                                    class="form-control originInput phone" placeholder="(555) 555-5555">
+                                                    class="form-control originInput phone" placeholder="1-555-555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -458,7 +461,7 @@
                                                 #1<b class="text-danger">*</b></label>
                                                 <input id="DestinationPhone1" name="DestinationPhone1" type="tel"
                                                     class="form-control DestinationInput phone"
-                                                    placeholder="(555) 555-5555">
+                                                    placeholder="1-555-555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -466,7 +469,7 @@
                                                     #2</label>
                                                 <input id="DestinationPhone2" name="DestinationPhone2" type="tel"
                                                     class="form-control DestinationInput phone"
-                                                    placeholder="(555) 555-5555">
+                                                    placeholder="1-555-555-5555">
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-4" >
@@ -632,7 +635,7 @@
                                                         <div class="col-sm-3" >
                                                         <label class="mb-1"><b>Vin</b></label>
                                                             <div class="input-group">
-                                                                <input type="text" name="Vin" class="form-control VinVehicle vehicleList">
+                                                                <input type="text" name="Vin" class="form-control VinVehicle vehicleList" style="text-transform:uppercase">
                                                                 <button type="button" title="Delete vehicle" onclick="EliminarVehiculo(this)"  class="btn btn-outline-danger"> <span class="far fa-trash-alt me-1"></span> </button>
                                                             </div>
                                                         </div>
@@ -781,13 +784,13 @@
                                         <div class="col-md-4" >
                                         <label class="mb-1"><i class="fa fa-mobile"></i> Phone number #1<b class="text-danger">*</b></label>
                                             <input id="Tel1" name="Tel1" type="tel" class="form-control phone"
-                                                placeholder="(555) 555-5555">
+                                                placeholder="1-555-555-5555">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" >
                                             <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone number #2</label>
                                             <input id="Tel2" name="Tel2" type="tel" class="form-control phone"
-                                                placeholder="(555) 555-5555">
+                                                placeholder="1-555-555-5555">
                                         </div>
                                         <!-- end row -->
                                         <div class="col-md-4" >
@@ -1038,7 +1041,7 @@
                         <span class="text-dark"><b><i data-feather="truck"></i> Trucker company</b></span>
                         <hr>
                                 <div class="row">
-                                    <label class="mb-1">Company name</label>
+                                    <label class="mb-1"><b class="text-danger">*</b>Company name</label>
                                         <div class="input-group">
                                             <select style="width: 92%;" id="IdCompanyService" name="IdCompanyService" class="select2 form-control mb-3 custom-select">
                                             </select>
@@ -1058,14 +1061,14 @@
                                             <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #1</label>
                                                 <input id="CompanyPhone1" name="CompanyPhone1" type="tel"
-                                                    class="form-control" placeholder="+1 (555) 555-5555">
+                                                    class="form-control" placeholder="+1 1-555-555-5555">
                                             </div>
 
                                             
                                             <div class="col-md-4" >
                                                 <label class="mb-1"><i class="fa fa-phone-alt"></i> Phone #2</label>
                                                 <input id="CompanyPhone2" name="CompanyPhone2" type="tel"
-                                                    class="form-control" placeholder="+1 (555) 555-5555">
+                                                    class="form-control" placeholder="+1 1-555-555-5555">
                                             </div>
                                         
                                             <div class="col-md-4" >
@@ -1091,13 +1094,13 @@
                                         <div class="col-md-6" >
                                             <label class="mb-1"><i class="fa fa-mobile"></i> Driver phone #1</label>
                                             <input id="DriverPhone1" name="DriverPhone1" type="number"
-                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                                class="form-control" placeholder="+1 1-555-555-5555">
                                         </div>
                                       
                                         <div class="col-md-6" >
                                             <label class="mb-1"><i class="fa fa-phone-alt"></i> Driver phone #2</label>
                                             <input id="DriverPhone2" name="DriverPhone2" type="number"
-                                                class="form-control" placeholder="+1 (555) 555-5555">
+                                                class="form-control" placeholder="+1 1-555-555-5555">
                                         </div>
 
                                     </div>
@@ -1397,7 +1400,7 @@ return x1- x2;
 }
 
 $(document).ready(function($){
-    $('.phone').mask('(000) 000-0000');
+    $('.phone').mask('0-000-000-0000');
     $("#ExpDate").mask('00/00');
     $("#Cvv").mask('0000');
     $("#CreditCard").mask("0000 0000 0000 0000");
@@ -1591,6 +1594,36 @@ $(document).ready(function() {
     $(".steps").addClass("d-print-none");
     $(".actions").addClass("d-print-none");
     $(".ListVehiclesPDF").html("");
+
+    $("#DeliveryDate").change(function(){
+
+        const PickUpOrderDateDate = new Date($("#PickUpOrderDateDate").val());
+        const DeliveryDate = new Date($("#DeliveryDate").val());
+
+        if(+DeliveryDate < +PickUpOrderDateDate){
+
+            $(".toast-error").html("(!) The delivery date cannot be less than today");
+            var myAlert2 = document.getElementById('toastError');
+            var bsAlert2 = new bootstrap.Toast(myAlert2);
+            bsAlert2.show();
+        }
+
+        });
+
+        $("#PickUpDate").change(function(){
+
+        const PickUpDate = new Date($("#PickUpDate").val());
+        const PickUpOrderDateDate = new Date($("#PickUpOrderDateDate").val());
+
+        if(+PickUpDate < +PickUpOrderDateDate){
+
+            $(".toast-error").html("(!) The pick-up date cannot be less than today");
+            var myAlert1 = document.getElementById('toastError');
+            var bsAlert1 = new bootstrap.Toast(myAlert1);
+            bsAlert1.show();
+        }
+
+        });
 
 });
 
